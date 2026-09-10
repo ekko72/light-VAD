@@ -42,6 +42,9 @@ python scripts\verify_env.py
 # 2. 下载公开数据（LibriSpeech 子集 + MUSAN，约 2.2GB，可选）
 python scripts\download_data.py
 
+# 只下载需要的条目（可选；默认 8 连接并发分块下载）
+python scripts\download_data.py --only train-clean-100,musan
+
 # 3. 启动 Jupyter（学习 D2L / 实验用）
 python -m jupyter lab
 ```
@@ -60,7 +63,7 @@ python -m jupyter lab
 ## 数据说明
 
 - LibriSpeech dev-clean / test-clean / train-clean-100：干净语音，用于训练/评测
-- MUSAN：噪声与音乐库，用于合成带噪语音（压缩包约 10.5GB，下载脚本排在最后，按需保留）
+- MUSAN：噪声与音乐库，用于合成带噪语音（压缩包约 10.5GB，全部下载约 16.6GB，下载脚本排在最后）
 - DNS Challenge 数据太大，先不下载；需要时再补脚本
 
 ## 里程碑对照

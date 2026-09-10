@@ -9,6 +9,8 @@ downloads/
 
 # 数据集与下载产物
 data/*.tar.gz
+data/*.parts/
+data/*.chunks.json
 data/LibriSpeech/
 data/musan/
 

@@ -1,0 +1,25 @@
+# 深度学习
+torch==2.9.1+cu128
+torchaudio==2.9.1+cu128
+torchmetrics==1.9.0
+einops==0.8.2
+d2l==0.17.0
+
+# 音频与特征
+librosa==1.0.0
+soundfile==0.14.0
+webrtcvad-wheels==2.0.14
+
+# 数值 / 可视化和指标
+numpy==2.5.2
+scipy==1.18.0
+matplotlib==3.11.1
+scikit-learn==1.9.0
+
+# 部署
+onnx==1.22.0
+onnxruntime==1.28.0
+
+# 工具
+pyyaml==6.0.3
+tqdm==4.70.0

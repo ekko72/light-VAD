@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# 虚拟环境与安装包缓存
+.venv/
+downloads/
+
+# 数据集与下载产物
+data/*.tar.gz
+data/LibriSpeech/
+data/musan/
+
+# 运行产物
+.mplcache/
+results/
+experiments/
+*.pt
+*.onnx
+*.log
+
+# IDE / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

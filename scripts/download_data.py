@@ -21,6 +21,7 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent / "data"
 OPENSLR = "https://www.openslr.org/resources"
+HF_MIRROR = "https://hf-mirror.com/datasets/huseinzol05/musan-mirror/resolve/main/musan.tar.gz"
 CHUNK_MB = 8
 DEFAULT_JOBS = 8
 
@@ -28,7 +29,7 @@ ITEMS = [
     ("dev-clean", f"{OPENSLR}/12/dev-clean.tar.gz", "LibriSpeech/dev-clean"),
     ("test-clean", f"{OPENSLR}/12/test-clean.tar.gz", "LibriSpeech/test-clean"),
     ("train-clean-100", f"{OPENSLR}/12/train-clean-100.tar.gz", "LibriSpeech/train-clean-100"),
-    ("musan", f"{OPENSLR}/17/musan.tar.gz", "musan"),
+    ("musan", HF_MIRROR, "musan"),
 ]
 
 
@@ -66,10 +67,19 @@ def parallel_download(url: str, dest: Path, jobs: int) -> bool:
         start = starts[i]
         end = min(start + chunk, total) - 1
         part = part_dir / f"part-{i:04d}.bin"
-        req = urllib.request.Request(url, headers={"Range": f"bytes={start}-{end}"})
-        with urllib.request.urlopen(req, timeout=120) as r:
-            with open(part, "wb") as f:
-                shutil.copyfileobj(r, f, 1024 * 1024)
+        last_error: Exception | None = None
+        for attempt in range(1, 6):
+            try:
+                req = urllib.request.Request(url, headers={"Range": f"bytes={start}-{end}"})
+                with urllib.request.urlopen(req, timeout=120) as r:
+                    with open(part, "wb") as f:
+                        shutil.copyfileobj(r, f, 1024 * 1024)
+                break
+            except Exception as exc:
+                last_error = exc
+                time.sleep(min(2 ** attempt, 30))
+        if last_error is not None:
+            raise RuntimeError(f"chunk {i} 多次重试仍失败: {last_error}") from last_error
         if part.stat().st_size != end - start + 1:
             raise RuntimeError(f"chunk {i} 大小不完整: {part}")
         with lock:

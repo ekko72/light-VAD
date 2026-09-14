@@ -34,6 +34,7 @@
 | --- | --- | --- |
 | torch | 2.9.1+cu128 | 训练 / 推理 |
 | torchaudio | 2.9.1+cu128 | 音频加载与重采样 |
+| torchvision | 0.24.1+cu128 | d2l 依赖（本项目不做图像任务） |
 | torchmetrics | 1.9.0 | 评测指标 |
 | einops | 0.8.2 | 张量重排 |
 | d2l | 0.17.0 | 课程练习 |
@@ -64,7 +65,6 @@
 
 ## 5. 未安装项
 
-- `torchvision`：未安装，本项目不涉及图像任务。
 - `onnxruntime-gpu`：未安装，当前 `onnxruntime` 仅有 `AzureExecutionProvider` 和 `CPUExecutionProvider`，ONNX 推理走 CPU。
 
 ## 6. 自检结果

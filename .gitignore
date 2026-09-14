@@ -1,30 +1,60 @@
-# Python
+# ---- Python ----
 __pycache__/
 *.py[cod]
+*$py.class
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
 
-# 虚拟环境与安装包缓存
+# ---- 虚拟环境 ----
 .venv/
-downloads/
+venv/
+env/
 
-# 数据集与下载产物
+# ---- 数据集与下载产物（大文件不入库） ----
 data/*.tar.gz
+data/*.tar
+data/*.zip
+data/*.7z
 data/*.parts/
 data/*.chunks.json
 data/LibriSpeech/
 data/musan/
 data/validation/
+downloads/
+# 注：data/manifests 与 data/splits 是冻结的划分产物，需要入库
 
-# 运行产物
+# ---- 训练与实验产物 ----
 .mplcache/
 results/
 experiments/
+checkpoints/
+runs/
+lightning_logs/
+wandb/
 *.pt
+*.pth
+*.ckpt
+*.safetensors
 *.onnx
+*.npy
+*.npz
 *.log
 
-# IDE / 系统
+# ---- 密钥与本地配置 ----
+.env
+*.env.local
+
+# ---- 办公文档（如需入库请用 git add -f） ----
+*.docx
+
+# ---- IDE / 系统 ----
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+desktop.ini

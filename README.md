@@ -29,7 +29,7 @@ cd <项目根目录>
 ## 已安装组件（全部验证通过）
 
 - 深度学习：torch / torchaudio / torchmetrics / einops / d2l / jupyter
-- 音频处理：librosa / soundfile / webrtcvad-wheels
+- 音频处理：librosa / soundfile / webrtcvad-wheels / python_speech_features / pydub
 - 数值与可视化：numpy / scipy / matplotlib
 - 部署相关：onnx / onnxruntime
 - 工具：tqdm / pyyaml / python-docx
@@ -53,7 +53,7 @@ python -m jupyter lab
 ## 目录结构
 
 ```text
-轻量VAD项目/
+light-VAD/
 ├── .venv/           # Python 虚拟环境（不要手动删）
 ├── scripts/         # 脚本（验证、下载、练习）
 ├── data/            # 数据集（LibriSpeech、MUSAN 等）

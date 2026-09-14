@@ -1,0 +1,463 @@
+{
+  "upstream_repository": "nicklashansen/voice-activity-detection",
+  "upstream_commit": "fa6f57855a41380f44f5c95c3d1252fc5856da73",
+  "protocol": {
+    "speech_dataset": "LibriSpeech test-clean",
+    "noise_dataset": "MUSAN",
+    "noise_categories": [
+      "noise"
+    ],
+    "noise_normalization": "peak normalized to 0 dBFS per sampled clip",
+    "noise_levels": {
+      "None": "0 dB overlay gain; noise is still present",
+      "-15": "-15 dB overlay gain applied to the noise bed",
+      "-3": "-3 dB overlay gain applied to the noise bed"
+    },
+    "sample_rate": 16000,
+    "frame_ms": 30,
+    "mfcc_coefficients": 12,
+    "delta_filter_width": 2,
+    "sequence_frames": 30,
+    "center_frame_label": true,
+    "batch_size": 2048,
+    "step_size": 6,
+    "seed": 1337,
+    "speech_minutes_target": 10.0,
+    "speech_seconds_generated": 601.47,
+    "silence_seconds_generated": 602.16
+  },
+  "results": [
+    {
+      "checkpoint": "net_epoch014.net",
+      "noise_level": "None",
+      "parameters": 8522,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.70263671875,
+      "auc": 0.7941778246466196,
+      "speech_recall": 0.8371929824561404,
+      "nonspeech_recall": 0.5862173649058895,
+      "confusion": {
+        "true_negative": 1931,
+        "false_positive": 1363,
+        "false_negative": 464,
+        "true_positive": 2386
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.908621736490589,
+        "threshold": 7.270543542214902e-12
+      },
+      "elapsed_seconds": 0.3441768999909982
+    },
+    {
+      "checkpoint": "net_epoch014.net",
+      "noise_level": "-15",
+      "parameters": 8522,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7618815104166666,
+      "auc": 0.9141524196039581,
+      "speech_recall": 0.9831578947368421,
+      "nonspeech_recall": 0.5704310868245295,
+      "confusion": {
+        "true_negative": 1879,
+        "false_positive": 1415,
+        "false_negative": 48,
+        "true_positive": 2802
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.509411050394657,
+        "threshold": 0.017568033188581467
+      },
+      "elapsed_seconds": 0.03806960000656545
+    },
+    {
+      "checkpoint": "net_epoch014.net",
+      "noise_level": "-3",
+      "parameters": 8522,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.72509765625,
+      "auc": 0.834775828460039,
+      "speech_recall": 0.8901754385964912,
+      "nonspeech_recall": 0.5822707953855495,
+      "confusion": {
+        "true_negative": 1918,
+        "false_positive": 1376,
+        "false_negative": 313,
+        "true_positive": 2537
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.8706739526411658,
+        "threshold": 2.2003297794892518e-10
+      },
+      "elapsed_seconds": 0.03508320008404553
+    },
+    {
+      "checkpoint": "net_large_epoch014.net",
+      "noise_level": "None",
+      "parameters": 30200,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7078450520833334,
+      "auc": 0.7994563214350388,
+      "speech_recall": 0.8049122807017544,
+      "nonspeech_recall": 0.6238615664845173,
+      "confusion": {
+        "true_negative": 2055,
+        "false_positive": 1239,
+        "false_negative": 556,
+        "true_positive": 2294
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.9055859137826351,
+        "threshold": 8.147515648260217e-12
+      },
+      "elapsed_seconds": 0.05184750002808869
+    },
+    {
+      "checkpoint": "net_large_epoch014.net",
+      "noise_level": "-15",
+      "parameters": 30200,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7814127604166666,
+      "auc": 0.9323809371637959,
+      "speech_recall": 0.9803508771929824,
+      "nonspeech_recall": 0.6092896174863388,
+      "confusion": {
+        "true_negative": 2007,
+        "false_positive": 1287,
+        "false_negative": 56,
+        "true_positive": 2794
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.5075895567698846,
+        "threshold": 0.011809480376541615
+      },
+      "elapsed_seconds": 0.0343176000751555
+    },
+    {
+      "checkpoint": "net_large_epoch014.net",
+      "noise_level": "-3",
+      "parameters": 30200,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7353515625,
+      "auc": 0.8405469274278592,
+      "speech_recall": 0.8694736842105263,
+      "nonspeech_recall": 0.6193078324225865,
+      "confusion": {
+        "true_negative": 2040,
+        "false_positive": 1254,
+        "false_negative": 372,
+        "true_positive": 2478
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.8743169398907104,
+        "threshold": 4.381491003346838e-10
+      },
+      "elapsed_seconds": 0.03470830002333969
+    },
+    {
+      "checkpoint": "gru_epoch014.net",
+      "noise_level": "None",
+      "parameters": 10019,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7093098958333334,
+      "auc": 0.7773009405724389,
+      "speech_recall": 0.7547368421052632,
+      "nonspeech_recall": 0.6700060716454159,
+      "confusion": {
+        "true_negative": 2207,
+        "false_positive": 1087,
+        "false_negative": 699,
+        "true_positive": 2151
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.9435336976320583,
+        "threshold": 2.8012067332383594e-07
+      },
+      "elapsed_seconds": 0.43545800005085766
+    },
+    {
+      "checkpoint": "gru_epoch014.net",
+      "noise_level": "-15",
+      "parameters": 10019,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.8059895833333334,
+      "auc": 0.9173192620287818,
+      "speech_recall": 0.9803508771929824,
+      "nonspeech_recall": 0.655130540376442,
+      "confusion": {
+        "true_negative": 2158,
+        "false_positive": 1136,
+        "false_negative": 56,
+        "true_positive": 2794
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.4268366727383121,
+        "threshold": 0.043428193777799606
+      },
+      "elapsed_seconds": 0.06155310000758618
+    },
+    {
+      "checkpoint": "gru_epoch014.net",
+      "noise_level": "-3",
+      "parameters": 10019,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7369791666666666,
+      "auc": 0.8216315682953589,
+      "speech_recall": 0.8207017543859649,
+      "nonspeech_recall": 0.664541590771099,
+      "confusion": {
+        "true_negative": 2189,
+        "false_positive": 1105,
+        "false_negative": 511,
+        "true_positive": 2339
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.895264116575592,
+        "threshold": 5.488194005920377e-07
+      },
+      "elapsed_seconds": 0.05979269999079406
+    },
+    {
+      "checkpoint": "gru_large_epoch014.net",
+      "noise_level": "None",
+      "parameters": 28669,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.70361328125,
+      "auc": 0.7732441760138049,
+      "speech_recall": 0.7849122807017543,
+      "nonspeech_recall": 0.6332726168791742,
+      "confusion": {
+        "true_negative": 2086,
+        "false_positive": 1208,
+        "false_negative": 613,
+        "true_positive": 2237
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.9238008500303583,
+        "threshold": 1.7835377548180986e-06
+      },
+      "elapsed_seconds": 0.09369459992740303
+    },
+    {
+      "checkpoint": "gru_large_epoch014.net",
+      "noise_level": "-15",
+      "parameters": 28669,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7926432291666666,
+      "auc": 0.9041902874977366,
+      "speech_recall": 0.9859649122807017,
+      "nonspeech_recall": 0.6253794778384942,
+      "confusion": {
+        "true_negative": 2060,
+        "false_positive": 1234,
+        "false_negative": 40,
+        "true_positive": 2810
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.38737097753491195,
+        "threshold": 0.3864537179470062
+      },
+      "elapsed_seconds": 0.06992479995824397
+    },
+    {
+      "checkpoint": "gru_large_epoch014.net",
+      "noise_level": "-3",
+      "parameters": 28669,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7333984375,
+      "auc": 0.814434538075608,
+      "speech_recall": 0.8505263157894737,
+      "nonspeech_recall": 0.6320582877959927,
+      "confusion": {
+        "true_negative": 2082,
+        "false_positive": 1212,
+        "false_negative": 426,
+        "true_positive": 2424
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.8151183970856102,
+        "threshold": 5.933778083999641e-06
+      },
+      "elapsed_seconds": 0.07352880004327744
+    },
+    {
+      "checkpoint": "densenet_epoch012.net",
+      "noise_level": "None",
+      "parameters": 9966,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.6746419270833334,
+      "auc": 0.7492121773772622,
+      "speech_recall": 0.7347368421052631,
+      "nonspeech_recall": 0.6226472374013358,
+      "confusion": {
+        "true_negative": 2051,
+        "false_positive": 1243,
+        "false_negative": 756,
+        "true_positive": 2094
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.9128718882817244,
+        "threshold": 3.8020214532252794e-08
+      },
+      "elapsed_seconds": 0.11844080011360347
+    },
+    {
+      "checkpoint": "densenet_epoch012.net",
+      "noise_level": "-15",
+      "parameters": 9966,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7742513020833334,
+      "auc": 0.8968136643977886,
+      "speech_recall": 0.9680701754385965,
+      "nonspeech_recall": 0.6065573770491803,
+      "confusion": {
+        "true_negative": 1998,
+        "false_positive": 1296,
+        "false_negative": 91,
+        "true_positive": 2759
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.5591985428051002,
+        "threshold": 0.00017565560119692236
+      },
+      "elapsed_seconds": 0.041790899937041104
+    },
+    {
+      "checkpoint": "densenet_epoch012.net",
+      "noise_level": "-3",
+      "parameters": 9966,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7034505208333334,
+      "auc": 0.7871224128931924,
+      "speech_recall": 0.8007017543859649,
+      "nonspeech_recall": 0.6193078324225865,
+      "confusion": {
+        "true_negative": 2040,
+        "false_positive": 1254,
+        "false_negative": 568,
+        "true_positive": 2282
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.8642987249544627,
+        "threshold": 5.2443233755639085e-08
+      },
+      "elapsed_seconds": 0.04305750003550202
+    },
+    {
+      "checkpoint": "densenet_large_epoch014.net",
+      "noise_level": "None",
+      "parameters": 29696,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.6735026041666666,
+      "auc": 0.75324406949371,
+      "speech_recall": 0.7817543859649123,
+      "nonspeech_recall": 0.5798421372191864,
+      "confusion": {
+        "true_negative": 1910,
+        "false_positive": 1384,
+        "false_negative": 622,
+        "true_positive": 2228
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.9001214329083181,
+        "threshold": 1.3120176056702348e-08
+      },
+      "elapsed_seconds": 0.07218130002729595
+    },
+    {
+      "checkpoint": "densenet_large_epoch014.net",
+      "noise_level": "-15",
+      "parameters": 29696,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.7561848958333334,
+      "auc": 0.9063260686628531,
+      "speech_recall": 0.9814035087719298,
+      "nonspeech_recall": 0.5613236187006678,
+      "confusion": {
+        "true_negative": 1849,
+        "false_positive": 1445,
+        "false_negative": 53,
+        "true_positive": 2797
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.5300546448087432,
+        "threshold": 0.1032351553440094
+      },
+      "elapsed_seconds": 0.04679759999271482
+    },
+    {
+      "checkpoint": "densenet_large_epoch014.net",
+      "noise_level": "-3",
+      "parameters": 29696,
+      "frames": 6144,
+      "speech_fraction": 0.4638671875,
+      "accuracy": 0.6982421875,
+      "auc": 0.793264308311763,
+      "speech_recall": 0.8396491228070175,
+      "nonspeech_recall": 0.5758955676988464,
+      "confusion": {
+        "true_negative": 1897,
+        "false_positive": 1397,
+        "false_negative": 457,
+        "true_positive": 2393
+      },
+      "operating_point": {
+        "target_frr": 0.01,
+        "achieved_frr": 0.009824561403508772,
+        "far": 0.840922890103218,
+        "threshold": 1.308938806232618e-07
+      },
+      "elapsed_seconds": 0.0567269999301061
+    }
+  ]
+}

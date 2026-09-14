@@ -41,6 +41,8 @@
 | librosa | 1.0.0 | 特征提取（STFT / Mel） |
 | soundfile | 0.14.0 | 读写 flac / wav |
 | webrtcvad-wheels | 2.0.14 | WebRTC VAD 基线 |
+| python_speech_features | 0.6 | 官方复现所需的 MFCC / Delta 特征 |
+| pydub | 0.25.1 | 音频片段处理与复现兼容 |
 | numpy | 2.5.2 | 数值计算 |
 | scipy | 1.18.0 | 信号处理 |
 | matplotlib | 3.11.1 | 可视化 |
@@ -84,6 +86,8 @@ GPU: NVIDIA GeForce RTX 5060 Laptop GPU
 webrtcvad: 16 帧判定输出 [False x 16]
 librosa: STFT (1025, 16), Mel (128, 16)
 onnxruntime: 1.28.0, providers=['AzureExecutionProvider', 'CPUExecutionProvider']
+[OK] import python_speech_features
+[OK] import pydub
 GPU 矩阵乘法 OK
 ALL PASS
 ```

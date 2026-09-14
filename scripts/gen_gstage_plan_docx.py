@@ -150,7 +150,7 @@ bullet("部署接口：流式推理（帧级输出 + 状态管理）、INT8 量�
 # ===== 四、环境与数据 =====
 heading("四、环境与数据（已就绪）", 1)
 bullet("环境已预装（2026-08-13）：项目根目录下的 .venv，Python 3.12 + PyTorch 2.9.1（cu128 GPU，RTX 5060 已验证）；")
-bullet("自检命令：python scripts\\verify_env.py（15 项全部通过）；")
+bullet("自检命令：python scripts\\verify_env.py（16 项全部通过）；")
 bullet("数据下载脚本：scripts\\download_data.py（LibriSpeech dev-clean/test-clean + MUSAN，约 2.2GB，9 月再下）；DNS 数据集太大，先不装。")
 
 # ===== 五、风险与收缩方案 =====

@@ -32,7 +32,7 @@ def _import(mod):
 for m in [
     "numpy", "scipy", "torch", "torchaudio", "librosa", "soundfile",
     "matplotlib", "onnx", "onnxruntime", "webrtcvad", "tqdm", "yaml",
-    "einops", "torchmetrics", "d2l",
+    "einops", "torchmetrics", "d2l", "docx",
 ]:
     check(f"import {m}", lambda m=m: _import(m))
 

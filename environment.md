@@ -48,6 +48,7 @@
 | onnxruntime | 1.28.0 | ONNX 推理 |
 | pyyaml | 6.0.3 | 配置读取 |
 | tqdm | 4.70.0 | 进度条 |
+| python-docx | 1.2.0 | 生成 Word 文档 |
 
 ## 4. 随依赖安装的工具包
 
@@ -59,6 +60,7 @@
 | notebook | 7.6.2 |
 | ipykernel | 7.3.0 |
 | pandas | 3.0.5 |
+| lxml | 6.1.3 |
 
 ## 5. 未安装项
 

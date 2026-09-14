@@ -32,7 +32,7 @@ cd <项目根目录>
 - 音频处理：librosa / soundfile / webrtcvad-wheels
 - 数值与可视化：numpy / scipy / matplotlib
 - 部署相关：onnx / onnxruntime
-- 工具：tqdm / pyyaml
+- 工具：tqdm / pyyaml / python-docx
 
 ## 常用命令
 

@@ -75,10 +75,13 @@ python -m jupyter lab
 # 1. 生成 speech/noise manifest 与 train/val/test 划分
 python scripts\prepare_manifests.py
 
-# 2. 抽查 10 条语音的帧标签并出图
+# 2. 随机抽查 10 条语音 + 10 条噪声，输出明细表、拼接音频和波形图
+python scripts\inspect_audio.py
+
+# 3. 抽查 10 条语音的帧标签并出图
 python scripts\generate_labels.py
 
-# 3. 生成 5 x 3 组 SNR 混合样例并校验实际 SNR
+# 4. 生成 5 x 3 组 SNR 混合样例并校验实际 SNR
 python scripts\mix_noise.py
 ```
 
@@ -86,6 +89,9 @@ python scripts\mix_noise.py
 
 > 自定义 SNR 列表时，PowerShell 请用等号传参，例如
 > `python scripts\mix_noise.py --snrs=-10,0,10`。
+
+`inspect_audio.py` 的拼接音频由 3 秒片段加 0.3 秒间隔组成，便于一次听完全部抽查条目；
+加 `--play` 可直接播放（Windows），`--count` 和 `--seed` 控制抽查条数与随机性。
 
 ## 里程碑对照
 

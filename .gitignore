@@ -25,6 +25,7 @@ data/*.chunks.json
 data/LibriSpeech/
 data/musan/
 data/validation/
+data/fashion-mnist/
 downloads/
 # 注：data/manifests 与 data/splits 是冻结的划分产物，需要入库
 

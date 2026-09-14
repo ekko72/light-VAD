@@ -13,6 +13,7 @@ data/*.parts/
 data/*.chunks.json
 data/LibriSpeech/
 data/musan/
+data/validation/
 
 # 运行产物
 .mplcache/

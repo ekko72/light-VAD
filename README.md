@@ -6,8 +6,9 @@
 ## 环境
 
 - 位置：`C:\Users\20547\Desktop\论文p12\轻量VAD项目\.venv`
-- Python 3.12.13（独立虚拟环境，不污染系统 Python）
+- Python 3.12.14（独立虚拟环境，不污染系统 Python）
 - PyTorch 2.9.1 + cu128（GPU 版，RTX 5060 Laptop 已验证可用）
+- 完整环境快照与依赖版本：`environment.md`
 
 ### 每次开始练习前激活环境
 
@@ -65,6 +66,26 @@ python -m jupyter lab
 - LibriSpeech dev-clean / test-clean / train-clean-100：干净语音，用于训练/评测
 - MUSAN：噪声与音乐库，用于合成带噪语音（压缩包约 10.5GB，全部下载约 16.6GB，下载脚本排在最后）
 - DNS Challenge 数据太大，先不下载；需要时再补脚本
+
+## 数据预处理
+
+一次性生成 manifest、固定划分、标签抽查和 SNR 混合验证：
+
+```powershell
+# 1. 生成 speech/noise manifest 与 train/val/test 划分
+python scripts\prepare_manifests.py
+
+# 2. 抽查 10 条语音的帧标签并出图
+python scripts\generate_labels.py
+
+# 3. 生成 5 x 3 组 SNR 混合样例并校验实际 SNR
+python scripts\mix_noise.py
+```
+
+协议固定在 `data_protocol.md`，中间文件在 `data\manifests`、`data\splits`、`data\validation`。
+
+> 自定义 SNR 列表时，PowerShell 请用等号传参，例如
+> `python scripts\mix_noise.py --snrs=-10,0,10`。
 
 ## 里程碑对照
 

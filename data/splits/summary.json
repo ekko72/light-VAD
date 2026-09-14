@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "sample_rate": 16000,
+  "speaker_overlap": {},
+  "noise_group_roles": {
+    "music/fma": "train_group(文件级 70/15/15)",
+    "music/fma-western-art": "test_seen_group",
+    "music/hd-classical": "test_unseen_group",
+    "music/jamendo": "train_group(文件级 70/15/15)",
+    "music/rfm": "train_group(文件级 70/15/15)",
+    "noise/free-sound": "train_group(文件级 70/15/15)",
+    "noise/sound-bible": "test_unseen_group",
+    "speech/librivox": "test_unseen_group",
+    "speech/us-gov": "train_group(文件级 70/15/15)"
+  },
+  "counts": {
+    "speech_train": 28539,
+    "speech_val": 2703,
+    "speech_test": 2620,
+    "noise_train": 1112,
+    "noise_val": 238,
+    "noise_test_seen": 331,
+    "noise_test_unseen": 335
+  }
+}

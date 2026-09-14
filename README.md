@@ -5,7 +5,7 @@
 
 ## 环境
 
-- 位置：`C:\Users\20547\Desktop\论文p12\轻量VAD项目\.venv`
+- 位置：项目根目录下的 `.venv`
 - Python 3.12.14（独立虚拟环境，不污染系统 Python）
 - PyTorch 2.9.1 + cu128（GPU 版，RTX 5060 Laptop 已验证可用）
 - 完整环境快照与依赖版本：`environment.md`
@@ -15,7 +15,7 @@
 PowerShell 中执行：
 
 ```powershell
-cd C:\Users\20547\Desktop\论文p12\轻量VAD项目
+cd <项目根目录>
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -23,7 +23,7 @@ cd C:\Users\20547\Desktop\论文p12\轻量VAD项目
 不想激活也可以全程用完整路径：
 
 ```powershell
-C:\Users\20547\Desktop\论文p12\轻量VAD项目\.venv\Scripts\python.exe xxx.py
+.\.venv\Scripts\python.exe xxx.py
 ```
 
 ## 已安装组件（全部验证通过）

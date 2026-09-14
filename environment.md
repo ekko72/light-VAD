@@ -22,7 +22,7 @@
 | 项目 | 值 |
 | --- | --- |
 | Python | 3.12.14（AMD64） |
-| 虚拟环境 | `C:\Users\20547\Desktop\论文p12\轻量VAD项目\.venv` |
+| 虚拟环境 | 项目根目录下的 `.venv` |
 | pip | 26.2.1 |
 | torch 线程数 | 8 |
 
@@ -70,7 +70,7 @@
 自检命令：
 
 ```powershell
-cd C:\Users\20547\Desktop\论文p12\轻量VAD项目
+cd <项目根目录>
 .\.venv\Scripts\python.exe scripts\verify_env.py
 ```
 

@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-"""生成《G 阶段执行规划：轻量神经 VAD》Word 文档，保存到桌面。"""
+"""生成《G 阶段执行规划：轻量神经 VAD》Word 文档。
+
+默认保存到桌面，可用 --out 指定输出路径。
+"""
+
+import argparse
+from pathlib import Path
 
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
@@ -7,7 +13,14 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 
-OUT = r"C:\Users\20547\Desktop\G阶段执行规划-轻量神经VAD-研一上2026.docx"
+_parser = argparse.ArgumentParser(description="生成 G 阶段执行规划 Word 文档")
+_parser.add_argument(
+    "--out",
+    type=Path,
+    default=Path.home() / "Desktop" / "G阶段执行规划-轻量神经VAD-研一上2026.docx",
+    help="输出 docx 路径（默认保存到桌面）",
+)
+OUT = _parser.parse_args().out
 
 doc = Document()
 
@@ -136,7 +149,7 @@ bullet("部署接口：流式推理（帧级输出 + 状态管理）、INT8 量�
 
 # ===== 四、环境与数据 =====
 heading("四、环境与数据（已就绪）", 1)
-bullet("环境已预装（2026-08-13）：项目在 C:\\Users\\20547\\Desktop\\论文p12\\轻量VAD项目\\.venv，Python 3.12 + PyTorch 2.9.1（cu128 GPU，RTX 5060 已验证）；")
+bullet("环境已预装（2026-08-13）：项目根目录下的 .venv，Python 3.12 + PyTorch 2.9.1（cu128 GPU，RTX 5060 已验证）；")
 bullet("自检命令：python scripts\\verify_env.py（15 项全部通过）；")
 bullet("数据下载脚本：scripts\\download_data.py（LibriSpeech dev-clean/test-clean + MUSAN，约 2.2GB，9 月再下）；DNS 数据集太大，先不装。")
 
@@ -155,5 +168,6 @@ bullet("代码、数据、笔记分开放：代码在项目文件夹，笔记在
 para("", size=8)
 para("生成日期：2026-08-13 · 配合 Obsidian「04_学习/第二阶段_神经VAD」使用", size=8)
 
+OUT.parent.mkdir(parents=True, exist_ok=True)
 doc.save(OUT)
 print("saved:", OUT)

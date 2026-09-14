@@ -33,7 +33,6 @@ for m in [
     "numpy", "scipy", "torch", "torchaudio", "librosa", "soundfile",
     "matplotlib", "onnx", "onnxruntime", "webrtcvad", "tqdm", "yaml",
     "einops", "torchmetrics", "d2l.torch", "docx", "torchvision",
-    "python_speech_features", "pydub",
 ]:
     check(f"import {m}", lambda m=m: _import(m))
 

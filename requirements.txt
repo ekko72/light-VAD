@@ -10,8 +10,6 @@ d2l==0.17.0
 librosa==1.0.0
 soundfile==0.14.0
 webrtcvad-wheels==2.0.14
-python_speech_features==0.6
-pydub==0.25.1
 
 # 数值 / 可视化和指标
 numpy==2.5.2

@@ -29,7 +29,7 @@ cd <项目根目录>
 ## 已安装组件（全部验证通过）
 
 - 深度学习：torch / torchaudio / torchmetrics / einops / d2l / jupyter
-- 音频处理：librosa / soundfile / webrtcvad-wheels / python_speech_features / pydub
+- 音频处理：librosa / soundfile / webrtcvad-wheels
 - 数值与可视化：numpy / scipy / matplotlib
 - 部署相关：onnx / onnxruntime
 - 工具：tqdm / pyyaml / python-docx
@@ -60,6 +60,9 @@ light-VAD/
 ├── notes/           # 项目内临时笔记
 └── README.md
 ```
+
+`nicklashansen/voice-activity-detection` 的独立复现已拆分到同级目录
+`..\voice-activity-detection-reproduction`，不再占用本项目代码目录。
 
 ## 数据说明
 

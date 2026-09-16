@@ -1,6 +1,6 @@
 # 环境快照（environment）
 
-> 快照日期：2026-09-14
+> 快照日期：2026-09-16
 > 记录范围：G 阶段（轻量神经 VAD）开发环境的系统、硬件与依赖版本。
 > 用途：复现实验环境、排查「本机可跑、换机报错」类问题。
 
@@ -41,6 +41,7 @@
 | librosa | 1.0.0 | 特征提取（STFT / Mel） |
 | soundfile | 0.14.0 | 读写 flac / wav |
 | webrtcvad-wheels | 2.0.14 | WebRTC VAD 基线 |
+| praat-textgrids | 1.4.0 | 解析 LibriVAD 强制对齐 TextGrid |
 | numpy | 2.5.2 | 数值计算 |
 | scipy | 1.18.0 | 信号处理 |
 | matplotlib | 3.11.1 | 可视化 |
@@ -76,7 +77,7 @@ cd <项目根目录>
 .\.venv\Scripts\python.exe scripts\verify_env.py
 ```
 
-2026-09-14 运行结果：`ALL PASS`。关键输出：
+2026-09-16 运行结果：`ALL PASS`。关键输出：
 
 ```text
 torch: 2.9.1+cu128, CUDA 可用: True

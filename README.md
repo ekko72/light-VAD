@@ -56,6 +56,8 @@ python -m jupyter lab
 light-VAD/
 ├── .venv/           # Python 虚拟环境（不要手动删）
 ├── scripts/         # 脚本（验证、下载、练习）
+│   └── librivad/    # LibriVAD 风格数据管线
+├── reproductions/   # 论文/开源项目复现
 ├── data/            # 数据集（LibriSpeech、MUSAN 等）
 ├── notes/           # 项目内临时笔记
 └── README.md
@@ -95,6 +97,96 @@ python scripts\mix_noise.py
 
 `inspect_audio.py` 的拼接音频由 3 秒片段加 0.3 秒间隔组成，便于一次听完全部抽查条目；
 加 `--play` 可直接播放（Windows），`--count` 和 `--seed` 控制抽查条数与随机性。
+
+## LibriVAD 风格数据管线（v2）
+
+第二条数据线：用 LibriVAD 的 forced alignment 标签 + 官方 9 类噪声，替换 v1 的
+RMS 门限标签与 MUSAN。两条线的中间产物互不覆盖，协议见
+`data_protocol_librivad_v2.md`（v1 仍保留在 `data_protocol.md`）。
+
+```powershell
+# 1. 下载并校验上游数据（对齐包 + 噪声包，约 4GB）
+python scripts\librivad\download.py
+
+# 2. 生成 LibriVAD 风格数据（variant x split x 9 噪声 x 6 SNR）
+python scripts\librivad\generate.py --size small
+
+# 完整 medium 实验集（约 27.4 万条混合音频，单变体约 1 小时）
+python scripts\librivad\generate.py `
+  --size medium --variants LibriSpeech --splits train,val,test `
+  --batch-size 2900 --progress-every 1000
+python scripts\librivad\generate.py `
+  --size medium --variants LibriSpeechConcat --splits train,val,test `
+  --batch-size 2900 --progress-every 1000
+
+# 只跑冒烟子集
+python scripts\librivad\generate.py --size small --noises Babble_noise --snrs=-5,5
+
+# 3. 逐条校验：重算标签、重混音频、比对 SNR / scale / hash / 选择
+python scripts\librivad\verify.py `
+  --manifest data\librivad\manifests\LibriSpeech_train_small.tsv `
+  --check-selection
+
+# 4. 与上游转录实现做协议一致性检查
+python scripts\librivad\parity.py --samples 25
+```
+
+产物布局：
+
+```text
+data\librivad\
+├── raw\          # 上游对齐与噪声（不入库）
+├── generated\    # {variant}\{split_dir}\{noise}\{snr}\*.wav
+├── labels\       # 逐采样点 int16 标签（每个干净样本一份）
+└── manifests\    # {variant}_{split}_{size}.tsv / .json
+```
+
+评测沿用上游 25 ms 窗、10 ms 帧移、窗内多数投票；这与 v1 的 30 ms 中心帧协议
+不同，两套指标不要混着比。
+
+## MarbleNet 复现
+
+`reproductions/marblenet_vad/` 提供 MarbleNet-3x2x64 的纯 PyTorch 复现，
+不依赖 NeMo；模型、MFCC、数据切窗、训练配方和 87.5% 滑窗评估都在该目录。
+
+```powershell
+# 冒烟训练（复用 LibriVAD smoke 数据）
+python reproductions\marblenet_vad\train.py `
+  --train-manifest data\librivad\smoke\manifests\LibriSpeech_train_small.tsv `
+  --val-manifest data\librivad\smoke\manifests\LibriSpeech_val_small.tsv `
+  --data-root data\librivad\smoke --causal `
+  --results-dir results\marblenet_vad_causal `
+  --epochs 2 --limit 8 --batch-size 16
+
+# 从 causal checkpoint 续训（--epochs 是总预算）
+python reproductions\marblenet_vad\train.py `
+  --train-manifest data\librivad\smoke\manifests\LibriSpeech_train_small.tsv `
+  --val-manifest data\librivad\smoke\manifests\LibriSpeech_val_small.tsv `
+  --data-root data\librivad\smoke --causal `
+  --results-dir results\marblenet_vad_causal `
+  --resume results\marblenet_vad_causal\last.pt `
+  --epochs 60 --batch-size 16
+
+# 正式 medium 训练：按噪声/SNR 确定性分层抽样，避免只取 manifest 前几行
+python reproductions\marblenet_vad\train.py `
+  --train-manifest data\librivad\manifests\LibriSpeech_train_medium.tsv `
+  --val-manifest data\librivad\manifests\LibriSpeech_val_medium.tsv `
+  --data-root data\librivad --causal `
+  --resume results\marblenet_vad_causal\last.pt `
+  --results-dir results\marblenet_vad_causal_formal `
+  --train-rows 2160 --val-rows 432 `
+  --epochs 120 --batch-size 128 --num-workers 0
+
+# 滑窗评估
+python reproductions\marblenet_vad\evaluate.py `
+  --manifest data\librivad\manifests\LibriSpeech_test_medium.tsv `
+  --data-root data\librivad `
+  --checkpoint results\marblenet_vad_causal_formal\best.pt `
+  --row-sample 2160
+```
+
+训练产物写入 `results\marblenet_vad_causal\`；协议差异和完整参数说明见
+`reproductions\marblenet_vad\README.md`。
 
 ## 里程碑对照
 

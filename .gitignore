@@ -31,6 +31,19 @@ data/FashionMNIST/
 downloads/
 # 注：data/manifests 与 data/splits 是冻结的划分产物，需要入库
 
+# ---- LibriVAD 风格数据管线（输入、缓存和生成音频不入库） ----
+data/librivad/downloads/
+data/librivad/raw/
+data/librivad/bench/
+data/librivad/generated/
+data/librivad/labels/
+data/librivad/metadata/silence_segments.tsv
+data/librivad/smoke/
+data/librivad/manifests/*_medium.tsv
+data/librivad/manifests/*_medium.json
+data/librivad/manifests/*_large.tsv
+data/librivad/manifests/*_large.json
+
 # ---- 训练与实验产物 ----
 .mplcache/
 results/

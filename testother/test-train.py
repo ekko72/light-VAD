@@ -21,12 +21,12 @@ from pathlib import Path
 
 import matplotlib
 
-matplotlib.use("Agg")
+matplotlib.use("Agg") #无gui，脚步绘图
 import matplotlib.pyplot as plt
 import torch
-from torch import nn
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+from torch import nn#神经网络的函数
+from torch.utils.data import DataLoader#批次封装数据的函数
+from torchvision import datasets, transforms#数据集，图像转换
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DATA_DIR = PROJECT_ROOT / "data" / "fashion-mnist"
@@ -35,16 +35,16 @@ DEFAULT_OUT_DIR = PROJECT_ROOT / "results" / "g0-01_mlp"
 
 def get_dataloaders(data_dir: Path, batch_size: int):
     """Fashion-MNIST 训练/测试集；首次运行会自动下载到项目内。"""
-    transform = transforms.ToTensor()
+    transform = transforms.ToTensor() #转换图像形式，对像素值归一化
     train_set = datasets.FashionMNIST(
         root=str(data_dir), train=True, download=True, transform=transform
     )
     test_set = datasets.FashionMNIST(
         root=str(data_dir), train=False, download=True, transform=transform
-    )
+    ) #分别设置数据集和测试集
     train_iter = DataLoader(train_set, batch_size=batch_size, shuffle=True)
     test_iter = DataLoader(test_set, batch_size=batch_size, shuffle=False)
-    return train_iter, test_iter
+    return train_iter, test_iter #对测试集和训练集的封装，shuffle=true是训练集
 
 
 def build_net(hidden: int = 256, std: float = 0.01) -> nn.Sequential:
@@ -54,42 +54,42 @@ def build_net(hidden: int = 256, std: float = 0.01) -> nn.Sequential:
         nn.Linear(784, hidden),
         nn.ReLU(),
         nn.Linear(hidden, 10),
-    )
+    )#网络的设置
 
-    def init_weights(module):
+    def init_weights(module):#初始化线性网络层，正态分布，偏置为0
         if isinstance(module, nn.Linear):
             nn.init.normal_(module.weight, std=std)
             nn.init.zeros_(module.bias)
 
-    net.apply(init_weights)
+    net.apply(init_weights)#apply，对net里的所有层遍历，初始化
     return net
 
 
 def evaluate_accuracy(net, data_iter, device) -> float:
-    net.eval()
+    net.eval()#评估模式，测正确率
     correct = 0
     total = 0
     with torch.no_grad():
         for features, labels in data_iter:
             features, labels = features.to(device), labels.to(device)
             predictions = net(features).argmax(dim=1)
-            correct += int((predictions == labels).sum())
-            total += labels.numel()
+            correct += int((predictions == labels).sum())#判断相等数量-sum求和-int化为整形加到correct
+            total += labels.numel()#标签数量
     return correct / total
 
 
 def train_one_epoch(net, train_iter, loss_fn, optimizer, device) -> tuple[float, float]:
-    net.train()
+    net.train()#进入训练模式
     total_loss = 0.0
     correct = 0
     total = 0
     for features, labels in train_iter:
-        features, labels = features.to(device), labels.to(device)
-        optimizer.zero_grad()
-        outputs = net(features)
-        loss = loss_fn(outputs, labels)
-        loss.backward()
-        optimizer.step()
+        features, labels = features.to(device), labels.to(device) #转移特征和标签到设备
+        optimizer.zero_grad()#清空梯度
+        outputs = net(features)#输入网络获得输出
+        loss = loss_fn(outputs, labels)#对比计算损失
+        loss.backward()#反向传播
+        optimizer.step()#更新梯度
 
         total_loss += float(loss.item()) * labels.numel()
         correct += int((outputs.argmax(dim=1) == labels).sum())

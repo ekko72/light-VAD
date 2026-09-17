@@ -132,20 +132,50 @@ checkpoint 会记录 `model_config.causal=true`，评估脚本会自动恢复对
   --data-root data\librivad --causal `
   --resume results\marblenet_vad_causal\last.pt `
   --results-dir results\marblenet_vad_causal_formal `
-  --train-rows 2160 --val-rows 432 `
-  --epochs 120 --batch-size 128 --num-workers 0
+  --train-rows 8640 --val-rows 432 `
+  --train-stride 4800 --val-stride 2400 `
+  --epochs 100 --max-steps 28902 `
+  --batch-size 128 --num-workers 0 `
+  --warmup-ratio 0.03 --hold-ratio 0.25
 ```
 
-`--epochs` 仍表示总预算；smoke checkpoint 停在 epoch 60，因此该命令会再训练
-60 个 formal epoch。训练结束后把同一组条件抽样规则用于测试：
+`--epochs` 表示总预算；smoke checkpoint 停在零基 epoch 59，因此这条命令
+从 epoch 60 继续并再训练 40 个 formal epoch。8640 条训练行在 0.63 s、
+50% overlap 的切窗协议下展开为 90,514 个平衡窗口（45,257 speech /
+45,257 silence），共 708 step/epoch。432 条验证行展开为 18,449 个窗口。
+
+本机在 2026-09-16 完成了上述 100 epoch 正式训练。验证集最佳 checkpoint
+为零基 epoch 93（日志中的 epoch 94/100）：
+
+| 指标 | 验证集 |
+| --- | ---: |
+| loss | 0.15936 |
+| accuracy | 0.93273 |
+| AUROC | 0.98168 |
+
+训练结束后使用同一组条件分层规则抽取 4320 条 medium 测试行：
 
 ```powershell
 .\.venv\Scripts\python.exe reproductions\marblenet_vad\evaluate.py `
   --manifest data\librivad\manifests\LibriSpeech_test_medium.tsv `
   --data-root data\librivad `
   --checkpoint results\marblenet_vad_causal_formal\best.pt `
-  --row-sample 2160
+  --row-sample 4320
 ```
+
+正式测试结果：
+
+| 聚合级别 | accuracy | AUROC | TPR@FPR=0.315 |
+| --- | ---: | ---: | ---: |
+| sample-level | 0.90635 | 0.91246 | 0.93428 |
+| LibriVAD frame-level（25 ms / 10 ms） | 0.90712 | 0.91302 | 0.93510 |
+
+这是 LibriVAD-style medium 数据的确定性分层抽样测试，不是完整 14,148 条
+测试集，也不是论文 AV A-speech 协议的分数。此前 smoke checkpoint 约
+0.62 的 AUC 只用于验证 causal 前向、数据和续训链路，不能作为正式 VAD
+指标。评估脚本使用流式混淆统计和 65,536 桶概率直方图累计全局 AUC，
+避免把几十亿逐采样概率同时保存在内存中；结果 JSON 仍保留每条测试音频
+的独立指标，便于按噪声和 SNR 复查。
 
 ## 滑窗评估
 
@@ -174,3 +204,4 @@ LibriVAD 25 ms/10 ms frame-level 的 accuracy、AUROC 和
 | `train.py` | 训练、验证、学习率调度与 checkpoint |
 | `evaluate.py` | 87.5% 滑窗推理、median/mean 平滑与指标 |
 | `test_causal.py` | 卷积、MFCC、流式缓存的因果性检查 |
+| `test_evaluate.py` | 流式指标与 scikit-learn 参考实现的对照 |

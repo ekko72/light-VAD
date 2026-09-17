@@ -43,6 +43,7 @@ except ImportError:
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CHECKPOINT = REPO_ROOT / "results" / "marblenet_vad" / "best.pt"
+AUC_HISTOGRAM_BINS = 65_536
 
 
 def resolve_device(value: str) -> torch.device:
@@ -90,6 +91,125 @@ def metrics_from_arrays(
         "auc": safe_auc(labels, scores),
         "tpr_at_fpr_0.315": tpr_at_fpr(labels, scores, target_fpr),
     }
+
+
+class StreamingMetrics:
+    """Accumulate binary metrics without retaining all sample scores."""
+
+    def __init__(
+        self,
+        *,
+        threshold: float = 0.5,
+        target_fpr: float = 0.315,
+        bins: int = AUC_HISTOGRAM_BINS,
+    ) -> None:
+        if bins <= 0:
+            raise ValueError("bins must be positive")
+        self.threshold = float(threshold)
+        self.target_fpr = float(target_fpr)
+        self.bins = int(bins)
+        self.examples = 0
+        self.speech = 0
+        self.silence = 0
+        self.correct = 0
+        self.positive_histogram = np.zeros(self.bins, dtype=np.int64)
+        self.negative_histogram = np.zeros(self.bins, dtype=np.int64)
+
+    def update(
+        self, labels: np.ndarray, scores: np.ndarray
+    ) -> None:
+        labels = np.asarray(labels, dtype=np.int64).reshape(-1)
+        scores = np.asarray(scores, dtype=np.float64).reshape(-1)
+        if labels.shape != scores.shape:
+            raise ValueError("labels and scores must have the same shape")
+        if labels.size == 0:
+            return
+        if not np.isfinite(scores).all():
+            raise ValueError("scores must be finite")
+
+        speech = labels == 1
+        silence = labels == 0
+        if int(np.count_nonzero(speech) + np.count_nonzero(silence)) != labels.size:
+            raise ValueError("labels must contain only 0 and 1")
+
+        predictions = scores >= self.threshold
+        self.examples += int(labels.size)
+        self.speech += int(np.count_nonzero(speech))
+        self.silence += int(np.count_nonzero(silence))
+        self.correct += int(np.count_nonzero(predictions == speech))
+
+        indices = np.floor(
+            np.clip(scores, 0.0, 1.0) * self.bins
+        ).astype(np.int64)
+        np.minimum(indices, self.bins - 1, out=indices)
+        self.positive_histogram += np.bincount(
+            indices[speech], minlength=self.bins
+        )
+        self.negative_histogram += np.bincount(
+            indices[silence], minlength=self.bins
+        )
+
+    def metrics(self) -> dict[str, Any]:
+        if self.examples == 0:
+            return {
+                "examples": 0,
+                "speech": 0,
+                "silence": 0,
+                "accuracy": None,
+                "auc": None,
+                "tpr_at_fpr_0.315": None,
+            }
+
+        auc: float | None = None
+        tpr: float | None = None
+        if self.speech and self.silence:
+            negatives_before = (
+                np.cumsum(self.negative_histogram, dtype=np.float64)
+                - self.negative_histogram
+            )
+            pair_score = float(
+                np.dot(
+                    self.positive_histogram,
+                    negatives_before + 0.5 * self.negative_histogram,
+                )
+            )
+            auc = pair_score / (self.speech * self.silence)
+
+            negatives_from_high = np.cumsum(
+                self.negative_histogram[::-1], dtype=np.float64
+            )
+            positives_from_high = np.cumsum(
+                self.positive_histogram[::-1], dtype=np.float64
+            )
+            fpr = negatives_from_high / self.silence
+            tpr_values = positives_from_high / self.speech
+            index = int(
+                np.searchsorted(fpr, self.target_fpr, side="left")
+            )
+            if index == 0:
+                tpr = 0.0
+            elif index >= fpr.size:
+                tpr = 1.0
+            elif fpr[index] == fpr[index - 1]:
+                tpr = float(tpr_values[index])
+            else:
+                fraction = (
+                    (self.target_fpr - fpr[index - 1])
+                    / (fpr[index] - fpr[index - 1])
+                )
+                tpr = float(
+                    tpr_values[index - 1]
+                    + fraction * (tpr_values[index] - tpr_values[index - 1])
+                )
+
+        return {
+            "examples": self.examples,
+            "speech": self.speech,
+            "silence": self.silence,
+            "accuracy": self.correct / self.examples,
+            "auc": auc,
+            "tpr_at_fpr_0.315": tpr,
+        }
 
 
 def aggregate_window_scores(
@@ -189,6 +309,8 @@ def load_model(
         num_classes=int(model_config.get("num_classes", 2)),
         dropout=float(model_config.get("dropout", 0.0)),
         causal=bool(model_config.get("causal", False)),
+        dilation_profile=model_config.get("dilation_profile", "baseline"),
+        frame_output=bool(model_config.get("frame_output", False)),
     )
     model.load_state_dict(state_dict)
     model.to(device)
@@ -339,10 +461,14 @@ def evaluate_manifest(
             "no utterance is long enough for the requested segment length"
         )
 
-    all_sample_labels: list[np.ndarray] = []
-    all_sample_scores: list[np.ndarray] = []
-    all_frame_labels: list[np.ndarray] = []
-    all_frame_scores: list[np.ndarray] = []
+    sample_metrics = StreamingMetrics(
+        threshold=threshold,
+        target_fpr=0.315,
+    )
+    frame_metrics = StreamingMetrics(
+        threshold=threshold,
+        target_fpr=0.315,
+    )
     per_utterance: list[dict[str, Any]] = []
 
     print(
@@ -390,10 +516,8 @@ def evaluate_manifest(
             smoothing=smoothing,
         )
 
-        all_sample_labels.append(sample_labels)
-        all_sample_scores.append(sample_scores)
-        all_frame_labels.append(frame_labels)
-        all_frame_scores.append(frame_scores)
+        sample_metrics.update(sample_labels, sample_scores)
+        frame_metrics.update(frame_labels, frame_scores)
         per_utterance.append(
             {
                 "index": index,
@@ -413,10 +537,6 @@ def evaluate_manifest(
         if (index + 1) % 50 == 0 or index + 1 == len(dataset):
             print(f"  evaluated {index + 1}/{len(dataset)} utterances")
 
-    sample_labels_all = np.concatenate(all_sample_labels)
-    sample_scores_all = np.concatenate(all_sample_scores)
-    frame_labels_all = np.concatenate(all_frame_labels)
-    frame_scores_all = np.concatenate(all_frame_scores)
     summary = {
         "manifest": str(manifest),
         "checkpoint": str(checkpoint_path),
@@ -430,12 +550,8 @@ def evaluate_manifest(
         "frame_hop_samples": int(frame_hop_samples),
         "threshold": float(threshold),
         "utterances": len(dataset),
-        "sample": metrics_from_arrays(
-            sample_labels_all, sample_scores_all, threshold=threshold
-        ),
-        "frame": metrics_from_arrays(
-            frame_labels_all, frame_scores_all, threshold=threshold
-        ),
+        "sample": sample_metrics.metrics(),
+        "frame": frame_metrics.metrics(),
         "per_utterance": per_utterance,
     }
     return summary

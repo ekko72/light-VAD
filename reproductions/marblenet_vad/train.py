@@ -37,7 +37,12 @@ try:
     )
     from .dataset import LibriVADSegments
     from .features import MfccConfig, MfccFrontend
-    from .model import build_marblenet_3x2x64, count_parameters
+    from .model import (
+        DILATION_PROFILES,
+        build_marblenet_3x2x64,
+        count_parameters,
+        receptive_field,
+    )
 except ImportError:
     # Allows direct execution with:
     # python reproductions\marblenet_vad\train.py
@@ -49,7 +54,12 @@ except ImportError:
     )
     from dataset import LibriVADSegments
     from features import MfccConfig, MfccFrontend
-    from model import build_marblenet_3x2x64, count_parameters
+    from model import (
+        DILATION_PROFILES,
+        build_marblenet_3x2x64,
+        count_parameters,
+        receptive_field,
+    )
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -383,6 +393,15 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--rf-profile",
+        choices=tuple(DILATION_PROFILES),
+        default="baseline",
+        help=(
+            "Dilation profile used to change temporal receptive field "
+            "without changing parameter count."
+        ),
+    )
+    parser.add_argument(
         "--resume",
         type=Path,
         default=None,
@@ -512,12 +531,16 @@ def main() -> int:
         "segment_samples": args.segment_samples,
         "causal": bool(args.causal),
         "frontend": "mfcc_causal" if args.causal else "mfcc_centered",
+        "dilation_profile": args.rf_profile,
+        "frame_output": False,
     }
     model = build_marblenet_3x2x64(
         feat_in=model_config["feat_in"],
         num_classes=model_config["num_classes"],
         dropout=model_config["dropout"],
         causal=model_config["causal"],
+        dilation_profile=model_config["dilation_profile"],
+        frame_output=model_config["frame_output"],
     ).to(device)
     feature_config = MfccConfig(causal=args.causal)
     frontend = MfccFrontend(feature_config).to(device)
@@ -588,6 +611,7 @@ def main() -> int:
         f"{train_dataset.label_counts()[1]} silence), "
         f"val_windows={len(val_dataset)}, "
         f"parameters={count_parameters(model):,}, "
+        f"rf={receptive_field(args.rf_profile)}, "
         f"total_steps={total_steps}, start_epoch={start_epoch}"
     )
 

@@ -30,6 +30,59 @@ from torch import nn
 from torch.nn import functional as F
 
 
+DILATION_PROFILES: dict[str, tuple[int, ...]] = {
+    # Original MarbleNet-3x2x64 configuration.
+    "baseline": (1, 1, 1, 1, 2),
+    # A0 paired experiment: identical kernels/channels/parameters, only RF
+    # changes.  These profiles apply to prologue, B1, B2, B3, epilogue.
+    "short": (1, 1, 1, 1, 1),
+    "long": (1, 2, 3, 4, 4),
+}
+
+
+def resolve_dilation_profile(
+    profile: str | tuple[int, ...] | list[int],
+) -> tuple[int, ...]:
+    """Validate a five-block dilation profile and return it as a tuple."""
+    if isinstance(profile, str):
+        try:
+            resolved = DILATION_PROFILES[profile]
+        except KeyError as exc:
+            known = ", ".join(sorted(DILATION_PROFILES))
+            raise ValueError(
+                f"unknown dilation profile {profile!r}; expected one of {known}"
+            ) from exc
+    else:
+        resolved = tuple(int(value) for value in profile)
+    if len(resolved) != 5:
+        raise ValueError(
+            "dilation profile must contain five values "
+            "(prologue, B1, B2, B3, epilogue)"
+        )
+    if any(value <= 0 for value in resolved):
+        raise ValueError("dilation values must be positive")
+    return resolved
+
+
+def receptive_field(
+    profile: str | tuple[int, ...] | list[int] = "baseline",
+) -> dict[str, int | float | tuple[int, ...]]:
+    """Return causal lookback, total RF and duration for a dilation profile."""
+    resolved = resolve_dilation_profile(profile)
+    kernels = (11, 13, 15, 17, 29)
+    repeats = (1, 2, 2, 2, 1)
+    lookback_frames = sum(
+        repeat * (kernel - 1) * dilation
+        for kernel, repeat, dilation in zip(kernels, repeats, resolved)
+    )
+    return {
+        "profile": resolved,
+        "lookback_frames": lookback_frames,
+        "receptive_field_frames": lookback_frames + 1,
+        "receptive_field_seconds": (lookback_frames + 1) * 0.01,
+    }
+
+
 def compute_new_kernel_size(kernel_size: int, kernel_size_factor: float) -> int:
     """NeMo's ``compute_new_kernel_size``: scale then force an odd size."""
     new_kernel_size = max(int(kernel_size * float(kernel_size_factor)), 1)
@@ -392,11 +445,16 @@ class MarbleNet(nn.Module):
         dropout: float = 0.0,
         kernel_size_factor: float = 1.0,
         causal: bool = False,
+        dilation_profile: str | tuple[int, ...] | list[int] = "baseline",
+        frame_output: bool = False,
     ) -> None:
         super().__init__()
         self.feat_in = feat_in
         self.num_classes = num_classes
         self.causal = bool(causal)
+        self.dilation_profile = resolve_dilation_profile(dilation_profile)
+        self.frame_output = bool(frame_output)
+        dilations = self.dilation_profile
         self.encoder = nn.Sequential(
             # Prologue: Conv1, 128 channels, kernel 11.
             JasperBlock(
@@ -409,6 +467,7 @@ class MarbleNet(nn.Module):
                 dropout=dropout,
                 kernel_size_factor=kernel_size_factor,
                 causal=causal,
+                dilation=dilations[0],
             ),
             # B1/B2/B3: 64 channels, kernels 13/15/17, residual.
             JasperBlock(
@@ -421,6 +480,7 @@ class MarbleNet(nn.Module):
                 dropout=dropout,
                 kernel_size_factor=kernel_size_factor,
                 causal=causal,
+                dilation=dilations[1],
             ),
             JasperBlock(
                 channels,
@@ -432,6 +492,7 @@ class MarbleNet(nn.Module):
                 dropout=dropout,
                 kernel_size_factor=kernel_size_factor,
                 causal=causal,
+                dilation=dilations[2],
             ),
             JasperBlock(
                 channels,
@@ -443,6 +504,7 @@ class MarbleNet(nn.Module):
                 dropout=dropout,
                 kernel_size_factor=kernel_size_factor,
                 causal=causal,
+                dilation=dilations[3],
             ),
             # Epilogue: Conv2 (dilated) and Conv3.
             JasperBlock(
@@ -450,12 +512,12 @@ class MarbleNet(nn.Module):
                 128,
                 repeat=1,
                 kernel_size=29,
-                dilation=2,
                 separable=True,
                 residual=False,
                 dropout=dropout,
                 kernel_size_factor=kernel_size_factor,
                 causal=causal,
+                dilation=dilations[4],
             ),
             JasperBlock(
                 128,
@@ -469,20 +531,29 @@ class MarbleNet(nn.Module):
                 causal=causal,
             ),
         )
-        self.pool = nn.AdaptiveAvgPool1d(1)
-        self.classifier = nn.Linear(128, num_classes, bias=True)
+        if self.frame_output:
+            self.pool = None
+            self.classifier: nn.Module = nn.Conv1d(
+                128, num_classes, kernel_size=1, bias=True
+            )
+        else:
+            self.pool = nn.AdaptiveAvgPool1d(1)
+            self.classifier = nn.Linear(128, num_classes, bias=True)
         self.apply(init_weights)
 
     def forward(
         self, features: torch.Tensor, length: torch.Tensor | None = None
     ) -> torch.Tensor:
-        """Map ``[B, feat_in, T]`` MFCC features to ``[B, num_classes]`` logits.
+        """Map ``[B, feat_in, T]`` MFCC features to clip or frame logits.
 
         ``length`` is accepted for call-site compatibility with NeMo and is
         ignored: fixed-length windows mean no padding mask is required.
         """
         del length
         encoded = self.encoder(features)
+        if self.frame_output:
+            return self.classifier(encoded)
+        assert self.pool is not None
         pooled = self.pool(encoded).flatten(1)
         return self.classifier(pooled)
 
@@ -522,6 +593,9 @@ class MarbleNet(nn.Module):
     ) -> tuple[torch.Tensor, list[list[torch.Tensor | None]]]:
         """Classify one causal feature chunk and return updated caches."""
         encoded, next_states = self.encode_stream(features, states)
+        if self.frame_output:
+            return self.classifier(encoded), next_states
+        assert self.pool is not None
         pooled = self.pool(encoded).flatten(1)
         return self.classifier(pooled), next_states
 
@@ -533,6 +607,10 @@ class MarbleNet(nn.Module):
         for index, block in enumerate(self.encoder):
             out = block(out)
             yield f"block{index + 1}({type(block).__name__})", tuple(out.shape)
+        if self.frame_output:
+            yield "frame_logits", tuple(self.classifier(out).shape)
+            return
+        assert self.pool is not None
         pooled = self.pool(out)
         yield "avgpool", tuple(pooled.shape)
         yield "logits", tuple(self.classifier(pooled.flatten(1)).shape)
@@ -568,6 +646,8 @@ def build_marblenet_3x2x64(
     num_classes: int = 2,
     dropout: float = 0.0,
     causal: bool = False,
+    dilation_profile: str | tuple[int, ...] | list[int] = "baseline",
+    frame_output: bool = False,
 ) -> MarbleNet:
     """The ``MarbleNet-3x2x64`` model from the paper (B=3, R=2, C=64)."""
     return MarbleNet(
@@ -577,6 +657,8 @@ def build_marblenet_3x2x64(
         channels=64,
         dropout=dropout,
         causal=causal,
+        dilation_profile=dilation_profile,
+        frame_output=frame_output,
     )
 
 
@@ -625,6 +707,8 @@ class MarbleNetStreaming:
         encoded, self._states = self.model.encode_stream(
             features, self._states
         )
+        if self.model.frame_output:
+            return self.model.classifier(encoded)
         if self._encoded_history is None:
             self._encoded_history = encoded
         else:
@@ -657,9 +741,15 @@ def main() -> int:
     parser.add_argument("--frames", type=int, default=64)
     parser.add_argument("--feat-in", type=int, default=64)
     parser.add_argument("--batch-size", type=int, default=2)
+    parser.add_argument("--dilation-profile", default="baseline")
+    parser.add_argument("--frame-output", action="store_true")
     args = parser.parse_args()
 
-    model = build_marblenet_3x2x64(feat_in=args.feat_in)
+    model = build_marblenet_3x2x64(
+        feat_in=args.feat_in,
+        dilation_profile=args.dilation_profile,
+        frame_output=args.frame_output,
+    )
     model.eval()
     features = torch.randn(args.batch_size, args.feat_in, args.frames)
     with torch.no_grad():
@@ -669,6 +759,8 @@ def main() -> int:
     total = count_parameters(model)
     print(f"\ninput                {tuple(features.shape)}")
     print(f"trainable parameters {total:,} (~{total / 1000:.1f}K)")
+    print(f"dilation profile     {model.dilation_profile}")
+    print(f"receptive field      {receptive_field(model.dilation_profile)}")
     print("paper reference      88K for MarbleNet-3x2x64")
     return 0
 

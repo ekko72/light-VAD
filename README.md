@@ -174,19 +174,46 @@ python reproductions\marblenet_vad\train.py `
   --data-root data\librivad --causal `
   --resume results\marblenet_vad_causal\last.pt `
   --results-dir results\marblenet_vad_causal_formal `
-  --train-rows 2160 --val-rows 432 `
-  --epochs 120 --batch-size 128 --num-workers 0
+  --train-rows 8640 --val-rows 432 `
+  --train-stride 4800 --val-stride 2400 `
+  --epochs 100 --max-steps 28902 `
+  --batch-size 128 --num-workers 0 `
+  --warmup-ratio 0.03 --hold-ratio 0.25
 
 # 滑窗评估
 python reproductions\marblenet_vad\evaluate.py `
   --manifest data\librivad\manifests\LibriSpeech_test_medium.tsv `
   --data-root data\librivad `
   --checkpoint results\marblenet_vad_causal_formal\best.pt `
-  --row-sample 2160
+  --row-sample 4320
 ```
 
-训练产物写入 `results\marblenet_vad_causal\`；协议差异和完整参数说明见
+2026-09-16 的正式 medium 运行以零基 epoch 93 为最佳 checkpoint，验证
+AUROC `0.98168`；4320 条分层测试的 sample-level AUROC 为 `0.91246`，
+LibriVAD 帧级 AUROC 为 `0.91302`。训练产物写入
+`results\marblenet_vad_causal_formal\`；完整结果、口径差异和参数说明见
 `reproductions\marblenet_vad\README.md`。
+
+## Difficulty-Adaptive Temporal Context（A0-A5）
+
+`reproductions/difficulty_adaptive_context/` 检验 Long-RF 的收益是否集中在
+Short-RF 不确定的困难帧。两套 causal MarbleNet 的参数量均为 89,154，仅使用
+不同 dilation profile：Short 为 123 帧 / 1.23 s，Long 为 383 帧 / 3.83 s。
+
+2026-09-16 完成的基础 30 轮和 40 轮等额续训结果显示：
+
+| 模型 | Best epoch | Val AUROC | 测试 Delta F1（相对 Short） |
+| --- | ---: | ---: | ---: |
+| Short-RF | 39 | 0.95547 | - |
+| Long-RF | 38 | 0.95526 | Clean +0.0048，-5 dB +0.0110 |
+
+Long 的增益集中在 Short 模型最困难的置信度分桶：该桶 error reduction 为
+`+4.709 pp`，整句聚类 bootstrap 的 95% CI 为 `[+3.165, +6.352] pp`。
+其他难度桶没有一致收益，unseen 优势也主要由 SSN 驱动，因此当前证据支持
+“困难帧更受益”，但还不足以证明应始终运行 Long-RF。
+
+完整协议、A1-A5 结果、稳健性检查和限制见
+`reproductions/difficulty_adaptive_context/README.md`。
 
 ## 里程碑对照
 

@@ -1,0 +1,117 @@
+{
+  "E1_STATUS": "REMOTE_INFORMATION_CONDITIONAL",
+  "SUPPORTED_INTERPRETATION": "The tested data are consistent with some dependence on correctly related remote temporal information, but the pre-registered conditions for a supported conclusion are not met.",
+  "PRIMARY_QUESTION": "Does RF384 benefit depend on correctly related remote temporal information?",
+  "FULL_BASELINE_REPRODUCED": true,
+  "REMOTE_PERMUTE_DELTA_LOGLOSS": 0.00023030291364668006,
+  "REMOTE_PERMUTE_CI95": [
+    -0.00018317710908267,
+    0.0006266319092749803
+  ],
+  "MATCHED_REPLACE_DELTA_LOGLOSS": 0.032131332797710244,
+  "MATCHED_REPLACE_CI95": [
+    0.024512764554617997,
+    0.039888602005205116
+  ],
+  "ZERO_DELTA_LOGLOSS": 0.02067777155708292,
+  "LOCAL_CONTROL_DELTA_LOGLOSS": -0.0011323968320816327,
+  "ORIGINAL_R_PREVALENCE": 0.013345625209520616,
+  "R_SURVIVAL_FULL": 1.0,
+  "R_SURVIVAL_PERMUTE": 0.851243406179352,
+  "R_SURVIVAL_MATCHED": 0.3262999246420497,
+  "INTERVENTION_SEED_AGREEMENT": "C3 5/5 positive; C4 5/5 positive",
+  "SEEN_EFFECT": 0.00041360295250794725,
+  "UNSEEN_EFFECT": 6.25606555653214e-05,
+  "TRANSITION_NEAR_EFFECT": 0.0026424073132548507,
+  "TRANSITION_FAR_EFFECT": -0.00011452183835972914,
+  "A9_AE2_RECONCILIATION": "T2",
+  "PROTOCOL_DEVIATIONS": [],
+  "PROTOCOL_VERSION": "E1-RTI-v2",
+  "V1_INVALID_RETAINED": true,
+  "SCIENTIFIC_PROTOCOL_CHANGED": false,
+  "IMPLEMENTATION_CORRECTION": true,
+  "INTERVENTION_EXECUTED_BEFORE_V2_FREEZE": false,
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "TRAINING_PERFORMED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "AUTHORIZATION_DISCLOSURE": "E1-RTI-v1 was invalidated before intervention because the manual scoring path did not reproduce the frozen Full baseline within the preregistered tolerance. A diagnostic performed without executing interventions isolated the discrepancy to classifier chunking semantics. After explicit authorization, E1-RTI-v2 changed only the classifier scoring path to reproduce the frozen 2,000-frame chunked reference. The scientific hypotheses, interventions, endpoints, thresholds, gates, and evaluation population were unchanged.",
+  "REVISION_CHAIN": {
+    "v1": {
+      "protocol_id": "E1-RTI-v1",
+      "protocol_sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+      "runner_sha256": "A03A0939DF7D54C9195C05930A2BDC4AE76896BC8CF55F91A9567270003397F9",
+      "status": "INCONCLUSIVE_OR_INVALID",
+      "failure": "mandatory C1 baseline reproduction failed before intervention because the classifier scoring path was not chunk-equivalent"
+    },
+    "diagnostic_evidence": {
+      "root_cause_record": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_root_cause.md",
+        "sha256": "EAC068D1AD662005AC3DE57F64185A5E31D2F3E2A25F724238BF1A134BFC3951",
+        "size_bytes": 3342
+      },
+      "full_population_record": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_chunked_classifier_full.json",
+        "sha256": "77DD581AB9912091BE20F58A22F6DFBF93BC8A330A0A1366E1DBBE5A49AE75F0",
+        "size_bytes": 963
+      },
+      "records": 1024,
+      "frames": 553532,
+      "max_abs_full_error": 2.384185791015625e-07,
+      "max_abs_embedded_short_error": 0.0,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    "authorized_correction": {
+      "revision_record": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_to_v2_revision.md",
+        "sha256": "5C01C59476347967090F18A4F802AB95FFB4E80036FFFEFFDDC43B0E3738BBDB",
+        "size_bytes": 3509
+      },
+      "change": "_short_logits_for_encoded evaluates model.short_model.classifier in the same configured 2,000-frame chunks as the frozen reference path and concatenates logits in time order",
+      "scientific_protocol_changed": false,
+      "implementation_correction": true,
+      "intervention_executed_before_v2_freeze": false
+    },
+    "v2": {
+      "protocol_id": "E1-RTI-v2",
+      "protocol_sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6",
+      "runner_sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3",
+      "scoring_path_tests": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_scoring_path_tests.json",
+        "sha256": "6CC1F12C3EE2AA8814EFA6168896A3175620062DDB15774F9ECB099B004F60CA",
+        "size_bytes": 2522,
+        "all_required_tests_passed": true,
+        "checks": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      }
+    },
+    "authorization_disclosure": "E1-RTI-v1 was invalidated before intervention because the manual scoring path did not reproduce the frozen Full baseline within the preregistered tolerance. A diagnostic performed without executing interventions isolated the discrepancy to classifier chunking semantics. After explicit authorization, E1-RTI-v2 changed only the classifier scoring path to reproduce the frozen 2,000-frame chunked reference. The scientific hypotheses, interventions, endpoints, thresholds, gates, and evaluation population were unchanged."
+  },
+  "DECISION_RULES": {
+    "R1": false,
+    "R2": true,
+    "R3": true,
+    "R4": true,
+    "R5": true,
+    "C2_POSITIVE": true,
+    "C5_CLEAR_POSITIVE": false,
+    "C3_C4_NEAR_ZERO": false,
+    "R3_positive_seed_count": {
+      "C3_REMOTE_PERMUTE": 5,
+      "C4_REMOTE_MATCHED_REPLACE": 5
+    }
+  },
+  "POPULATION": {
+    "frames": 553532,
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20
+  }
+}

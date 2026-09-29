@@ -1,0 +1,578 @@
+{
+  "config": {
+    "train_manifest": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad\\manifests\\LibriSpeech_train_medium.tsv",
+    "val_manifest": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad\\manifests\\LibriSpeech_val_medium.tsv",
+    "data_root": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad",
+    "results_dir": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed97\\stage_a",
+    "rf_profile": "short",
+    "train_rows": 8640,
+    "val_rows": 432,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "batch_size": 128,
+    "num_workers": 0,
+    "epochs": 30,
+    "max_steps": null,
+    "log_every": 100,
+    "fixed_train_chunks": false,
+    "seed": 97,
+    "device": "auto",
+    "max_lr": 0.01,
+    "min_lr": 0.001,
+    "warmup_ratio": 0.03,
+    "hold_ratio": 0.25,
+    "decay_power": 2.0,
+    "momentum": 0.9,
+    "weight_decay": 0.001,
+    "exclude_noise_names": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ],
+    "resume": null
+  },
+  "model_config": {
+    "feat_in": 64,
+    "num_classes": 2,
+    "repeat": 2,
+    "channels": 64,
+    "dropout": 0.0,
+    "causal": true,
+    "frame_output": true,
+    "dilation_profile": "short",
+    "frontend": "mfcc_causal",
+    "context_samples": 64000,
+    "target_samples": 64000
+  },
+  "receptive_field": {
+    "profile": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "lookback_frames": 122,
+    "receptive_field_frames": 123,
+    "receptive_field_seconds": 1.23
+  },
+  "unseen_noise": [
+    "SSN_noise",
+    "Street_noise",
+    "Transport_noise"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "global_step": 65,
+      "train": {
+        "loss": 0.44358676861322666,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.11411743678346795,
+        "f1": 0.9361651479227964,
+        "auc": 0.8169678601746124,
+        "loss": 0.29367674658322906
+      }
+    },
+    {
+      "epoch": 1,
+      "global_step": 130,
+      "train": {
+        "loss": 0.25117724293359006,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07870256100363426,
+        "f1": 0.9566037647301756,
+        "auc": 0.9200982723734726,
+        "loss": 0.19845223035218365
+      }
+    },
+    {
+      "epoch": 2,
+      "global_step": 195,
+      "train": {
+        "loss": 0.2295350923963596,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07708544338811674,
+        "f1": 0.9576171646505534,
+        "auc": 0.9273636917996054,
+        "loss": 0.19190516386422687
+      }
+    },
+    {
+      "epoch": 3,
+      "global_step": 260,
+      "train": {
+        "loss": 0.22135346159473682,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07239580230311593,
+        "f1": 0.9598739515619251,
+        "auc": 0.9333433685522835,
+        "loss": 0.18397384368315492
+      }
+    },
+    {
+      "epoch": 4,
+      "global_step": 325,
+      "train": {
+        "loss": 0.21537324391875803,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07408952022673691,
+        "f1": 0.9589783464103108,
+        "auc": 0.9342316193441904,
+        "loss": 0.18435416673230637
+      }
+    },
+    {
+      "epoch": 5,
+      "global_step": 390,
+      "train": {
+        "loss": 0.21120809423161818,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07146808746052956,
+        "f1": 0.9605023636491922,
+        "auc": 0.9379539986845767,
+        "loss": 0.17886105693444457
+      }
+    },
+    {
+      "epoch": 6,
+      "global_step": 455,
+      "train": {
+        "loss": 0.20553985814181633,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07526405828432332,
+        "f1": 0.9585961166594094,
+        "auc": 0.9346199863402942,
+        "loss": 0.18380658720133655
+      }
+    },
+    {
+      "epoch": 7,
+      "global_step": 520,
+      "train": {
+        "loss": 0.20481230564473837,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06990203671708102,
+        "f1": 0.9613562256800184,
+        "auc": 0.9390971636524428,
+        "loss": 0.1770323743795779
+      }
+    },
+    {
+      "epoch": 8,
+      "global_step": 585,
+      "train": {
+        "loss": 0.2032127674154807,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07205535648932276,
+        "f1": 0.9597194732034104,
+        "auc": 0.9388119390531967,
+        "loss": 0.1798634448250813
+      }
+    },
+    {
+      "epoch": 9,
+      "global_step": 650,
+      "train": {
+        "loss": 0.2012390849172099,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.0707446401062191,
+        "f1": 0.9609336078132784,
+        "auc": 0.9410311183765994,
+        "loss": 0.17519138453356642
+      }
+    },
+    {
+      "epoch": 10,
+      "global_step": 715,
+      "train": {
+        "loss": 0.20117499854206825,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06944243486846025,
+        "f1": 0.9616038024424104,
+        "auc": 0.9430126196708215,
+        "loss": 0.17293088773818552
+      }
+    },
+    {
+      "epoch": 11,
+      "global_step": 780,
+      "train": {
+        "loss": 0.19697481235551,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07357885150604716,
+        "f1": 0.9593461525800733,
+        "auc": 0.9393159151531243,
+        "loss": 0.17837756973891536
+      }
+    },
+    {
+      "epoch": 12,
+      "global_step": 845,
+      "train": {
+        "loss": 0.19599687442713434,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07498319048794397,
+        "f1": 0.9586252888246013,
+        "auc": 0.9377047254156334,
+        "loss": 0.18058118524201494
+      }
+    },
+    {
+      "epoch": 13,
+      "global_step": 910,
+      "train": {
+        "loss": 0.19703831252849124,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07076166239690876,
+        "f1": 0.9607782086482305,
+        "auc": 0.9413825858255912,
+        "loss": 0.1749128621999721
+      }
+    },
+    {
+      "epoch": 14,
+      "global_step": 975,
+      "train": {
+        "loss": 0.1940264127156043,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06944243486846025,
+        "f1": 0.9615535041961766,
+        "auc": 0.9437840609648179,
+        "loss": 0.172185762801268
+      }
+    },
+    {
+      "epoch": 15,
+      "global_step": 1040,
+      "train": {
+        "loss": 0.19525141949356142,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06825938566552901,
+        "f1": 0.9619616771011194,
+        "auc": 0.9455209030403126,
+        "loss": 0.17019997710050577
+      }
+    },
+    {
+      "epoch": 16,
+      "global_step": 1105,
+      "train": {
+        "loss": 0.19308108228958823,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07170639953018478,
+        "f1": 0.9600656014333724,
+        "auc": 0.9419878717837503,
+        "loss": 0.1751023969857766
+      }
+    },
+    {
+      "epoch": 17,
+      "global_step": 1170,
+      "train": {
+        "loss": 0.1919680991055665,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06892325500242567,
+        "f1": 0.9616161233137732,
+        "auc": 0.9447476927246052,
+        "loss": 0.1709241058944435
+      }
+    },
+    {
+      "epoch": 18,
+      "global_step": 1235,
+      "train": {
+        "loss": 0.1919069595477752,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06829343024690833,
+        "f1": 0.961976970099038,
+        "auc": 0.9458953496238555,
+        "loss": 0.169360219313423
+      }
+    },
+    {
+      "epoch": 19,
+      "global_step": 1300,
+      "train": {
+        "loss": 0.19012399315834044,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06774871694483926,
+        "f1": 0.9622161464266727,
+        "auc": 0.946070860093955,
+        "loss": 0.16929401635309943
+      }
+    },
+    {
+      "epoch": 20,
+      "global_step": 1365,
+      "train": {
+        "loss": 0.19008199148791752,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06868494293277046,
+        "f1": 0.9617597164437958,
+        "auc": 0.9450142512903212,
+        "loss": 0.17043703687679237
+      }
+    },
+    {
+      "epoch": 21,
+      "global_step": 1430,
+      "train": {
+        "loss": 0.1910351956048739,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06841258628173594,
+        "f1": 0.9618759426668817,
+        "auc": 0.9463083033373945,
+        "loss": 0.16914208482556783
+      }
+    },
+    {
+      "epoch": 22,
+      "global_step": 1495,
+      "train": {
+        "loss": 0.18923340155605525,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06818278535742554,
+        "f1": 0.9619774931060178,
+        "auc": 0.9465786445622721,
+        "loss": 0.16875882873966425
+      }
+    },
+    {
+      "epoch": 23,
+      "global_step": 1560,
+      "train": {
+        "loss": 0.18928222735651004,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06797851786914966,
+        "f1": 0.9621234036297417,
+        "auc": 0.946210614321421,
+        "loss": 0.16918077688575198
+      }
+    },
+    {
+      "epoch": 24,
+      "global_step": 1625,
+      "train": {
+        "loss": 0.18955144358730375,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06807214046794277,
+        "f1": 0.9620390146660971,
+        "auc": 0.9469062553602795,
+        "loss": 0.1684734025912887
+      }
+    },
+    {
+      "epoch": 25,
+      "global_step": 1690,
+      "train": {
+        "loss": 0.18921168709893482,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06803809588656345,
+        "f1": 0.9620993741703016,
+        "auc": 0.946482957085289,
+        "loss": 0.1685039947769341
+      }
+    },
+    {
+      "epoch": 26,
+      "global_step": 1755,
+      "train": {
+        "loss": 0.1886331189408081,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.07222557939621935,
+        "f1": 0.9598937557895533,
+        "auc": 0.9434567019660111,
+        "loss": 0.17373638684025397
+      }
+    },
+    {
+      "epoch": 27,
+      "global_step": 1820,
+      "train": {
+        "loss": 0.18922486921223336,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06827640795621867,
+        "f1": 0.9619626549327163,
+        "auc": 0.9468125108203712,
+        "loss": 0.1683851137197872
+      }
+    },
+    {
+      "epoch": 28,
+      "global_step": 1885,
+      "train": {
+        "loss": 0.18863211012411146,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06833598597363247,
+        "f1": 0.9619873212163679,
+        "auc": 0.9466239623691433,
+        "loss": 0.16826679870333688
+      }
+    },
+    {
+      "epoch": 29,
+      "global_step": 1950,
+      "train": {
+        "loss": 0.18960460057597767,
+        "frames": 3326295
+      },
+      "val": {
+        "frames": 117493,
+        "speech": 104884,
+        "silence": 12609,
+        "error": 0.06952754632190854,
+        "f1": 0.9613742428755834,
+        "auc": 0.9460436865745225,
+        "loss": 0.16958195733942677
+      }
+    }
+  ],
+  "last_epoch": 29,
+  "global_step": 1950
+}

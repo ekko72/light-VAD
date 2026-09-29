@@ -1,0 +1,430 @@
+{
+  "baseline_gate": {
+    "condition": "C0_FULL",
+    "e1_c4_audit_tolerance": 1e-06,
+    "e1_c4_reference_delta_logloss": 0.032131332797710244,
+    "e1_c4_replay_required_before_interventions": true,
+    "max_abs_embedded_short_error_max": 1e-06,
+    "max_abs_full_error_max": 1e-06,
+    "population": "all E2 noisy-test frames",
+    "stop_if_failed": true
+  },
+  "bootstrap": {
+    "confidence_interval": 0.95,
+    "primary_cluster": "source",
+    "repeats": 2000,
+    "seed": 20260921,
+    "speaker_seed_offset": 500000
+  },
+  "conditions": {
+    "C0_FULL": {
+      "role": "baseline",
+      "short_name": "C0"
+    },
+    "C1_SAME_UTT_DIFFERENT_TIME": {
+      "role": "utterance_identity",
+      "short_name": "C1"
+    },
+    "C2_SAME_NOISE_INSTANCE": {
+      "role": "noise_instance",
+      "short_name": "C2"
+    },
+    "C3_SAME_NOISE_CLASS": {
+      "role": "noise_class_control",
+      "short_name": "C3"
+    },
+    "C4_SAME_CLASS_WRONG_SNR": {
+      "role": "level_mismatch",
+      "short_name": "C4"
+    },
+    "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": {
+      "role": "noise_class_mismatch",
+      "short_name": "C5"
+    },
+    "C6_SPEECH_STATE_MISMATCH": {
+      "role": "speech_state_mismatch",
+      "short_name": "C6"
+    },
+    "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": {
+      "role": "best_generic_control",
+      "short_name": "C7"
+    }
+  },
+  "decision_rule": {
+    "B1": "P1 C7-C1 at least 0.005 with source CI lower bound > 0",
+    "B2": "P3 C5-C3 or P4 C4-C3 at least 0.005 with source CI lower bound > 0",
+    "B3": "speech-state contrast P5 does not explain at least 60% of positive P6 residual damage",
+    "B4": "C7 onset or transition excess over its matched stable stratum has source CI lower bound > 0 and at least 0.005",
+    "B5": "relevant LOSO signs are consistent and positive donor-seed count is at least four",
+    "conditional": "background-related point estimates are material but one or more primary CIs cross zero or source/donor stability fails",
+    "invalid": "matching, baseline, or intervention validity fails",
+    "material_contrast_delta_logloss": 0.005,
+    "residual": "B1 and B2 fail while P6 C7-FULL is material with CI lower bound > 0",
+    "speech_state": "P5 is material with CI lower bound > 0 and explains at least 60% of positive P6",
+    "supported": "all B1-B5 pass",
+    "unresolved": "no mechanism separates the replacement conditions"
+  },
+  "event_matching": {
+    "S1_ONSET_NEAR": "match each speech frame with onset distance 0-5 to the nearest non-overlapping stable-speech frame in the same item, same ground-truth label, and stable speech run length at least 21",
+    "S2_TRANSITION_NEAR": "match each Short-posterior transition frame with absolute switch age 0-5 to the nearest non-overlapping stable frame in the same item, same ground-truth label, and stable run length at least 21",
+    "S3_OFFSET_NEAR": "match each non-speech frame with offset distance 0-5 to the nearest non-overlapping stable-silence frame in the same item, same ground-truth label, and stable silence run length at least 21"
+  },
+  "event_rules": {
+    "offset_near": "post-speech non-speech, offset distance 0-5",
+    "onset_near": "ground-truth speech, onset distance 0-5",
+    "stable_silence": "ground-truth silence run length at least 21",
+    "stable_speech": "ground-truth speech run length at least 21",
+    "transition_near": "Short posterior switch age 0-5"
+  },
+  "event_strata": {
+    "S1_ONSET_NEAR": "ground-truth speech with onset distance 0-5 frames",
+    "S2_TRANSITION_NEAR": "Short-posterior switch age 0-5 frames",
+    "S3_OFFSET_NEAR": "post-speech non-speech with offset distance 0-5 frames",
+    "S4_STABLE_SPEECH": "speech run length at least 21 frames",
+    "S5_STABLE_SILENCE": "silence run length at least 21 frames"
+  },
+  "execution_order": [
+    "metadata_only_feasibility",
+    "protocol_freeze",
+    "c1_full_reproduction_gate",
+    "e1_c4_reference_audit",
+    "c0_c7_outcome_scoring_once",
+    "verify"
+  ],
+  "feasibility_gate": {
+    "c6_minimum_speech_state_mismatch": 0.25,
+    "condition_failure_status": "INCOMPARABLE",
+    "maximum_top_donor_assignment_share": 0.2,
+    "minimum_match_success_rate": 0.8,
+    "minimum_primary_sources": 20,
+    "outcome_inspection_during_feasibility": false
+  },
+  "frozen_inputs": {
+    "e1_c1_validation": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_c1_validation.json",
+      "sha256": "7A40AC66FB051C122F81E2DC51E81635C90E834EC39A59EA92779609E0FFC16F",
+      "size_bytes": 286078
+    },
+    "e1_final_summary": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json",
+      "sha256": "3E8735DD02823093600908DD7D31FBC2B050EF86B871FC7855DDA6904A30AA31",
+      "size_bytes": 5742
+    },
+    "e1_frame_results": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet",
+      "sha256": "33D0075B0D140D845E10CF95AB0D965665A9B8474088B22EBC397A2B4AD55DE2",
+      "size_bytes": 169069726
+    },
+    "e1_protocol": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json",
+      "sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6",
+      "size_bytes": 22446
+    },
+    "e1_runner": {
+      "path": "reproductions/difficulty_adaptive_context/run_e1.py",
+      "sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3",
+      "size_bytes": 174701
+    },
+    "rf384_checkpoint": {
+      "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+      "sha256": "85ACDE86D8D9A21103992B8BA697AA55DFAE5987D93235A1FF3BB3BA4A5E10AB",
+      "size_bytes": 462563
+    },
+    "rf384_reference": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+      "size_bytes": 10702416
+    },
+    "short_checkpoint": {
+      "path": "results/difficulty_adaptive_context/formal_short_ext40/best.pt",
+      "sha256": "9170DDF879FBCAF7F9AFDE24695D9BB02D02F919321BDE85A2F0E22511CD75C2",
+      "size_bytes": 765229
+    },
+    "test_manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39",
+      "size_bytes": 7715067
+    }
+  },
+  "frozen_source_files": {
+    "reproductions/difficulty_adaptive_context/adaptive_model.py": {
+      "path": "reproductions/difficulty_adaptive_context/adaptive_model.py",
+      "sha256": "CFB181B7B1C89BA04D57DCF1453C19ECBC4AA4AE244C3A1E7F22C75FFA4DF99B",
+      "size_bytes": 17817
+    },
+    "reproductions/difficulty_adaptive_context/ae_protocol_freeze.json": {
+      "path": "reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+      "sha256": "28218C73CC8CEDFE14DC9CDB5622B50C2D927627744AB9B9679FDFEE7F6B3842",
+      "size_bytes": 22358
+    },
+    "reproductions/difficulty_adaptive_context/analyze_context_gate.py": {
+      "path": "reproductions/difficulty_adaptive_context/analyze_context_gate.py",
+      "sha256": "9EF555E38F4B91BDC8FF431BEC391AC2F37FEAC2B8E293C68C65D0F1DFD34035",
+      "size_bytes": 34268
+    },
+    "reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json": {
+      "path": "reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json",
+      "sha256": "E37D683432D74F7C38968D33A134F8A104EA90473314C53AC5A39AE56DF29311",
+      "size_bytes": 1776
+    },
+    "reproductions/difficulty_adaptive_context/ax3_protocol.json": {
+      "path": "reproductions/difficulty_adaptive_context/ax3_protocol.json",
+      "sha256": "FC813B4DE5BE9265C2BCDD48F85A2CE6D22F658C7ED74C39A56575C2FBBD6B96",
+      "size_bytes": 9628
+    },
+    "reproductions/difficulty_adaptive_context/data.py": {
+      "path": "reproductions/difficulty_adaptive_context/data.py",
+      "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D",
+      "size_bytes": 12271
+    },
+    "reproductions/difficulty_adaptive_context/evaluate_adaptive.py": {
+      "path": "reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+      "sha256": "D9BE590A985D3B0E7341488BE723DF5C4C88F821356916D2FC7ABBE0249BF61D",
+      "size_bytes": 41902
+    },
+    "reproductions/marblenet_vad/dataset.py": {
+      "path": "reproductions/marblenet_vad/dataset.py",
+      "sha256": "5F961A14FBC561CC1F84BF1CA25C162E589AC3C60015C3759B5499CA73DEBB9C",
+      "size_bytes": 15447
+    },
+    "reproductions/marblenet_vad/features.py": {
+      "path": "reproductions/marblenet_vad/features.py",
+      "sha256": "9BF8864228FC31FE3920021F8778D9CAA01D221CEE98DCCD81D61F7D4D08B9EE",
+      "size_bytes": 4009
+    },
+    "reproductions/marblenet_vad/model.py": {
+      "path": "reproductions/marblenet_vad/model.py",
+      "sha256": "3474C2424A2528DCE2928EE6BE7DE0C6156B73A8CEA26B6941B01D7790B7CBA6",
+      "size_bytes": 26680
+    },
+    "results/cross_architecture_replication/car_protocol_freeze.json": {
+      "path": "results/cross_architecture_replication/car_protocol_freeze.json",
+      "sha256": "C6878F55BB18005807CE205239903EFF45A76756EBD213235FE8BC7D20C6669B",
+      "size_bytes": 15449
+    },
+    "results/cross_architecture_replication/car_protocol_sha256.txt": {
+      "path": "results/cross_architecture_replication/car_protocol_sha256.txt",
+      "sha256": "83258A3A4888A7488A6D06D923E98A4AA5D9D81A8F26701485B60A1B562153F7",
+      "size_bytes": 66
+    }
+  },
+  "matching": {
+    "anchor_top_k": 5,
+    "b4_event_pairing": {
+      "S1_ONSET_NEAR": "match each speech frame with onset distance 0-5 to the nearest non-overlapping stable-speech frame in the same item, same ground-truth label, and stable speech run length at least 21",
+      "S2_TRANSITION_NEAR": "match each Short-posterior transition frame with absolute switch age 0-5 to the nearest non-overlapping stable frame in the same item, same ground-truth label, and stable run length at least 21",
+      "S3_OFFSET_NEAR": "match each non-speech frame with offset distance 0-5 to the nearest non-overlapping stable-silence frame in the same item, same ground-truth label, and stable silence run length at least 21"
+    },
+    "b4_matching_variable": "Short uncertainty abs(short_score - 0.5), with frame index only as a deterministic tie break",
+    "b4_stable_event_distance_clearance_frames": 5,
+    "b4_stable_run_minimum_frames": 21,
+    "c1_rule": "same utterance, different causal anchor, remote vector positions disjoint from the original remote positions, and donor causal window strictly before target frame",
+    "c2_rule": "same noise instance and same SNR; different utterance",
+    "c3_rule": "same noise class and same SNR; different noise instance, utterance, and source",
+    "c4_rule": "same noise class; different noise instance, utterance, and source; absolute SNR difference at least 10 dB",
+    "c5_rule": "different noise class; same SNR; different utterance and source; RMS/state costs minimized",
+    "c6_rule": "same noise class and SNR; different utterance and source; remote speech-state mismatch at least 0.25",
+    "c7_rule": "same noise class and SNR; different source, noise instance, and utterance; simultaneous cost matching for speech-state composition, RMS, and duration",
+    "candidate_pool": "E2 noisy test records only",
+    "donor_seeds": [
+      101,
+      211,
+      307,
+      401,
+      503
+    ],
+    "donor_selection_uses_model_outcomes": false,
+    "event_strata_provenance": {
+      "bindings": {
+        "S1_ONSET_NEAR": {
+          "distance_window": 5,
+          "imported_definition": "ground-truth speech frames with frames-since-onset in frozen bins 0, 1-2, or 3-5",
+          "source": "ax3_protocol.json#event_definitions.dimensions.onset_distance"
+        },
+        "S2_TRANSITION_NEAR": {
+          "distance_window": 5,
+          "imported_definition": "age of the most recent Short-prediction switch in the current utterance in frozen bins 0, 1-2, or 3-5",
+          "source": "ax3_protocol.json#event_definitions.dimensions.recent_posterior_transition"
+        },
+        "S3_OFFSET_NEAR": {
+          "distance_window": 5,
+          "imported_definition": "post-speech ground-truth non-speech frames in frozen bins 0, 1-2, or 3-5",
+          "source": "ax3_protocol.json#event_definitions.dimensions.offset_distance"
+        },
+        "S4_STABLE_SPEECH": {
+          "imported_definition": "ground-truth speech run length at least 21 frames, using the frozen 21-50 and longer run bins",
+          "minimum_run_length": 21,
+          "source": "ax3_protocol.json#event_definitions.dimensions.speech_run_length"
+        },
+        "S5_STABLE_SILENCE": {
+          "imported_definition": "ground-truth silence run length at least 21 frames, using the frozen 21-50 and longer run bins",
+          "minimum_run_length": 21,
+          "source": "ax3_protocol.json#event_definitions.dimensions.silence_run_length"
+        }
+      },
+      "import_rule": "E2 imports these definitions from already frozen CAR/AE/AX3 protocols and does not redefine windows or run thresholds after outcome inspection.",
+      "source_protocols": [
+        "reproductions/difficulty_adaptive_context/ax3_protocol.json",
+        "reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json",
+        "reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+        "results/cross_architecture_replication/car_protocol_freeze.json",
+        "results/cross_architecture_replication/car_protocol_sha256.txt"
+      ]
+    },
+    "max_donor_anchors": 96,
+    "max_donor_records_per_seed_shortlist": 5,
+    "noise_identity": "(noise_source, noise_start_sample)",
+    "pre_outcome_implementation_corrections": [
+      "Remote speech-state features now index full-history labels at the original causal frame positions.",
+      "C7 now requires same noise class and SNR as hard candidate constraints before deterministic metadata cost matching."
+    ],
+    "speech_state_bins": [
+      [
+        0.0,
+        0.25
+      ],
+      [
+        0.25,
+        0.5
+      ],
+      [
+        0.5,
+        0.75
+      ],
+      [
+        0.75,
+        1.01
+      ]
+    ],
+    "speech_state_names": [
+      "low",
+      "medium",
+      "high",
+      "very_high"
+    ]
+  },
+  "metadata_feasibility": {
+    "artifacts": [
+      {
+        "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_matching_feasibility.csv",
+        "sha256": "9391A756B072535613A7529D85DF78F2DA50DCF45906D48CA06A0D99A2129B0A",
+        "size_bytes": 1979
+      },
+      {
+        "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_match_quality.csv",
+        "sha256": "FC0C19991DF35FCF956ED6792F7F3A8CAE157FA58628F91D074BAD19289F8FDB",
+        "size_bytes": 5106934
+      }
+    ],
+    "condition_statuses": {
+      "C1_SAME_UTT_DIFFERENT_TIME": "PRIMARY_INTERPRETABLE",
+      "C2_SAME_NOISE_INSTANCE": "INCOMPARABLE",
+      "C3_SAME_NOISE_CLASS": "PRIMARY_INTERPRETABLE",
+      "C4_SAME_CLASS_WRONG_SNR": "PRIMARY_INTERPRETABLE",
+      "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": "PRIMARY_INTERPRETABLE",
+      "C6_SPEECH_STATE_MISMATCH": "INCOMPARABLE",
+      "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": "PRIMARY_INTERPRETABLE"
+    },
+    "outcome_inspection_during_feasibility": false,
+    "stage": "METADATA_ONLY_FEASIBILITY_COMPLETE"
+  },
+  "population": {
+    "decision_threshold": 0.5,
+    "expected_frames": 553532,
+    "expected_noisy_test_frames": 240565,
+    "expected_noisy_test_records": 396,
+    "expected_noisy_test_sources": 96,
+    "expected_noisy_test_speakers": 20,
+    "expected_records": 1024,
+    "expected_test_frames": 298300,
+    "reconstruction": "build_evaluation_items(row_sample=1080, seed=17, include_clean=True)",
+    "uncertainty_threshold": 0.13,
+    "valid_start": 382
+  },
+  "primary_contrasts": [
+    {
+      "definition": "C7 minus C1; positive means different-source replacement is more harmful",
+      "left": "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE",
+      "name": "P1_UTTERANCE",
+      "right": "C1_SAME_UTT_DIFFERENT_TIME"
+    },
+    {
+      "definition": "C3 minus C2; positive means class-only replacement is more harmful",
+      "left": "C3_SAME_NOISE_CLASS",
+      "name": "P2_NOISE_INSTANCE",
+      "right": "C2_SAME_NOISE_INSTANCE"
+    },
+    {
+      "definition": "C5 minus C3; positive means class mismatch adds damage",
+      "left": "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR",
+      "name": "P3_NOISE_CLASS",
+      "right": "C3_SAME_NOISE_CLASS"
+    },
+    {
+      "definition": "C4 minus C3; positive means SNR mismatch adds damage",
+      "left": "C4_SAME_CLASS_WRONG_SNR",
+      "name": "P4_SNR",
+      "right": "C3_SAME_NOISE_CLASS"
+    },
+    {
+      "definition": "C6 minus C3; positive means speech-state mismatch adds damage",
+      "left": "C6_SPEECH_STATE_MISMATCH",
+      "name": "P5_SPEECH_STATE",
+      "right": "C3_SAME_NOISE_CLASS"
+    },
+    {
+      "definition": "C7 minus FULL; positive means residual replacement damage remains",
+      "left": "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE",
+      "name": "P6_RESIDUAL_IDENTITY",
+      "right": "C0_FULL"
+    }
+  ],
+  "primary_question": "Why does replacing the original remote context strongly damage RF384 refinement while permuting the original remote context does not?",
+  "protocol_id": "E2-RCCD-v1",
+  "protocol_status": "FROZEN_BEFORE_E2_OUTCOME_ANALYSIS",
+  "remote_definition": {
+    "future_information_used": false,
+    "local_and_current_preserved": true,
+    "remote_taps": [
+      96,
+      192,
+      288,
+      384
+    ],
+    "remote_window_order": [
+      384,
+      288,
+      192,
+      96
+    ]
+  },
+  "required_figures": [
+    "figure1_condition_delta_logloss.png",
+    "figure2_primary_contrasts.png",
+    "figure3_correction_survival.png",
+    "figure4_event_asymmetry.png",
+    "figure5_seen_unseen.png"
+  ],
+  "research_boundary": {
+    "e1_artifacts_may_be_modified": false,
+    "e3_or_e4_started": false,
+    "new_final_ood_touched": false,
+    "router_or_architecture_search": false,
+    "threshold_tuning": false,
+    "tiny_gru_interventions": false,
+    "training_performed": false
+  },
+  "runner_module": "reproductions.difficulty_adaptive_context.run_e2",
+  "scoring": {
+    "classifier_chunk_frames": 2000,
+    "donor_draws_treated_as_independent_frames": false,
+    "donor_realizations_averaged_per_frame_before_bootstrap": true,
+    "encoder_chunk_frames": 2000,
+    "primary_endpoint": "delta log-loss relative to C0 FULL",
+    "secondary_endpoint": "delta Brier relative to C0 FULL"
+  },
+  "stop_rule": {
+    "final_response": "exactly one allowed E2 status token",
+    "next_experiment_authorized": false
+  }
+}

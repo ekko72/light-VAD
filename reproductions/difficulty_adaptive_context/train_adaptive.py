@@ -20,6 +20,7 @@ from reproductions.difficulty_adaptive_context.adaptive_model import (
     RefinementConfig,
     SparseCausalMultiScaleRefinement,
     confidence_from_logits,
+    dilations_for_rf_span,
     selection_from_confidence,
     speech_probabilities,
 )
@@ -367,11 +368,19 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--label-weight", type=float, default=1.0)
     parser.add_argument("--distill-weight", type=float, default=1.0)
     parser.add_argument("--kernel-size", type=int, default=5)
-    parser.add_argument(
+    rf_group = parser.add_mutually_exclusive_group()
+    rf_group.add_argument(
+        "--rf-span",
+        type=int,
+        default=None,
+        help="A9 RF span; one of 64, 128, 256, 384 or 512.",
+    )
+    rf_group.add_argument(
         "--dilations",
         type=int,
         nargs="+",
-        default=[1, 2, 4, 8, 16],
+        default=None,
+        help="Explicit dilations. Overrides the default RF64 profile.",
     )
     parser.add_argument("--max-residual", type=float, default=2.0)
     parser.add_argument(
@@ -406,10 +415,36 @@ def validate_args(
         parser.error("at least one loss weight must be positive")
 
 
+def resolve_dilations(
+    parser: argparse.ArgumentParser,
+    args: argparse.Namespace,
+) -> tuple[int, ...]:
+    try:
+        if args.rf_span is not None:
+            dilations = dilations_for_rf_span(
+                args.rf_span,
+                kernel_size=args.kernel_size,
+            )
+        elif args.dilations is not None:
+            dilations = tuple(int(value) for value in args.dilations)
+            if not dilations or any(value <= 0 for value in dilations):
+                raise ValueError("dilations must be positive")
+        else:
+            dilations = dilations_for_rf_span(
+                64,
+                kernel_size=args.kernel_size,
+            )
+    except ValueError as error:
+        parser.error(str(error))
+    return dilations
+
+
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
     validate_args(parser, args)
+    dilations = resolve_dilations(parser, args)
+    args.dilations = list(dilations)
     set_seed(args.seed)
     device = resolve_device(args.device)
 
@@ -475,7 +510,7 @@ def main() -> int:
         in_channels=128,
         num_classes=2,
         kernel_size=args.kernel_size,
-        dilations=tuple(int(value) for value in args.dilations),
+        dilations=dilations,
         max_residual=args.max_residual,
     )
     refinement = SparseCausalMultiScaleRefinement(refinement_config)
@@ -507,6 +542,7 @@ def main() -> int:
         f"val_chunks={len(val_dataset)}, "
         f"refinement_params={sum(p.numel() for p in model.refinement.parameters()):,}, "
         f"lookback={model.refinement.lookback_frames} frames, "
+        f"rf_span={args.rf_span if args.rf_span is not None else 'custom'}, "
         f"training_threshold={args.training_threshold:.4f}, "
         f"activation_threshold={args.activation_threshold:.4f}",
         flush=True,

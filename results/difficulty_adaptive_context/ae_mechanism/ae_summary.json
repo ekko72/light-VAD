@@ -1,0 +1,61 @@
+{
+  "version": "A-v2-AE-v1",
+  "date": "2026-09-20",
+  "protocol": {
+    "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\ae_protocol_freeze.json",
+    "sha256": "28218C73CC8CEDFE14DC9CDB5622B50C2D927627744AB9B9679FDFEE7F6B3842",
+    "status": "FROZEN_BEFORE_AE1_OUTCOME_ANALYSIS"
+  },
+  "scope": {
+    "a14": "opened once; post-hoc A-v2 development data",
+    "a_v1": "COMPLETE_CONDITIONAL_GO",
+    "a_v1_method_search": "CLOSED",
+    "a15": "FORBIDDEN",
+    "router_search": "forbidden",
+    "gate_tuning": "forbidden",
+    "model_selection_from_ae_outcomes": "forbidden"
+  },
+  "ae1": {
+    "frames": 298300,
+    "availability_net": 0.005316795172644989,
+    "gate_utility": 0.004448541736506872,
+    "activation_rate": 0.05021119678176333,
+    "refinable_rate": 0.013345625209520616,
+    "rf384_irreducible_rate": 0.08074756956084479,
+    "refinement_harm_rate": 0.008028830036875628
+  },
+  "ae2": {
+    "non_monotone_rate": 0.1280818013396038,
+    "mean_stable_sufficient_span": 69.224047177908,
+    "stable_sufficient_long_rate": 0.01378723529650107,
+    "never_correct_rate": 0.07555145826349313,
+    "unstable_correct_rate": 0.014347971840429099
+  },
+  "ae3": {
+    "feature_bin_rows": 546,
+    "interpretation": "feature-bin gradients are descriptive mechanism diagnostics; no post-outcome feature selection was performed"
+  },
+  "ae4": {
+    "checkpoint_shared_short_sign_agreement": 0.9858196446530338,
+    "checkpoint_independent_short_sign_agreement": 0.9665135769359705,
+    "replication_sign_agreement": 0.9708270197787463,
+    "required_wording": "five independent initializations of Short/RF384 replicates",
+    "a14_relation_wording": "The five training replicates are not independent encoders relative to the A14 checkpoints."
+  },
+  "ae5": {
+    "classification_counts": {
+      "OBSERVABILITY_LIMITED": 7,
+      "VALUE_SCARCITY": 6
+    },
+    "classification_rule": "low = below-chance sign agreement (<0.5); replicated = above-chance agreement (>0.5) and positive availability"
+  },
+  "ae0_stop_rule_triggered": false,
+  "claim_freeze": "A-v2 AE CLAIM FREEZE",
+  "allowed_next_step": "Only a separately authorized A-v2 method study with a new untouched OOD set.",
+  "forbidden_next_steps": [
+    "A15",
+    "post-A14 router tuning",
+    "reusing A14 as confirmatory data for a new method",
+    "automatic method selection"
+  ]
+}

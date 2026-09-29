@@ -1,0 +1,120 @@
+{
+  "version": "A14-final-ood-confirmatory-v1",
+  "status": "COMPLETED_FINAL_OOD_CONFIRMATION",
+  "frozen_at": "2026-09-19",
+  "protocol": {
+    "path": "results/difficulty_adaptive_context/a14_final_ood_protocol.json",
+    "sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF"
+  },
+  "route": {
+    "final_ood_access": "SEALED",
+    "a14": "CONFIRMATION_ONLY",
+    "a14_after_result": "A_CLAIM_FREEZE",
+    "a15": "FORBIDDEN",
+    "router_tuning_after_a14": "FORBIDDEN",
+    "stabilizer_comparison_on_final_ood": "FORBIDDEN"
+  },
+  "unique_candidate": {
+    "name": "ShortShort Adaptive RF384Adaptive RF384",
+    "short_model": "Short",
+    "adaptive_model": "Adaptive RF384",
+    "comparator": "AlwaysRefine RF384",
+    "router": "raw causal confidence gate",
+    "gate_rule": "abs(short_score - 0.5) <= 0.13",
+    "threshold": 0.13,
+    "source_rank_stabilizer": "EXCLUDED",
+    "primary_seed": 17,
+    "checkpoint_seeds": [
+      17,
+      18,
+      19,
+      23
+    ]
+  },
+  "pre_access_checks": {
+    "runner_sha256": "772213F1AA0AE009BE122A7588241E0EA240D484225A2F6E3B5E8A864949D2D8",
+    "test_sha256": "317FFE5E665F0A69B4D148B3D566BFBBB97811E829CF2E4F0A4E43CE4D5C7D9E",
+    "compile_check": "passed",
+    "unit_tests": "11/11 passed",
+    "lock_validation": "passed",
+    "verified_artifact_count": 12,
+    "verified_checkpoint_count": 4,
+    "manifest_rows_loaded": false,
+    "final_ood_audio_loaded": false,
+    "final_ood_labels_loaded": false,
+    "output_directory_created": false
+  },
+  "sealed_split": {
+    "manifest_path": "data/librivad/manifests/LibriSpeechConcat_test_medium.tsv",
+    "manifest_sha256": "9DCD9B90D0752E5CB654B0F959FC067EC29A861C793126B3FDAE0784CC6A078C",
+    "rows": 1080,
+    "sources": 20,
+    "speaker_sensitivity_keys": 16,
+    "noise_classes": 9,
+    "seen_rows": 720,
+    "unseen_rows": 360,
+    "samples": 322768800,
+    "causal_frames": 2017926
+  },
+  "execution": {
+    "command": ".venv\\Scripts\\python.exe -m reproductions.difficulty_adaptive_context.run_a14_final_ood --device auto --progress-every 10",
+    "single_execution_only": true,
+    "rerun_forbidden": true,
+    "overwrite_forbidden": true,
+    "result_dependent_tuning_forbidden": true
+  },
+  "preflight_incidents": [
+    {
+    "occurred": true,
+    "stage": "sealed manifest metadata validation",
+    "error": "frozen speaker_sensitivity_keys 17 differed from the manifest-derived count 16",
+    "manifest_rows_read": true,
+    "audio_or_labels_read": false,
+    "metrics_computed": false,
+    "output_directory_created": false,
+    "resolution": "Corrected only the manifest-derived speaker count from 17 to 16; no model, router, gate, candidate, split, or metric rule changed."
+    },
+    {
+      "occurred": true,
+      "stage": "seed17 first-row evaluation",
+      "error": "detection accumulator expected six values while _detection_counts returned three",
+      "audio_or_labels_read": true,
+      "metrics_computed": false,
+      "output_directory_created": false,
+      "resolution": "Extended _detection_counts to return tp, fp, fn, tn, speech and silence and added a shape regression test; no model, router, gate, candidate, split, or metric rule changed."
+    },
+    {
+      "occurred": true,
+      "stage": "post-evaluation aggregate summary",
+      "error": "seed summary coerced the detection mapping to an integer array instead of reading the short, refined, and adaptive count vectors",
+      "audio_or_labels_read": true,
+      "metrics_computed": false,
+      "gate_values_exposed": false,
+      "output_directory_created": false,
+      "resolution": "Read the frozen detection mapping by score family and added a seed-summary regression test; no model, router, gate, candidate, split, or metric rule changed."
+    }
+  ],
+  "final_confirmation": {
+    "effective_execution_count": 1,
+    "result_protocol_sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF",
+    "verdict": "CONDITIONAL_GO",
+    "aggregate_utility": 0.0011754643133593601,
+    "source_cluster_ci95_lower": -0.0005421332280057735,
+    "activation_rate": 0.06705300392581294,
+    "positive_cells": 7,
+    "cells": 12,
+    "seed23_utility": -0.003929777405117928,
+    "seed23_positive_direction": false,
+    "claim_freeze": "A14 -> A CLAIM FREEZE",
+    "a15": "FORBIDDEN",
+    "artifacts": {
+      "a14_final_ood.json": "4B763E677F3A2FDF1766559C790D3C7DBEAF8500540BAAD3CE0D1153519434FA",
+      "per_cell.csv": "8AC834E3B02A25E309D0A634BF3D089F541AF46B7D64604A52DCF40EF2A44353",
+      "per_seed.csv": "835E7A78D9D6F9033CB5F3688E93C023FE13ED973932F28D51BA4ED1FB1B6BA5",
+      "report.md": "64C4AE537B7B07C0295CD63BDA1DCE8FB2898F44A1588E0E7E22ABF94D6EB404",
+      "lock_record.json": "30D95CAE07624CC99FD86FF72FC4D78F22247B27796D61D5DC07E47ED775D8C3",
+      "claim_freeze.json": "2889DFBDAA48B498DBFE9F94B1180E3B77A44D1782730418BD3485A2C0445AB6"
+    }
+  },
+  "permitted_next_step": "None. A14 is complete and frozen; A15 is forbidden."
+}

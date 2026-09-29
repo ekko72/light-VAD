@@ -1,0 +1,12 @@
+{
+  "status": "A-v2 AE CLAIM FREEZE",
+  "completed_at": "2026-09-20T09:33:13.171935+00:00",
+  "protocol_sha256": "28218C73CC8CEDFE14DC9CDB5622B50C2D927627744AB9B9679FDFEE7F6B3842",
+  "summary_sha256": "85EA7201BF95CF835C083826645863C59AE96375ED3A88516383E87682624C66",
+  "report_sha256": "3F27D36384B789365C776670F86DFC09693746FCB01E26409BEB9738ED0F61FF",
+  "execution_manifest_sha256": "58CC1DAD5D90E24B7BA7CCF6AB3018D550032ECFC0069597D1AB71D1682E03A8",
+  "a15": "FORBIDDEN",
+  "router_or_gate_tuning": "FORBIDDEN",
+  "automatic_method_experiment": "FORBIDDEN",
+  "allowed_next_step": "Only a separately authorized A-v2 method study with a new untouched OOD set."
+}

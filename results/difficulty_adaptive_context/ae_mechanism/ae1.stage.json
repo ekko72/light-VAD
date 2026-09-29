@@ -1,0 +1,22 @@
+{
+  "stage": "ae1",
+  "completed_at": "2026-09-20T03:40:08.004831+00:00",
+  "artifacts": [
+    {
+      "path": "ae1_state_summary.csv",
+      "sha256": "78ADC5E651A12741445692F8AE82E55EAC8B87E71F30B596AE542BA7B6EE1510"
+    },
+    {
+      "path": "ae1_state_by_cell.csv",
+      "sha256": "A49F3C5F3783887201E17867321D348E9BAC32F368FF7E60355E0A1C3899ACEE"
+    },
+    {
+      "path": "ae1_condition_availability.csv",
+      "sha256": "3188D485FEE567CCFCD73C72456F8CE0278309DFBA596F01746C65E9039BBAA8"
+    },
+    {
+      "path": "ae1_state_rates.png",
+      "sha256": "EDE280BC4C4BCBF2CC42CEC6E15341C1223BA3D3F889BE688D2E9F26D8EB18E3"
+    }
+  ]
+}

@@ -20,6 +20,44 @@ from torch.nn import functional as F
 from reproductions.marblenet_vad.model import MarbleNet
 
 
+RF_SPAN_DILATION_PROFILES: dict[int, tuple[int, ...]] = {
+    64: (1, 2, 4, 8, 16),
+    128: (1, 2, 4, 8, 32),
+    256: (1, 2, 4, 8, 64),
+    384: (1, 2, 4, 8, 96),
+    512: (1, 2, 4, 8, 128),
+}
+
+
+def dilations_for_rf_span(
+    span_frames: int,
+    *,
+    kernel_size: int = 5,
+) -> tuple[int, ...]:
+    """Return the five-branch dilation profile for an A9 RF span."""
+    try:
+        dilations = RF_SPAN_DILATION_PROFILES[int(span_frames)]
+    except KeyError as error:
+        supported = ", ".join(
+            str(value) for value in sorted(RF_SPAN_DILATION_PROFILES)
+        )
+        raise ValueError(
+            f"unsupported RF span {span_frames}; choose one of {supported}"
+        ) from error
+    if kernel_size <= 0:
+        raise ValueError("kernel_size must be positive")
+    if kernel_size != 5:
+        raise ValueError("A9 RF span profiles require kernel_size=5")
+    actual_lookback = max(
+        (kernel_size - 1) * dilation for dilation in dilations
+    )
+    if actual_lookback != int(span_frames):
+        raise AssertionError(
+            f"RF span profile {span_frames} has lookback {actual_lookback}"
+        )
+    return dilations
+
+
 @dataclass(frozen=True)
 class RefinementConfig:
     """Configuration of the sparse causal refinement path."""

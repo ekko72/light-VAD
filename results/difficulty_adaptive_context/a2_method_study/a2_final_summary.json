@@ -1,0 +1,62 @@
+{
+  "STATUS": "CONDITIONAL_GO",
+  "PRIMARY_METHOD": "M2",
+  "PRIMARY_BUDGET": 0.05,
+  "DELTA_UTILITY_VS_UNCERTAINTY": 0.0005167364201845739,
+  "PRIMARY_CI": {
+    "lower": -0.00017398191060556133,
+    "upper": 0.001320609542074035,
+    "unit": "source_cluster",
+    "repeats": 2000
+  },
+  "SEED_CONSISTENCY": {
+    "positive": 5,
+    "total": 5,
+    "per_seed_delta": [
+      0.0005751347142465297,
+      0.0005308935823814124,
+      0.0004512595450242001,
+      0.00030968792305582395,
+      0.0007167063362149059
+    ]
+  },
+  "SEEN_RESULT": -0.00012815246857800049,
+  "UNSEEN_RESULT": 0.002440321621875295,
+  "MAX_ACTIVATION": 0.10861728766468762,
+  "COMPUTE_RESULT": {
+    "advantage_ms_per_frame": 1.266680700946019,
+    "advantage_fraction": 0.40137386225766647,
+    "role": "engineering_diagnostic"
+  },
+  "INDEPENDENT_REPLICATION": {
+    "primary_method": "M2",
+    "replicate_delta_utilities": [
+      -0.0001415716219683766,
+      0.0005485900351274581,
+      0.00048665245051629415,
+      0.0002212056593255884,
+      0.00046895599777024713
+    ],
+    "positive_replicates": 4,
+    "mean_delta_utility": 0.00031676650415424223,
+    "sign_matches_primary": true,
+    "primary_delta_utility": 0.0005167364201845739
+  },
+  "FAILURE_MODE": "POSITIVE_POINT_WITH_INCOMPLETE_GATES_G1",
+  "PROTOCOL_DEVIATIONS": [
+    {
+      "kind": "infrastructure_recovery",
+      "stage": "after all primary checkpoints were trained, before result files",
+      "failure": "ValueError in domain bootstrap seed lookup because `all` and `clean` are returned by `_domain_masks` but omitted from `DOMAIN_ORDER`",
+      "action": "Reused all ten saved primary checkpoints, preserved the original seen/unseen bootstrap seed positions, reran deterministic evaluation and independent sensitivity, and made no model, threshold, feature, loss, budget, or seed selection.",
+      "primary_models_retrained": false,
+      "new_final_ood_touched": false,
+      "next_search_authorized": false
+    }
+  ],
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_SEARCH_AUTHORIZED": false,
+  "OBSERVATION": "Utility is evaluated from actual Short and RF384 predictions on the frozen INTERNAL_TEST split.",
+  "SUPPORTED_INTERPRETATION": "Any learned-router improvement is conditional on the frozen features, split, seeds, and budget rule.",
+  "UNSUPPORTED_CLAIM": "The study does not establish a new deployed router or generalization beyond the tested data."
+}

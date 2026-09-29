@@ -1,0 +1,124 @@
+{
+  "config": {
+    "train_manifest": "data\\librivad\\manifests\\LibriSpeech_train_medium.tsv",
+    "val_manifest": "data\\librivad\\manifests\\LibriSpeech_val_medium.tsv",
+    "data_root": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad",
+    "short_checkpoint": "results\\difficulty_adaptive_context\\formal_short_ext40\\best.pt",
+    "long_checkpoint": "results\\difficulty_adaptive_context\\formal_long_ext40\\best.pt",
+    "results_dir": "results\\difficulty_adaptive_context\\a3_smoke_rf384",
+    "train_rows": 64,
+    "val_rows": 32,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "batch_size": 32,
+    "num_workers": 0,
+    "epochs": 1,
+    "max_steps": 2,
+    "log_every": 1,
+    "seed": 17,
+    "device": "auto",
+    "max_lr": 0.001,
+    "min_lr": 0.0001,
+    "weight_decay": 0.0001,
+    "training_threshold": 0.13,
+    "activation_threshold": 0.13,
+    "label_weight": 2.0,
+    "distill_weight": 0.25,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      96
+    ],
+    "max_residual": 2.0,
+    "exclude_noise_names": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "short_model_config": {
+    "feat_in": 64,
+    "num_classes": 2,
+    "repeat": 2,
+    "channels": 64,
+    "dropout": 0.0,
+    "causal": true,
+    "frame_output": true,
+    "dilation_profile": "short",
+    "frontend": "mfcc_causal",
+    "context_samples": 64000,
+    "target_samples": 64000
+  },
+  "refinement_config": {
+    "in_channels": 128,
+    "num_classes": 2,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      96
+    ],
+    "max_residual": 2.0
+  },
+  "unseen_noise": [
+    "SSN_noise",
+    "Street_noise",
+    "Transport_noise"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "global_step": 2,
+      "train": {
+        "loss": 1.511307317757862,
+        "label_loss": 0.6702562994558997,
+        "distill_loss": 0.6831788114438926,
+        "selected_frames": 1306,
+        "target_frames": 24461,
+        "activation_rate": 0.05339111238297698
+      },
+      "val": {
+        "short": {
+          "frames": 8822,
+          "speech": 7777,
+          "silence": 1045,
+          "error": 0.06563137610519157,
+          "f1": 0.9630998661653177,
+          "auc": 0.9513561335627753
+        },
+        "adaptive": {
+          "frames": 8822,
+          "speech": 7777,
+          "silence": 1045,
+          "error": 0.06597143504874178,
+          "f1": 0.9629723883445731,
+          "auc": 0.9512968248294411
+        },
+        "utility": {
+          "frames": 8822,
+          "selected": 283,
+          "correction": 12,
+          "harm": 15,
+          "signed_utility": -3,
+          "net_utility_per_selected": -0.01060070671378092
+        },
+        "teacher": {
+          "frames": 8822,
+          "speech": 7777,
+          "silence": 1045,
+          "error": 0.06835184765359328,
+          "f1": 0.9614376159109803,
+          "auc": 0.9530759637822976
+        },
+        "teacher_agreement": 0.9801632282929041
+      }
+    }
+  ],
+  "best_utility_per_selected": -0.01060070671378092,
+  "global_step": 2
+}

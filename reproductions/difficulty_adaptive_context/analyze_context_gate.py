@@ -140,8 +140,12 @@ def count_frames_by_cluster(
     values = {
         "frames": np.ones(labels.size, dtype=np.int64),
         "selected": selected.astype(np.int64),
-        "correction": (short_wrong & ~long_wrong).astype(np.int64),
-        "harm": (~short_wrong & long_wrong).astype(np.int64),
+        "correction": (
+            selected & short_wrong & ~long_wrong
+        ).astype(np.int64),
+        "harm": (
+            selected & ~short_wrong & long_wrong
+        ).astype(np.int64),
         "short_error": short_wrong.astype(np.int64),
         "long_error": long_wrong.astype(np.int64),
         "gated_error": np.where(selected, long_wrong, short_wrong).astype(

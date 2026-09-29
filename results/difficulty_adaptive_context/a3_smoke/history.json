@@ -1,0 +1,124 @@
+{
+  "config": {
+    "train_manifest": "data\\librivad\\smoke\\manifests\\LibriSpeech_train_small.tsv",
+    "val_manifest": "data\\librivad\\smoke\\manifests\\LibriSpeech_val_small.tsv",
+    "data_root": "data\\librivad\\smoke",
+    "short_checkpoint": "results\\difficulty_adaptive_context\\smoke_short\\best.pt",
+    "long_checkpoint": "results\\difficulty_adaptive_context\\smoke_long\\best.pt",
+    "results_dir": "results\\difficulty_adaptive_context\\a3_smoke",
+    "train_rows": 16,
+    "val_rows": 8,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "batch_size": 8,
+    "num_workers": 0,
+    "epochs": 1,
+    "max_steps": 1,
+    "log_every": 1,
+    "seed": 17,
+    "device": "cuda",
+    "max_lr": 0.001,
+    "min_lr": 0.0001,
+    "weight_decay": 0.0001,
+    "training_threshold": 0.25,
+    "activation_threshold": 0.24,
+    "label_weight": 1.0,
+    "distill_weight": 1.0,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "max_residual": 2.0,
+    "exclude_noise_names": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "short_model_config": {
+    "feat_in": 64,
+    "num_classes": 2,
+    "repeat": 2,
+    "channels": 64,
+    "dropout": 0.0,
+    "causal": true,
+    "frame_output": true,
+    "dilation_profile": "short",
+    "frontend": "mfcc_causal",
+    "context_samples": 64000,
+    "target_samples": 64000
+  },
+  "refinement_config": {
+    "in_channels": 128,
+    "num_classes": 2,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "max_residual": 2.0
+  },
+  "unseen_noise": [
+    "SSN_noise",
+    "Street_noise",
+    "Transport_noise"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "global_step": 1,
+      "train": {
+        "loss": 1.1220567226409912,
+        "label_loss": 0.5445157289505005,
+        "distill_loss": 0.5775410532951355,
+        "selected_frames": 1885,
+        "target_frames": 3208,
+        "activation_rate": 0.5875935162094763
+      },
+      "val": {
+        "short": {
+          "frames": 3208,
+          "speech": 3071,
+          "silence": 137,
+          "error": 0.04270573566084788,
+          "f1": 0.9781812390508042,
+          "auc": 0.744148818592579
+        },
+        "adaptive": {
+          "frames": 3208,
+          "speech": 3071,
+          "silence": 137,
+          "error": 0.04270573566084788,
+          "f1": 0.9781812390508042,
+          "auc": 0.7433371283516389
+        },
+        "utility": {
+          "frames": 3208,
+          "selected": 315,
+          "correction": 0,
+          "harm": 0,
+          "signed_utility": 0,
+          "net_utility_per_selected": 0.0
+        },
+        "teacher": {
+          "frames": 3208,
+          "speech": 3071,
+          "silence": 137,
+          "error": 0.04270573566084788,
+          "f1": 0.9781812390508042,
+          "auc": 0.5415209862927741
+        },
+        "teacher_agreement": 1.0
+      }
+    }
+  ],
+  "best_utility_per_selected": 0.0,
+  "global_step": 1
+}

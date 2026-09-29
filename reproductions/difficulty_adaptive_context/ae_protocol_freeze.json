@@ -1,0 +1,578 @@
+{
+  "protocol_id": "A-v2-AE-v1",
+  "status": "FROZEN_BEFORE_AE1_OUTCOME_ANALYSIS",
+  "date": "2026-09-20",
+  "study": {
+    "name": "A-v2 / AE mechanism decomposition and replication",
+    "purpose": "Explain why refinement value varies across conditions and models, then integrate availability, observability, refinability, context demand, and model dependence.",
+    "sequence": [
+      "AE0",
+      "AE1",
+      "AE2",
+      "AE3",
+      "AE4",
+      "AE5"
+    ],
+    "authorization": "AE1-AE5 are explicitly authorized after AE0 did not trigger its STOP rule.",
+    "analysis_type": "post_hoc_mechanism_study_with_preregistered_replication_training",
+    "router_search": "forbidden",
+    "gate_tuning": "forbidden",
+    "threshold_change": "forbidden",
+    "architecture_change": "forbidden",
+    "a14_rerun": "forbidden",
+    "a15": "forbidden",
+    "automatic_a_v2_method_experiment": "forbidden",
+    "post_outcome_model_selection": "forbidden",
+    "negative_results_must_be_reported": true
+  },
+  "frozen_state": {
+    "a14": {
+      "verdict": "CONDITIONAL_GO",
+      "utility_a_minus_s": 0.00117546,
+      "source_cluster_ci95_low": -0.00054213,
+      "activation_rate_ood": 0.067053,
+      "maximum_cell_activation": 0.097639,
+      "activation_warning_boundary": 0.15,
+      "positive_cells": 7,
+      "cells": 12,
+      "worst_cell_utility": -0.00310418,
+      "seen_gate_utility": -0.00123543,
+      "unseen_gate_utility": 0.00599725,
+      "seed_utilities": {
+        "17": 0.00117546,
+        "18": -0.00106198,
+        "19": -0.00086624,
+        "23": -0.00392978
+      },
+      "seed_structure": "17/18/19 share one frozen Short encoder; 23 uses an independently trained Short encoder"
+    },
+    "ae0": {
+      "availability_limited_cells": 6,
+      "observability_limited_cells": 6,
+      "actionability_limited_cells": 0,
+      "aggregate_availability_net": 0.00002329,
+      "aggregate_observability_auroc": 0.032193,
+      "aggregate_gate_utility": 0.00117546,
+      "seen_availability_net": -0.00308708,
+      "unseen_availability_net": 0.00624403,
+      "stop_rule_triggered": false
+    }
+  },
+  "locks": {
+    "a14_protocol": {
+      "path": "results/difficulty_adaptive_context/a14_final_ood_protocol.json",
+      "sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF"
+    },
+    "a14_result": {
+      "path": "results/difficulty_adaptive_context/a14_final_ood/a14_final_ood.json",
+      "sha256": "4B763E677F3A2FDF1766559C790D3C7DBEAF8500540BAAD3CE0D1153519434FA"
+    },
+    "a14_per_cell": {
+      "path": "results/difficulty_adaptive_context/a14_final_ood/per_cell.csv",
+      "sha256": "8AC834E3B02A25E309D0A634BF3D089F541AF46B7D64604A52DCF40EF2A44353"
+    },
+    "a14_per_seed": {
+      "path": "results/difficulty_adaptive_context/a14_final_ood/per_seed.csv",
+      "sha256": "835E7A78D9D6F9033CB5F3688E93C023FE13ED973932F28D51BA4ED1FB1B6BA5"
+    },
+    "a14_runner": {
+      "path": "reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+      "sha256": "772213F1AA0AE009BE122A7588241E0EA240D484225A2F6E3B5E8A864949D2D8"
+    },
+    "ae0_protocol": {
+      "path": "reproductions/difficulty_adaptive_context/ae0_protocol.json",
+      "sha256": "F45D202C77C0C83131E8C3BF94C8D02783E3B2A6EF4B31D3F3CADE6D02DD1870"
+    },
+    "ae0_result": {
+      "path": "results/difficulty_adaptive_context/ae0_value_decomposition/ae0_value_decomposition.json",
+      "sha256": "DEC4FB043216F19700B9731C325428534F5E4B22FA7AF3390FFBD1850EAC0F35"
+    },
+    "short_checkpoint": {
+      "path": "results/difficulty_adaptive_context/formal_short_ext40/best.pt",
+      "sha256": "9170DDF879FBCAF7F9AFDE24695D9BB02D02F919321BDE85A2F0E22511CD75C2"
+    },
+    "long_checkpoint": {
+      "path": "results/difficulty_adaptive_context/formal_long_ext40/best.pt",
+      "sha256": "A29BCD790E01F753E936A8429B3E0B43043B606175773628EC0D624DFC87E0D0"
+    },
+    "a14_checkpoints": [
+      {
+        "seed": 17,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+        "sha256": "85ACDE86D8D9A21103992B8BA697AA55DFAE5987D93235A1FF3BB3BA4A5E10AB",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "seed": 18,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed18_gate013_distill025_rf384/best.pt",
+        "sha256": "6516CC11CF1045BCABC9B6905C6AFD7B126BFD3F58ED2A5923861C3DE5A89D3B",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "seed": 19,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed19_gate013_distill025_rf384/best.pt",
+        "sha256": "96C551837474C150F1908E7BD789E680F857FA40A6F510B9F07FC73F764B1346",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "seed": 23,
+        "path": "results/difficulty_adaptive_context/a14_seed23_gate013_distill025_rf384/best.pt",
+        "sha256": "97B1E9E0E617D28B7A6A51E93E6DEA69EE103EDCD60C239DD4D32BA69C05D8D9",
+        "short_encoder_relation": "independently_trained_short_encoder"
+      }
+    ],
+    "a9_predictions": {
+      "manifest_path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "manifest_sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39",
+      "row_sample": 1080,
+      "evaluation_seed": 17,
+      "threshold": 0.13,
+      "spans": [
+        64,
+        128,
+        256,
+        384,
+        512
+      ],
+      "bundles": [
+        {
+          "span": 64,
+          "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf64_fixed130/frame_predictions.npz",
+          "sha256": "05BEE3FEE83EB1DACC29C2AC49F151EE4AF482DD45EF227C38DD2644952D1A46"
+        },
+        {
+          "span": 128,
+          "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf128_fixed130/frame_predictions.npz",
+          "sha256": "B6628F3BDB3E1F76677A5F84878D3BA98D90F15C97D3F55FE72D8516B0E71CB5"
+        },
+        {
+          "span": 256,
+          "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf256_fixed130/frame_predictions.npz",
+          "sha256": "240F6FAC3AA5FDAFE04879B1690BF89AB654DD9C4B3F01D9D0C426112EB13E3F"
+        },
+        {
+          "span": 384,
+          "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+          "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03"
+        },
+        {
+          "span": 512,
+          "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf512_fixed130/frame_predictions.npz",
+          "sha256": "5C42AD1EB91E1577A702E8518CF7B8CAC07A5860FA632059F8FF4FAD8CF90F0C"
+        }
+      ],
+      "expected_rows": 1080,
+      "expected_frames": 553532,
+      "expected_test_frames": 298300,
+      "expected_test_source_clusters": 96,
+      "expected_test_speaker_clusters": 20,
+      "expected_test_conditions": {
+        "-5": 44711,
+        "0": 38534,
+        "5": 35496,
+        "10": 39418,
+        "15": 44624,
+        "20": 37782,
+        "clean": 57735
+      }
+    }
+  },
+  "common_definitions": {
+    "decision_threshold": 0.5,
+    "gate_threshold": 0.13,
+    "frame_hop": 160,
+    "score_chunk_frames": 2000,
+    "short_correct": "(short_score >= 0.5) == label",
+    "refined_correct": "(full_adaptive_score >= 0.5) == label",
+    "uncertainty": "abs(short_score - 0.5)",
+    "selected": "uncertainty <= 0.13",
+    "source_cluster": "source_key",
+    "speaker_cluster": "speaker_ids",
+    "unseen_noise_names": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ],
+    "conditions": {
+      "all": "test_mask",
+      "clean": "test_mask and condition == clean",
+      "seen": "test_mask and condition != clean and noise_name not in unseen_noise_names",
+      "unseen": "test_mask and condition != clean and noise_name in unseen_noise_names",
+      "seen_snr": "test_mask and condition != clean and noise_name not in unseen_noise_names for each SNR",
+      "unseen_snr": "test_mask and condition != clean and noise_name in unseen_noise_names for each SNR"
+    },
+    "cell_order": [
+      "all",
+      "clean",
+      "seen/-5",
+      "seen/0",
+      "seen/5",
+      "seen/10",
+      "seen/15",
+      "seen/20",
+      "unseen/-5",
+      "unseen/0",
+      "unseen/5",
+      "unseen/10",
+      "unseen/15",
+      "unseen/20"
+    ],
+    "primary_bootstrap": {
+      "unit": "source_cluster",
+      "repeats": 2000,
+      "seed_base": 20260920,
+      "seed_rules": {
+        "all": 20260920,
+        "clean": 20260921,
+        "domain": "20260930 + domain_index",
+        "cell": "20261000 + cell_index",
+        "group_feature": "20262000 + group_index",
+        "feature_bin": "20263000 + group_index * 100 + bin_index"
+      },
+      "confidence_interval": "2.5th to 97.5th percentile",
+      "shared_resample_rule": "One shared source-cluster resample vector is used for all metrics in a group."
+    },
+    "speaker_sensitivity": {
+      "unit": "speaker_cluster",
+      "repeats": 2000,
+      "seed_offset": 500000,
+      "role": "sensitivity only"
+    },
+    "frame_bootstrap": "forbidden for primary CIs",
+    "undefined_metric": "report null and exclude only that metric from its bootstrap interval"
+  },
+  "ae1": {
+    "question": "Is OOD failure explained by scarce refinement value, refinement harm, or irreducible difficulty?",
+    "operation": "Classify every test frame by the frozen Short and RF384 outcomes, then aggregate by frozen condition and cell.",
+    "states": {
+      "Short-sufficient": "short_correct and refined_correct",
+      "Refinable": "not short_correct and refined_correct",
+      "RF384-Irreducible": "not short_correct and not refined_correct",
+      "Refinement-Harm": "short_correct and not refined_correct"
+    },
+    "point_metrics": [
+      "frames",
+      "state_count",
+      "state_rate",
+      "availability_gross",
+      "availability_net",
+      "gate_utility",
+      "activation_rate",
+      "selected_refinable_rate",
+      "selected_harm_rate"
+    ],
+    "availability_gross": "mean(Refinable)",
+    "availability_net": "mean(Refinable) - mean(Refinement-Harm)",
+    "gate_utility": "mean(selected and Refinable) - mean(selected and Refinement-Harm)",
+    "outputs": [
+      "ae1_state_summary.csv",
+      "ae1_state_by_cell.csv",
+      "ae1_condition_availability.csv"
+    ],
+    "interpretation_rule": "A negative or near-zero availability_net is value scarcity. Positive availability_net with low gate utility is an observability/actionability question. High RF384-Irreducible rate is irreducible difficulty."
+  },
+  "ae2": {
+    "question": "What temporal horizon is sufficient under each condition, and is correctness monotone in temporal span?",
+    "operation": "Use the five frozen RF bundles and the frozen Short predictions to compute first-correct and stable-sufficient horizons for every test frame.",
+    "span_order": [
+      64,
+      128,
+      256,
+      384,
+      512
+    ],
+    "horizon_definitions": {
+      "Short-sufficient": "short_correct",
+      "first_correct": "minimum RF span with refined_correct at that span",
+      "stable_sufficient": "minimum RF span such that that span and every larger span are correct",
+      "Never-correct": "no tested RF span is correct",
+      "Unstable-correct": "some span is correct but no stable sufficient span exists"
+    },
+    "non_monotonicity": {
+      "frame_rule": "Within the ordered span sequence, a non-monotone frame has at least one correct-to-wrong transition.",
+      "denominator": "not short_correct",
+      "reported_rates": [
+        "non_monotone_rate",
+        "first_correct_histogram",
+        "stable_sufficient_histogram",
+        "never_correct_rate"
+      ]
+    },
+    "point_metrics": [
+      "frames",
+      "short_sufficient_rate",
+      "first_correct_span_histogram",
+      "stable_sufficient_span_histogram",
+      "never_correct_rate",
+      "unstable_correct_rate",
+      "non_monotone_rate",
+      "oracle_net_utility_by_span"
+    ],
+    "oracle_net_utility_by_span": "mean(refined_correct at span) - mean(short_correct)",
+    "outputs": [
+      "ae2_horizon_summary.csv",
+      "ae2_horizon_by_cell.csv",
+      "ae2_nonmonotonicity.csv"
+    ],
+    "interpretation_rule": "A larger OOD stable horizon than development supports an OOD context-demand shift. No stable span effect supports temporal span not being the main bottleneck."
+  },
+  "ae3": {
+    "question": "Is refinability and context demand aligned with interpretable event and uncertainty structure?",
+    "operation": "Construct frozen frame-level event features from labels and Short posteriors, then aggregate AE1 states and AE2 stable horizons by condition and feature bin.",
+    "features": {
+      "onset_distance": "Signed frame distance to the nearest label transition 0 to 1; negative means before onset.",
+      "offset_distance": "Signed frame distance to the nearest label transition 1 to 0; negative means before offset.",
+      "speech_run_length": "Length in frames of the current contiguous label-1 run.",
+      "silence_run_length": "Length in frames of the current contiguous label-0 run.",
+      "posterior_transition_distance": "Absolute distance to the nearest Short threshold crossing at 0.5 within the same utterance.",
+      "uncertainty_persistence": "Length in frames of the current contiguous selected run, where selected means uncertainty <= 0.13."
+    },
+    "bins": {
+      "distance": [
+        "0",
+        "1",
+        "2-4",
+        "5-10",
+        "11-25",
+        "26-50",
+        ">50"
+      ],
+      "duration": [
+        "1",
+        "2-4",
+        "5-10",
+        "11-25",
+        "26-50",
+        ">50"
+      ],
+      "posterior_transition_distance": [
+        "0",
+        "1",
+        "2-4",
+        "5-10",
+        "11-25",
+        "26-50",
+        ">50"
+      ],
+      "uncertainty_persistence": [
+        "1",
+        "2-4",
+        "5-10",
+        "11-25",
+        "26-50",
+        ">50"
+      ]
+    },
+    "point_metrics": [
+      "frames",
+      "refinable_rate",
+      "irreducible_rate",
+      "refinement_harm_rate",
+      "availability_net",
+      "mean_first_correct_span",
+      "mean_stable_sufficient_span",
+      "non_monotone_rate"
+    ],
+    "outputs": [
+      "ae3_event_feature_summary.csv",
+      "ae3_feature_bins.csv",
+      "ae3_condition_feature_map.csv"
+    ],
+    "interpretation_rule": "Stable feature gradients are mechanism evidence. Absent or contradictory gradients must be reported as absent structure."
+  },
+  "ae4": {
+    "question": "Is refinement value model-relative, and does the direction replicate across independent initializations?",
+    "existing_checkpoint_agreement": {
+      "checkpoints": [
+        17,
+        18,
+        19,
+        23
+      ],
+      "operation": "Run post-hoc inference on the frozen A9 test rows with each frozen A14 checkpoint. This is not an A14 rerun and does not change A14 results.",
+      "output_paths": {
+        "17": "results/difficulty_adaptive_context/ae_mechanism/ae4_existing_predictions/seed17/frame_predictions.npz",
+        "18": "results/difficulty_adaptive_context/ae_mechanism/ae4_existing_predictions/seed18/frame_predictions.npz",
+        "19": "results/difficulty_adaptive_context/ae_mechanism/ae4_existing_predictions/seed19/frame_predictions.npz",
+        "23": "results/difficulty_adaptive_context/ae_mechanism/ae4_existing_predictions/seed23/frame_predictions.npz"
+      },
+      "comparisons": [
+        "per-frame refinement value sign",
+        "P(value = +1)",
+        "P(value = -1)",
+        "mean value",
+        "pairwise agreement",
+        "condition-level agreement"
+      ],
+      "grouping_rule": "17/18/19 are checkpoint variation with a shared Short encoder. Seed 23 is the only independently trained Short encoder and is reported separately."
+    },
+    "replication_training": {
+      "authorization": "Exactly five paired Short/RF384 training replicates, solely for mechanism replication.",
+      "seeds": [
+        73,
+        79,
+        83,
+        89,
+        97
+      ],
+      "seed_replacement_reason": "Original seeds 53,59,61,67,71 cannot all be used because 59 and 71 are MODEL_SEEDS in reproductions/ssr_prior_shift/run_method_rescue_r1.py.",
+      "required_wording": "five independent initializations of Short/RF384 replicates",
+      "forbidden_wording": "do not describe these as independent encoders relative to the A14 checkpoints",
+      "training_inputs": {
+        "train_manifest": "data/librivad/manifests/LibriSpeech_train_medium.tsv",
+        "val_manifest": "data/librivad/manifests/LibriSpeech_val_medium.tsv",
+        "data_root": "data/librivad",
+        "long_teacher": "results/difficulty_adaptive_context/formal_long_ext40/best.pt"
+      },
+      "short_stage_a": {
+        "command_module": "reproductions.difficulty_adaptive_context.train_context",
+        "from_scratch": true,
+        "rf_profile": "short",
+        "epochs": 30,
+        "train_rows": 8640,
+        "val_rows": 432,
+        "context_seconds": 4.0,
+        "target_seconds": 4.0,
+        "batch_size": 128,
+        "num_workers": 0,
+        "max_lr": 0.01,
+        "min_lr": 0.001,
+        "warmup_ratio": 0.03,
+        "hold_ratio": 0.25,
+        "decay_power": 2.0,
+        "momentum": 0.9,
+        "weight_decay": 0.001,
+        "checkpoint_used_for_stage_b": "last.pt"
+      },
+      "short_stage_b": {
+        "resume": "same-seed Short Stage A last.pt",
+        "epochs": 40,
+        "max_lr": 0.001,
+        "min_lr": 0.001,
+        "warmup_ratio": 0.0,
+        "hold_ratio": 0.0,
+        "checkpoint_used_for_refiner": "last.pt"
+      },
+      "refiner": {
+        "command_module": "reproductions.difficulty_adaptive_context.train_adaptive",
+        "short_checkpoint": "same-seed Short Stage B last.pt",
+        "long_checkpoint": "results/difficulty_adaptive_context/formal_long_ext40/best.pt",
+        "epochs": 20,
+        "train_rows": 8640,
+        "val_rows": 432,
+        "context_seconds": 4.0,
+        "target_seconds": 4.0,
+        "batch_size": 128,
+        "num_workers": 0,
+        "dilations": [
+          1,
+          2,
+          4,
+          8,
+          96
+        ],
+        "kernel_size": 5,
+        "training_threshold": 0.13,
+        "activation_threshold": 0.13,
+        "label_weight": 2.0,
+        "distill_weight": 0.25,
+        "max_lr": 0.001,
+        "min_lr": 0.0001,
+        "weight_decay": 0.0001,
+        "max_residual": 2.0,
+        "checkpoint_policy": "best.pt selected by validation net_utility_per_selected, fixed before training"
+      },
+      "no_selection_rule": "No hyperparameter, epoch, seed, or checkpoint search. The recipe and checkpoint policy are identical for all five pairs."
+    },
+    "agreement_metrics": [
+      "refinable_rate",
+      "refinement_harm_rate",
+      "availability_net",
+      "sign_agreement",
+      "pairwise_value_agreement",
+      "condition_level_direction_agreement"
+    ],
+    "outputs": [
+      "ae4_checkpoint_agreement.csv",
+      "ae4_replication_summary.csv",
+      "ae4_replication_predictions"
+    ],
+    "interpretation_rule": "Low agreement supports model-relative context value. High agreement supports a more sample-intrinsic NeedLong interpretation."
+  },
+  "ae5": {
+    "question": "How do availability, observability, refinability, context demand, and model dependence vary by condition?",
+    "operation": "Join AE0-AE4 outputs by frozen condition and cell without changing any upstream metric.",
+    "fields": [
+      "availability_net",
+      "observability_auroc",
+      "gate_utility",
+      "activation_rate",
+      "refinable_rate",
+      "refinement_harm_rate",
+      "rf384_irreducible_rate",
+      "stable_sufficient_span",
+      "non_monotone_rate",
+      "checkpoint_value_agreement",
+      "replication_value_agreement"
+    ],
+    "outputs": [
+      "ae5_condition_mechanism_map.csv",
+      "ae5_mechanism_summary.json",
+      "ae5_mechanism_map.png"
+    ],
+    "classification_rules": {
+      "VALUE_SCARCITY": "availability_net <= 0",
+      "OBSERVABILITY_LIMITED": "availability_net > 0 and observability_auroc <= 0.5",
+      "ACTIONABILITY_LIMITED": "availability_net > 0 and observability_auroc > 0.5 and gate_utility <= 0",
+      "LONG_HORIZON_DEMAND": "stable_sufficient_span is predominantly 256-512",
+      "TEMPORAL_SPAN_NOT_LIMITING": "no stable horizon increase across spans",
+      "MODEL_RELATIVE_VALUE": "checkpoint or replication agreement is low",
+      "REPLICATED_VALUE": "direction and availability reproduce across independent initializations"
+    }
+  },
+  "stop_rule": {
+    "trigger": "AE0-AE3 jointly show value scarcity, temporal span is not the main bottleneck, refinable region lacks stable structure, and context value lacks usable model-relative structure.",
+    "action": "STOP A-v2 MECHANISM EXPLORATION",
+    "claim": "uncertainty is a strong simple proxy, but routing robustness remains condition-dependent.",
+    "otherwise": "Complete AE4 and AE5, then claim-freeze."
+  },
+  "claim_freeze": {
+    "after_ae5": "A-v2 AE CLAIM FREEZE",
+    "allowed_next_step": "Only a separately authorized A-v2 method study with a new untouched OOD set.",
+    "forbidden_next_steps": [
+      "A15",
+      "post-A14 router tuning",
+      "reusing A14 as confirmatory data for a new method",
+      "automatic method selection"
+    ]
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ae_mechanism",
+    "summary_json": "ae_summary.json",
+    "final_report": "ae_final_report.md",
+    "protocol_hash": "ae_protocol_hash.json",
+    "execution_manifest": "ae_execution_manifest.json",
+    "claim_freeze": "ae_claim_freeze.json",
+    "tables": [
+      "ae1_state_summary.csv",
+      "ae1_state_by_cell.csv",
+      "ae1_condition_availability.csv",
+      "ae2_horizon_summary.csv",
+      "ae2_horizon_by_cell.csv",
+      "ae2_nonmonotonicity.csv",
+      "ae3_event_feature_summary.csv",
+      "ae3_feature_bins.csv",
+      "ae3_condition_feature_map.csv",
+      "ae4_checkpoint_agreement.csv",
+      "ae4_replication_summary.csv",
+      "ae5_condition_mechanism_map.csv"
+    ],
+    "figures": [
+      "ae1_state_rates.png",
+      "ae2_horizon_saturation.png",
+      "ae3_feature_gradients.png",
+      "ae4_model_relative_value.png",
+      "ae5_mechanism_map.png"
+    ]
+  }
+}

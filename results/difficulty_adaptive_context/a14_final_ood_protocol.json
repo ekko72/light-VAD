@@ -1,0 +1,320 @@
+{
+  "version": "A14-final-ood-confirmatory-v1",
+  "status": "FROZEN_BEFORE_FINAL_OOD_ACCESS",
+  "date": "2026-09-19",
+  "route": {
+    "final_ood_access": "SEALED",
+    "a14": "CONFIRMATION_ONLY",
+    "a14_after_result": "A_CLAIM_FREEZE",
+    "a15": "FORBIDDEN",
+    "router_tuning_after_a14": "FORBIDDEN",
+    "stabilizer_comparison_on_final_ood": "FORBIDDEN"
+  },
+  "candidate": {
+    "name": "ShortShort Adaptive RF384Adaptive RF384",
+    "short_model": "Short",
+    "adaptive_model": "Adaptive RF384",
+    "comparator": "AlwaysRefine RF384",
+    "rf_span": 384,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      96
+    ],
+    "lookback_frames": 384,
+    "kernel_size": 5,
+    "max_residual": 2.0,
+    "router": "raw causal confidence gate",
+    "gate_rule": "abs(short_score - 0.5) <= 0.13",
+    "threshold": 0.13,
+    "source_rank_stabilizer": "EXCLUDED",
+    "unique_candidate": true
+  },
+  "locks": {
+    "artifacts": [
+      {
+        "role": "final_ood_manifest",
+        "path": "data/librivad/manifests/LibriSpeechConcat_test_medium.tsv",
+        "sha256": "9DCD9B90D0752E5CB654B0F959FC067EC29A861C793126B3FDAE0784CC6A078C"
+      },
+      {
+        "role": "a11_cost",
+        "path": "results/difficulty_adaptive_context/a11_conditional_compute/a11_conditional_compute.json",
+        "sha256": "132A470DE6CF30BC30EF692DD4B3C91F920DD29A9D675394F9ABC67392C79AE1"
+      },
+      {
+        "role": "a12_routing",
+        "path": "results/difficulty_adaptive_context/a12_routing_robustness/a12_routing_robustness.json",
+        "sha256": "579A0F53D2347B8DDE9341461CC7BE85613AF9E87699A91A87C50CED687EF68A"
+      },
+      {
+        "role": "adaptive_model",
+        "path": "reproductions/difficulty_adaptive_context/adaptive_model.py",
+        "sha256": "CFB181B7B1C89BA04D57DCF1453C19ECBC4AA4AE244C3A1E7F22C75FFA4DF99B"
+      },
+      {
+        "role": "evaluate_adaptive",
+        "path": "reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+        "sha256": "D9BE590A985D3B0E7341488BE723DF5C4C88F821356916D2FC7ABBE0249BF61D"
+      },
+      {
+        "role": "analyze_context_gate",
+        "path": "reproductions/difficulty_adaptive_context/analyze_context_gate.py",
+        "sha256": "9EF555E38F4B91BDC8FF431BEC391AC2F37FEAC2B8E293C68C65D0F1DFD34035"
+      },
+      {
+        "role": "data",
+        "path": "reproductions/difficulty_adaptive_context/data.py",
+        "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D"
+      },
+      {
+        "role": "marblenet_dataset",
+        "path": "reproductions/marblenet_vad/dataset.py",
+        "sha256": "5F961A14FBC561CC1F84BF1CA25C162E589AC3C60015C3759B5499CA73DEBB9C"
+      },
+      {
+        "role": "marblenet_features",
+        "path": "reproductions/marblenet_vad/features.py",
+        "sha256": "9BF8864228FC31FE3920021F8778D9CAA01D221CEE98DCCD81D61F7D4D08B9EE"
+      },
+      {
+        "role": "marblenet_model",
+        "path": "reproductions/marblenet_vad/model.py",
+        "sha256": "3474C2424A2528DCE2928EE6BE7DE0C6156B73A8CEA26B6941B01D7790B7CBA6"
+      },
+      {
+        "role": "run_a14_final_ood",
+        "path": "reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+        "sha256": "772213F1AA0AE009BE122A7588241E0EA240D484225A2F6E3B5E8A864949D2D8"
+      },
+      {
+        "role": "test_run_a14_final_ood",
+        "path": "reproductions/difficulty_adaptive_context/test_run_a14_final_ood.py",
+        "sha256": "317FFE5E665F0A69B4D148B3D566BFBBB97811E829CF2E4F0A4E43CE4D5C7D9E"
+      }
+    ],
+    "checkpoints": [
+      {
+        "role": "checkpoint_seed17",
+        "seed": 17,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+        "sha256": "85ACDE86D8D9A21103992B8BA697AA55DFAE5987D93235A1FF3BB3BA4A5E10AB",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "role": "checkpoint_seed18",
+        "seed": 18,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed18_gate013_distill025_rf384/best.pt",
+        "sha256": "6516CC11CF1045BCABC9B6905C6AFD7B126BFD3F58ED2A5923861C3DE5A89D3B",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "role": "checkpoint_seed19",
+        "seed": 19,
+        "path": "results/difficulty_adaptive_context/a3_pilot_seed19_gate013_distill025_rf384/best.pt",
+        "sha256": "96C551837474C150F1908E7BD789E680F857FA40A6F510B9F07FC73F764B1346",
+        "short_encoder_relation": "shared_frozen_short_encoder"
+      },
+      {
+        "role": "checkpoint_seed23",
+        "seed": 23,
+        "path": "results/difficulty_adaptive_context/a14_seed23_gate013_distill025_rf384/best.pt",
+        "sha256": "97B1E9E0E617D28B7A6A51E93E6DEA69EE103EDCD60C239DD4D32BA69C05D8D9",
+        "short_encoder_relation": "independently_trained_short_encoder"
+      }
+    ]
+  },
+  "sealed_split": {
+    "protocol_role": "test_untouched_final_ood",
+    "manifest_path": "data/librivad/manifests/LibriSpeechConcat_test_medium.tsv",
+    "manifest_sha256": "9DCD9B90D0752E5CB654B0F959FC067EC29A861C793126B3FDAE0784CC6A078C",
+    "rows": 1080,
+    "sources": 20,
+    "speaker_sensitivity_keys": 16,
+    "noise_classes": 9,
+    "seen_rows": 720,
+    "unseen_rows": 360,
+    "samples": 322768800,
+    "causal_frames": 2017926
+  },
+  "evaluation": {
+    "primary_seed": 17,
+    "checkpoint_seeds": [
+      17,
+      18,
+      19,
+      23
+    ],
+    "decision_threshold": 0.5,
+    "score_chunk_frames": 2000,
+    "causal_inference_start_frame": 0,
+    "zero_cache_at_start": true,
+    "valid_start_frame": 0,
+    "development_activation_reference": 0.0505,
+    "activation_warning": 0.15,
+    "activation_failure": 0.2,
+    "bootstrap_repeats": 5000,
+    "bootstrap_seed": 20260919,
+    "bootstrap_seed_rules": {
+      "aggregate_source_cluster": 20260919,
+      "speaker_cluster_sensitivity": "base + 1",
+      "domain_source_cluster": "base + 10 + domain_index",
+      "cell_source_cluster": "base + 100 + cell_index"
+    },
+    "bootstrap_primary_unit": "source_cluster",
+    "bootstrap_sensitivity_unit": "speaker_cluster",
+    "cells": [
+      [
+        "seen",
+        "-5"
+      ],
+      [
+        "seen",
+        "0"
+      ],
+      [
+        "seen",
+        "5"
+      ],
+      [
+        "seen",
+        "10"
+      ],
+      [
+        "seen",
+        "15"
+      ],
+      [
+        "seen",
+        "20"
+      ],
+      [
+        "unseen",
+        "-5"
+      ],
+      [
+        "unseen",
+        "0"
+      ],
+      [
+        "unseen",
+        "5"
+      ],
+      [
+        "unseen",
+        "10"
+      ],
+      [
+        "unseen",
+        "15"
+      ],
+      [
+        "unseen",
+        "20"
+      ]
+    ],
+    "required_wording": "four refinement checkpoints were evaluated, of which three share the same frozen Short encoder and one uses an independently trained Short encoder"
+  },
+  "gates": {
+    "gate_1": {
+      "name": "OOD accuracy utility",
+      "utility": "U_A_minus_S = R_S - R_A",
+      "strong_go_rule": "U > 0 and source-cluster bootstrap 95% lower CI > 0"
+    },
+    "gate_2": {
+      "name": "OOD compute behavior",
+      "warning_boundary": 0.15,
+      "failure_boundary": 0.2,
+      "development_reference": 0.0505,
+      "interpretation": "r_OOD below 15% means no catastrophic activation drift; report drift even when below the warning boundary"
+    },
+    "gate_3": {
+      "name": "OOD failure structure",
+      "cell_order": [
+        [
+          "seen",
+          "-5"
+        ],
+        [
+          "seen",
+          "0"
+        ],
+        [
+          "seen",
+          "5"
+        ],
+        [
+          "seen",
+          "10"
+        ],
+        [
+          "seen",
+          "15"
+        ],
+        [
+          "seen",
+          "20"
+        ],
+        [
+          "unseen",
+          "-5"
+        ],
+        [
+          "unseen",
+          "0"
+        ],
+        [
+          "unseen",
+          "5"
+        ],
+        [
+          "unseen",
+          "10"
+        ],
+        [
+          "unseen",
+          "15"
+        ],
+        [
+          "unseen",
+          "20"
+        ]
+      ],
+      "require_all_cells_positive": false,
+      "report": [
+        "positive-cell fraction",
+        "worst-cell utility",
+        "activation maximum",
+        "cluster CI",
+        "seed23 sensitivity"
+      ],
+      "taxonomy": {
+        "F1": "population value <= 0 and selected value <= 0",
+        "F2": "population value > 0 and selected value <= 0",
+        "F3": "selected value > 0 and activation > 0.15"
+      }
+    }
+  },
+  "verdicts": {
+    "strong_go": {
+      "aggregate_utility_rule": "U > 0 and source-cluster bootstrap 95% lower CI > 0",
+      "activation_rule": "r_OOD < 0.15",
+      "domain_rule": "no catastrophic domain regression",
+      "seed23_rule": "independent Short encoder seed23 has positive direction"
+    },
+    "conditional_go": {
+      "rule": "aggregate utility is positive but one or more Strong GO conditions are not met"
+    },
+    "no_go": {
+      "aggregate_rule": "aggregate utility non-positive or (r_OOD > 0.20 and source-cluster bootstrap 95% lower CI <= 0)"
+    }
+  },
+  "claim_freeze": {
+    "action": "A14 -> A CLAIM FREEZE",
+    "a15": "FORBIDDEN",
+    "router_or_stabilizer_tuning": "FORBIDDEN",
+    "rule": "A14 is the final confirmatory experiment for A; no A15, router tuning, gate tuning, architecture change, or stabilizer selection follows from the Final OOD result."
+  }
+}

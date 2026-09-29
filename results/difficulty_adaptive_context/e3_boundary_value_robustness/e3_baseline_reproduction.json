@@ -1,0 +1,30 @@
+{
+  "BASELINE_REPRODUCED": true,
+  "tolerance": 1e-06,
+  "max_abs_full_error": 2.086162567138672e-07,
+  "max_abs_embedded_short_error": 0.0,
+  "max_abs_short_error": 0.0,
+  "metadata_match": {
+    "source_key": true,
+    "condition": true,
+    "noise_name": true
+  },
+  "population": {
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20
+  },
+  "inputs": {
+    "e1_frame_results": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet",
+      "sha256": "33D0075B0D140D845E10CF95AB0D965665A9B8474088B22EBC397A2B4AD55DE2",
+      "size_bytes": 169069726
+    },
+    "rf384_reference": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+      "size_bytes": 10702416
+    }
+  },
+  "status": "PASSED"
+}

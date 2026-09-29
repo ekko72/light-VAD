@@ -1,0 +1,25 @@
+{
+  "protocol_id": "A-AX4-v1",
+  "frozen_at": "2026-09-19T21:21:18.8085317+08:00",
+  "status_before_successful_analysis": {
+    "unit_tests": "11/11 passed",
+    "test_command": "python -m unittest reproductions.difficulty_adaptive_context.test_run_ax4_routing_failure_taxonomy -v",
+    "test_only_corrections_before_analysis": [
+      "Corrected the signed-value test expectation to match the frozen correction-positive, harm-negative definition.",
+      "Corrected the synthetic selected-cell fixture so its last frame is a Short error corrected by refinement."
+    ],
+    "analysis_started": false,
+    "final_ood_accessed": false
+  },
+  "code_sha256": {
+    "reproductions/difficulty_adaptive_context/ax4_protocol.json": "ce4f07fbb293856bb6d917368665b04e8431bee9ed4c1adccdde282cb9028fee",
+    "reproductions/difficulty_adaptive_context/run_ax4_routing_failure_taxonomy.py": "6d534f2537139d1a5e712c65d388857e1ddd6b1f5aeaa6de678258b5be9313fb",
+    "reproductions/difficulty_adaptive_context/test_run_ax4_routing_failure_taxonomy.py": "65431dd326b93f36d6c22d97c3b474aaefa3666716dd9e26c1ba61151d1b480c"
+  },
+  "input_sha256": {
+    "reproductions/difficulty_adaptive_context/run_a12_routing_robustness.py": "23ce074285c327eb9819f14cc5185e803a129e8eadf4a422b9121bdb6d217d44",
+    "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03",
+    "results/difficulty_adaptive_context/a12_routing_robustness/a12_routing_robustness.json": "579a0f53d2347b8dde9341461cc7be85613af9e87699a91a87c50ced687ef68a"
+  },
+  "permitted_next_step": "Run AX4 once on development data, then report the frozen diagnostic result before deciding whether AX5 is permitted."
+}

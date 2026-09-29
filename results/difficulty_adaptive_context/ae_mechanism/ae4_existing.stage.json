@@ -1,0 +1,26 @@
+{
+  "stage": "ae4_existing",
+  "completed_at": "2026-09-20T03:58:35.595328+00:00",
+  "artifacts": [
+    {
+      "path": "ae4_checkpoint_agreement.csv",
+      "sha256": "C9A9574797783C95A9D8EB6A869B2936A96190336AA76F04BFFC1D71F99364BF"
+    },
+    {
+      "path": "ae4_existing_predictions\\seed17\\frame_predictions.npz",
+      "sha256": "9763AD2A47B5F9D6FDBE53F714C7F88BB9DDF559057117ADC655B5892FDF510A"
+    },
+    {
+      "path": "ae4_existing_predictions\\seed18\\frame_predictions.npz",
+      "sha256": "F7A52747B9049413A877A846CC33079A76E7987AF16A7DE30D4B30F5F2331EDE"
+    },
+    {
+      "path": "ae4_existing_predictions\\seed19\\frame_predictions.npz",
+      "sha256": "145F950904FB733FD0A5826B8371494FA954D763641EA22FE7D55816BA37C145"
+    },
+    {
+      "path": "ae4_existing_predictions\\seed23\\frame_predictions.npz",
+      "sha256": "8D4B02ACEA7530530FF040BA315BE8651512319F114C235B7037E2EB90E3C330"
+    }
+  ]
+}

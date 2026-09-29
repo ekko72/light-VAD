@@ -1,0 +1,26 @@
+{
+  "protocol_id": "A-AX3-v1",
+  "frozen_at": "2026-09-19T21:13:09+08:00",
+  "status_before_successful_analysis": {
+    "unit_tests": "10/10 passed",
+    "test_command": "python -m unittest reproductions.difficulty_adaptive_context.test_run_ax3_event_structure -v",
+    "test_only_corrections_before_analysis": [
+      "Corrected the expected speech-run bin for the second utterance from 1-2 to 3-5.",
+      "Corrected the expected uncertainty-streak bin for the third consecutive uncertain frame from 1-2 to 3-5."
+    ],
+    "analysis_started": false,
+    "final_ood_accessed": false
+  },
+  "code_sha256": {
+    "reproductions/difficulty_adaptive_context/ax3_protocol.json": "fc813b4de5be9265c2bcdd48f85a2ce6d22f658c7ed74c39a56575c2fbbd6b96",
+    "reproductions/difficulty_adaptive_context/run_ax3_event_structure.py": "8a406cf6cb627af2ea22823b4f025041f47da4f15e42cee232325f95e93bf0c0",
+    "reproductions/difficulty_adaptive_context/test_run_ax3_event_structure.py": "733591d74e43ada5df17a91b3e37c23ee76a744e577a1491788db379586fc4d9"
+  },
+  "input_sha256": {
+    "reproductions/difficulty_adaptive_context/ax_protocol.json": "3f915c4bbb2809366004e3708e3ccac41718eb65d80b180f12eca19cafb0cb8e",
+    "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03",
+    "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab",
+    "data/librivad/manifests/LibriSpeech_test_medium.tsv": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39"
+  },
+  "permitted_next_step": "Run AX3 once on development data, then report the frozen diagnostic result before AX4."
+}

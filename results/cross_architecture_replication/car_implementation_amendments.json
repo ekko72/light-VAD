@@ -1,0 +1,35 @@
+{
+  "protocol_id": "A-v2-CAR-v1",
+  "protocol_sha256": "C6878F55BB18005807CE205239903EFF45A76756EBD213235FE8BC7D20C6669B",
+  "created_at": "2026-09-20T17:42:30.792659+00:00",
+  "frozen_runner_sha256": "8759641A05A2887400093D430E4E0CE8DB105C46B6DDF96210653BCDDEADF217",
+  "post_freeze_wrapper_sha256": "DBA2490035678CC695A3AE89FE6AD41A6ADA0B8822081C2BE3CCE04B73A8A22E",
+  "amendments": [
+    {
+      "target": "CarReference construction",
+      "issue": "The frozen runner omitted full_adaptive_scores and long_scores when constructing CarReference.",
+      "resolution": "Load the two arrays from the already hash-verified RF384 prediction bundle and pass them to the frozen CarReference class.",
+      "changes_training": false,
+      "changes_evaluation_semantics": false,
+      "changes_analysis_semantics": false
+    },
+    {
+      "target": "score_horizon target slices",
+      "issue": "The frozen _score_window_batch used a truth-value test on a NumPy target array.",
+      "resolution": "Convert target slices to lists before delegating to the unchanged scoring implementation.",
+      "changes_training": false,
+      "changes_evaluation_semantics": false,
+      "changes_analysis_semantics": false
+    },
+    {
+      "target": "CAR analysis overwrite guard",
+      "issue": "The frozen run_analyze_stage included the completed car_gru_training_runs.csv in its analysis overwrite guard.",
+      "resolution": "Exclude only car_gru_training_runs.csv from the analysis-stage overwrite check; all analysis outputs remain protected from overwrite.",
+      "changes_training": false,
+      "changes_evaluation_semantics": false,
+      "changes_analysis_semantics": false
+    }
+  ],
+  "NEXT_METHOD_SEARCH_AUTHORIZED": false,
+  "NEW_FINAL_OOD_TOUCHED": false
+}

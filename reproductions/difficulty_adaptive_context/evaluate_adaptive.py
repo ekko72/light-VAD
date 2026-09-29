@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from pathlib import Path
 from typing import Any
 
@@ -92,6 +93,66 @@ def load_adaptive_model(
 
 
 @torch.inference_mode()
+def benchmark_refinement_cpu(
+    checkpoint_path: Path,
+    *,
+    warmup: int,
+    repeats: int,
+    selected_frames_per_call: int,
+) -> dict[str, Any]:
+    """Measure one isolated ``forward_sparse`` call on a single CPU thread."""
+    if warmup < 0:
+        raise ValueError("warmup must be non-negative")
+    if repeats <= 0:
+        raise ValueError("repeats must be positive")
+    if selected_frames_per_call <= 0:
+        raise ValueError("selected_frames_per_call must be positive")
+
+    previous_threads = torch.get_num_threads()
+    try:
+        torch.set_num_threads(1)
+        model, _, refinement_config = load_adaptive_model(
+            checkpoint_path,
+            torch.device("cpu"),
+        )
+        history_frames = max(refinement_config.lookback_frames + 1, 1)
+        selected_count = min(selected_frames_per_call, history_frames)
+        encoded = torch.zeros(1, refinement_config.in_channels, history_frames)
+        selected = torch.zeros(1, history_frames, dtype=torch.bool)
+        selected[0, -selected_count:] = True
+
+        for _ in range(warmup):
+            model.refinement.forward_sparse(encoded, selected)
+        durations_ms: list[float] = []
+        for _ in range(repeats):
+            started = time.perf_counter_ns()
+            model.refinement.forward_sparse(encoded, selected)
+            durations_ms.append(
+                (time.perf_counter_ns() - started) / 1_000_000.0
+            )
+    finally:
+        torch.set_num_threads(previous_threads)
+
+    values = np.asarray(durations_ms, dtype=np.float64)
+    return {
+        "device": "cpu",
+        "torch_num_threads": 1,
+        "batch": 1,
+        "history_frames": history_frames,
+        "selected_frames_per_call": selected_count,
+        "warmup": warmup,
+        "repeats": repeats,
+        "median_ms_per_call": float(np.median(values)),
+        "mean_ms_per_call": float(np.mean(values)),
+        "p95_ms_per_call": float(np.quantile(values, 0.95)),
+        "p99_ms_per_call": float(np.quantile(values, 0.99)),
+        "median_us_per_selected_frame": float(
+            np.median(values) * 1_000.0 / selected_count
+        ),
+    }
+
+
+@torch.inference_mode()
 def predict_full_adaptive_frames(
     model: AdaptiveCausalVAD,
     frontend: torch.nn.Module,
@@ -99,7 +160,7 @@ def predict_full_adaptive_frames(
     *,
     device: torch.device,
     chunk_frames: int,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, int]:
     """Return ungated refinement probabilities and embedded Short probabilities.
 
     The streaming wrapper is run with a permissive threshold so every frame
@@ -144,11 +205,13 @@ def predict_full_adaptive_frames(
             np.empty(0, dtype=np.float64),
             np.empty(0, dtype=np.float64),
             np.empty(0, dtype=bool),
+            0,
         )
     return (
         np.concatenate(score_parts).astype(np.float64),
         np.concatenate(short_parts).astype(np.float64),
         np.concatenate(selected_parts).astype(bool),
+        int(stream.cache_bytes),
     )
 
 
@@ -200,14 +263,21 @@ def _delta_metrics(
     short_scores: np.ndarray,
     long_scores: np.ndarray,
     adaptive_scores: np.ndarray,
+    refine_scores: np.ndarray | None = None,
 ) -> dict[str, Any]:
     short = binary_metrics(labels, short_scores)
     long = binary_metrics(labels, long_scores)
     adaptive = binary_metrics(labels, adaptive_scores)
+    refine = (
+        None
+        if refine_scores is None
+        else binary_metrics(labels, refine_scores)
+    )
     return {
         "frames": int(np.asarray(labels).size),
         "short": short,
         "long": long,
+        "refine": refine,
         "adaptive": adaptive,
         "delta_f1_long_minus_short": (
             None
@@ -223,6 +293,13 @@ def _delta_metrics(
             None
             if long["f1"] is None or adaptive["f1"] is None
             else float(adaptive["f1"] - long["f1"])
+        ),
+        "delta_f1_refine_minus_short": (
+            None
+            if refine is None
+            or short["f1"] is None
+            or refine["f1"] is None
+            else float(refine["f1"] - short["f1"])
         ),
         "error_reduction_long_vs_short": (
             None
@@ -247,6 +324,7 @@ def _condition_seen_metrics(
     short_scores: np.ndarray,
     long_scores: np.ndarray,
     adaptive_scores: np.ndarray,
+    refine_scores: np.ndarray,
     condition: np.ndarray,
     noise_name: np.ndarray,
     unseen_noise: set[str],
@@ -260,6 +338,7 @@ def _condition_seen_metrics(
                 short_scores[mask],
                 long_scores[mask],
                 adaptive_scores[mask],
+                refine_scores[mask],
             )
     noisy = condition != "clean"
     unseen = noisy & np.isin(noise_name, sorted(unseen_noise))
@@ -271,6 +350,7 @@ def _condition_seen_metrics(
                 short_scores[mask],
                 long_scores[mask],
                 adaptive_scores[mask],
+                refine_scores[mask],
             )
     return result
 
@@ -325,6 +405,24 @@ def _report(summary: dict[str, Any]) -> str:
             "scores. The final-test activation rate is observed, not forced "
             "to the calibration budget."
         )
+    cpu_latency = protocol.get("cpu_latency")
+    macs_per_selected_frame = protocol[
+        "refinement_macs_per_selected_frame"
+    ]
+    macs_per_call = protocol["refinement_macs_per_call"]
+    if cpu_latency is None:
+        latency_lines = ["- Not run for this evaluation."]
+    else:
+        latency_lines = [
+            f"- Protocol: batch {cpu_latency['batch']}, "
+            f"{cpu_latency['history_frames']} history frames, "
+            f"{cpu_latency['selected_frames_per_call']} selected frames per "
+            f"call, one CPU thread.",
+            f"- Median: {cpu_latency['median_ms_per_call']:.5f} ms/call "
+            f"({cpu_latency['median_us_per_selected_frame']:.3f} "
+            f"us/selected frame).",
+            f"- P95: {cpu_latency['p95_ms_per_call']:.5f} ms/call.",
+        ]
     lines = [
         "# Phase A3: Sparse Shared-Encoder Refinement",
         "",
@@ -341,7 +439,11 @@ def _report(summary: dict[str, Any]) -> str:
         f"- Refinement lookback: {protocol['lookback_frames']} frames "
         f"({protocol['lookback_seconds']:.2f} s)",
         f"- Estimated refinement MACs per selected frame: "
-        f"{protocol['refinement_macs_per_selected_frame']:,}",
+        f"{macs_per_selected_frame:,}",
+        f"- Estimated refinement MACs per call "
+        f"({protocol['refinement_selected_frames_per_call']} selected "
+        f"frames): {macs_per_call:,}",
+        f"- Streaming cache bytes: {protocol['streaming_cache_bytes']:,}",
         "",
         threshold_note,
         "",
@@ -350,10 +452,13 @@ def _report(summary: dict[str, Any]) -> str:
         "| Model | F1 | Error | AUROC |",
         "| --- | ---: | ---: | ---: |",
     ]
-    for name in ("short", "long", "adaptive"):
+    for name in ("short", "long", "refine", "adaptive"):
         row = primary[name]
+        if row is None:
+            continue
+        label = "refine-only" if name == "refine" else name
         lines.append(
-            f"| {name} | {_md_number(row['f1'])} | "
+            f"| {label} | {_md_number(row['f1'])} | "
             f"{_md_percent(row['error'])} | {_md_number(row['auc'])} |"
         )
     lines.extend(
@@ -363,6 +468,12 @@ def _report(summary: dict[str, Any]) -> str:
             f"{_md_number(primary['delta_f1_adaptive_minus_short'])}.",
             f"- Adaptive minus Long F1: "
             f"{_md_number(primary['delta_f1_adaptive_minus_long'])}.",
+            f"- Refine-only minus Short F1: "
+            f"{_md_number(primary['delta_f1_refine_minus_short'])}.",
+            "",
+            "## CPU Refinement Microbenchmark",
+            "",
+            *latency_lines,
             "",
             "## Final-Test Gate Utility",
             "",
@@ -381,9 +492,9 @@ def _report(summary: dict[str, Any]) -> str:
             "",
             "## By Condition",
             "",
-            "| Condition | Frames | Short F1 | Long F1 | Adaptive F1 | "
-            "Adaptive-Short | Selected | Net / selected |",
-            "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+            "| Condition | Frames | Short F1 | Long F1 | Refine F1 | "
+            "Adaptive F1 | Adaptive-Short | Selected | Net / selected |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for name in (*CONDITION_ORDER, "seen", "unseen"):
@@ -395,6 +506,7 @@ def _report(summary: dict[str, Any]) -> str:
             f"| {name} | {row['frames']} | "
             f"{_md_number(row['short']['f1'])} | "
             f"{_md_number(row['long']['f1'])} | "
+            f"{_md_number(row['refine']['f1'])} | "
             f"{_md_number(row['adaptive']['f1'])} | "
             f"{_md_number(row['delta_f1_adaptive_minus_short'])} | "
             f"{utility.get('selected', 'n/a')} | "
@@ -486,6 +598,18 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="*",
         default=list(UNSEEN_NOISE),
     )
+    parser.add_argument("--latency-warmup", type=int, default=20)
+    parser.add_argument("--latency-repeats", type=int, default=100)
+    parser.add_argument(
+        "--latency-selected-frames",
+        type=int,
+        default=64,
+    )
+    parser.add_argument(
+        "--skip-latency-benchmark",
+        action="store_true",
+        help="Omit the isolated CPU refinement latency measurement.",
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--progress-every", type=int, default=50)
     return parser
@@ -518,6 +642,12 @@ def validate_args(
         parser.error("--activation-budgets values must be in (0, 1]")
     if args.bootstrap_repeats <= 0:
         parser.error("--bootstrap-repeats must be positive")
+    if args.latency_warmup < 0:
+        parser.error("--latency-warmup must be non-negative")
+    if args.latency_repeats <= 0:
+        parser.error("--latency-repeats must be positive")
+    if args.latency_selected_frames <= 0:
+        parser.error("--latency-selected-frames must be positive")
 
 
 def main() -> int:
@@ -587,6 +717,7 @@ def main() -> int:
     all_noise: list[np.ndarray] = []
     all_condition: list[np.ndarray] = []
     embedded_short_parts: list[np.ndarray] = []
+    stream_cache_bytes: list[int] = []
 
     print(
         f"device={device}, items={len(items)}, valid_start={valid_start}, "
@@ -607,7 +738,7 @@ def main() -> int:
         if n_frames <= valid_start:
             continue
 
-        refined_scores, embedded_short, stream_selected = (
+        refined_scores, embedded_short, stream_selected, cache_bytes = (
             predict_full_adaptive_frames(
                 model,
                 frontend,
@@ -624,6 +755,7 @@ def main() -> int:
         all_refined.append(refined_scores[valid_start:])
         all_stream_selected.append(stream_selected[valid_start:])
         embedded_short_parts.append(embedded_short[valid_start:])
+        stream_cache_bytes.append(cache_bytes)
         all_source.append(
             np.full(
                 labels.size,
@@ -764,6 +896,7 @@ def main() -> int:
         short_scores[test_mask],
         long_scores[test_mask],
         adaptive_scores[test_mask],
+        full_adaptive_scores[test_mask],
     )
     test_bootstrap = speaker_cluster_bootstrap(
         [test_counts],
@@ -867,6 +1000,7 @@ def main() -> int:
         short_scores[test_mask],
         long_scores[test_mask],
         adaptive_scores[test_mask],
+        full_adaptive_scores[test_mask],
         condition[test_mask],
         noise_name[test_mask],
         unseen_set,
@@ -905,6 +1039,18 @@ def main() -> int:
         )
         if bootstrap is not None:
             by_condition[name]["utility_bootstrap"] = bootstrap
+
+    cpu_latency = (
+        None
+        if args.skip_latency_benchmark
+        else benchmark_refinement_cpu(
+            args.adaptive_checkpoint,
+            warmup=args.latency_warmup,
+            repeats=args.latency_repeats,
+            selected_frames_per_call=args.latency_selected_frames,
+        )
+    )
+    cache_bytes_values = sorted(set(stream_cache_bytes))
 
     summary: dict[str, Any] = {
         "protocol": {
@@ -948,6 +1094,16 @@ def main() -> int:
             "refinement_macs_per_selected_frame": (
                 model.refinement.estimated_macs_per_selected_frame()
             ),
+            "refinement_selected_frames_per_call": (
+                args.latency_selected_frames
+            ),
+            "refinement_macs_per_call": (
+                model.refinement.estimated_macs_per_selected_frame()
+                * args.latency_selected_frames
+            ),
+            "streaming_cache_bytes": max(stream_cache_bytes, default=0),
+            "streaming_cache_bytes_values": cache_bytes_values,
+            "cpu_latency": cpu_latency,
             "unseen_noise": sorted(unseen_set),
         },
         "fixed_gate": {

@@ -1,0 +1,210 @@
+{
+  "PROTOCOL_ID": "E3-BVRA-v1",
+  "PROTOCOL_STATUS": "FROZEN_BEFORE_E3_OUTCOME_ANALYSIS",
+  "PROTOCOL_SHA256": "CE64F181069AA8EAE2A0CA2A1834D1F733703AB49C271B7307838CFAD5A47481",
+  "RUNNER_SHA256": "76F51D104EC07677F53CBDA36E6113CA13477EDD9A91C74B29450DD31DE55A36",
+  "TRAINING_PERFORMED": false,
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "BASELINE_REPRODUCED": true,
+  "BASELINE_STATUS": "PASSED",
+  "RUNTIME_SECONDS": 56.911975622177124,
+  "PYTHON": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "PLATFORM": "Windows-11-10.0.26200-SP0",
+  "GIT_COMMIT": "d7a8ce71b1a00602d76d0c02b7fc9d57ff0f9870",
+  "GIT_STATUS_SHORT": [
+    " M reproductions/difficulty_adaptive_context/README.md",
+    " M reproductions/difficulty_adaptive_context/adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/analyze_context_gate.py",
+    " M reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+    " M reproductions/difficulty_adaptive_context/test_adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/test_context.py",
+    " M reproductions/difficulty_adaptive_context/train_adaptive.py",
+    "?? reproductions/boundary_aware_supervision/",
+    "?? reproductions/cross_architecture_replication/",
+    "?? reproductions/difficulty_adaptive_context/ae0_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ae_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+    "?? reproductions/difficulty_adaptive_context/analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/ax1_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/diagnose_e1_c1_backend.py",
+    "?? reproductions/difficulty_adaptive_context/recover_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/run_e2.py",
+    "?? reproductions/difficulty_adaptive_context/run_e3.py",
+    "?? reproductions/difficulty_adaptive_context/test_analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e2.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e3.py",
+    "?? reproductions/prior_factored_vad/",
+    "?? reproductions/ssr_prior_shift/"
+  ],
+  "ARTIFACTS": [
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_protocol_freeze.json",
+      "sha256": "CE64F181069AA8EAE2A0CA2A1834D1F733703AB49C271B7307838CFAD5A47481",
+      "size_bytes": 5019
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_protocol_sha256.txt",
+      "sha256": "FB954108FEDEEDFBCD14DF865B8074E322E66F1458C602C37260AFF9DA54FB2C",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_runner_sha256.txt",
+      "sha256": "91619263109BC1564FF5E0D1D83ABCF9B66B7361150642E6EEA40197C620369D",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_baseline_reproduction.json",
+      "sha256": "501B66CECFEAF39906381FF96C6B10FF35F2CA9403E06A01B0864AD3140DE422",
+      "size_bytes": 958
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_threshold_robustness.csv",
+      "sha256": "8DF1C58B80125E3DF4E849DCC06951037336DD17107A41898D421AE190ECADDA",
+      "size_bytes": 2868
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_boundary_exclusion.csv",
+      "sha256": "B35D50EA0DD0F1B0F3902ACFB5BF72E5E5302028F6C10BA5CA73EFEE19302C78",
+      "size_bytes": 1919
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_boundary_bootstrap.csv",
+      "sha256": "5FAA434DA3A4872AC573ACDD902B0C1C3D62ED2F1768835F159E43857DCCFC93",
+      "size_bytes": 8888
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_label_jitter.csv",
+      "sha256": "16B8D0DE18DCADC20A2E716E60077A3B196686E258B1CDB8C7A00DC66799FAF2",
+      "size_bytes": 7452
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_label_jitter_bootstrap.csv",
+      "sha256": "0A65000AD10CA296C6C81025EC85FEA5AB85EB8FB229AAA4D7E53D0EA2CD0220",
+      "size_bytes": 1075
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_event_profiles.csv",
+      "sha256": "DD6F9B08025C71CDD41ECF04CB713A88D61EF5E5A7FA439136706144F7137FDF",
+      "size_bytes": 53974
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_event_contrasts.csv",
+      "sha256": "3BEE80A59ABE91E94976F34E832A655E12BD6D0F20A3D2B7592996D1694B44DF",
+      "size_bytes": 16857
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_proper_scoring_value.csv",
+      "sha256": "35A81096035CD08E070F6571E1CFB4001B44A7D3CDB118EE2FA4656887F3D000",
+      "size_bytes": 682
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_decision_vs_probabilistic_value.csv",
+      "sha256": "F55AAF563013AAF65D012F00C57A416F7A644777EA8E4BF9A3FF98D244DCE56A",
+      "size_bytes": 460
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_value_concentration.csv",
+      "sha256": "AB51F8B5C91354D99E277C571AF796C85C12D5AEC2BF43A9D5520C51A87BEEE9",
+      "size_bytes": 540
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_segment_metrics.csv",
+      "sha256": "613207565832BBEFAAF34A714C24132B0BA851D91EEF1E098CD970AAA51F5DAB",
+      "size_bytes": 5709
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_condition_robustness.csv",
+      "sha256": "CAED2DE383D4423BB29B22347FAC3FE03E576D964DA893E830F9132CDA74F85B",
+      "size_bytes": 43578
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_source_influence.csv",
+      "sha256": "EEE8169D66830987D4427D6B7623A18A030101D4DC61D75D1BB2047DDA4D7313",
+      "size_bytes": 953
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_final_summary.json",
+      "sha256": "3887E7C18B018F0E6F0CEB905B19A480D61A09A2421408FBC2B84E8DD09E6587",
+      "size_bytes": 44954
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_final_report.md",
+      "sha256": "FD7BA69BE9F930DD82926A2830060625CC285B0A4D4B83D9770641E97B437ED3",
+      "size_bytes": 2143
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_claim_freeze.md",
+      "sha256": "77806AFB026836C216D35DE39BA03C55B35E62981AB401A46CC3E2A3D5A3C89A",
+      "size_bytes": 345
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure1_threshold_taxonomy.png",
+      "sha256": "4618CCFADDD6FA8BF95ACAC3371CFA82A4F3FC7EBDB84C9CE82E2C8B10FE209B",
+      "size_bytes": 58194
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure2_boundary_robustness.png",
+      "sha256": "9D6F36AA4E2AD1E7E9343342E0010A84EB586E085631A304DB74A18CEF59F40C",
+      "size_bytes": 45000
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure3_event_profiles.png",
+      "sha256": "C4B2B3FB3DE71FA499C323BB7CD87EE27DE6A0B136CCFAB1B0034DB53DEF065B",
+      "size_bytes": 51434
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure4_label_jitter.png",
+      "sha256": "1C0996577C71216FC7D84B0FDB2C7EB4F980DC043981B158185BEFE21C16DBEB",
+      "size_bytes": 41900
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure5_decision_vs_probabilistic_value.png",
+      "sha256": "7457865F775148AD11E91BFE65DAAD4A91A248AD62C305B4968FB2F29D31C6FA",
+      "size_bytes": 38785
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/figure6_cross_architecture.png",
+      "sha256": "F018AB38177556333280DD2ED34C18FCC778416443889F174CD7BDDE6179443A",
+      "size_bytes": 23791
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_cross_arch_replication.csv",
+      "sha256": "A157AE287849E09C148DAEB81BCD21201F8F77C96DB82DFF5E332F8E64E90C81",
+      "size_bytes": 213
+    }
+  ]
+}

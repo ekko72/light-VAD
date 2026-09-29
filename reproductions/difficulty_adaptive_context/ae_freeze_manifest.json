@@ -1,0 +1,10 @@
+{
+  "manifest_id": "A-v2-AE-v1-freeze",
+  "frozen_at_utc": "2026-09-20T01:34:32.9811787Z",
+  "protocol_path": "reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+  "protocol_sha256": "28218C73CC8CEDFE14DC9CDB5622B50C2D927627744AB9B9679FDFEE7F6B3842",
+  "protocol_bytes": 22358,
+  "status": "FROZEN_BEFORE_AE1_OUTCOME_ANALYSIS",
+  "execution_rule": "AE1-AE5 must run in order and must verify this hash before reading outcome-bearing inputs.",
+  "amendment_rule": "No protocol amendment is permitted after AE1 output is produced. A new version requires a new protocol id and a new confirmatory dataset."
+}

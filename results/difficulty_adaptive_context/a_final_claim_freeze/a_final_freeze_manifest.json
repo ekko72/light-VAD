@@ -1,0 +1,466 @@
+{
+  "manifest_id": "A-FINAL-MECHANISM-CLAIM-FREEZE-v1",
+  "created_utc": "2026-09-22T00:00:00Z",
+  "freeze_status": "FROZEN_MECHANISM_EXPLORATION_CLOSED",
+  "scope": "Final freeze of A-v1/A-v2 mechanism claims, the A-v2 M2 candidate, all evaluation contracts, and the unexecuted NEW_FINAL_OOD protocol.",
+  "authority": {
+    "mechanism_exploration_closed": true,
+    "historical_results_modified": false,
+    "training_permitted": false,
+    "tuning_permitted": false,
+    "new_method_search_permitted": false
+  },
+  "protocol": {
+    "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_ood_protocol.md",
+    "sha256": "4D9BDD2A6381E28F8E50B43352F5A0AA33CA916188839727FD2EB3F609A910E8",
+    "protocol_id": "A-FINAL-OOD-v1",
+    "status": "FROZEN_BEFORE_NEW_FINAL_OOD_ACCESS",
+    "immutable": true
+  },
+  "claim_ledger": {
+    "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_claim_ledger.md",
+    "sha256": "1B54B0225685AA990F9F7761BD3401444AAFA8E6C55E28599DDC910B6A5A4353",
+    "frozen_pre_execution_sha256": "C3C588512B796A83DDF926DDFD83A5D6BDC423D494DEB1FE01E6F386A5BDFDEF",
+    "post_execution_addendum": true,
+    "post_execution_addendum_section": "7. Post-Execution Experimental Closure",
+    "ledger_id": "A-FINAL-CLAIM-LEDGER-v1",
+    "immutable": true
+  },
+  "sha256_ledger_path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_sha256.txt",
+  "official_statuses": {
+    "A-v1": "CONDITIONAL_GO",
+    "A-v2": "CONDITIONAL_GO",
+    "CAR": "STRONG_CROSS_ARCH_REPLICATION",
+    "E1": "REMOTE_INFORMATION_CONDITIONAL",
+    "E2": "INCONCLUSIVE_OR_INVALID",
+    "E3": "ROBUST_VALUE_STRUCTURE",
+    "E4": "INCONCLUSIVE_OR_INVALID"
+  },
+  "status_precedence": {
+    "user_mandated_official_status": "CONDITIONAL_GO",
+    "historical_phase_a2_internal_formal_status": "FORMAL_GO",
+    "historical_override_modified": false,
+    "interpretation": "The historical FORMAL_GO field is retained as historical metadata; the official A-v1 status in this freeze is CONDITIONAL_GO."
+  },
+  "diagnostic_evidence": {
+    "e4_post_hoc": {
+      "label": "DIAGNOSTIC_ONLY_NOT_AN_OFFICIAL_UPGRADE",
+      "official_status_change_permitted": false,
+      "may_create_confirmatory_claim": false
+    }
+  },
+  "post_execution_closure": {
+    "final_ood_status": "NOT_EXECUTABLE_NO_UNUSED_CONFIRMATORY_DATASET",
+    "new_final_ood_consumed": true,
+    "final_ood_outcome_exposed": false,
+    "scientific_blindness_preserved": true,
+    "a_v2_status": "CONDITIONAL_GO",
+    "m2_final_ood_superiority": "UNRESOLVED",
+    "a_experimentation_complete": true,
+    "next_experiment_authorized": false
+  },
+  "stop_controls": {
+    "STOP_MECHANISM_EXPLORATION": true,
+    "E5_PERMITTED": false,
+    "ROUTER_SEARCH_PERMITTED": false,
+    "RF_SEARCH_PERMITTED": false,
+    "NEW_BACKBONE_PERMITTED": false,
+    "NEW_FEATURE_PERMITTED": false,
+    "RETRAINING_PERMITTED": false,
+    "FINE_TUNING_PERMITTED": false,
+    "CHECKPOINT_REPLACEMENT_PERMITTED": false,
+    "THRESHOLD_OR_GATE_TUNING_PERMITTED": false,
+    "NEXT_EXPERIMENT_AUTHORIZED": false,
+    "TRAINING_PERFORMED": false,
+    "NEW_FINAL_OOD_TOUCHED": false
+  },
+  "final_method": {
+    "method": "A-v2 M2",
+    "primary_budget": 0.05,
+    "budgets_audited_for_activation": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "training_seeds": [
+      17,
+      23,
+      41,
+      59,
+      71
+    ],
+    "checkpoint_selection": "Five frozen M2 best-state checkpoints; all five are required.",
+    "router_score": "sigmoid(primary R head)",
+    "selection_rule": "Calibrate on frozen DEV by selecting the top ceil(0.05 * DEV frames); freeze that score threshold and apply it once to OOD without recalibration.",
+    "decision_threshold": 0.5,
+    "comparator": {
+      "name": "frozen uncertainty M0",
+      "score": "-abs(short_score - 0.5)",
+      "same_population_budget_labels_and_clusters_as_m2": true
+    },
+    "compute_reference_only": "AlwaysRefine",
+    "checkpoints": [
+      {
+        "seed": 17,
+        "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed17.pt",
+        "sha256": "1779D9E4E9231A93190EEDA28F55EBDFAF8B9085E01BAC22848FB7F8A90C6942"
+      },
+      {
+        "seed": 23,
+        "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed23.pt",
+        "sha256": "11692BFE9DCA551CA0C3A95D2F9F0C2F04E8496965C5B8D16694643E4A926AFA"
+      },
+      {
+        "seed": 41,
+        "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed41.pt",
+        "sha256": "EC3273A68BD0D6537929666C25FE4AE7D2EEA107E3748C9058B073ECAA985F3B"
+      },
+      {
+        "seed": 59,
+        "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed59.pt",
+        "sha256": "BC098C739F85630A4A964D423D1C52183A418DB9D6B6E52EDE48AD5008C1F5E1"
+      },
+      {
+        "seed": 71,
+        "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed71.pt",
+        "sha256": "E9FE065232641FC875699D65B2F12DA5CE034510028DABFC484A65D81E2A6580"
+      }
+    ],
+    "primary_estimate": 0.0005167364201845739,
+    "primary_source_cluster_ci95": [
+      -0.00017398191060556133,
+      0.001320609542074035
+    ],
+    "positive_seed_count": "5/5",
+    "seen_delta": -0.00012815246857800049,
+    "unseen_delta": 0.002440321621875295,
+    "primary_activation": 0.05731,
+    "maximum_activation": 0.10861728766468762,
+    "official_interpretation": "Positive point estimate with incomplete gate evidence; A-v2 remains CONDITIONAL_GO."
+  },
+  "data_contract": {
+    "input": "A-v2 X3",
+    "feature_dimension": 330,
+    "causal_window_frames": 25,
+    "normalization": {
+      "fit_scope": "TRAIN only",
+      "statistics": "mean and variance",
+      "ddof": 0,
+      "artifact": "results/difficulty_adaptive_context/a2_method_study/a2_train_normalizer.npz",
+      "sha256": "9100B0C62843F23CCF3DEC15FC6E2B4D7960EA82448BCF9DC5FD3EBA32B5E9C4"
+    },
+    "split_seed": 20260920,
+    "split": {
+      "TRAIN": {
+        "speakers": 24,
+        "frames": 313993
+      },
+      "DEV": {
+        "speakers": 8,
+        "frames": 126522
+      },
+      "INTERNAL_TEST": {
+        "speakers": 8,
+        "frames": 113017
+      }
+    },
+    "primary_source_manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39"
+    },
+    "feature_artifact": {
+      "path": "results/difficulty_adaptive_context/ax1_value_predictability/ax1_features.npz",
+      "sha256": "E6E3F45EA095F196E2DA76C23DB0B7518AA4BD6E8E46321D394B1705E7BABE62"
+    },
+    "ood_population_source": "Runtime-bound untracked final holdout only under a later explicit authorization.",
+    "ood_population_may_overlap_prior_data": false
+  },
+  "evaluation_contract": {
+    "per_frame_value": "v = 1[short prediction wrong] - 1[RF384 prediction wrong]",
+    "primary_endpoint": "Delta_U_primary = mean_s(U(M2, s, 0.05) - U(M0, s, 0.05))",
+    "selected_frame_utility": "U(m, s, B) = mean(selected_m(B, s) * v)",
+    "aggregate_test": {
+      "type": "paired source-cluster percentile bootstrap",
+      "cluster": "frozen OOD source_key",
+      "pairing": "M2 and M0 use identical resampled source clusters",
+      "seed_aggregation": "average the five per-seed paired differences before bootstrap",
+      "resamples": 2000,
+      "seed": 20260921,
+      "interval": "two-sided 95 percent"
+    },
+    "sensitivity_only": "Speaker-cluster bootstrap, if reported, cannot replace source-cluster inference.",
+    "allowed_subgroups": {
+      "seen_unseen": [
+        "seen",
+        "unseen"
+      ],
+      "snr_db": [
+        -5,
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "noise_domain": [
+        "clean",
+        "noise"
+      ],
+      "condition": "Existing frozen CAR/E2 condition labels only.",
+      "onset_distance": [
+        "0",
+        "1-2",
+        "3-5",
+        "6-10",
+        "11-25",
+        "26+"
+      ],
+      "offset_distance": [
+        "0",
+        "1-2",
+        "3-5",
+        "6-10",
+        "11-25",
+        "26+"
+      ],
+      "posterior_transition_distance": [
+        "0",
+        "1-2",
+        "3-5",
+        "6-10",
+        "11-25",
+        "26+"
+      ],
+      "minimum_eligible_frames_for_g3": 1000,
+      "subgroups_may_change_after_outcome": false
+    }
+  },
+  "frozen_gates": {
+    "G1": {
+      "rule": "Delta_U_primary > 0 and source-cluster 95 percent CI lower bound > 0",
+      "frozen_a_v2_result": "FAIL",
+      "reason": "Point estimate is positive but the CI lower bound is below zero."
+    },
+    "G2": {
+      "rule": "At least 4/5 per-seed paired deltas are strictly positive",
+      "frozen_a_v2_result": "PASS"
+    },
+    "G3": {
+      "rule": "Unseen aggregate delta is at least 0 and no eligible subgroup cell has delta utility at or below -0.005",
+      "frozen_a_v2_result": "PASS"
+    },
+    "G4": {
+      "rule": "Primary-budget activation is in [0.03, 0.075], and activation for every frozen budget 0.01, 0.02, 0.05, 0.10 is at most 0.15",
+      "frozen_a_v2_result": "PASS"
+    },
+    "G5": {
+      "rule": "Frozen latency estimate is at least 0.20 ms/frame below AlwaysRefine and at least 10 percent below AlwaysRefine",
+      "frozen_a_v2_result": "PASS"
+    },
+    "final_decision_rule": {
+      "METHOD_GO": "All five frozen gates pass.",
+      "CONDITIONAL_GO": "Point estimate is positive but one or more gates are incomplete or fail for a non-invalidity reason.",
+      "METHOD_NO_GO": "Point estimate is not positive, or activation/compute control fails while primary utility is unsupported.",
+      "INCONCLUSIVE_OR_INVALID": "Any integrity, reproduction, alignment, data, inference, or execution failure occurs; this state takes precedence."
+    }
+  },
+  "fail_closed_rules": [
+    "OOD manifest, dataset payload, feature cache, preprocessing input, or source metadata is missing.",
+    "Any required SHA256 is missing or differs from its frozen value.",
+    "Baseline or checkpoint reproduction fails.",
+    "Frame order, labels, masks, source IDs, or prediction rows are misaligned.",
+    "Any required M2 seed is missing, unreadable, or has mismatched metadata.",
+    "Seed set, budget, feature dimension, causal window, normalization, threshold, or split fingerprint differs from the freeze.",
+    "Source clusters are missing or empty, or M2 and M0 cannot use identical bootstrap clusters.",
+    "OOD population overlaps a prior evaluation population or is not demonstrably untouched final holdout.",
+    "Frozen evaluation code has changed.",
+    "Execution failure prevents completion of all five seeds and the primary source-cluster bootstrap."
+  ],
+  "frozen_artifacts": [
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_ood_protocol.md",
+      "sha256": "4D9BDD2A6381E28F8E50B43352F5A0AA33CA916188839727FD2EB3F609A910E8"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_claim_ledger.md",
+      "sha256": "1B54B0225685AA990F9F7761BD3401444AAFA8E6C55E28599DDC910B6A5A4353"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/phase_a2_confirmatory/phase_a2_confirmatory.json",
+      "sha256": "9B26C2FC6B7E83A4DA9C28B55DCFC84C326BB8AAA6F20A8C76988C4831823CCF"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/phase_a2_confirmatory/phase_a2_confirmatory.md",
+      "sha256": "A753CBF608411FD51F522682AEEAD067012E622E1EC5D1C2F2D9FCE0C48DDB6F"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_method_protocol_freeze.json",
+      "sha256": "E72EB551B0E3FCB426540E8311C3156358AD7FAD28B8DADEDB769C7556D0F66E"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_training_manifest.json",
+      "sha256": "91F1EF30BA67486D37AE1C96FD19AF76E7BA77433887B34357B1547BC01134E2"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_final_summary.json",
+      "sha256": "BCA8BC63564D963F4DB9CE1A1EFFB09DBB0FEF548E387D06666D2F4D77C71A66"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_cell_results.csv",
+      "sha256": "06B4BE95A8DE15B8C64EAF37663D9836C986C66F5A886DDABADDFC9AF9F9DAD7"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_budget_results.csv",
+      "sha256": "03AA8DA110FEDC035DAF3F3F82992C0C61103CBA519667AE2EA722C99CF75459"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_cluster_bootstrap.csv",
+      "sha256": "525642287315F20C862587CD3ED8FE909A871A1C17316203D896A6F54C862C35"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_selection_taxonomy.csv",
+      "sha256": "8D863601DD23DDF3CBBAE25A02B8CFF5852BECF06A6F00C25FDAB3C0D51D2C55"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_train_normalizer.npz",
+      "sha256": "9100B0C62843F23CCF3DEC15FC6E2B4D7960EA82448BCF9DC5FD3EBA32B5E9C4"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed17.pt",
+      "sha256": "1779D9E4E9231A93190EEDA28F55EBDFAF8B9085E01BAC22848FB7F8A90C6942"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed23.pt",
+      "sha256": "11692BFE9DCA551CA0C3A95D2F9F0C2F04E8496965C5B8D16694643E4A926AFA"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed41.pt",
+      "sha256": "EC3273A68BD0D6537929666C25FE4AE7D2EEA107E3748C9058B073ECAA985F3B"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed59.pt",
+      "sha256": "BC098C739F85630A4A964D423D1C52183A418DB9D6B6E52EDE48AD5008C1F5E1"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed71.pt",
+      "sha256": "E9FE065232641FC875699D65B2F12DA5CE034510028DABFC484A65D81E2A6580"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json",
+      "sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json",
+      "sha256": "3E8735DD02823093600908DD7D31FBC2B050EF86B871FC7855DDA6904A30AA31"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_protocol_freeze.json",
+      "sha256": "1A5E17226E75B08EB20725CCEB8AEA1B18794A510118E386C53F790AF700D589"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_final_summary.json",
+      "sha256": "D5F6BCBB4F6E4D8CC881C08A60E79B49E837A57271E595648797B1C08F4F18E6"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_protocol_freeze.json",
+      "sha256": "CE64F181069AA8EAE2A0CA2A1834D1F733703AB49C271B7307838CFAD5A47481"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_final_summary.json",
+      "sha256": "3887E7C18B018F0E6F0CEB905B19A480D61A09A2421408FBC2B84E8DD09E6587"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_protocol_freeze.json",
+      "sha256": "066516F8E208C3F4F6F4A74BE2EA92AE5C91993B995C2022C61CC8DBE783626E"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_final_summary.json",
+      "sha256": "0D25842397F2E811F1B5687507176DA5D80C8EA9641414842F4C648C8A597577"
+    },
+    {
+      "path": "results/cross_architecture_replication/car_protocol_freeze.json",
+      "sha256": "C6878F55BB18005807CE205239903EFF45A76756EBD213235FE8BC7D20C6669B"
+    },
+    {
+      "path": "results/cross_architecture_replication/car_final_summary.json",
+      "sha256": "E2D627D5F747253C43003315FA20A87AED8806002925186ECD235306D8A54586"
+    },
+    {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/ax1_value_predictability/ax1_features.npz",
+      "sha256": "E6E3F45EA095F196E2DA76C23DB0B7518AA4BD6E8E46321D394B1705E7BABE62"
+    }
+  ],
+  "evaluation_code": [
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_a2_method_study.py",
+      "sha256": "EDEA5B0A7B089B74EC76C49824EADB449C755103208FEA0847A11212FE6CA2C9",
+      "role": "canonical A-v2 scoring, endpoint, bootstrap, and gate implementation"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/recover_a2_method_study.py",
+      "sha256": "1318546E9E64BCD0B75532EAD4BDBE22CF295E8C58980D24E535ABE782F3D964",
+      "role": "frozen A-v2 recovery implementation"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+      "sha256": "D9BE590A985D3B0E7341488BE723DF5C4C88F821356916D2FC7ABBE0249BF61D",
+      "role": "frozen adaptive evaluation utilities"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/data.py",
+      "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D",
+      "role": "frozen data and alignment utilities"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/adaptive_model.py",
+      "sha256": "CFB181B7B1C89BA04D57DCF1453C19ECBC4AA4AE244C3A1E7F22C75FFA4DF99B",
+      "role": "frozen adaptive model implementation"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e1.py",
+      "sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3",
+      "role": "frozen E1 runner"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e2.py",
+      "sha256": "AB7EE06CFA401DE2AEF30766C06D81490CFB50C5B65AB741D540097032BC3A55",
+      "role": "frozen E2 runner"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e3.py",
+      "sha256": "76F51D104EC07677F53CBDA36E6113CA13477EDD9A91C74B29450DD31DE55A36",
+      "role": "frozen E3 runner"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e4.py",
+      "sha256": "33B2EF3D0E4745432F832E2FE69BD4762AA21030B96B73FC01B73D29CF422212",
+      "role": "frozen E4 runner"
+    },
+    {
+      "path": "reproductions/cross_architecture_replication/run_car.py",
+      "sha256": "8759641A05A2887400093D430E4E0CE8DB105C46B6DDF96210653BCDDEADF217",
+      "role": "frozen CAR runner"
+    }
+  ],
+  "runtime_binding": {
+    "state": "UNBOUND_AT_FREEZE_NOT_ACCESSED",
+    "manifest_path": null,
+    "manifest_sha256": null,
+    "dataset_payload_sha256": null,
+    "source_cluster_metadata_sha256": null,
+    "binding_may_change_after_ood_access": false,
+    "binding_rule": "Before any OOD sample is opened, a later authorized preflight must bind and verify the OOD manifest, payload, source metadata, feature, and preprocessing hashes without modifying this freeze."
+  },
+  "verifier": {
+    "path": "results/difficulty_adaptive_context/a_final_claim_freeze/verify_a_final_freeze.ps1",
+    "mode": "read_only_explicit_path_checks",
+    "loads_models": false,
+    "runs_inference": false,
+    "accesses_new_final_ood": false
+  }
+}

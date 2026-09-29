@@ -1,0 +1,61 @@
+{
+  "stage": "train",
+  "completed_at": "2026-09-20T17:15:00.671867+00:00",
+  "artifacts": [
+    {
+      "path": "car_gru_training_runs.csv",
+      "sha256": "32D8EDDADFF6298C39EF7190EBDC1F6ABAA8E6DD0F688959EA155210251643FD",
+      "bytes": 1028
+    },
+    {
+      "path": "checkpoints\\seed41\\history.json",
+      "sha256": "BB95135DD916416F30B8F5708215B12BEA845FFB2AB0F9236C3CAA23264286BC",
+      "bytes": 16520
+    },
+    {
+      "path": "checkpoints\\seed59\\history.json",
+      "sha256": "E312E36C6CC7D1931F40BD5761909C1C37CAAD0592CCFB2583D923826A6F87ED",
+      "bytes": 16525
+    },
+    {
+      "path": "checkpoints\\seed71\\history.json",
+      "sha256": "54C8F3FBC617199BFCB34219EFC2341BC77E30AA7D8D15F2E6A5503A424A6BD0",
+      "bytes": 16514
+    },
+    {
+      "path": "checkpoints\\seed83\\history.json",
+      "sha256": "87BF4F6B6939061BCA1A130DF197D300DCB7CEF8B4099A511BE8E499F5CCBD4E",
+      "bytes": 16522
+    },
+    {
+      "path": "checkpoints\\seed97\\history.json",
+      "sha256": "01EDC73EEC54B8AE74DA418F1E4AA426D4D9E663F4357A2FFFE92BD37BC77347",
+      "bytes": 16519
+    },
+    {
+      "path": "checkpoints\\seed41\\best.pt",
+      "sha256": "5892B0E985D47A4D32C9511391E2F0B907A3D4781F1EAAF29C9A26C178EA56E8",
+      "bytes": 410243
+    },
+    {
+      "path": "checkpoints\\seed59\\best.pt",
+      "sha256": "2E801C91C4349BBA829C2F4CAE4F58AE365893F7D2D1A0CFAA17F6FE6B635686",
+      "bytes": 410371
+    },
+    {
+      "path": "checkpoints\\seed71\\best.pt",
+      "sha256": "E5DCD12922DC08009E98EE0C755C5502875CBED0E4FF520DDDDEE79E7D65572C",
+      "bytes": 410371
+    },
+    {
+      "path": "checkpoints\\seed83\\best.pt",
+      "sha256": "27972E23D75D369E7201E3A2376B9946C6EA23D692342454370AD4B98C7AD77B",
+      "bytes": 410371
+    },
+    {
+      "path": "checkpoints\\seed97\\best.pt",
+      "sha256": "90B4A5DEE6AFF92CF8B2D4232BD7B4EA53823ABA2D08C5D2B9D1828B346B58EA",
+      "bytes": 410371
+    }
+  ]
+}

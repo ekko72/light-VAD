@@ -1,0 +1,48 @@
+OBSERVATIONS
+- E2_STATUS: INCONCLUSIVE_OR_INVALID
+- Baseline reproduced: true
+- E1 C4 replay reproduced: true
+- Matching feasibility: {"C1_SAME_UTT_DIFFERENT_TIME": "PRIMARY_INTERPRETABLE", "C2_SAME_NOISE_INSTANCE": "INCOMPARABLE", "C3_SAME_NOISE_CLASS": "PRIMARY_INTERPRETABLE", "C4_SAME_CLASS_WRONG_SNR": "PRIMARY_INTERPRETABLE", "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": "PRIMARY_INTERPRETABLE", "C6_SPEECH_STATE_MISMATCH": "INCOMPARABLE", "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": "PRIMARY_INTERPRETABLE"}
+- C1 same-utterance effect: {'estimate': -1.5557565177776396e-05, 'ci95_low': -0.00048391406238330095, 'ci95_high': 0.0004786484293876707, 'status': 'PRIMARY_INTERPRETABLE'}
+- C2 same-noise-instance effect: {'estimate': nan, 'ci95_low': nan, 'ci95_high': nan, 'status': 'INCOMPARABLE'}
+- C3 same-noise-class effect: {'estimate': 0.01469826493367407, 'ci95_low': 0.010788573754545353, 'ci95_high': 0.018574714561000537, 'status': 'PRIMARY_INTERPRETABLE'}
+- C4 wrong-SNR effect: {'estimate': 0.011575476368575694, 'ci95_low': 0.007888247809056805, 'ci95_high': 0.01536931007374868, 'status': 'PRIMARY_INTERPRETABLE'}
+- C5 different-class effect: {'estimate': 0.018953840872256815, 'ci95_low': 0.014496927175171691, 'ci95_high': 0.023404747948838782, 'status': 'PRIMARY_INTERPRETABLE'}
+- C6 speech-state-mismatch effect: {'estimate': 0.01148088509357114, 'ci95_low': 0.005740720094819828, 'ci95_high': 0.016952914226573173, 'status': 'INCOMPARABLE'}
+- C7 best-metadata-matched effect: {'estimate': 0.019638670554482835, 'ci95_low': 0.014629411366256237, 'ci95_high': 0.0247021292661965, 'status': 'PRIMARY_INTERPRETABLE'}
+- P1 utterance contrast: {'estimate': 0.019654228119660614, 'ci95_low': 0.014552501226452722, 'ci95_high': 0.02453461542878668, 'status': 'PRIMARY_INTERPRETABLE'}
+- P2 noise-instance contrast: {'estimate': nan, 'ci95_low': nan, 'ci95_high': nan, 'status': 'INCOMPARABLE'}
+- P3 noise-class contrast: {'estimate': 0.004255575938582742, 'ci95_low': 0.0009659939173539824, 'ci95_high': 0.007610304766303482, 'status': 'PRIMARY_INTERPRETABLE'}
+- P4 SNR contrast: {'estimate': -0.003122788565098376, 'ci95_low': -0.0053323138149715425, 'ci95_high': -0.0008453141896517856, 'status': 'PRIMARY_INTERPRETABLE'}
+- P5 speech-state contrast: {'estimate': 0.003386523805887278, 'ci95_low': -0.003034719107397934, 'ci95_high': 0.009646898459734897, 'status': 'PRIMARY_INTERPRETABLE'}
+- P6 residual identity effect: {'estimate': 0.019638670554482835, 'ci95_low': 0.014509107434145505, 'ci95_high': 0.02442867322179603, 'status': 'PRIMARY_INTERPRETABLE'}
+- Onset/transition/offset C7 effects: {'estimate': 0.038804446829015966, 'ci95_low': 0.010662985074635329, 'ci95_high': 0.06596510933226106} / {'estimate': 0.05931344397969429, 'ci95_low': 0.039196728622089, 'ci95_high': 0.07796126001990028} / {'estimate': 0.008708015829115602, 'ci95_low': -0.013651838579386297, 'ci95_high': 0.03138845493581769}
+- Source LOSO stability: {'P6_RESIDUAL_IDENTITY': {'full_estimate': 0.019638670554482835, 'min_loso_estimate': 0.01664766283758172, 'max_loso_estimate': 0.02059874621225458, 'sign_consistent': True, 'all_loso_positive': True, 'loso_source_count': 96}, 'P5_SPEECH_STATE': {'full_estimate': 0.003386523805887278, 'min_loso_estimate': 0.0018416414277333554, 'max_loso_estimate': 0.007755234259279593, 'sign_consistent': True, 'all_loso_positive': True, 'loso_source_count': 57}, 'P4_SNR': {'full_estimate': -0.003122788565098376, 'min_loso_estimate': -0.0036199590865829416, 'max_loso_estimate': -0.001629656544339893, 'sign_consistent': True, 'all_loso_positive': False, 'loso_source_count': 96}, 'P3_NOISE_CLASS': {'full_estimate': 0.004255575938582742, 'min_loso_estimate': 0.0024538025383408846, 'max_loso_estimate': 0.005424437684529959, 'sign_consistent': True, 'all_loso_positive': True, 'loso_source_count': 96}, 'P2_NOISE_INSTANCE': {'full_estimate': nan, 'min_loso_estimate': nan, 'max_loso_estimate': nan, 'sign_consistent': False, 'all_loso_positive': False, 'loso_source_count': 0}, 'P1_UTTERANCE': {'full_estimate': 0.019654228119660614, 'min_loso_estimate': 0.01662931444701129, 'max_loso_estimate': 0.020552351406667585, 'sign_consistent': True, 'all_loso_positive': True, 'loso_source_count': 96}}
+- Donor-seed stability: {'conditions': {'C1_SAME_UTT_DIFFERENT_TIME': {'row_type': 'condition_summary', 'condition_or_contrast': 'C1_SAME_UTT_DIFFERENT_TIME', 'contrast': '', 'seed': -1, 'frames': 240565, 'estimate': -1.5557565177776396e-05, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'C2_SAME_NOISE_INSTANCE': {'row_type': 'condition_summary', 'condition_or_contrast': 'C2_SAME_NOISE_INSTANCE', 'contrast': '', 'seed': -1, 'frames': 0, 'estimate': nan, 'positive_seed_count': 0, 'finite_seed_count': 0, 'required_positive_seed_count': 4, 'seed_direction_stable': False}, 'C3_SAME_NOISE_CLASS': {'row_type': 'condition_summary', 'condition_or_contrast': 'C3_SAME_NOISE_CLASS', 'contrast': '', 'seed': -1, 'frames': 240565, 'estimate': 0.01469826493367407, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'C4_SAME_CLASS_WRONG_SNR': {'row_type': 'condition_summary', 'condition_or_contrast': 'C4_SAME_CLASS_WRONG_SNR', 'contrast': '', 'seed': -1, 'frames': 240565, 'estimate': 0.011575476368575694, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR': {'row_type': 'condition_summary', 'condition_or_contrast': 'C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR', 'contrast': '', 'seed': -1, 'frames': 240565, 'estimate': 0.018953840872256815, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'C6_SPEECH_STATE_MISMATCH': {'row_type': 'condition_summary', 'condition_or_contrast': 'C6_SPEECH_STATE_MISMATCH', 'contrast': '', 'seed': -1, 'frames': 67607, 'estimate': 0.01148088509357114, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE': {'row_type': 'condition_summary', 'condition_or_contrast': 'C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE', 'contrast': '', 'seed': -1, 'frames': 240565, 'estimate': 0.019638670554482835, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}}, 'contrasts': {'P1_UTTERANCE': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P1_UTTERANCE', 'contrast': 'P1_UTTERANCE', 'seed': -1, 'frames': 240565, 'estimate': 0.019654228119660614, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'P2_NOISE_INSTANCE': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P2_NOISE_INSTANCE', 'contrast': 'P2_NOISE_INSTANCE', 'seed': -1, 'frames': 0, 'estimate': nan, 'positive_seed_count': 0, 'finite_seed_count': 0, 'required_positive_seed_count': 4, 'seed_direction_stable': False}, 'P3_NOISE_CLASS': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P3_NOISE_CLASS', 'contrast': 'P3_NOISE_CLASS', 'seed': -1, 'frames': 240565, 'estimate': 0.004255575938582742, 'positive_seed_count': 4, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}, 'P4_SNR': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P4_SNR', 'contrast': 'P4_SNR', 'seed': -1, 'frames': 240565, 'estimate': -0.003122788565098376, 'positive_seed_count': 0, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': False}, 'P5_SPEECH_STATE': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P5_SPEECH_STATE', 'contrast': 'P5_SPEECH_STATE', 'seed': -1, 'frames': 67607, 'estimate': 0.003386523805887278, 'positive_seed_count': 3, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': False}, 'P6_RESIDUAL_IDENTITY': {'row_type': 'contrast_summary', 'condition_or_contrast': 'P6_RESIDUAL_IDENTITY', 'contrast': 'P6_RESIDUAL_IDENTITY', 'seed': -1, 'frames': 240565, 'estimate': 0.019638670554482835, 'positive_seed_count': 5, 'finite_seed_count': 5, 'required_positive_seed_count': 4, 'seed_direction_stable': True}}}
+- Protocol deviations: []
+
+SUPPORTED_INTERPRETATIONS
+The frozen baseline, matching-validity, intervention-validity, or E1-preservation gate failed. No scientific status is established.
+
+PARTIALLY_SUPPORTED_INTERPRETATIONS
+- R4_noise_class_matters: PARTIALLY_SUPPORTED
+- R6_speech_state_composition_matters: PARTIALLY_SUPPORTED
+- R8_insufficient_evidence: PARTIALLY_SUPPORTED
+
+ALTERNATIVE_EXPLANATIONS
+- Same-utterance identity may reflect background realization, channel, gain, speaker/context state, mixture construction, or utterance-specific normalization rather than noise estimation.
+- Residual replacement damage may reflect latent identity or processing effects not captured by the available metadata.
+- Matching variables may be noisy or insufficiently precise, leaving residual confounding despite constrained matching.
+- Source/domain heterogeneity and finite donor seed count may limit stability of the observed effects.
+- The conclusions are bounded to frozen MarbleNet RF384 checkpoint behavior.
+
+UNSUPPORTED_CLAIMS
+- "RF384 estimates noise."
+- "Long context works by noise adaptation."
+- "Background reference is the universal mechanism."
+- "Exact temporal ordering is irrelevant."
+- "The same mechanism explains all refinable frames."
+- "The mechanism generalizes to all VAD architectures."
+- "E2 proves why Tiny GRU benefits from long history."
+- Any follow-on experiment or NEW_FINAL_OOD access is authorized.
+

@@ -1,0 +1,22 @@
+{
+  "stage": "ae2",
+  "completed_at": "2026-09-20T03:42:20.615036+00:00",
+  "artifacts": [
+    {
+      "path": "ae2_horizon_summary.csv",
+      "sha256": "E0E12B76552A5B02FD2300A6DD4AD290220EE3F9730E4B2C6013D6EBAE5EDE10"
+    },
+    {
+      "path": "ae2_horizon_by_cell.csv",
+      "sha256": "DC47FDB4B263174513A9DE418527DC300FE49E6BCE837F301A26280EEDD8CCC1"
+    },
+    {
+      "path": "ae2_nonmonotonicity.csv",
+      "sha256": "9E94B9DA437682AB8D50599EFE797E11C2B384038CBE45E13155954ED62CB16B"
+    },
+    {
+      "path": "ae2_horizon_saturation.png",
+      "sha256": "5C9E4E0B3C2F478E955EAEBDDF57AF2670C593918EC87C989402C6ECC70B78F1"
+    }
+  ]
+}

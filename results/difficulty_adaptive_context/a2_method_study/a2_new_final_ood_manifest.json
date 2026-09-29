@@ -1,0 +1,9 @@
+{
+  "status": "NO_UNUSED_CONFIRMATORY_DATASET_AVAILABLE",
+  "touched": false,
+  "protocol": "results\\difficulty_adaptive_context\\a2_method_study\\a2_method_protocol_freeze.json",
+  "protocol_sha256": "e72eb551b0e3fcb426540e8311c3156358ad7fad28b8dadedb769c7556d0f66e",
+  "candidate_dataset": null,
+  "reason": "The available LibriSpeech test speakers were already used for A-v1 evaluation. No new untouched confirmatory dataset is present, so no final-OOD result may be fabricated.",
+  "loader": "load_new_final_ood() refuses by design; a genuinely unused dataset and a new protocol are required"
+}

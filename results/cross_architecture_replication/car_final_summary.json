@@ -1,0 +1,352 @@
+{
+  "protocol_id": "A-v2-CAR-v1",
+  "protocol_sha256": "C6878F55BB18005807CE205239903EFF45A76756EBD213235FE8BC7D20C6669B",
+  "completed_at": "2026-09-20T17:44:41.221013+00:00",
+  "status": "STRONG_CROSS_ARCH_REPLICATION",
+  "passed_count": 5,
+  "gates": {
+    "R1": {
+      "pass": true,
+      "rule": "all five seed aggregate NetRefinability > 0",
+      "seed_net_refinability": {
+        "41": 0.01415018437814281,
+        "59": 0.016439825678846796,
+        "71": 0.011575595038551795,
+        "83": 0.003845122360040228,
+        "97": 0.010764331210191084
+      }
+    },
+    "R2": {
+      "pass": true,
+      "rule": "aggregate P(R)>0 with source lower bound >0 and P(I)>P(R)",
+      "p_R": 0.020581293999329533,
+      "p_R_source_ci95_low": 0.01646258790762749,
+      "p_I": 0.10800536372779082
+    },
+    "R3": {
+      "pass": true,
+      "rule": "at least two transition/persistence/onset structures pass",
+      "passing_structures": [
+        "transition",
+        "onset"
+      ],
+      "passed_count": 2
+    },
+    "R4": {
+      "pass": true,
+      "rule": "12-cell mean-v range meets point and source-support rules",
+      "statistic": "max_cell_mean_v_minus_min_cell_mean_v",
+      "cells": [
+        "seen/-5",
+        "seen/0",
+        "seen/5",
+        "seen/10",
+        "seen/15",
+        "seen/20",
+        "unseen/-5",
+        "unseen/0",
+        "unseen/5",
+        "unseen/10",
+        "unseen/15",
+        "unseen/20"
+      ],
+      "point_range": 0.04189161372561124,
+      "source_ci95_low": 0.023463800814287228,
+      "source_ci95_high": 0.09694654445187413,
+      "threshold": 0.002
+    },
+    "R5": {
+      "pass": true,
+      "rule": "full and LOSO means positive and no seed dominates",
+      "full_mean_v": 0.020043899306062256,
+      "loso_mean_v": {
+        "41": 0.01766030133701295,
+        "59": 0.01900480916933727,
+        "71": 0.01948941260259338,
+        "83": 0.02372979356424709,
+        "97": 0.020335179857120585
+      },
+      "positive_frame_shares": {
+        "41": 0.2067817170584331,
+        "59": 0.2012668512966057,
+        "71": 0.21126318921517018,
+        "83": 0.18285230367810304,
+        "97": 0.19783593875168798
+      },
+      "maximum_positive_share": 0.21126318921517018,
+      "full_mean_v_positive": true,
+      "all_loso_mean_v_positive": true,
+      "no_seed_exceeds_positive_share": true
+    }
+  },
+  "car1_aggregate": {
+    "scope": "aggregate",
+    "seed": "aggregate",
+    "group": "all",
+    "frames": 298300,
+    "p_SS": 0.8621870600067045,
+    "p_R": 0.020581293999329533,
+    "p_I": 0.10800536372779082,
+    "p_H": 0.00922628226617499,
+    "availability_net": 0.011355011733154542,
+    "mean_value": 0.020043899306062256,
+    "source_ci95_low_p_SS": 0.8442974544935717,
+    "source_ci95_high_p_SS": 0.8792310875580291,
+    "speaker_ci95_low_p_SS": 0.8415673078474004,
+    "speaker_ci95_high_p_SS": 0.8821732575992225,
+    "source_ci95_low_p_R": 0.01646258790762749,
+    "source_ci95_high_p_R": 0.02462507852640791,
+    "speaker_ci95_low_p_R": 0.015256243226800695,
+    "speaker_ci95_high_p_R": 0.026112559714135588,
+    "source_ci95_low_p_I": 0.09447317508847279,
+    "source_ci95_high_p_I": 0.12191735423929324,
+    "speaker_ci95_low_p_I": 0.09390740170941146,
+    "speaker_ci95_high_p_I": 0.1229444935828619,
+    "source_ci95_low_p_H": 0.007633044742533073,
+    "source_ci95_high_p_H": 0.010769010158315351,
+    "speaker_ci95_low_p_H": 0.007666393130835072,
+    "speaker_ci95_high_p_H": 0.010707411159243929,
+    "source_ci95_low_availability_net": 0.007941357671154637,
+    "source_ci95_high_availability_net": 0.014682832758924779,
+    "speaker_ci95_low_availability_net": 0.006879745617618587,
+    "speaker_ci95_high_availability_net": 0.016067768619870866,
+    "source_ci95_low_mean_value": 0.015552336184944596,
+    "source_ci95_high_mean_value": 0.024534667604822123,
+    "speaker_ci95_low_mean_value": 0.014110861141338228,
+    "speaker_ci95_high_mean_value": 0.026571906497568555
+  },
+  "car2_aggregate": {
+    "scope": "aggregate",
+    "seed": "aggregate",
+    "group": "all",
+    "frames": 298300,
+    "non_monotone_rate": 0.006902044066896735,
+    "never_correct_rate": 0.1053402614817298,
+    "unstable_correct_rate": 0.008407643312101911,
+    "first_correct_defined_rate": 0.8946597385182702,
+    "stable_sufficient_defined_rate": 0.8862520952061683,
+    "stable_sufficient_long_rate": 0.005310758825732215,
+    "mean_first_correct_index": 0.040479321934823904,
+    "mean_stable_sufficient_index": 0.04648805268393798,
+    "long_history_share": 0.8019452752979839,
+    "first_correct_H64": 260630,
+    "stable_sufficient_H64": 257712,
+    "first_correct_H128": 3323,
+    "stable_sufficient_H128": 3146,
+    "first_correct_H256": 1847,
+    "stable_sufficient_H256": 2107,
+    "first_correct_H384": 522,
+    "stable_sufficient_H384": 686,
+    "first_correct_HFULL": 555,
+    "stable_sufficient_HFULL": 718,
+    "delta_v_h64_h128": -0.007138650188699691,
+    "delta_v_h128_h256": -0.00556710850282055,
+    "delta_v_h256_h384": -0.0018068928479640367,
+    "delta_v_h384_hfull": -0.005531247766577929,
+    "source_ci95_low_non_monotone_rate": 0.004676482137947276,
+    "source_ci95_high_non_monotone_rate": 0.009119691960226809,
+    "source_ci95_low_never_correct_rate": 0.09176016612600212,
+    "source_ci95_high_never_correct_rate": 0.11966764305489518,
+    "source_ci95_low_unstable_correct_rate": 0.006875669129896227,
+    "source_ci95_high_unstable_correct_rate": 0.009869431302573176,
+    "source_ci95_low_first_correct_defined_rate": 0.8803323569451049,
+    "source_ci95_high_first_correct_defined_rate": 0.9082398338739979,
+    "source_ci95_low_stable_sufficient_defined_rate": 0.8708416674624792,
+    "source_ci95_high_stable_sufficient_defined_rate": 0.9007166928111426,
+    "source_ci95_low_stable_sufficient_long_rate": 0.0025286220590359653,
+    "source_ci95_high_stable_sufficient_long_rate": 0.00866446261058346,
+    "source_ci95_low_mean_first_correct_index": 0.0284014324404073,
+    "source_ci95_high_mean_first_correct_index": 0.054263182623254365,
+    "source_ci95_low_mean_stable_sufficient_index": 0.032089904998683895,
+    "source_ci95_high_mean_stable_sufficient_index": 0.06345895314466277,
+    "source_ci95_low_long_history_share": 0.665788625716683,
+    "source_ci95_high_long_history_share": 0.9097618950199359
+  },
+  "car3_gate": {
+    "pass": true,
+    "passing_structures": [
+      "transition",
+      "onset"
+    ],
+    "passed_count": 2
+  },
+  "car4_gate": {
+    "statistic": "max_cell_mean_v_minus_min_cell_mean_v",
+    "cells": [
+      "seen/-5",
+      "seen/0",
+      "seen/5",
+      "seen/10",
+      "seen/15",
+      "seen/20",
+      "unseen/-5",
+      "unseen/0",
+      "unseen/5",
+      "unseen/10",
+      "unseen/15",
+      "unseen/20"
+    ],
+    "point_range": 0.04189161372561124,
+    "source_ci95_low": 0.023463800814287228,
+    "source_ci95_high": 0.09694654445187413,
+    "threshold": 0.002,
+    "pass": true
+  },
+  "car5_gate": {
+    "full_mean_v": 0.020043899306062256,
+    "loso_mean_v": {
+      "41": 0.01766030133701295,
+      "59": 0.01900480916933727,
+      "71": 0.01948941260259338,
+      "83": 0.02372979356424709,
+      "97": 0.020335179857120585
+    },
+    "positive_frame_shares": {
+      "41": 0.2067817170584331,
+      "59": 0.2012668512966057,
+      "71": 0.21126318921517018,
+      "83": 0.18285230367810304,
+      "97": 0.19783593875168798
+    },
+    "maximum_positive_share": 0.21126318921517018,
+    "full_mean_v_positive": true,
+    "all_loso_mean_v_positive": true,
+    "no_seed_exceeds_positive_share": true,
+    "pass": true
+  },
+  "cross_architecture_summary": [
+    {
+      "item": "A. Refinable prevalence",
+      "metric": "P(R)/P(SS)",
+      "classification": "REPLICATED",
+      "tiny_value": 0.023871030956054348,
+      "marble_value": 0.014863517736533787,
+      "tiny_support": "P(R)=0.020581293999329533; P(SS)=0.8621870600067045",
+      "marble_support": "P(R)=0.013345625209520616; P(SS)=0.8978779751927589",
+      "rule": "both architectures classified sparse when the ratio is <= 0.1"
+    },
+    {
+      "item": "B. Irreducible prevalence",
+      "metric": "P(I)>P(R)",
+      "classification": "REPLICATED",
+      "tiny_value": 0.10800536372779082,
+      "marble_value": 0.08074756956084479,
+      "tiny_support": "P(I)=0.10800536372779082; P(R)=0.020581293999329533",
+      "marble_support": "P(I)=0.08074756956084479; P(R)=0.013345625209520616",
+      "rule": "both architectures show P(I)>P(R)"
+    },
+    {
+      "item": "C. Harm prevalence",
+      "metric": "P(H)<P(R)",
+      "classification": "REPLICATED",
+      "tiny_value": 0.00922628226617499,
+      "marble_value": 0.008028830036875628,
+      "tiny_support": "P(H)=0.00922628226617499; P(R)=0.020581293999329533",
+      "marble_support": "P(H)=0.008028830036875628; P(R)=0.013345625209520616",
+      "rule": "both architectures show P(H)<P(R)"
+    },
+    {
+      "item": "D. Net refinability",
+      "metric": "P(R)-P(H)",
+      "classification": "REPLICATED",
+      "tiny_value": 0.011355011733154542,
+      "marble_value": 0.005316795172644989,
+      "tiny_support": "source_ci95_low=0.007941357671154637",
+      "marble_support": "source_ci95_low=0.0033826005824453857",
+      "rule": "both point values positive; full replication requires both source lower bounds positive"
+    },
+    {
+      "item": "E. Value sparsity",
+      "metric": "P(|v|>epsilon)",
+      "classification": "NOT_REPLICATED",
+      "tiny_value": 0.5384151232449073,
+      "marble_value": 0.9999349631096305,
+      "tiny_support": "epsilon=1e-08; threshold=0.1",
+      "marble_support": "epsilon=1e-08; threshold=0.1",
+      "rule": "both architectures classified sparse when meaningful value rate is below the frozen threshold"
+    },
+    {
+      "item": "F. Transition enrichment",
+      "metric": "transition-bin availability contrast",
+      "classification": "REPLICATED",
+      "tiny_value": 0.03819560241664022,
+      "marble_value": 0.08464296565320309,
+      "tiny_support": "source lower bound > 0 required for replication",
+      "marble_support": "frozen AE3 contrast",
+      "rule": "positive contrast with source support in both"
+    },
+    {
+      "item": "G. Uncertainty-persistence enrichment",
+      "metric": "persistence-bin availability contrast",
+      "classification": "PARTIALLY_REPLICATED",
+      "tiny_value": 0.014117692494805684,
+      "marble_value": 0.13375772372764638,
+      "tiny_support": "selected frames only; source lower bound > 0 required",
+      "marble_support": "frozen AE3 contrast",
+      "rule": "positive contrast with source support in both"
+    },
+    {
+      "item": "H. Condition heterogeneity",
+      "metric": "12-cell availability range",
+      "classification": "REPLICATED",
+      "tiny_value": 0.03491082113246661,
+      "marble_value": 0.03596975804508562,
+      "tiny_support": "point threshold=0.002; source lower bound in R4",
+      "marble_support": "point threshold=0.002",
+      "rule": "both architectures show a condition-cell range above the frozen point threshold"
+    },
+    {
+      "item": "I. Long-history demand",
+      "metric": "H384 share of H64-to-full benefit",
+      "classification": "REPLICATED",
+      "tiny_value": 0.8019452752979839,
+      "marble_value": 1.2677857713828937,
+      "tiny_support": "CAR2 aggregate long_history_share",
+      "marble_support": "AE2 RF384/RF512 oracle utility ratio; direction-only and not numerically interchangeable with Tiny-GRU",
+      "rule": "both architectures classify long history as not dominant when share >= 0.5; raw shares use architecture-specific units"
+    },
+    {
+      "item": "J. Non-monotonicity",
+      "metric": "non-monotone prediction rate",
+      "classification": "NOT_REPLICATED",
+      "tiny_value": 0.006902044066896735,
+      "marble_value": 0.1280818013396038,
+      "tiny_support": "minimum rate=0.05",
+      "marble_support": "minimum rate=0.05",
+      "rule": "both architectures show non-monotone prediction rate above the frozen minimum"
+    }
+  ],
+  "scope": {
+    "test_frames": 298300,
+    "source_clusters": 96,
+    "speaker_clusters": 20,
+    "model_seeds": [
+      41,
+      59,
+      71,
+      83,
+      97
+    ],
+    "horizons": [
+      "H64",
+      "H128",
+      "H256",
+      "H384",
+      "HFULL"
+    ],
+    "primary_short": "H64",
+    "primary_long": "HFULL",
+    "secondary_long": "H384"
+  },
+  "figures": [
+    "car_figures\\car1_taxonomy.png",
+    "car_figures\\car2_horizon_demand.png",
+    "car_figures\\car2_nonmonotonicity.png",
+    "car_figures\\car3_event_profiles.png",
+    "car_figures\\car4_condition_heatmap.png",
+    "car_figures\\car5_seed_agreement.png",
+    "car_figures\\car_gate_status.png"
+  ],
+  "NEXT_METHOD_SEARCH_AUTHORIZED": false,
+  "NEW_FINAL_OOD_TOUCHED": false
+}

@@ -1,0 +1,282 @@
+{
+  "protocol_id": "A-AX3-v1",
+  "frozen_date": "2026-09-19",
+  "frozen_scope": {
+    "purpose": "Describe where signed long-context value occurs within speech and silence event structure on development data.",
+    "sequence_position": "AX3 after completed AX1 and AX2 and before AX4",
+    "a14_status": "sealed",
+    "final_ood_access": "forbidden",
+    "main_model_change": "forbidden",
+    "rf384_change": "forbidden",
+    "router_search": "forbidden",
+    "training": "none",
+    "diagnostic_only": true
+  },
+  "inputs": {
+    "ax1_protocol": {
+      "path": "reproductions/difficulty_adaptive_context/ax_protocol.json",
+      "sha256": "3f915c4bbb2809366004e3708e3ccac41718eb65d80b180f12eca19cafb0cb8e"
+    },
+    "prediction_bundle": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "adaptive_checkpoint": {
+      "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+      "sha256": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab"
+    },
+    "manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39"
+    }
+  },
+  "split": {
+    "implementation": "AX1 frozen deterministic speaker split",
+    "primary_population": "all development frames",
+    "sensitivity_population": [
+      "calibration speakers",
+      "test speakers"
+    ],
+    "bootstrap_unit": "LibriSpeech speaker cluster",
+    "speaker_split_seed": 20260917,
+    "calibration_fraction": 0.5,
+    "calibration_and_test_speakers_disjoint": true
+  },
+  "event_definitions": {
+    "ground_truth_boundary_role": "Ground-truth boundaries and run lengths are explanatory strata only. They are not claimed to be available to a causal router.",
+    "causal_feature_role": "Recent posterior transition and uncertainty duration use only current and previous Short scores within an utterance and are causally deployable diagnostics.",
+    "decision_threshold": 0.5,
+    "uncertainty_threshold": 0.13,
+    "uncertainty_rule": "abs(short_score - 0.5) <= 0.13",
+    "posterior_prediction_rule": "short_score >= 0.5",
+    "utterance_reset_rule": "All distances, run lengths, prediction-switch ages, and uncertainty streaks reset at every contiguous source/noise/condition utterance variant.",
+    "dimensions": {
+      "onset_distance": {
+        "applicable": "ground-truth speech frames",
+        "distance_definition": "frames since the start of the current speech run; first speech frame has distance 0",
+        "bins": [
+          "0",
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-20",
+          "21-50",
+          "51+",
+          "not_in_speech"
+        ]
+      },
+      "offset_distance": {
+        "applicable": "ground-truth non-speech frames after a completed speech run",
+        "distance_definition": "frames since the first non-speech frame after the most recent speech run; first post-speech frame has distance 0",
+        "bins": [
+          "pre_first_speech",
+          "0",
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-20",
+          "21-50",
+          "51+",
+          "in_speech"
+        ]
+      },
+      "speech_run_length": {
+        "applicable": "ground-truth speech frames",
+        "length_definition": "full length of the speech run containing the frame",
+        "bins": [
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-20",
+          "21-50",
+          "51-100",
+          "101-200",
+          "201+",
+          "not_in_speech"
+        ]
+      },
+      "silence_run_length": {
+        "applicable": "ground-truth non-speech frames",
+        "length_definition": "full length of the silence run containing the frame",
+        "bins": [
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-20",
+          "21-50",
+          "51-100",
+          "101-200",
+          "201+",
+          "in_speech"
+        ]
+      },
+      "recent_posterior_transition": {
+        "applicable": "all frames",
+        "distance_definition": "age of the most recent Short-prediction switch in the current utterance; a switch at the current frame has age 0; no switch yet is none",
+        "bins": [
+          "0",
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-25",
+          "26+",
+          "none"
+        ]
+      },
+      "recent_uncertainty_duration": {
+        "applicable": "all frames",
+        "distance_definition": "length of the consecutive uncertain Short-posterior streak ending at the current frame; a certain frame has duration 0",
+        "bins": [
+          "0",
+          "1-2",
+          "3-5",
+          "6-10",
+          "11-25",
+          "26+"
+        ]
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "id": "onset_near_vs_established",
+      "dimension": "onset_distance",
+      "focal_bins": [
+        "0",
+        "1-2",
+        "3-5"
+      ],
+      "reference_bins": [
+        "21-50",
+        "51+"
+      ],
+      "test": "Frames within five frames of a speech onset have different mean signed value than established speech frames."
+    },
+    {
+      "id": "offset_near_vs_later",
+      "dimension": "offset_distance",
+      "focal_bins": [
+        "0",
+        "1-2",
+        "3-5"
+      ],
+      "reference_bins": [
+        "21-50",
+        "51+"
+      ],
+      "test": "Frames within five frames of a speech offset have different mean signed value than later post-offset frames."
+    },
+    {
+      "id": "short_vs_long_speech_runs",
+      "dimension": "speech_run_length",
+      "focal_bins": [
+        "1-2",
+        "3-5",
+        "6-10",
+        "11-20"
+      ],
+      "reference_bins": [
+        "21-50",
+        "51-100",
+        "101-200",
+        "201+"
+      ],
+      "test": "Frames in speech runs of at most 20 frames have different mean signed value than frames in longer speech runs."
+    },
+    {
+      "id": "short_vs_long_silence_runs",
+      "dimension": "silence_run_length",
+      "focal_bins": [
+        "1-2",
+        "3-5",
+        "6-10",
+        "11-20"
+      ],
+      "reference_bins": [
+        "21-50",
+        "51-100",
+        "101-200",
+        "201+"
+      ],
+      "test": "Frames in silence runs of at most 20 frames have different mean signed value than frames in longer silence runs."
+    },
+    {
+      "id": "near_vs_far_from_posterior_transition",
+      "dimension": "recent_posterior_transition",
+      "focal_bins": [
+        "0",
+        "1-2",
+        "3-5"
+      ],
+      "reference_bins": [
+        "26+",
+        "none"
+      ],
+      "test": "Frames within five frames of a Short-prediction switch have different mean signed value than frames far from or without a switch."
+    },
+    {
+      "id": "persistent_uncertainty_vs_certain",
+      "dimension": "recent_uncertainty_duration",
+      "focal_bins": [
+        "11-25",
+        "26+"
+      ],
+      "reference_bins": [
+        "0"
+      ],
+      "test": "Frames in persistent uncertainty streaks have different mean signed value than certain frames."
+    }
+  ],
+  "metrics": {
+    "per_bin": [
+      "frame count",
+      "speaker-cluster count",
+      "correction count",
+      "harm count",
+      "P(v=+1)",
+      "P(v=-1)",
+      "E[v]",
+      "share of all frames",
+      "share of all corrections",
+      "share of all harms",
+      "speaker-cluster 95% CI for P(v=+1), P(v=-1), and E[v]"
+    ],
+    "per_contrast": [
+      "focal and reference frame counts",
+      "focal and reference P(v=+1), P(v=-1), and E[v]",
+      "focal-minus-reference differences",
+      "speaker-cluster 95% CI for each difference",
+      "calibration-only and test-only point differences"
+    ]
+  },
+  "bootstrap": {
+    "unit": "speaker cluster",
+    "repeats": 5000,
+    "seed": 20260919,
+    "confidence_interval": "2.5th to 97.5th percentile",
+    "resampling_rule": "One shared cluster resample matrix is used for every dimension, bin, and paired contrast.",
+    "finite_sample_rule": "A bootstrap replicate with zero denominator for a metric is excluded only from that metric's interval."
+  },
+  "assessment": {
+    "material_effect_threshold": 0.005,
+    "minimum_frames_each_contrast_side": 1000,
+    "net_robust_rule": "The paired speaker-cluster 95% CI for focal-minus-reference E[v] excludes zero.",
+    "sign_consistency_rule": "The calibration-only and test-only focal-minus-reference E[v] point differences have the same nonzero sign as the pooled difference.",
+    "supported_rule": "At least one predefined contrast has a material abs(E[v]) difference, at least 1000 frames on each side, a paired net CI excluding zero, and sign consistency.",
+    "limited_rule": "No contrast passes supported_rule, but at least one predefined contrast has a paired speaker-cluster 95% CI excluding zero for E[v], P(v=+1), or P(v=-1).",
+    "no_stable_rule": "No predefined contrast has any paired speaker-cluster 95% CI excluding zero.",
+    "statuses": [
+      "EVENT_STRUCTURE_SUPPORTED",
+      "EVENT_STRUCTURE_LIMITED",
+      "NO_STABLE_EVENT_STRUCTURE"
+    ],
+    "interpretation_limit": "AX3 is descriptive. No status authorizes a new router, changes the frozen gate, or changes A14.",
+    "multiplicity_note": "The six contrasts are descriptive and are not corrected as confirmatory multiple tests."
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ax3_event_structure",
+    "summary": "ax3_event_structure.json",
+    "metrics_table": "ax3_event_structure.csv",
+    "report": "README.md"
+  }
+}

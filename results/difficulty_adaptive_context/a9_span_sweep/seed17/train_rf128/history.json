@@ -1,0 +1,1018 @@
+{
+  "config": {
+    "train_manifest": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad\\manifests\\LibriSpeech_train_medium.tsv",
+    "val_manifest": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad\\manifests\\LibriSpeech_val_medium.tsv",
+    "data_root": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad",
+    "short_checkpoint": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\formal_short_ext40\\best.pt",
+    "long_checkpoint": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\formal_long_ext40\\best.pt",
+    "results_dir": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a9_span_sweep\\seed17\\train_rf128",
+    "train_rows": 8640,
+    "val_rows": 432,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "batch_size": 128,
+    "num_workers": 0,
+    "epochs": 20,
+    "max_steps": null,
+    "log_every": 20,
+    "seed": 17,
+    "device": "auto",
+    "max_lr": 0.001,
+    "min_lr": 0.0001,
+    "weight_decay": 0.0001,
+    "training_threshold": 0.13,
+    "activation_threshold": 0.13,
+    "label_weight": 2.0,
+    "distill_weight": 0.25,
+    "kernel_size": 5,
+    "rf_span": 128,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "max_residual": 2.0,
+    "exclude_noise_names": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "short_model_config": {
+    "feat_in": 64,
+    "num_classes": 2,
+    "repeat": 2,
+    "channels": 64,
+    "dropout": 0.0,
+    "causal": true,
+    "frame_output": true,
+    "dilation_profile": "short",
+    "frontend": "mfcc_causal",
+    "context_samples": 64000,
+    "target_samples": 64000
+  },
+  "refinement_config": {
+    "in_channels": 128,
+    "num_classes": 2,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "max_residual": 2.0
+  },
+  "unseen_noise": [
+    "SSN_noise",
+    "Street_noise",
+    "Transport_noise"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "global_step": 65,
+      "train": {
+        "loss": 1.5278873882887347,
+        "label_loss": 0.6786439748786169,
+        "distill_loss": 0.6823977560129776,
+        "selected_frames": 160085,
+        "target_frames": 3322686,
+        "activation_rate": 0.04817939462230256
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06563779231167365,
+          "f1": 0.9632220474378466,
+          "auc": 0.9555216801082889
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 442,
+          "harm": 423,
+          "signed_utility": 19,
+          "net_utility_per_selected": 0.0038306451612903224
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9743879295472012
+      }
+    },
+    {
+      "epoch": 1,
+      "global_step": 130,
+      "train": {
+        "loss": 1.5152924191957269,
+        "label_loss": 0.6727283348783695,
+        "distill_loss": 0.6793429893304389,
+        "selected_frames": 157757,
+        "target_frames": 3322686,
+        "activation_rate": 0.04747875664447378
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06461832839285435,
+          "f1": 0.9636485556477086,
+          "auc": 0.9556476163020354
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 549,
+          "harm": 400,
+          "signed_utility": 149,
+          "net_utility_per_selected": 0.03004032258064516
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9753603412851519
+      }
+    },
+    {
+      "epoch": 2,
+      "global_step": 195,
+      "train": {
+        "loss": 1.5055513788546726,
+        "label_loss": 0.6679260494703878,
+        "distill_loss": 0.6787971246765899,
+        "selected_frames": 156888,
+        "target_frames": 3322686,
+        "activation_rate": 0.047217221248110716
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06458696027227528,
+          "f1": 0.9636629959056897,
+          "auc": 0.9556742359246143
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 654,
+          "harm": 501,
+          "signed_utility": 153,
+          "net_utility_per_selected": 0.030846774193548386
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9752191847425461
+      }
+    },
+    {
+      "epoch": 3,
+      "global_step": 260,
+      "train": {
+        "loss": 1.5055158856391317,
+        "label_loss": 0.6678940262804156,
+        "distill_loss": 0.6789113195278389,
+        "selected_frames": 156949,
+        "target_frames": 3322686,
+        "activation_rate": 0.04723557988928235
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06438306748851143,
+          "f1": 0.9638227180992165,
+          "auc": 0.9556665204552308
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 649,
+          "harm": 470,
+          "signed_utility": 179,
+          "net_utility_per_selected": 0.03608870967741935
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.975156448501388
+      }
+    },
+    {
+      "epoch": 4,
+      "global_step": 325,
+      "train": {
+        "loss": 1.497564011449489,
+        "label_loss": 0.6642473932620653,
+        "distill_loss": 0.67627691150555,
+        "selected_frames": 156751,
+        "target_frames": 3322686,
+        "activation_rate": 0.04717598954580722
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06439875154880095,
+          "f1": 0.963785500088199,
+          "auc": 0.9557094381739588
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 734,
+          "harm": 557,
+          "signed_utility": 177,
+          "net_utility_per_selected": 0.03568548387096774
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9754701297071786
+      }
+    },
+    {
+      "epoch": 5,
+      "global_step": 390,
+      "train": {
+        "loss": 1.497743654715135,
+        "label_loss": 0.6641875340328666,
+        "distill_loss": 0.677474351076142,
+        "selected_frames": 157272,
+        "target_frames": 3322686,
+        "activation_rate": 0.04733279039909278
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06394391380040465,
+          "f1": 0.9640637808393051,
+          "auc": 0.9557368561804229
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 711,
+          "harm": 476,
+          "signed_utility": 235,
+          "net_utility_per_selected": 0.047379032258064516
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9755171818880471
+      }
+    },
+    {
+      "epoch": 6,
+      "global_step": 455,
+      "train": {
+        "loss": 1.4931620736209175,
+        "label_loss": 0.6621373777392244,
+        "distill_loss": 0.6755492803866502,
+        "selected_frames": 159634,
+        "target_frames": 3322686,
+        "activation_rate": 0.04804366106216477
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06407722831286564,
+          "f1": 0.9639931432298208,
+          "auc": 0.9557061046461442
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 796,
+          "harm": 578,
+          "signed_utility": 218,
+          "net_utility_per_selected": 0.04395161290322581
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9750858702300852
+      }
+    },
+    {
+      "epoch": 7,
+      "global_step": 520,
+      "train": {
+        "loss": 1.4930686348587208,
+        "label_loss": 0.6621470861789946,
+        "distill_loss": 0.6750978276999744,
+        "selected_frames": 158816,
+        "target_frames": 3322686,
+        "activation_rate": 0.04779747469366651
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06416349064445803,
+          "f1": 0.9639445110343369,
+          "auc": 0.9556567815167357
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 745,
+          "harm": 538,
+          "signed_utility": 207,
+          "net_utility_per_selected": 0.041733870967741934
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9757053906115215
+      }
+    },
+    {
+      "epoch": 8,
+      "global_step": 585,
+      "train": {
+        "loss": 1.4894450857186439,
+        "label_loss": 0.6602784403826482,
+        "distill_loss": 0.6755528033781932,
+        "selected_frames": 156410,
+        "target_frames": 3322686,
+        "activation_rate": 0.047073361732044496
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06396743989083895,
+          "f1": 0.9640009003084881,
+          "auc": 0.9557416385365742
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 762,
+          "harm": 530,
+          "signed_utility": 232,
+          "net_utility_per_selected": 0.0467741935483871
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9761367022694836
+      }
+    },
+    {
+      "epoch": 9,
+      "global_step": 650,
+      "train": {
+        "loss": 1.4917451341174834,
+        "label_loss": 0.661471621996034,
+        "distill_loss": 0.6752075530007539,
+        "selected_frames": 158259,
+        "target_frames": 3322686,
+        "activation_rate": 0.04762983923247638
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06396743989083895,
+          "f1": 0.9640706693858494,
+          "auc": 0.9557080657606187
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 778,
+          "harm": 546,
+          "signed_utility": 232,
+          "net_utility_per_selected": 0.0467741935483871
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9755093398579024
+      }
+    },
+    {
+      "epoch": 10,
+      "global_step": 715,
+      "train": {
+        "loss": 1.4919620469481973,
+        "label_loss": 0.6615997927151587,
+        "distill_loss": 0.6750498380258001,
+        "selected_frames": 158003,
+        "target_frames": 3322686,
+        "activation_rate": 0.04755279313182167
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06406154425257611,
+          "f1": 0.9640368216457039,
+          "auc": 0.9556978857547628
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 810,
+          "harm": 590,
+          "signed_utility": 220,
+          "net_utility_per_selected": 0.04435483870967742
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9757916529431139
+      }
+    },
+    {
+      "epoch": 11,
+      "global_step": 780,
+      "train": {
+        "loss": 1.49260365631962,
+        "label_loss": 0.6619711604263501,
+        "distill_loss": 0.6746453373849236,
+        "selected_frames": 156007,
+        "target_frames": 3322686,
+        "activation_rate": 0.04695207431577946
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06358318041374551,
+          "f1": 0.964227097047456,
+          "auc": 0.9557483633619409
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 811,
+          "harm": 530,
+          "signed_utility": 281,
+          "net_utility_per_selected": 0.056653225806451615
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9760818080584702
+      }
+    },
+    {
+      "epoch": 12,
+      "global_step": 845,
+      "train": {
+        "loss": 1.4888316370223638,
+        "label_loss": 0.6597973065766719,
+        "distill_loss": 0.676948099508686,
+        "selected_frames": 158035,
+        "target_frames": 3322686,
+        "activation_rate": 0.0475624238944035
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.0638890195893913,
+          "f1": 0.9641532430161084,
+          "auc": 0.9557343595496518
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 809,
+          "harm": 567,
+          "signed_utility": 242,
+          "net_utility_per_selected": 0.04879032258064516
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9755720760990605
+      }
+    },
+    {
+      "epoch": 13,
+      "global_step": 910,
+      "train": {
+        "loss": 1.4910776241406691,
+        "label_loss": 0.6610413599469688,
+        "distill_loss": 0.6759795914686559,
+        "selected_frames": 157949,
+        "target_frames": 3322686,
+        "activation_rate": 0.04753654121996481
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06351260214244264,
+          "f1": 0.9643176561295297,
+          "auc": 0.9557746317811951
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 795,
+          "harm": 505,
+          "signed_utility": 290,
+          "net_utility_per_selected": 0.05846774193548387
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9759014413651406
+      }
+    },
+    {
+      "epoch": 14,
+      "global_step": 975,
+      "train": {
+        "loss": 1.4854224376707783,
+        "label_loss": 0.6582439486516154,
+        "distill_loss": 0.6757381917353588,
+        "selected_frames": 155822,
+        "target_frames": 3322686,
+        "activation_rate": 0.0468963964696032
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06350476011229787,
+          "f1": 0.964268064527516,
+          "auc": 0.9558234163377074
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 825,
+          "harm": 534,
+          "signed_utility": 291,
+          "net_utility_per_selected": 0.05866935483870968
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9763327530231026
+      }
+    },
+    {
+      "epoch": 15,
+      "global_step": 1040,
+      "train": {
+        "loss": 1.4825696035887117,
+        "label_loss": 0.6568564736433554,
+        "distill_loss": 0.675426653584439,
+        "selected_frames": 157760,
+        "target_frames": 3322686,
+        "activation_rate": 0.04747965952846583
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06359886447403504,
+          "f1": 0.9642454061298628,
+          "auc": 0.955796025840642
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 844,
+          "harm": 565,
+          "signed_utility": 279,
+          "net_utility_per_selected": 0.05625
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9763013849025236
+      }
+    },
+    {
+      "epoch": 16,
+      "global_step": 1105,
+      "train": {
+        "loss": 1.4850107686198122,
+        "label_loss": 0.6582017890990847,
+        "distill_loss": 0.674428749559016,
+        "selected_frames": 157156,
+        "target_frames": 3322686,
+        "activation_rate": 0.047297878884733614
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06334007747925784,
+          "f1": 0.964442155218335,
+          "auc": 0.9558101115698076
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 857,
+          "harm": 545,
+          "signed_utility": 312,
+          "net_utility_per_selected": 0.06290322580645161
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9755093398579024
+      }
+    },
+    {
+      "epoch": 17,
+      "global_step": 1170,
+      "train": {
+        "loss": 1.484228507150159,
+        "label_loss": 0.6576358205983819,
+        "distill_loss": 0.6758274447340571,
+        "selected_frames": 157950,
+        "target_frames": 3322686,
+        "activation_rate": 0.047536842181295495
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06374786304678555,
+          "f1": 0.9641927398786896,
+          "auc": 0.9557726669988009
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 823,
+          "harm": 563,
+          "signed_utility": 260,
+          "net_utility_per_selected": 0.05241935483870968
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9761523863297731
+      }
+    },
+    {
+      "epoch": 18,
+      "global_step": 1235,
+      "train": {
+        "loss": 1.485537155366429,
+        "label_loss": 0.658355182433147,
+        "distill_loss": 0.6753071849423373,
+        "selected_frames": 158127,
+        "target_frames": 3322686,
+        "activation_rate": 0.04759011233682629
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06350476011229787,
+          "f1": 0.9643200183290594,
+          "auc": 0.9558059555109689
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 814,
+          "harm": 523,
+          "signed_utility": 291,
+          "net_utility_per_selected": 0.05866935483870968
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9758308630938377
+      }
+    },
+    {
+      "epoch": 19,
+      "global_step": 1300,
+      "train": {
+        "loss": 1.4821851173340803,
+        "label_loss": 0.6566776402785997,
+        "distill_loss": 0.6753193242561796,
+        "selected_frames": 159092,
+        "target_frames": 3322686,
+        "activation_rate": 0.04788054002093487
+      },
+      "val": {
+        "short": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06578679088442416,
+          "f1": 0.9630461691621185,
+          "auc": 0.9554695073108245
+        },
+        "adaptive": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06363807462475886,
+          "f1": 0.9642934144119963,
+          "auc": 0.9557685830757191
+        },
+        "utility": {
+          "frames": 127518,
+          "selected": 4960,
+          "correction": 818,
+          "harm": 544,
+          "signed_utility": 274,
+          "net_utility_per_selected": 0.05524193548387097
+        },
+        "teacher": {
+          "frames": 127518,
+          "speech": 113048,
+          "silence": 14470,
+          "error": 0.06617105036151759,
+          "f1": 0.9627273771346284,
+          "auc": 0.9552628246127399
+        },
+        "teacher_agreement": 0.9757446007622453
+      }
+    }
+  ],
+  "best_utility_per_selected": 0.06290322580645161,
+  "global_step": 1300
+}

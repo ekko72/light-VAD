@@ -1,0 +1,7 @@
+{
+  "action": "A14 -> A CLAIM FREEZE",
+  "verdict": "CONDITIONAL_GO",
+  "a15": "FORBIDDEN",
+  "router_or_stabilizer_tuning": "FORBIDDEN",
+  "protocol_sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF"
+}

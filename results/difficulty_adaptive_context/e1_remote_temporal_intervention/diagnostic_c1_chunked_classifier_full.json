@@ -1,0 +1,25 @@
+{
+  "diagnostic_only": true,
+  "protocol_sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+  "frozen_runner_sha256": "A03A0939DF7D54C9195C05930A2BDC4AE76896BC8CF55F91A9567270003397F9",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "chunk_frames": 2000,
+  "records": 1024,
+  "frames": 553532,
+  "max_abs_full_error": 2.384185791015625e-07,
+  "max_abs_embedded_short_error": 0.0,
+  "tolerance": 1e-06,
+  "passed": true,
+  "elapsed_seconds": 15.281774520874023,
+  "finding": "Chunked classifier logits make the existing manual refinement path reproduce the frozen streaming reference across all records.",
+  "top_error_record": {
+    "item_index": 277,
+    "sample_id": "LibriSpeech:test:SSN_noise:0:7127-75947-0022",
+    "max_abs_full_error": 2.384185791015625e-07,
+    "max_abs_embedded_short_error": 0.0
+  },
+  "interventions_run": false,
+  "training_performed": false,
+  "new_final_ood_touched": false
+}

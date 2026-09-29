@@ -1,0 +1,34 @@
+{
+  "stage": "ae4_training",
+  "completed_at": "2026-09-20T09:30:05.702721+00:00",
+  "artifacts": [
+    {
+      "path": "ae4_replication_summary.csv",
+      "sha256": "1EE101A0FB89CB928D6D18A9B2C7C4822C40A0EE23978A680D0CF72A2AED608B"
+    },
+    {
+      "path": "ae4_training_manifest.csv",
+      "sha256": "FA430EF47C92426D6BE368B0D5079C9D76BD158AE9A947D9712977EF5F37FCD2"
+    },
+    {
+      "path": "ae4_replication_predictions\\seed73\\frame_predictions.npz",
+      "sha256": "606CACB5CFF22843B3F676253B079B0F3EB1BE1239BCCDAB19639BED9A634E30"
+    },
+    {
+      "path": "ae4_replication_predictions\\seed79\\frame_predictions.npz",
+      "sha256": "78F6AF22016108713B6FC3B244403743EDE92F65872D2540384AD0BF0FFFCDC0"
+    },
+    {
+      "path": "ae4_replication_predictions\\seed83\\frame_predictions.npz",
+      "sha256": "F502CE6A5CDDE591C622C0BDDEF32436B62F6DC8B8DE8646FBBBB0536CDDDC8C"
+    },
+    {
+      "path": "ae4_replication_predictions\\seed89\\frame_predictions.npz",
+      "sha256": "D397D67D63D1015174FE8C5FBCB1CEFEF6FFCB51E8DC7E5F2765859C7998D5A4"
+    },
+    {
+      "path": "ae4_replication_predictions\\seed97\\frame_predictions.npz",
+      "sha256": "8CCCB57A671FE8BA352E2C4D18446035E2D53BB0C832FC78F1C352DCB4C0AF77"
+    }
+  ]
+}

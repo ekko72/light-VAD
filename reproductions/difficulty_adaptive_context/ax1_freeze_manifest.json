@@ -1,0 +1,24 @@
+{
+  "protocol_id": "A-AX1-v1",
+  "frozen_at": "2026-09-19T20:28:36+08:00",
+  "status_before_successful_feature_extraction": {
+    "unit_tests": "12/12 passed",
+    "test_command": "python -m unittest reproductions.difficulty_adaptive_context.test_run_ax1_value_predictability -v",
+    "feature_extraction_attempts": 1,
+    "feature_cache_written": false,
+    "failed_attempt_reason": "direct full-sequence Short encoding differed numerically from the frozen chunked streaming bundle before any cache was written; extraction now mirrors the frozen 2000-frame streaming path",
+    "ax1_analysis_started": false,
+    "final_ood_accessed": false
+  },
+  "code_sha256": {
+    "reproductions/difficulty_adaptive_context/ax_protocol.json": "3f915c4bbb2809366004e3708e3ccac41718eb65d80b180f12eca19cafb0cb8e",
+    "reproductions/difficulty_adaptive_context/run_ax1_value_predictability.py": "45f3feeaeba9c5334a341b33373cf21fcf073c02fba10250cb10d7ca36bdd36b",
+    "reproductions/difficulty_adaptive_context/test_run_ax1_value_predictability.py": "5d7107ff6190e8ebb985e6f0b8b8c1d846cf85b264fb23537e7935875f4157e1"
+  },
+  "input_sha256": {
+    "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03",
+    "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab",
+    "data/librivad/manifests/LibriSpeech_test_medium.tsv": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39"
+  },
+  "permitted_next_step": "Run AX1 feature extraction once, then AX1 analysis on development data only."
+}

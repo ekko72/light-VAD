@@ -1,0 +1,19 @@
+{
+  "recovery_script": "reproductions\\difficulty_adaptive_context\\recover_a2_method_study.py",
+  "recovery_script_sha256": "1318546e9e64bcd0b75532ead4bdbe22cf295e8c58980d24e535abe782f3d964",
+  "protocol_sha256": "e72eb551b0e3fcb426540e8311c3156358ad7fad28b8dadedb769c7556d0f66e",
+  "internal_run_started": {
+    "command": "internal-test",
+    "claimed_at_utc": "2026-09-20T10:38:54.736068+00:00",
+    "protocol_sha256": "e72eb551b0e3fcb426540e8311c3156358ad7fad28b8dadedb769c7556d0f66e"
+  },
+  "deviation": {
+    "kind": "infrastructure_recovery",
+    "stage": "after all primary checkpoints were trained, before result files",
+    "failure": "ValueError in domain bootstrap seed lookup because `all` and `clean` are returned by `_domain_masks` but omitted from `DOMAIN_ORDER`",
+    "action": "Reused all ten saved primary checkpoints, preserved the original seen/unseen bootstrap seed positions, reran deterministic evaluation and independent sensitivity, and made no model, threshold, feature, loss, budget, or seed selection.",
+    "primary_models_retrained": false,
+    "new_final_ood_touched": false,
+    "next_search_authorized": false
+  }
+}

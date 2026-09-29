@@ -1,0 +1,138 @@
+{
+  "protocol_id": "A-AX2-v1",
+  "frozen_date": "2026-09-19",
+  "frozen_scope": {
+    "purpose": "Correction-versus-harm separability on development data only.",
+    "sequence_position": "AX2 after completed AX1 and before AX3",
+    "a14_status": "sealed",
+    "final_ood_access": "forbidden",
+    "main_model_change": "forbidden",
+    "rf384_change": "forbidden",
+    "router_search": "forbidden",
+    "diagnostic_only": true
+  },
+  "inputs": {
+    "ax1_protocol": {
+      "path": "reproductions/difficulty_adaptive_context/ax_protocol.json",
+      "sha256": "3f915c4bbb2809366004e3708e3ccac41718eb65d80b180f12eca19cafb0cb8e"
+    },
+    "ax1_feature_cache": {
+      "path": "results/difficulty_adaptive_context/ax1_value_predictability/ax1_features.npz",
+      "sha256": "e6e3f45ea095f196e2da76c23db0b7518aa4bd6e8e46321d394b1705e7babe62"
+    },
+    "ax1_summary": {
+      "path": "results/difficulty_adaptive_context/ax1_value_predictability/ax1_value_predictability.json",
+      "sha256": "137262d690dc5ed08ba2ab4ed0119b5f73d2697a3744197f9fab446be3a855ef"
+    },
+    "prediction_bundle": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "adaptive_checkpoint": {
+      "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+      "sha256": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab"
+    },
+    "manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39"
+    }
+  },
+  "split": {
+    "implementation": "AX1 frozen deterministic speaker split",
+    "calibration_and_test_speakers_disjoint": true,
+    "pooled_target_source": "signed temporal value from the AX1 frozen prediction bundle"
+  },
+  "targets": {
+    "correction": {
+      "symbol": "B(x)",
+      "positive": "signed_value == +1",
+      "negative": "signed_value in {0, -1}",
+      "rule": "one-versus-rest"
+    },
+    "harm": {
+      "symbol": "H(x)",
+      "positive": "signed_value == -1",
+      "negative": "signed_value in {0, +1}",
+      "rule": "one-versus-rest"
+    }
+  },
+  "feature_ladder": {
+    "source": "AX1 X0-X3 feature blocks; no new features",
+    "information_levels": [
+      "X0",
+      "X1",
+      "X2",
+      "X3"
+    ],
+    "primary_predictor": "X3_logistic",
+    "ceiling_probe": "X3_mlp",
+    "primary_selection_basis": "X3_logistic was the strongest stable AX1 low-budget signed-value predictor. It is fixed before inspecting any AX2 outcome."
+  },
+  "models": {
+    "logistic": {
+      "scaler": "StandardScaler fitted on calibration speakers only",
+      "classifier": "binary LogisticRegression",
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "tol": 0.00001,
+      "class_weight": "balanced",
+      "random_state": 20260919,
+      "prediction": "probability of the target event"
+    },
+    "mlp_ceiling_probe": {
+      "input_scaler": "StandardScaler fitted on calibration speakers only",
+      "architecture": "Linear(input,64) -> GELU -> Linear(64,1)",
+      "dropout": 0.0,
+      "loss": "binary cross entropy with positive weight n_negative/n_positive",
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 4096,
+      "epochs": 30,
+      "shuffle_seed": 20260919,
+      "torch_seed": 20260919,
+      "device": "cuda_if_available_else_cpu",
+      "stopping_rule": "fixed 30 epochs; no test-based early stopping"
+    }
+  },
+  "metrics": {
+    "auroc": "test AUROC",
+    "auprc": "test average precision",
+    "prevalence": "positive target fraction on test",
+    "normalized_auprc_lift": "(auprc - prevalence) / (1 - prevalence); zero is prevalence-only skill and one is perfect ranking",
+    "report_for_all_models": [
+      "positive and negative frame counts",
+      "prevalence",
+      "AUROC",
+      "AUPRC",
+      "normalized AUPRC lift"
+    ]
+  },
+  "bootstrap": {
+    "unit": "speaker cluster",
+    "repeats": 5000,
+    "seed": 20260919,
+    "confidence_interval": "2.5th to 97.5th percentile",
+    "applies_to": [
+      "X3_logistic correction",
+      "X3_logistic harm",
+      "X3_logistic minus X0_logistic within each target",
+      "X3_logistic correction minus X3_logistic harm"
+    ],
+    "paired_comparison": "The same resampled speaker clusters are used for both sides of each paired comparison."
+  },
+  "decision_rules": {
+    "robust_direction": "For X3_logistic, the speaker-cluster 95% AUROC CI lower bound is above 0.50 and the normalized AUPRC lift 95% CI lower bound is above zero.",
+    "asymmetric_separability": "Exactly one target passes robust_direction and the paired correction-minus-harm difference has a 95% CI excluding zero in the same direction for both AUROC and normalized AUPRC lift.",
+    "bidirectional_separability": "Both correction and harm pass robust_direction. This means both mechanisms contain ranking signal; it does not authorize a router.",
+    "no_robust_direction_separability": "Neither target passes robust_direction.",
+    "uncertain_robust_asymmetry": "Exactly one target passes robust_direction but the paired direction-difference CI includes zero.",
+    "no_model_selection_after_results": "All outcomes remain diagnostic. AX2 cannot select or tune a final router."
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ax2_correction_harm_separability",
+    "summary": "ax2_correction_harm_separability.json",
+    "metrics_table": "ax2_binary_metrics.csv",
+    "report": "README.md"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "protocol_id": "A-AX2-v1",
+  "frozen_at": "2026-09-19T20:51:00+08:00",
+  "status_before_successful_analysis": {
+    "unit_tests": "10/10 passed",
+    "test_command": "python -m unittest reproductions.difficulty_adaptive_context.test_run_ax2_correction_harm_separability -v",
+    "implementation_bug_found_and_fixed_before_analysis": "The grouped AUROC bootstrap initially used a descending rank statistic with the wrong offset and chunk-local negative prefix. It now counts lower-score negatives directly, with half ties, and matches a brute-force bootstrap recomputation.",
+    "analysis_started": false,
+    "final_ood_accessed": false
+  },
+  "code_sha256": {
+    "reproductions/difficulty_adaptive_context/ax2_protocol.json": "0421ea44ae4b443cdf779476ba55dce08bc1a0ccd442baaae9cbd3bed089ac27",
+    "reproductions/difficulty_adaptive_context/run_ax2_correction_harm_separability.py": "9a75e9a39b3ac8bbff04a718f12787f856d14ddae6fee2f9e8bfc98522592633",
+    "reproductions/difficulty_adaptive_context/test_run_ax2_correction_harm_separability.py": "1d3f287e5bee0c4db69c34378eaee5a8df048ee0bf693df3c63249c578ace31d"
+  },
+  "input_sha256": {
+    "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03",
+    "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab",
+    "data/librivad/manifests/LibriSpeech_test_medium.tsv": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39",
+    "results/difficulty_adaptive_context/ax1_value_predictability/ax1_features.npz": "e6e3f45ea095f196e2da76c23db0b7518aa4bd6e8e46321d394b1705e7babe62",
+    "results/difficulty_adaptive_context/ax1_value_predictability/ax1_value_predictability.json": "137262d690dc5ed08ba2ab4ed0119b5f73d2697a3744197f9fab446be3a855ef"
+  },
+  "permitted_next_step": "Run AX2 once on development data, then report the frozen diagnostic result before AX3."
+}

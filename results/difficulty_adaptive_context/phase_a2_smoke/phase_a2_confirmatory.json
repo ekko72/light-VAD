@@ -1,0 +1,300 @@
+{
+  "protocol": {
+    "run_labels": [
+      "seed17"
+    ],
+    "prediction_paths": {
+      "seed17": "results\\difficulty_adaptive_context\\formal_eval_ext40\\frame_predictions.npz"
+    },
+    "frames": 553532,
+    "speaker_count": 40,
+    "calibration_speaker_count": 20,
+    "test_speaker_count": 20,
+    "calibration_speakers": [
+      "1089",
+      "1221",
+      "1284",
+      "1580",
+      "3570",
+      "3575",
+      "4077",
+      "4446",
+      "4507",
+      "4970",
+      "4992",
+      "5105",
+      "5639",
+      "5683",
+      "61",
+      "672",
+      "6829",
+      "7127",
+      "8455",
+      "8555"
+    ],
+    "test_speakers": [
+      "1188",
+      "121",
+      "1320",
+      "1995",
+      "2094",
+      "2300",
+      "237",
+      "260",
+      "2830",
+      "2961",
+      "3729",
+      "5142",
+      "6930",
+      "7021",
+      "7176",
+      "7729",
+      "8224",
+      "8230",
+      "8463",
+      "908"
+    ],
+    "calibration_fraction": 0.5,
+    "speaker_split_seed": 20260917,
+    "primary_calibration_activation": 0.1,
+    "bootstrap_repeats": 100,
+    "random_repeats": 100,
+    "bootstrap_seed": 20260917,
+    "random_seed": 20260918,
+    "unseen_noise": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "per_run": {
+    "seed17": {
+      "path": "results\\difficulty_adaptive_context\\formal_eval_ext40\\frame_predictions.npz",
+      "threshold": 0.23494166135787964,
+      "calibration_activation_rate": 0.10000313440320963,
+      "calibration": {
+        "frames": 255232,
+        "selected": 25524,
+        "correction": 6193,
+        "harm": 4232,
+        "short_error": 20892,
+        "long_error": 18931,
+        "gated_error": 18871,
+        "activation_rate": 0.10000313440320963,
+        "signed_utility": 1961,
+        "net_utility_per_frame": 0.007683205867602808,
+        "net_utility_per_selected": 0.07682965052499609,
+        "correction_rate_selected": 0.24263438332549758,
+        "harm_rate_selected": 0.16580473280050148,
+        "short_error_rate": 0.08185493981945838,
+        "long_error_rate": 0.07417173395185557,
+        "gated_error_rate": 0.07393665371113341
+      },
+      "test": {
+        "frames": 298300,
+        "selected": 30776,
+        "correction": 8284,
+        "harm": 5514,
+        "short_error": 28068,
+        "long_error": 25298,
+        "gated_error": 25879,
+        "activation_rate": 0.10317130405631914,
+        "signed_utility": 2770,
+        "net_utility_per_frame": 0.009285953737847805,
+        "net_utility_per_selected": 0.09000519885625162,
+        "correction_rate_selected": 0.26917078242786585,
+        "harm_rate_selected": 0.17916558357161425,
+        "short_error_rate": 0.0940931947703654,
+        "long_error_rate": 0.0848072410325176,
+        "gated_error_rate": 0.08675494468655716
+      }
+    }
+  },
+  "aggregate": {
+    "test": {
+      "point": {
+        "activation_rate": 0.10317130405631914,
+        "net_utility_per_frame": 0.009285953737847805,
+        "net_utility_per_selected": 0.09000519885625162,
+        "correction_rate_selected": 0.26917078242786585,
+        "harm_rate_selected": 0.17916558357161425,
+        "runs": 1
+      },
+      "bootstrap_repeats": 100,
+      "activation_rate_ci95_low": 0.0894570878559337,
+      "activation_rate_ci95_high": 0.12075075080934318,
+      "net_utility_per_frame_ci95_low": 0.0049683001332859866,
+      "net_utility_per_frame_ci95_high": 0.015035110430568538,
+      "net_utility_per_selected_ci95_low": 0.04943186886675576,
+      "net_utility_per_selected_ci95_high": 0.1403301296080564
+    },
+    "unseen": {
+      "point": {
+        "activation_rate": 0.13407271295445597,
+        "net_utility_per_frame": 0.02971518571991075,
+        "net_utility_per_selected": 0.22163485070974057,
+        "correction_rate_selected": 0.40548213411649536,
+        "harm_rate_selected": 0.18384728340675477,
+        "runs": 1
+      },
+      "bootstrap_repeats": 100,
+      "activation_rate_ci95_low": 0.09396605146398476,
+      "activation_rate_ci95_high": 0.1720425476080618,
+      "net_utility_per_frame_ci95_low": 0.015758592201289424,
+      "net_utility_per_frame_ci95_high": 0.05186197833970777,
+      "net_utility_per_selected_ci95_low": 0.1289393434052531,
+      "net_utility_per_selected_ci95_high": 0.3317619614086545
+    }
+  },
+  "random_gate": {
+    "observed_net_per_selected": 0.09000519885625162,
+    "random_mean": 0.011331557057447364,
+    "random_ci95_low": 0.009452170522485053,
+    "random_ci95_high": 0.013582011957369378,
+    "random_p95": 0.012907785287236809,
+    "one_sided_p_value": 0.009900990099009901,
+    "repeats": 100
+  },
+  "activation_budgets": {
+    "0.050000": {
+      "calibration_activation": 0.05,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.13059884309768677,
+          "calibration_activation_rate": 0.05000156720160481,
+          "test": {
+            "frames": 298300,
+            "selected": 15064,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 26595,
+            "activation_rate": 0.05049949715051961,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.18388210302708444,
+            "correction_rate_selected": 0.5499203398831651,
+            "harm_rate_selected": 0.3660382368560807,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.0891552128729467
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.05049949715051961,
+          "net_utility_per_frame": 0.009285953737847805,
+          "net_utility_per_selected": 0.18388210302708444,
+          "correction_rate_selected": 0.5499203398831651,
+          "harm_rate_selected": 0.3660382368560807,
+          "runs": 1
+        },
+        "bootstrap_repeats": 100,
+        "activation_rate_ci95_low": 0.04226972567609374,
+        "activation_rate_ci95_high": 0.059506910143311414,
+        "net_utility_per_frame_ci95_low": 0.004199535660146347,
+        "net_utility_per_frame_ci95_high": 0.01452745880227012,
+        "net_utility_per_selected_ci95_low": 0.09602127001528805,
+        "net_utility_per_selected_ci95_high": 0.267194355603865
+      }
+    },
+    "0.100000": {
+      "calibration_activation": 0.1,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.23494166135787964,
+          "calibration_activation_rate": 0.10000313440320963,
+          "test": {
+            "frames": 298300,
+            "selected": 30776,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 25879,
+            "activation_rate": 0.10317130405631914,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.09000519885625162,
+            "correction_rate_selected": 0.26917078242786585,
+            "harm_rate_selected": 0.17916558357161425,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.08675494468655716
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.10317130405631914,
+          "net_utility_per_frame": 0.009285953737847805,
+          "net_utility_per_selected": 0.09000519885625162,
+          "correction_rate_selected": 0.26917078242786585,
+          "harm_rate_selected": 0.17916558357161425,
+          "runs": 1
+        },
+        "bootstrap_repeats": 100,
+        "activation_rate_ci95_low": 0.0884354521065568,
+        "activation_rate_ci95_high": 0.1187798865491209,
+        "net_utility_per_frame_ci95_low": 0.005686498511169221,
+        "net_utility_per_frame_ci95_high": 0.013799946974266968,
+        "net_utility_per_selected_ci95_low": 0.05840000779893402,
+        "net_utility_per_selected_ci95_high": 0.1258901427550331
+      }
+    },
+    "0.200000": {
+      "calibration_activation": 0.2,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.36673571169376373,
+          "calibration_activation_rate": 0.20000235080240722,
+          "test": {
+            "frames": 298300,
+            "selected": 64012,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 25108,
+            "activation_rate": 0.21458933959101575,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.0432731362869462,
+            "correction_rate_selected": 0.12941323501843405,
+            "harm_rate_selected": 0.08614009873148784,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.08417029835735837
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.21458933959101575,
+          "net_utility_per_frame": 0.009285953737847805,
+          "net_utility_per_selected": 0.0432731362869462,
+          "correction_rate_selected": 0.12941323501843405,
+          "harm_rate_selected": 0.08614009873148784,
+          "runs": 1
+        },
+        "bootstrap_repeats": 100,
+        "activation_rate_ci95_low": 0.1903897625371524,
+        "activation_rate_ci95_high": 0.2408608651124259,
+        "net_utility_per_frame_ci95_low": 0.004590557917867438,
+        "net_utility_per_frame_ci95_high": 0.013520471454221965,
+        "net_utility_per_selected_ci95_low": 0.022536692510876304,
+        "net_utility_per_selected_ci95_high": 0.060929460327425834
+      }
+    }
+  },
+  "criteria": {
+    "minimum_seed_count": false,
+    "all_seed_net_positive": true,
+    "cluster_ci_excludes_zero": true,
+    "confidence_beats_random": true,
+    "unseen_ci_excludes_zero": true
+  },
+  "formal_status": "INCOMPLETE"
+}

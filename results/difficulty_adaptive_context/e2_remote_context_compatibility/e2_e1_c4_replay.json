@@ -1,0 +1,23 @@
+{
+  "absolute_error": 9.255426075202577e-07,
+  "completed_utc": "2026-09-21T09:29:28Z",
+  "device": "cuda",
+  "donors_encoded": 367,
+  "elapsed_seconds": 15.2409086227417,
+  "frames": 298300,
+  "max_abs_full_error": 2.086162567138672e-07,
+  "new_final_ood_touched": false,
+  "passed": true,
+  "protocol_id": "E2-RCCD-v1",
+  "protocol_sha256": "1A5E17226E75B08EB20725CCEB8AEA1B18794A510118E386C53F790AF700D589",
+  "records": 492,
+  "reference_delta_logloss": 0.032131332797710244,
+  "replayed_delta_logloss": 0.03213040725510272,
+  "replayed_source_ci95": [
+    0.024427111127621512,
+    0.03941132821232785
+  ],
+  "runner_sha256": "AB7EE06CFA401DE2AEF30766C06D81490CFB50C5B65AB741D540097032BC3A55",
+  "tolerance": 1e-06,
+  "training_performed": false
+}

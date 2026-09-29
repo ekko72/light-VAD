@@ -1,0 +1,18 @@
+{
+  "stage": "ae5",
+  "completed_at": "2026-09-20T09:30:44.727079+00:00",
+  "artifacts": [
+    {
+      "path": "ae5_condition_mechanism_map.csv",
+      "sha256": "CD3C129C089826F78A3AF0F53AA87935D156FA0466439A440592AFBA6CC6345F"
+    },
+    {
+      "path": "ae5_mechanism_summary.json",
+      "sha256": "230B9E72F5E1F061BF87366A4714C37028530D26FE04EC49ED25561CC134E07D"
+    },
+    {
+      "path": "ae5_mechanism_map.png",
+      "sha256": "CEBA0AA23769FDB003AECFD10656B541D72DD6D51DA80DC0B853974BFC204AE0"
+    }
+  ]
+}

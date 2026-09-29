@@ -1,0 +1,22 @@
+{
+  "stage": "ae3",
+  "completed_at": "2026-09-20T03:53:50.704280+00:00",
+  "artifacts": [
+    {
+      "path": "ae3_event_feature_summary.csv",
+      "sha256": "35BDDEFF7806A39B5F1DBB05F46DAE73711399DDF7B0E77DA5A2E22F764B5FCE"
+    },
+    {
+      "path": "ae3_feature_bins.csv",
+      "sha256": "A9003F895B001E2D1C5802D84369EE6D08DC7BA147197849747C7E966B21C45F"
+    },
+    {
+      "path": "ae3_condition_feature_map.csv",
+      "sha256": "6A713357C670AC8A42FE70DDDD0CB1F6028DC68D694DAE1A19C797A365DB5432"
+    },
+    {
+      "path": "ae3_feature_gradients.png",
+      "sha256": "41338759BA5BB839513103B38EEFE9F61BE16308E53673ACC402DF3DD7E2101F"
+    }
+  ]
+}

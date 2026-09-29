@@ -1,0 +1,518 @@
+{
+  "protocol": {
+    "run_labels": [
+      "seed17",
+      "seed23",
+      "seed41"
+    ],
+    "prediction_paths": {
+      "seed17": "results\\difficulty_adaptive_context\\formal_eval_ext40\\frame_predictions.npz",
+      "seed23": "results\\difficulty_adaptive_context\\seed23_eval_ext40\\frame_predictions.npz",
+      "seed41": "results\\difficulty_adaptive_context\\seed41_eval_ext40\\frame_predictions.npz"
+    },
+    "frames": 553532,
+    "speaker_count": 40,
+    "calibration_speaker_count": 20,
+    "test_speaker_count": 20,
+    "calibration_speakers": [
+      "1089",
+      "1221",
+      "1284",
+      "1580",
+      "3570",
+      "3575",
+      "4077",
+      "4446",
+      "4507",
+      "4970",
+      "4992",
+      "5105",
+      "5639",
+      "5683",
+      "61",
+      "672",
+      "6829",
+      "7127",
+      "8455",
+      "8555"
+    ],
+    "test_speakers": [
+      "1188",
+      "121",
+      "1320",
+      "1995",
+      "2094",
+      "2300",
+      "237",
+      "260",
+      "2830",
+      "2961",
+      "3729",
+      "5142",
+      "6930",
+      "7021",
+      "7176",
+      "7729",
+      "8224",
+      "8230",
+      "8463",
+      "908"
+    ],
+    "calibration_fraction": 0.5,
+    "speaker_split_seed": 20260917,
+    "primary_calibration_activation": 0.1,
+    "bootstrap_repeats": 5000,
+    "random_repeats": 1000,
+    "bootstrap_seed": 20260917,
+    "random_seed": 20260918,
+    "unseen_noise": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "per_run": {
+    "seed17": {
+      "path": "results\\difficulty_adaptive_context\\formal_eval_ext40\\frame_predictions.npz",
+      "threshold": 0.23494166135787964,
+      "calibration_activation_rate": 0.10000313440320963,
+      "calibration": {
+        "frames": 255232,
+        "selected": 25524,
+        "correction": 6193,
+        "harm": 4232,
+        "short_error": 20892,
+        "long_error": 18931,
+        "gated_error": 18871,
+        "activation_rate": 0.10000313440320963,
+        "signed_utility": 1961,
+        "net_utility_per_frame": 0.007683205867602808,
+        "net_utility_per_selected": 0.07682965052499609,
+        "correction_rate_selected": 0.24263438332549758,
+        "harm_rate_selected": 0.16580473280050148,
+        "short_error_rate": 0.08185493981945838,
+        "long_error_rate": 0.07417173395185557,
+        "gated_error_rate": 0.07393665371113341
+      },
+      "test": {
+        "frames": 298300,
+        "selected": 30776,
+        "correction": 8284,
+        "harm": 5514,
+        "short_error": 28068,
+        "long_error": 25298,
+        "gated_error": 25879,
+        "activation_rate": 0.10317130405631914,
+        "signed_utility": 2770,
+        "net_utility_per_frame": 0.009285953737847805,
+        "net_utility_per_selected": 0.09000519885625162,
+        "correction_rate_selected": 0.26917078242786585,
+        "harm_rate_selected": 0.17916558357161425,
+        "short_error_rate": 0.0940931947703654,
+        "long_error_rate": 0.0848072410325176,
+        "gated_error_rate": 0.08675494468655716
+      }
+    },
+    "seed23": {
+      "path": "results\\difficulty_adaptive_context\\seed23_eval_ext40\\frame_predictions.npz",
+      "threshold": 0.24090790748596191,
+      "calibration_activation_rate": 0.10000313440320963,
+      "calibration": {
+        "frames": 255232,
+        "selected": 25524,
+        "correction": 5356,
+        "harm": 4284,
+        "short_error": 19486,
+        "long_error": 18414,
+        "gated_error": 18197,
+        "activation_rate": 0.10000313440320963,
+        "signed_utility": 1072,
+        "net_utility_per_frame": 0.004200100300902708,
+        "net_utility_per_selected": 0.04199968656950321,
+        "correction_rate_selected": 0.2098417175991224,
+        "harm_rate_selected": 0.16784203102961917,
+        "short_error_rate": 0.0763462261785356,
+        "long_error_rate": 0.0721461258776329,
+        "gated_error_rate": 0.07129591900702106
+      },
+      "test": {
+        "frames": 298300,
+        "selected": 32691,
+        "correction": 7435,
+        "harm": 6053,
+        "short_error": 25219,
+        "long_error": 23837,
+        "gated_error": 23544,
+        "activation_rate": 0.10959101575595039,
+        "signed_utility": 1382,
+        "net_utility_per_frame": 0.004632919879316124,
+        "net_utility_per_selected": 0.04227463216175706,
+        "correction_rate_selected": 0.22743262671683337,
+        "harm_rate_selected": 0.1851579945550763,
+        "short_error_rate": 0.08454240697284612,
+        "long_error_rate": 0.07990948709353,
+        "gated_error_rate": 0.07892725444183708
+      }
+    },
+    "seed41": {
+      "path": "results\\difficulty_adaptive_context\\seed41_eval_ext40\\frame_predictions.npz",
+      "threshold": 0.24032217264175415,
+      "calibration_activation_rate": 0.10000313440320963,
+      "calibration": {
+        "frames": 255232,
+        "selected": 25524,
+        "correction": 5783,
+        "harm": 4305,
+        "short_error": 20830,
+        "long_error": 19352,
+        "gated_error": 19525,
+        "activation_rate": 0.10000313440320963,
+        "signed_utility": 1478,
+        "net_utility_per_frame": 0.005790809929789368,
+        "net_utility_per_selected": 0.057906284281460586,
+        "correction_rate_selected": 0.22657107036514654,
+        "harm_rate_selected": 0.16866478608368593,
+        "short_error_rate": 0.08161202357071214,
+        "long_error_rate": 0.07582121364092277,
+        "gated_error_rate": 0.07649902833500502
+      },
+      "test": {
+        "frames": 298300,
+        "selected": 32768,
+        "correction": 8171,
+        "harm": 6162,
+        "short_error": 27666,
+        "long_error": 25657,
+        "gated_error": 25614,
+        "activation_rate": 0.10984914515588334,
+        "signed_utility": 2009,
+        "net_utility_per_frame": 0.006734830707341603,
+        "net_utility_per_selected": 0.061309814453125,
+        "correction_rate_selected": 0.249359130859375,
+        "harm_rate_selected": 0.18804931640625,
+        "short_error_rate": 0.09274555816292324,
+        "long_error_rate": 0.08601072745558162,
+        "gated_error_rate": 0.08586657727120349
+      }
+    }
+  },
+  "aggregate": {
+    "test": {
+      "point": {
+        "activation_rate": 0.10753715498938428,
+        "net_utility_per_frame": 0.00688456810816851,
+        "net_utility_per_selected": 0.06452988182371122,
+        "correction_rate_selected": 0.24865418000135808,
+        "harm_rate_selected": 0.18412429817764686,
+        "runs": 3
+      },
+      "bootstrap_repeats": 5000,
+      "activation_rate_ci95_low": 0.09224705486362049,
+      "activation_rate_ci95_high": 0.12351951718975282,
+      "net_utility_per_frame_ci95_low": 0.0033933475011207487,
+      "net_utility_per_frame_ci95_high": 0.010871782469966658,
+      "net_utility_per_selected_ci95_low": 0.035278250593515297,
+      "net_utility_per_selected_ci95_high": 0.09166573997912157
+    },
+    "unseen": {
+      "point": {
+        "activation_rate": 0.14049525309533184,
+        "net_utility_per_frame": 0.02294701841886512,
+        "net_utility_per_selected": 0.16494223761624524,
+        "correction_rate_selected": 0.3653753446560167,
+        "harm_rate_selected": 0.2004331070397715,
+        "runs": 3
+      },
+      "bootstrap_repeats": 5000,
+      "activation_rate_ci95_low": 0.09984733150667903,
+      "activation_rate_ci95_high": 0.18116229357414268,
+      "net_utility_per_frame_ci95_low": 0.009437191361204127,
+      "net_utility_per_frame_ci95_high": 0.039270822584612015,
+      "net_utility_per_selected_ci95_low": 0.08825573425186511,
+      "net_utility_per_selected_ci95_high": 0.2369186739563439
+    }
+  },
+  "random_gate": {
+    "observed_net_per_selected": 0.06452988182371122,
+    "random_mean": 0.009084443595994687,
+    "random_ci95_low": 0.007762829548458803,
+    "random_ci95_high": 0.010456083643976316,
+    "random_p95": 0.010205313560354038,
+    "one_sided_p_value": 0.000999000999000999,
+    "repeats": 1000
+  },
+  "activation_budgets": {
+    "0.050000": {
+      "calibration_activation": 0.05,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.13059884309768677,
+          "calibration_activation_rate": 0.05000156720160481,
+          "test": {
+            "frames": 298300,
+            "selected": 15064,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 26595,
+            "activation_rate": 0.05049949715051961,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.18388210302708444,
+            "correction_rate_selected": 0.5499203398831651,
+            "harm_rate_selected": 0.3660382368560807,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.0891552128729467
+          }
+        },
+        "seed23": {
+          "threshold": 0.13317912817001343,
+          "calibration_activation_rate": 0.05000156720160481,
+          "test": {
+            "frames": 298300,
+            "selected": 16359,
+            "correction": 7435,
+            "harm": 6053,
+            "short_error": 25219,
+            "long_error": 23837,
+            "gated_error": 23812,
+            "activation_rate": 0.05484076433121019,
+            "signed_utility": 1382,
+            "net_utility_per_frame": 0.004632919879316124,
+            "net_utility_per_selected": 0.08447949141145547,
+            "correction_rate_selected": 0.45448988324469713,
+            "harm_rate_selected": 0.37001039183324164,
+            "short_error_rate": 0.08454240697284612,
+            "long_error_rate": 0.07990948709353,
+            "gated_error_rate": 0.07982567884679853
+          }
+        },
+        "seed41": {
+          "threshold": 0.13302654027938843,
+          "calibration_activation_rate": 0.05000156720160481,
+          "test": {
+            "frames": 298300,
+            "selected": 16413,
+            "correction": 8171,
+            "harm": 6162,
+            "short_error": 27666,
+            "long_error": 25657,
+            "gated_error": 26185,
+            "activation_rate": 0.055021790144150186,
+            "signed_utility": 2009,
+            "net_utility_per_frame": 0.006734830707341603,
+            "net_utility_per_selected": 0.12240297325290928,
+            "correction_rate_selected": 0.4978370803631268,
+            "harm_rate_selected": 0.3754341071102175,
+            "short_error_rate": 0.09274555816292324,
+            "long_error_rate": 0.08601072745558162,
+            "gated_error_rate": 0.08778075762655045
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.053454017208626664,
+          "net_utility_per_frame": 0.00688456810816851,
+          "net_utility_per_selected": 0.13025485589714972,
+          "correction_rate_selected": 0.500749101163663,
+          "harm_rate_selected": 0.37049424526651337,
+          "runs": 3
+        },
+        "bootstrap_repeats": 5000,
+        "activation_rate_ci95_low": 0.045895508228104766,
+        "activation_rate_ci95_high": 0.06184163952361662,
+        "net_utility_per_frame_ci95_low": 0.003356784026690157,
+        "net_utility_per_frame_ci95_high": 0.010847344657478396,
+        "net_utility_per_selected_ci95_low": 0.07076612743822577,
+        "net_utility_per_selected_ci95_high": 0.18302698320722977
+      }
+    },
+    "0.100000": {
+      "calibration_activation": 0.1,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.23494166135787964,
+          "calibration_activation_rate": 0.10000313440320963,
+          "test": {
+            "frames": 298300,
+            "selected": 30776,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 25879,
+            "activation_rate": 0.10317130405631914,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.09000519885625162,
+            "correction_rate_selected": 0.26917078242786585,
+            "harm_rate_selected": 0.17916558357161425,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.08675494468655716
+          }
+        },
+        "seed23": {
+          "threshold": 0.24090790748596191,
+          "calibration_activation_rate": 0.10000313440320963,
+          "test": {
+            "frames": 298300,
+            "selected": 32691,
+            "correction": 7435,
+            "harm": 6053,
+            "short_error": 25219,
+            "long_error": 23837,
+            "gated_error": 23544,
+            "activation_rate": 0.10959101575595039,
+            "signed_utility": 1382,
+            "net_utility_per_frame": 0.004632919879316124,
+            "net_utility_per_selected": 0.04227463216175706,
+            "correction_rate_selected": 0.22743262671683337,
+            "harm_rate_selected": 0.1851579945550763,
+            "short_error_rate": 0.08454240697284612,
+            "long_error_rate": 0.07990948709353,
+            "gated_error_rate": 0.07892725444183708
+          }
+        },
+        "seed41": {
+          "threshold": 0.24032217264175415,
+          "calibration_activation_rate": 0.10000313440320963,
+          "test": {
+            "frames": 298300,
+            "selected": 32768,
+            "correction": 8171,
+            "harm": 6162,
+            "short_error": 27666,
+            "long_error": 25657,
+            "gated_error": 25614,
+            "activation_rate": 0.10984914515588334,
+            "signed_utility": 2009,
+            "net_utility_per_frame": 0.006734830707341603,
+            "net_utility_per_selected": 0.061309814453125,
+            "correction_rate_selected": 0.249359130859375,
+            "harm_rate_selected": 0.18804931640625,
+            "short_error_rate": 0.09274555816292324,
+            "long_error_rate": 0.08601072745558162,
+            "gated_error_rate": 0.08586657727120349
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.10753715498938428,
+          "net_utility_per_frame": 0.00688456810816851,
+          "net_utility_per_selected": 0.06452988182371122,
+          "correction_rate_selected": 0.24865418000135808,
+          "harm_rate_selected": 0.18412429817764686,
+          "runs": 3
+        },
+        "bootstrap_repeats": 5000,
+        "activation_rate_ci95_low": 0.09234373559887815,
+        "activation_rate_ci95_high": 0.1235680369613284,
+        "net_utility_per_frame_ci95_low": 0.003320089285171482,
+        "net_utility_per_frame_ci95_high": 0.010684269565397496,
+        "net_utility_per_selected_ci95_low": 0.034742475569110275,
+        "net_utility_per_selected_ci95_high": 0.09019184559913286
+      }
+    },
+    "0.200000": {
+      "calibration_activation": 0.2,
+      "per_run": {
+        "seed17": {
+          "threshold": 0.36673571169376373,
+          "calibration_activation_rate": 0.20000235080240722,
+          "test": {
+            "frames": 298300,
+            "selected": 64012,
+            "correction": 8284,
+            "harm": 5514,
+            "short_error": 28068,
+            "long_error": 25298,
+            "gated_error": 25108,
+            "activation_rate": 0.21458933959101575,
+            "signed_utility": 2770,
+            "net_utility_per_frame": 0.009285953737847805,
+            "net_utility_per_selected": 0.0432731362869462,
+            "correction_rate_selected": 0.12941323501843405,
+            "harm_rate_selected": 0.08614009873148784,
+            "short_error_rate": 0.0940931947703654,
+            "long_error_rate": 0.0848072410325176,
+            "gated_error_rate": 0.08417029835735837
+          }
+        },
+        "seed23": {
+          "threshold": 0.37305349111557007,
+          "calibration_activation_rate": 0.20000235080240722,
+          "test": {
+            "frames": 298300,
+            "selected": 65549,
+            "correction": 7435,
+            "harm": 6053,
+            "short_error": 25219,
+            "long_error": 23837,
+            "gated_error": 23598,
+            "activation_rate": 0.21974187060006706,
+            "signed_utility": 1382,
+            "net_utility_per_frame": 0.004632919879316124,
+            "net_utility_per_selected": 0.021083464278631253,
+            "correction_rate_selected": 0.11342659689697783,
+            "harm_rate_selected": 0.09234313261834658,
+            "short_error_rate": 0.08454240697284612,
+            "long_error_rate": 0.07990948709353,
+            "gated_error_rate": 0.07910828025477706
+          }
+        },
+        "seed41": {
+          "threshold": 0.3689470887184143,
+          "calibration_activation_rate": 0.20000235080240722,
+          "test": {
+            "frames": 298300,
+            "selected": 65979,
+            "correction": 8171,
+            "harm": 6162,
+            "short_error": 27666,
+            "long_error": 25657,
+            "gated_error": 25419,
+            "activation_rate": 0.22118337244384847,
+            "signed_utility": 2009,
+            "net_utility_per_frame": 0.006734830707341603,
+            "net_utility_per_selected": 0.030449082283756954,
+            "correction_rate_selected": 0.12384243471407569,
+            "harm_rate_selected": 0.09339335243031874,
+            "short_error_rate": 0.09274555816292324,
+            "long_error_rate": 0.08601072745558162,
+            "gated_error_rate": 0.08521287294669795
+          }
+        }
+      },
+      "aggregate": {
+        "point": {
+          "activation_rate": 0.21850486087831042,
+          "net_utility_per_frame": 0.00688456810816851,
+          "net_utility_per_selected": 0.03160189428311147,
+          "correction_rate_selected": 0.12222742220982918,
+          "harm_rate_selected": 0.0906255279267177,
+          "runs": 3
+        },
+        "bootstrap_repeats": 5000,
+        "activation_rate_ci95_low": 0.19245017633555234,
+        "activation_rate_ci95_high": 0.24652851861476474,
+        "net_utility_per_frame_ci95_low": 0.0032975285045147716,
+        "net_utility_per_frame_ci95_high": 0.010732358668248398,
+        "net_utility_per_selected_ci95_low": 0.016546025921389023,
+        "net_utility_per_selected_ci95_high": 0.045341184945351574
+      }
+    }
+  },
+  "criteria": {
+    "minimum_seed_count": true,
+    "all_seed_net_positive": true,
+    "cluster_ci_excludes_zero": true,
+    "confidence_beats_random": true,
+    "unseen_ci_excludes_zero": true
+  },
+  "formal_status": "FORMAL_GO"
+}

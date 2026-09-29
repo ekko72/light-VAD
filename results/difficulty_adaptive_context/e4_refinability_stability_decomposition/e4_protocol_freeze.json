@@ -1,0 +1,241 @@
+{
+  "PROTOCOL_ID": "E4-RSD-v1",
+  "PROTOCOL_STATUS": "FROZEN_BEFORE_E4_OUTCOME_ANALYSIS",
+  "CREATED_UTC": "2026-09-21T16:30:16.523676+00:00",
+  "ANALYSIS_ONLY": true,
+  "TRAINING_PERFORMED": false,
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "REPLICATE_IDENTITIES": [
+    41,
+    59,
+    71,
+    83,
+    97
+  ],
+  "PRIMARY_MODEL": "RF384_SHORT_vs_HFULL",
+  "PRIMARY_ARCHITECTURE": "TinyGRU_CAR_replicates",
+  "POPULATION": {
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20,
+    "total_frames": 553532,
+    "valid_start": 382,
+    "frame_hop": 160,
+    "labels_and_test_mask_source": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+    "score_source": "results/cross_architecture_replication/evaluations/seed{seed}/scores.npz"
+  },
+  "METADATA_PROVENANCE": {
+    "source_and_condition_metadata": "The CAR score bundles do not contain source or condition metadata. Source, speaker, condition, and noise identity are taken from the authoritative frozen RF384 frame reference after verifying that labels and test_mask are identical across all five CAR score bundles.",
+    "replicate_alignment_checks": "labels_equal and test_mask_equal for each of the five frozen CAR score bundles"
+  },
+  "PRE_FREEZE_INPUT_CHECK": {
+    "status": "PASSED_INPUT_INTEGRITY_ONLY",
+    "n_frames": 298300,
+    "n_sources": 96,
+    "n_speakers": 20,
+    "n_segments": 1024,
+    "baseline_max_abs_error": 1.1102230246251565e-16,
+    "aggregate_taxonomy": {
+      "P_SS": 0.8621870600067046,
+      "P_R": 0.020581293999329536,
+      "P_I": 0.10800536372779082,
+      "P_H": 0.009226282266174992,
+      "NetRefinability": 0.011355011733154544,
+      "mean_v_log": 0.020043899306062256,
+      "mean_v_brier": 0.0070263799128756745
+    },
+    "note": "This was an input-integrity and reproduction check only. No E4 stability endpoint was inspected before freeze."
+  },
+  "DECISION_THRESHOLD": 0.5,
+  "TAXONOMY": {
+    "SS": "Short correct and Full correct",
+    "R": "Short wrong and Full correct",
+    "I": "Short wrong and Full wrong",
+    "H": "Short correct and Full wrong",
+    "NetRefinability": "P(R) - P(H)"
+  },
+  "STABILITY_CATEGORIES": {
+    "NEVER_R": "K_R = 0",
+    "UNSTABLE_R": "K_R = 1 or 2",
+    "STABLE_R": "K_R = 3, 4, or 5",
+    "CORE_R": "K_R = 4 or 5"
+  },
+  "PROPER_SCORING": {
+    "primary": "v_log(t) = LogLoss(Short,t) - LogLoss(Full,t)",
+    "secondary": "v_brier(t) = Brier(Short,t) - Brier(Full,t)",
+    "logloss_epsilon": 1e-07
+  },
+  "OBSERVABLES": [
+    "mean_v_log",
+    "median_v_log",
+    "positive_value_count",
+    "mean_short_posterior",
+    "mean_abs_margin_from_0.5",
+    "mean_short_correctness",
+    "mean_short_logloss",
+    "short_wrong_count",
+    "long_correct_count",
+    "conditional_long_correct_given_short_wrong"
+  ],
+  "EVENT_DEFINITIONS": {
+    "bins": [
+      "0",
+      "1",
+      "2-4",
+      "5-10",
+      "11-25",
+      "26-50",
+      ">50"
+    ],
+    "dimensions": [
+      "onset_distance",
+      "offset_distance",
+      "posterior_transition_distance"
+    ],
+    "onset_and_offset": "signed frame distance to the nearest ground-truth onset or offset inside each reconstructed evaluation utterance",
+    "posterior_transition": "absolute frame distance to the nearest RF384 Short threshold-0.5 transition inside each reconstructed utterance",
+    "missing_distance": 51.0
+  },
+  "CONDITION_DEFINITIONS": {
+    "seen": "non-clean frames whose noise domain is not one of the frozen unseen noise domains",
+    "unseen": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ],
+    "snr_bins": [
+      "-5",
+      "0",
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "noise_domains": "the existing frozen noise_name values, including Clean"
+  },
+  "PERMUTATION_NULL": {
+    "seeds": [
+      101,
+      211,
+      307,
+      401,
+      503,
+      601,
+      701,
+      809,
+      907,
+      1009
+    ],
+    "method": "one realization per seed; independently permute each replicate's R membership within source x condition strata while preserving replicate-level R prevalence",
+    "primary_comparison": "observed P(K_R >= 3) and P(K_R >= 4) versus the maximum of the independence reference and permutation mean"
+  },
+  "BOOTSTRAP": {
+    "method": "source-cluster percentile bootstrap",
+    "repeats": 2000,
+    "confidence": 0.95,
+    "seed_base": 20260921
+  },
+  "PRIMARY_GATES": {
+    "G1_STABLE_CORE": "observed P(K_R >= 3) exceeds the frozen independence/permutation reference and source-cluster 95% CI lower bound for excess overlap is > 0",
+    "G2_STABLE_CORE_VALUE": "STABLE_R mean cross-seed v_log > 0, stable-minus-unstable v_log contrast > 0 with CI lower bound > 0, and leave-one-source-out sign consistency",
+    "G3_STRUCTURED_INSTABILITY": "at least one preregistered event, margin, condition, or disagreement contrast is robust in the frozen direction"
+  },
+  "NONTRIVIAL_RULES": {
+    "stable_R_min": 0.002,
+    "core_R_min": 0.0005,
+    "min_stable_sources": 20,
+    "min_core_sources": 10,
+    "near_null_abs_excess_max": 0.0001,
+    "near_null_ratio_max": 1.25,
+    "claim_c_stable_share_max": 0.5,
+    "claim_c_core_share_max": 0.25
+  },
+  "G3_MIN_ABS_DIFFERENCE": {
+    "posterior_transition_0_vs_beyond_stable": 0.001,
+    "onset_0_vs_beyond_stable": 0.001,
+    "offset_0_vs_beyond_stable": 0.001,
+    "stable_minus_unstable_short_margin": 0.005,
+    "seen_vs_unseen_stable": 0.001,
+    "stable_vs_unstable_non_r_i_share": 0.01
+  },
+  "FINAL_STATUS_RULES": {
+    "STABLE_REFINABLE_CORE": "G1 PASS, G2 PASS, and nontrivial stable/core R population",
+    "POPULATION_STABLE_INSTANCE_RELATIVE": "population-level R prevalence/value remains reproducible, but individual-frame stable overlap is limited or mixed while still exceeding null expectation",
+    "MOSTLY_MODEL_RELATIVE_REFINABILITY": "population-level phenomenon remains reproducible, but individual R membership is close to the frozen null reference and no meaningful stable core is supported",
+    "INCONCLUSIVE_OR_INVALID": "failed reproduction, alignment, integrity, or required statistical validity",
+    "NOT_EXECUTABLE_FROM_FROZEN_DATA": "required aligned frozen predictions do not exist and execution would require retraining"
+  },
+  "FROZEN_INPUTS": {
+    "rf384_frame_reference": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+      "size_bytes": 10702416
+    },
+    "car_taxonomy_reference": {
+      "path": "results/cross_architecture_replication/car1_taxonomy_by_seed.csv",
+      "sha256": "6380BB0EA5FC9AFE55374BF07E8B5B1B78E0704134D380130BD6511F98164F0B",
+      "size_bytes": 80788
+    },
+    "car_seed_agreement_reference": {
+      "path": "results/cross_architecture_replication/car5_seed_agreement.csv",
+      "sha256": "23D18613A03FC11042E798B932E944E95848D77FC829A5FB15FFD216C73D9D2C",
+      "size_bytes": 2167
+    },
+    "car_final_summary": {
+      "path": "results/cross_architecture_replication/car_final_summary.json",
+      "sha256": "E2D627D5F747253C43003315FA20A87AED8806002925186ECD235306D8A54586",
+      "size_bytes": 13111
+    },
+    "test_manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39",
+      "size_bytes": 7715067
+    },
+    "e3_final_summary": {
+      "path": "results/difficulty_adaptive_context/e3_boundary_value_robustness/e3_final_summary.json",
+      "sha256": "3887E7C18B018F0E6F0CEB905B19A480D61A09A2421408FBC2B84E8DD09E6587",
+      "size_bytes": 44954
+    },
+    "car_runner": {
+      "path": "reproductions/cross_architecture_replication/run_car.py",
+      "sha256": "8759641A05A2887400093D430E4E0CE8DB105C46B6DDF96210653BCDDEADF217",
+      "size_bytes": 187555
+    },
+    "ae_mechanism_runner": {
+      "path": "reproductions/difficulty_adaptive_context/run_ae_mechanism.py",
+      "sha256": "39FDF131F9AD4EB4D0A0D6760BD32C58BE582DED5C5AAA0F964904F1DAC308EE",
+      "size_bytes": 110221
+    },
+    "car_seed_41_scores": {
+      "path": "results/cross_architecture_replication/evaluations/seed41/scores.npz",
+      "sha256": "03D8CD7670EA3D4E403426B37FBF927ED53ECA0E0F6083FAF3A8A1B039D7FD30",
+      "size_bytes": 5128115
+    },
+    "car_seed_59_scores": {
+      "path": "results/cross_architecture_replication/evaluations/seed59/scores.npz",
+      "sha256": "65DEEEFCF5EC53014F3FEA688BA7F617357A038D819BF6F900DC4D6AD0B2A5BD",
+      "size_bytes": 5133372
+    },
+    "car_seed_71_scores": {
+      "path": "results/cross_architecture_replication/evaluations/seed71/scores.npz",
+      "sha256": "7DA937341F5C8B01A9A5935647C80A6D457E5FF458C4E5C6D9C20EE093EACB39",
+      "size_bytes": 5110151
+    },
+    "car_seed_83_scores": {
+      "path": "results/cross_architecture_replication/evaluations/seed83/scores.npz",
+      "sha256": "D75CEEAEC8A7E482DE47B6682EA8045ECE04BC897F2B548A36C17BEA56CB7893",
+      "size_bytes": 5121905
+    },
+    "car_seed_97_scores": {
+      "path": "results/cross_architecture_replication/evaluations/seed97/scores.npz",
+      "sha256": "B79337639957D8F7DF6C1114F84A94DD9339F0F079A6231628D593FA68E46AA8",
+      "size_bytes": 5095554
+    }
+  },
+  "RUNNER": {
+    "module": "reproductions.difficulty_adaptive_context.run_e4",
+    "path": "reproductions/difficulty_adaptive_context/run_e4.py",
+    "sha256": "33B2EF3D0E4745432F832E2FE69BD4762AA21030B96B73FC01B73D29CF422212"
+  }
+}

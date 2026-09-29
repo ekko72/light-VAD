@@ -1,0 +1,3 @@
+architecture,decision_sparsity_robust,proper_scoring_positive,event_signal_baseline,boundary_exclusion_30ms_value_positive,status
+MarbleNet,True,True,True,True,REPLICATED
+TinyGRU,True,True,True,True,REPLICATED

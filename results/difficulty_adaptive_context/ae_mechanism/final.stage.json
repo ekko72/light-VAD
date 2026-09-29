@@ -1,0 +1,94 @@
+{
+  "stage": "final",
+  "completed_at": "2026-09-20T09:33:13.185296+00:00",
+  "artifacts": [
+    {
+      "path": "ae_summary.json",
+      "sha256": "85EA7201BF95CF835C083826645863C59AE96375ED3A88516383E87682624C66"
+    },
+    {
+      "path": "ae_final_report.md",
+      "sha256": "3F27D36384B789365C776670F86DFC09693746FCB01E26409BEB9738ED0F61FF"
+    },
+    {
+      "path": "ae_protocol_hash.json",
+      "sha256": "B9D18D0A462969FA2EB6E778E16F951691493F0AFB958F83C1EBA2550A47A776"
+    },
+    {
+      "path": "ae_execution_manifest.json",
+      "sha256": "58CC1DAD5D90E24B7BA7CCF6AB3018D550032ECFC0069597D1AB71D1682E03A8"
+    },
+    {
+      "path": "ae_claim_freeze.json",
+      "sha256": "36478B689A87E6D6D8EDFE85DBA44DCFEC9E8EB56A07A3FCB32F867D68111054"
+    },
+    {
+      "path": "ae1_state_summary.csv",
+      "sha256": "78ADC5E651A12741445692F8AE82E55EAC8B87E71F30B596AE542BA7B6EE1510"
+    },
+    {
+      "path": "ae1_state_by_cell.csv",
+      "sha256": "A49F3C5F3783887201E17867321D348E9BAC32F368FF7E60355E0A1C3899ACEE"
+    },
+    {
+      "path": "ae1_condition_availability.csv",
+      "sha256": "3188D485FEE567CCFCD73C72456F8CE0278309DFBA596F01746C65E9039BBAA8"
+    },
+    {
+      "path": "ae2_horizon_summary.csv",
+      "sha256": "E0E12B76552A5B02FD2300A6DD4AD290220EE3F9730E4B2C6013D6EBAE5EDE10"
+    },
+    {
+      "path": "ae2_horizon_by_cell.csv",
+      "sha256": "DC47FDB4B263174513A9DE418527DC300FE49E6BCE837F301A26280EEDD8CCC1"
+    },
+    {
+      "path": "ae2_nonmonotonicity.csv",
+      "sha256": "9E94B9DA437682AB8D50599EFE797E11C2B384038CBE45E13155954ED62CB16B"
+    },
+    {
+      "path": "ae3_event_feature_summary.csv",
+      "sha256": "35BDDEFF7806A39B5F1DBB05F46DAE73711399DDF7B0E77DA5A2E22F764B5FCE"
+    },
+    {
+      "path": "ae3_feature_bins.csv",
+      "sha256": "A9003F895B001E2D1C5802D84369EE6D08DC7BA147197849747C7E966B21C45F"
+    },
+    {
+      "path": "ae3_condition_feature_map.csv",
+      "sha256": "6A713357C670AC8A42FE70DDDD0CB1F6028DC68D694DAE1A19C797A365DB5432"
+    },
+    {
+      "path": "ae4_checkpoint_agreement.csv",
+      "sha256": "C9A9574797783C95A9D8EB6A869B2936A96190336AA76F04BFFC1D71F99364BF"
+    },
+    {
+      "path": "ae4_replication_summary.csv",
+      "sha256": "1EE101A0FB89CB928D6D18A9B2C7C4822C40A0EE23978A680D0CF72A2AED608B"
+    },
+    {
+      "path": "ae5_condition_mechanism_map.csv",
+      "sha256": "CD3C129C089826F78A3AF0F53AA87935D156FA0466439A440592AFBA6CC6345F"
+    },
+    {
+      "path": "ae1_state_rates.png",
+      "sha256": "EDE280BC4C4BCBF2CC42CEC6E15341C1223BA3D3F889BE688D2E9F26D8EB18E3"
+    },
+    {
+      "path": "ae2_horizon_saturation.png",
+      "sha256": "5C9E4E0B3C2F478E955EAEBDDF57AF2670C593918EC87C989402C6ECC70B78F1"
+    },
+    {
+      "path": "ae3_feature_gradients.png",
+      "sha256": "41338759BA5BB839513103B38EEFE9F61BE16308E53673ACC402DF3DD7E2101F"
+    },
+    {
+      "path": "ae4_model_relative_value.png",
+      "sha256": "53B554DEC3B42ED68C7040BF23E975E2BEBF075F9EFCEAAFF7607484A95A35AC"
+    },
+    {
+      "path": "ae5_mechanism_map.png",
+      "sha256": "CEBA0AA23769FDB003AECFD10656B541D72DD6D51DA80DC0B853974BFC204AE0"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "artifact_hashes_id": "A-FINAL-OOD-ARTIFACT-HASHES-v1",
+  "execution_status": "INVALID_EXECUTION",
+  "new_final_ood_consumed": true,
+  "generated_outputs": [
+    {
+      "path": "results/difficulty_adaptive_context/a_final_ood/a_final_ood_summary.json",
+      "sha256": "5EDABADA60A72951585FF9613CDEADBECFDDFD6CD9990E37610F265F000346F2"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_ood/a_final_ood_report.md",
+      "sha256": "E8C4C379E5159365017206738EC102847ED2A19972EA5808DEB48B170E6BDA10"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_ood/a_final_claim_audit.md",
+      "sha256": "FCA6257609BDDE0E4D3206166F9F09C97A2581A81EF5E83DBB57AC2249E828E2"
+    }
+  ],
+  "protocol_and_freeze": [
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_ood_protocol.md",
+      "sha256": "4D9BDD2A6381E28F8E50B43352F5A0AA33CA916188839727FD2EB3F609A910E8"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_freeze_manifest.json",
+      "sha256": "6779E99917174935CE8C035311AF878A76388879C30452BE731371622DEE217A"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_claim_ledger.md",
+      "sha256": "1B54B0225685AA990F9F7761BD3401444AAFA8E6C55E28599DDC910B6A5A4353"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_sha256.txt",
+      "sha256": "7A300106BB10BAA54ABE97EAAB68F9D5D0FE3F06FB635FD5C08F90B2BAB5FE9A"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/verify_a_final_freeze.ps1",
+      "sha256": "C50CB943F6268F7BBA1909CA431C72282BB6E44363B37BAD70D4E22E382AE946"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_verification.json",
+      "sha256": "81D02050C204DC4DB2C1E274B0BFA426F7D383F88771EC92EB05B3A1FACF453A"
+    }
+  ],
+  "runtime_ood_binding": [
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_new_final_ood_manifest.json",
+      "sha256": "1097F834A8D59EC5F63197D07A8AEF81A39F65F51C7907EF73EED28FD971B6E7"
+    }
+  ],
+  "candidate_checkpoints": [
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed17.pt",
+      "sha256": "1779D9E4E9231A93190EEDA28F55EBDFAF8B9085E01BAC22848FB7F8A90C6942"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed23.pt",
+      "sha256": "11692BFE9DCA551CA0C3A95D2F9F0C2F04E8496965C5B8D16694643E4A926AFA"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed41.pt",
+      "sha256": "EC3273A68BD0D6537929666C25FE4AE7D2EEA107E3748C9058B073ECAA985F3B"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed59.pt",
+      "sha256": "BC098C739F85630A4A964D423D1C52183A418DB9D6B6E52EDE48AD5008C1F5E1"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_models/m2_seed71.pt",
+      "sha256": "E9FE065232641FC875699D65B2F12DA5CE034510028DABFC484A65D81E2A6580"
+    }
+  ],
+  "frozen_data_and_preprocessing": [
+    {
+      "path": "results/difficulty_adaptive_context/a2_method_study/a2_train_normalizer.npz",
+      "sha256": "9100B0C62843F23CCF3DEC15FC6E2B4D7960EA82448BCF9DC5FD3EBA32B5E9C4"
+    },
+    {
+      "path": "results/difficulty_adaptive_context/ax1_value_predictability/ax1_features.npz",
+      "sha256": "E6E3F45EA095F196E2DA76C23DB0B7518AA4BD6E8E46321D394B1705E7BABE62"
+    },
+    {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39"
+    }
+  ],
+  "frozen_evaluation_code": [
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_a2_method_study.py",
+      "sha256": "EDEA5B0A7B089B74EC76C49824EADB449C755103208FEA0847A11212FE6CA2C9"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/recover_a2_method_study.py",
+      "sha256": "1318546E9E64BCD0B75532EAD4BDBE22CF295E8C58980D24E535ABE782F3D964"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+      "sha256": "D9BE590A985D3B0E7341488BE723DF5C4C88F821356916D2FC7ABBE0249BF61D"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/data.py",
+      "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/adaptive_model.py",
+      "sha256": "CFB181B7B1C89BA04D57DCF1453C19ECBC4AA4AE244C3A1E7F22C75FFA4DF99B"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e1.py",
+      "sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e2.py",
+      "sha256": "AB7EE06CFA401DE2AEF30766C06D81490CFB50C5B65AB741D540097032BC3A55"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e3.py",
+      "sha256": "76F51D104EC07677F53CBDA36E6113CA13477EDD9A91C74B29450DD31DE55A36"
+    },
+    {
+      "path": "reproductions/difficulty_adaptive_context/run_e4.py",
+      "sha256": "33B2EF3D0E4745432F832E2FE69BD4762AA21030B96B73FC01B73D29CF422212"
+    },
+    {
+      "path": "reproductions/cross_architecture_replication/run_car.py",
+      "sha256": "8759641A05A2887400093D430E4E0CE8DB105C46B6DDF96210653BCDDEADF217"
+    }
+  ],
+  "self_hash_policy": "artifact_hashes.json is the hash index and does not contain its own hash.",
+  "training_performed": false,
+  "next_experiment_authorized": false
+}

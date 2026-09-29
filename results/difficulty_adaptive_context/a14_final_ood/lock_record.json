@@ -1,0 +1,131 @@
+{
+  "version": "A14-final-ood-confirmatory-v1",
+  "status": "VALIDATED_BEFORE_SEALED_ACCESS",
+  "protocol_path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a14_final_ood_protocol.json",
+  "protocol_sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF",
+  "verified_artifacts": [
+    {
+      "role": "final_ood_manifest",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\data\\librivad\\manifests\\LibriSpeechConcat_test_medium.tsv",
+      "sha256": "9DCD9B90D0752E5CB654B0F959FC067EC29A861C793126B3FDAE0784CC6A078C"
+    },
+    {
+      "role": "a11_cost",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a11_conditional_compute\\a11_conditional_compute.json",
+      "sha256": "132A470DE6CF30BC30EF692DD4B3C91F920DD29A9D675394F9ABC67392C79AE1"
+    },
+    {
+      "role": "a12_routing",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a12_routing_robustness\\a12_routing_robustness.json",
+      "sha256": "579A0F53D2347B8DDE9341461CC7BE85613AF9E87699A91A87C50CED687EF68A"
+    },
+    {
+      "role": "adaptive_model",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\adaptive_model.py",
+      "sha256": "CFB181B7B1C89BA04D57DCF1453C19ECBC4AA4AE244C3A1E7F22C75FFA4DF99B"
+    },
+    {
+      "role": "evaluate_adaptive",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\evaluate_adaptive.py",
+      "sha256": "D9BE590A985D3B0E7341488BE723DF5C4C88F821356916D2FC7ABBE0249BF61D"
+    },
+    {
+      "role": "analyze_context_gate",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\analyze_context_gate.py",
+      "sha256": "9EF555E38F4B91BDC8FF431BEC391AC2F37FEAC2B8E293C68C65D0F1DFD34035"
+    },
+    {
+      "role": "data",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\data.py",
+      "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D"
+    },
+    {
+      "role": "marblenet_dataset",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\marblenet_vad\\dataset.py",
+      "sha256": "5F961A14FBC561CC1F84BF1CA25C162E589AC3C60015C3759B5499CA73DEBB9C"
+    },
+    {
+      "role": "marblenet_features",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\marblenet_vad\\features.py",
+      "sha256": "9BF8864228FC31FE3920021F8778D9CAA01D221CEE98DCCD81D61F7D4D08B9EE"
+    },
+    {
+      "role": "marblenet_model",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\marblenet_vad\\model.py",
+      "sha256": "3474C2424A2528DCE2928EE6BE7DE0C6156B73A8CEA26B6941B01D7790B7CBA6"
+    },
+    {
+      "role": "run_a14_final_ood",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\run_a14_final_ood.py",
+      "sha256": "772213F1AA0AE009BE122A7588241E0EA240D484225A2F6E3B5E8A864949D2D8"
+    },
+    {
+      "role": "test_run_a14_final_ood",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\test_run_a14_final_ood.py",
+      "sha256": "317FFE5E665F0A69B4D148B3D566BFBBB97811E829CF2E4F0A4E43CE4D5C7D9E"
+    }
+  ],
+  "verified_checkpoints": [
+    {
+      "role": "checkpoint_seed17",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a3_pilot_seed17_gate013_distill025_rf384\\best.pt",
+      "sha256": "85ACDE86D8D9A21103992B8BA697AA55DFAE5987D93235A1FF3BB3BA4A5E10AB",
+      "seed": 17,
+      "short_encoder_relation": "shared_frozen_short_encoder"
+    },
+    {
+      "role": "checkpoint_seed18",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a3_pilot_seed18_gate013_distill025_rf384\\best.pt",
+      "sha256": "6516CC11CF1045BCABC9B6905C6AFD7B126BFD3F58ED2A5923861C3DE5A89D3B",
+      "seed": 18,
+      "short_encoder_relation": "shared_frozen_short_encoder"
+    },
+    {
+      "role": "checkpoint_seed19",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a3_pilot_seed19_gate013_distill025_rf384\\best.pt",
+      "sha256": "96C551837474C150F1908E7BD789E680F857FA40A6F510B9F07FC73F764B1346",
+      "seed": 19,
+      "short_encoder_relation": "shared_frozen_short_encoder"
+    },
+    {
+      "role": "checkpoint_seed23",
+      "path": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\a14_seed23_gate013_distill025_rf384\\best.pt",
+      "sha256": "97B1E9E0E617D28B7A6A51E93E6DEA69EE103EDCD60C239DD4D32BA69C05D8D9",
+      "seed": 23,
+      "short_encoder_relation": "independently_trained_short_encoder"
+    }
+  ],
+  "sealed_split": {
+    "protocol_role": "test_untouched_final_ood",
+    "manifest_path": "data/librivad/manifests/LibriSpeechConcat_test_medium.tsv",
+    "manifest_sha256": "9DCD9B90D0752E5CB654B0F959FC067EC29A861C793126B3FDAE0784CC6A078C",
+    "rows": 1080,
+    "sources": 20,
+    "speaker_sensitivity_keys": 16,
+    "noise_classes": 9,
+    "seen_rows": 720,
+    "unseen_rows": 360,
+    "samples": 322768800,
+    "causal_frames": 2017926
+  },
+  "sealed_access": {
+    "status": "LOADED_AFTER_FULL_LOCK_VALIDATION",
+    "rows_loaded": true,
+    "rows": 1080,
+    "sources": 20,
+    "speaker_sensitivity_keys": 16,
+    "causal_frames": 8071704
+  },
+  "run_provenance": {
+    "started_at": "2026-09-19T15:04:28.652108+00:00",
+    "completed_at": "2026-09-19T15:11:02.323624+00:00",
+    "primary_seed": 17,
+    "seeds": [
+      17,
+      18,
+      19,
+      23
+    ],
+    "single_execution": true
+  }
+}

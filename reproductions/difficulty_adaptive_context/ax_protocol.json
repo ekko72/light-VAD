@@ -1,0 +1,168 @@
+{
+  "protocol_id": "A-AX1-v1",
+  "frozen_date": "2026-09-19",
+  "frozen_scope": {
+    "purpose": "Value predictability ceiling on development data only.",
+    "sequence": [
+      "AX1",
+      "AX2",
+      "AX3",
+      "AX4",
+      "AX5_conditional"
+    ],
+    "a14_status": "sealed",
+    "final_ood_access": "forbidden",
+    "main_model_change": "forbidden",
+    "rf384_change": "forbidden",
+    "router_search_beyond_ax": "forbidden"
+  },
+  "data": {
+    "prediction_bundle": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "adaptive_checkpoint": {
+      "path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+      "sha256": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab"
+    },
+    "manifest": {
+      "path": "data/librivad/manifests/LibriSpeech_test_medium.tsv",
+      "sha256": "267cd1a018216e62552bc00b088f2667ad2113b1d1ec0e954a4f01854c1c8a39"
+    },
+    "generated_root": "data/librivad/generated",
+    "label_root": "data/librivad/labels",
+    "librispeech_root": "data/LibriSpeech",
+    "row_sample": 1080,
+    "manifest_seed": 17,
+    "include_clean": true,
+    "valid_start_frame": 382,
+    "frame_hop_samples": 160,
+    "score_chunk_frames": 2000
+  },
+  "split": {
+    "cluster": "LibriSpeech speaker id derived from the second component of source_key",
+    "calibration_fraction": 0.5,
+    "speaker_split_seed": 20260917,
+    "calibration_and_test_speakers_disjoint": true,
+    "implementation": "analyze_context_gate.deterministic_speaker_split"
+  },
+  "target": {
+    "short_correct": "short_score >= 0.5 equals label",
+    "refined_correct": "full_adaptive_score >= 0.5 equals label",
+    "signed_value": "{+1 correction, 0 no change, -1 harm}",
+    "value_source": "full_adaptive_scores from the frozen prediction bundle"
+  },
+  "feature_ladder": {
+    "posterior": "short_scores from the frozen prediction bundle",
+    "causal_window_frames": 25,
+    "X0": {
+      "name": "uncertainty_only",
+      "features": [
+        "binary_entropy(p)",
+        "abs(p - 0.5)"
+      ]
+    },
+    "X1": {
+      "name": "posterior_temporal_context",
+      "features": [
+        "X0",
+        "trailing mean of p in the current and previous 24 frames",
+        "trailing standard deviation of p in the current and previous 24 frames",
+        "p_t - p_(t-1)",
+        "trailing mean of abs(p_t - p_(t-1)) in the current and previous 24 frames",
+        "trailing minimum of p",
+        "trailing maximum of p",
+        "ordinary least squares slope of p over the current and previous 24 frames",
+        "trailing maximum minus trailing minimum"
+      ],
+      "boundary_rule": "Statistics reset at each contiguous source/noise/condition utterance variant."
+    },
+    "X2": {
+      "name": "plus_short_hidden",
+      "features": [
+        "X1",
+        "all 128 channels of model.short_model.encoder(features) at the current frame"
+      ]
+    },
+    "X3": {
+      "name": "plus_cheap_causal_acoustic_context",
+      "features": [
+        "X2",
+        "64 causal MFCC coefficients at the current frame",
+        "trailing mean of each MFCC coefficient over the current and previous 24 frames",
+        "MFCC coefficient delta: current minus previous frame"
+      ],
+      "boundary_rule": "Acoustic statistics reset at each contiguous source/noise/condition utterance variant."
+    }
+  },
+  "models": {
+    "logistic": {
+      "scaler": "StandardScaler fitted on calibration speakers only",
+      "classifier": "multinomial LogisticRegression",
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "tol": 0.00001,
+      "class_weight": "balanced",
+      "random_state": 20260919,
+      "prediction": "expected signed value from predict_proba times fitted classes"
+    },
+    "mlp_ceiling_probe": {
+      "input_scaler": "StandardScaler fitted on calibration speakers only",
+      "architecture": "Linear(input,64) -> GELU -> Linear(64,3)",
+      "dropout": 0.0,
+      "loss": "cross entropy with inverse-frequency class weights",
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 4096,
+      "epochs": 30,
+      "shuffle_seed": 20260919,
+      "torch_seed": 20260919,
+      "device": "cuda_if_available_else_cpu",
+      "prediction": "expected signed value from softmax probabilities times class values",
+      "stopping_rule": "fixed 30 epochs; no test-based early stopping"
+    }
+  },
+  "selection": {
+    "budgets": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "rule": "For each score and budget, select the highest-scoring calibration frames with ceil(budget * calibration_frames), take the minimum selected calibration score as the fixed threshold, and apply that threshold to test frames.",
+    "test_activation": "observed, not forced",
+    "uncertainty_baseline_score": "negative abs(short_score - 0.5)",
+    "oracle_reference": "Test-only top-budget upper bound; never a deployable candidate."
+  },
+  "metrics": {
+    "selected_mean_value": "sum(v * selected) / sum(selected)",
+    "oracle_value_recovery": "sum(v * selected) / sum(max(v, 0)) over the evaluated test split",
+    "also_report": [
+      "test activation",
+      "correction and harm counts",
+      "correction and harm rates selected",
+      "positive oracle sum and net selected value"
+    ]
+  },
+  "bootstrap": {
+    "unit": "speaker cluster",
+    "repeats": 5000,
+    "seed": 20260919,
+    "confidence_interval": "2.5th to 97.5th percentile",
+    "paired_comparison": "same resampled speaker clusters for both scores"
+  },
+  "decision_rules": {
+    "uncertainty_near_observable_ceiling": "No X1/X2/X3 model improves X0 oracle-value recovery by more than 0.01 with a paired speaker-cluster 95% CI lower bound above zero at any budget.",
+    "richer_features_add_observable_signal": "At least two budgets have a paired speaker-cluster 95% CI lower bound above zero for oracle-value recovery improvement over X0, with a maximum mean improvement greater than 0.02.",
+    "large_irreducible_routing_gap": "The best learned non-oracle oracle-value recovery is below 0.25 at both 1% and 2% budgets and below 0.50 at the 5% budget.",
+    "no_new_router_by_default": "AX1 is diagnostic. A learned-router direction is only reconsidered if richer_features_add_observable_signal passes; otherwise preserve the frozen uncertainty router."
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ax1_value_predictability",
+    "feature_cache": "ax1_features.npz",
+    "summary": "ax1_value_predictability.json",
+    "budget_table": "ax1_budget_table.csv",
+    "report": "README.md"
+  }
+}

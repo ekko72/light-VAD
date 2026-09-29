@@ -1,0 +1,198 @@
+{
+  "protocol_id": "A-AX4-v1",
+  "frozen_date": "2026-09-19",
+  "frozen_scope": {
+    "purpose": "Classify why the frozen raw uncertainty gate fails on major development cells.",
+    "sequence_position": "AX4 after completed AX1, AX2, and AX3 and before conditional AX5",
+    "a14_status": "sealed",
+    "final_ood_access": "forbidden",
+    "main_model_change": "forbidden",
+    "rf384_change": "forbidden",
+    "router_search": "forbidden",
+    "gate_tuning": "forbidden",
+    "threshold_change": "forbidden",
+    "training": "none",
+    "diagnostic_only": true
+  },
+  "inputs": {
+    "prediction_bundle": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "a12_runner": {
+      "path": "reproductions/difficulty_adaptive_context/run_a12_routing_robustness.py",
+      "sha256": "23ce074285c327eb9819f14cc5185e803a129e8eadf4a422b9121bdb6d217d44"
+    },
+    "a12_results": {
+      "path": "results/difficulty_adaptive_context/a12_routing_robustness/a12_routing_robustness.json",
+      "sha256": "579a0f53d2347b8dde9341461cc7be85613af9e87699a91a87c50ced687ef68a"
+    }
+  },
+  "gate": {
+    "name": "raw",
+    "threshold": 0.13,
+    "threshold_source": "frozen prediction bundle",
+    "selection_rule": "abs(short_score - 0.5) <= threshold",
+    "source_rank_stabilizer_role": "not evaluated by AX4; not retuned",
+    "no_gate_tuning": true
+  },
+  "value": {
+    "short_correct": "short_score >= 0.5 equals label",
+    "refined_correct": "full_adaptive_score >= 0.5 equals label",
+    "signed_value": "{+1 correction, 0 no change, -1 harm}",
+    "refined_score_field": "full_adaptive_scores"
+  },
+  "cells": {
+    "ssr_sweep": {
+      "purpose": "Recreate the A12 fixed-threshold SSR development sweep.",
+      "domains": [
+        "all",
+        "seen",
+        "unseen"
+      ],
+      "conditions": [
+        "20",
+        "10",
+        "5",
+        "0",
+        "-5"
+      ],
+      "unseen_noise": [
+        "SSN_noise",
+        "Street_noise",
+        "Transport_noise"
+      ],
+      "target_ssr": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "frames_per_stratum": 160,
+      "resample_seed": 20260919,
+      "domain_index_order": [
+        "all",
+        "seen",
+        "unseen"
+      ],
+      "seed_rule": "resample_seed + 7919 * domain_index + 1003 * ssr_index",
+      "sample_rule": "reuse reproductions.ssr_prior_shift.protocol.stratified_frame_resample with the frozen A12 parameters"
+    },
+    "acoustic_cell": {
+      "purpose": "Recreate the A12 unmodified held-out acoustic cells.",
+      "domains": [
+        "all",
+        "seen",
+        "unseen"
+      ],
+      "conditions": [
+        "20",
+        "10",
+        "5",
+        "0",
+        "-5"
+      ],
+      "unseen_noise": [
+        "SSN_noise",
+        "Street_noise",
+        "Transport_noise"
+      ],
+      "pool_rule": "test_mask and domain mask and condition equality; no resampling"
+    },
+    "major_cell_count": 30
+  },
+  "metrics": {
+    "population": [
+      "frames",
+      "speaker_clusters",
+      "source_clusters",
+      "corrections",
+      "harms",
+      "P(v=+1)",
+      "P(v=-1)",
+      "E[v]"
+    ],
+    "gate_selected": [
+      "selected",
+      "selected_corrections",
+      "selected_harms",
+      "activation_rate",
+      "P(v=+1 | G=1)",
+      "P(v=-1 | G=1)",
+      "E[v | G=1]"
+    ],
+    "confidence_intervals": [
+      "P(v=+1)",
+      "P(v=-1)",
+      "E[v]",
+      "activation_rate",
+      "P(v=+1 | G=1)",
+      "P(v=-1 | G=1)",
+      "E[v | G=1]"
+    ]
+  },
+  "bootstrap": {
+    "primary_unit": "source_key",
+    "primary_unit_rationale": "Matches the frozen A12 source-level cluster bootstrap.",
+    "sensitivity_unit": "speaker_id",
+    "sensitivity_unit_rationale": "Checks whether conclusions persist at the broader LibriSpeech speaker level.",
+    "repeats": 5000,
+    "seed": 20260919,
+    "confidence_interval": "2.5th to 97.5th percentile",
+    "resampling_rule": "One shared cluster resample matrix is used for population and selected metrics within a cell.",
+    "finite_sample_rule": "A bootstrap replicate with zero denominator is excluded only from that metric's interval."
+  },
+  "taxonomy": {
+    "activation_warning_threshold": 0.15,
+    "activation_failure_threshold": 0.2,
+    "point_estimate_rules": {
+      "NO_FAILURE": "selected E[v] > 0 and activation_rate <= activation_warning_threshold",
+      "F1_VALUE_SCARCITY": "population E[v] <= 0 and selected E[v] <= 0",
+      "F2_RANKING_FAILURE": "population E[v] > 0 and selected E[v] <= 0",
+      "F3_BUDGET_CALIBRATION_DRIFT": "selected E[v] > 0 and activation_rate > activation_warning_threshold"
+    },
+    "priority": [
+      "F1_VALUE_SCARCITY",
+      "F2_RANKING_FAILURE",
+      "F3_BUDGET_CALIBRATION_DRIFT",
+      "NO_FAILURE"
+    ],
+    "taxonomy_failure_rule": "A cell is a taxonomy failure if selected E[v] <= 0 or activation_rate > activation_warning_threshold.",
+    "focus_cells": [
+      {
+        "section": "ssr_sweep",
+        "domain": "seen",
+        "condition": "all_noisy",
+        "target_ssr": 0.9
+      },
+      {
+        "section": "acoustic_cell",
+        "domain": "seen",
+        "condition": "-5",
+        "target_ssr": null
+      }
+    ],
+    "focus_cell_source": "The two point failures frozen by A12.",
+    "interpretation_limit": "Point taxonomy is diagnostic only. No status authorizes changing the frozen gate, searching a new router, or opening A14."
+  },
+  "assessment": {
+    "statuses": [
+      "F1_VALUE_SCARCITY_DOMINANT",
+      "F2_RANKING_FAILURE_DOMINANT",
+      "F3_BUDGET_CALIBRATION_DRIFT_DETECTED",
+      "MIXED_FAILURE",
+      "NO_RAW_FAILURE"
+    ],
+    "dominant_rule": "If all failing focus cells share one taxonomy class, use that class status. If they differ, use MIXED_FAILURE.",
+    "ax5_trigger": "AX5 is permitted only if at least one major development cell is classified F3_BUDGET_CALIBRATION_DRIFT.",
+    "no_ax5_rule": "If no major cell is classified F3, stop router exploration after AX4 and proceed to final A development freeze.",
+    "confidence_role": "Bootstrap intervals are reported but do not change the frozen point-estimate taxonomy."
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ax4_routing_failure_taxonomy",
+    "summary": "ax4_routing_failure_taxonomy.json",
+    "metrics_table": "ax4_routing_failure_taxonomy.csv",
+    "report": "README.md"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "execution_id": "A-FINAL-OOD-EXECUTION-v1",
+  "started_utc": "2026-09-22T02:13:11Z",
+  "stopped_utc": "2026-09-22T02:13:11Z",
+  "execution_valid": false,
+  "execution_status": "INVALID_EXECUTION",
+  "final_status": "INCONCLUSIVE_OR_INVALID",
+  "new_final_ood_consumed": true,
+  "consumption_scope": "The authorized manifest was opened and hash-bound. No dataset payload or OOD sample was loaded.",
+  "protocol": {
+    "protocol_id": "A-FINAL-OOD-v1",
+    "path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_ood_protocol.md",
+    "sha256": "4D9BDD2A6381E28F8E50B43352F5A0AA33CA916188839727FD2EB3F609A910E8",
+    "frozen_manifest_path": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_freeze_manifest.json",
+    "frozen_manifest_sha256": "FB6EB5F005BE596308E444644A19CE34B54262700FEC2779707D91F38B82AF43"
+  },
+  "runtime_binding": {
+    "ood_manifest_path": "results/difficulty_adaptive_context/a2_method_study/a2_new_final_ood_manifest.json",
+    "ood_manifest_sha256": "1097F834A8D59EC5F63197D07A8AEF81A39F65F51C7907EF73EED28FD971B6E7",
+    "manifest_status": "NO_UNUSED_CONFIRMATORY_DATASET_AVAILABLE",
+    "candidate_dataset": null,
+    "manifest_touched_before_execution": false,
+    "manifest_reason": "The available LibriSpeech test speakers were already used for A-v1 evaluation. No new untouched confirmatory dataset is present, so no final-OOD result may be fabricated.",
+    "dataset_payload_sha256": null,
+    "source_cluster_metadata_sha256": null,
+    "feature_or_preprocessing_runtime_sha256": null
+  },
+  "preflight": {
+    "frozen_verification_record": "results/difficulty_adaptive_context/a_final_claim_freeze/a_final_verification.json",
+    "frozen_verification_status": "PASS",
+    "protocol_hash_verified": true,
+    "frozen_manifest_hash_verified": true,
+    "ood_manifest_hash_recorded_before_read": true,
+    "candidate_dataset_available": false,
+    "baseline_reproduction_attempted": false,
+    "baseline_reproduction_status": "NOT_RUN_PREFLIGHT_FAILURE",
+    "checkpoint_loading_attempted": false
+  },
+  "failure": {
+    "code": "NO_UNUSED_CONFIRMATORY_DATASET_AVAILABLE",
+    "fail_closed_rule": "Section 8, item 1: the OOD dataset payload is missing.",
+    "self_repair_performed": false,
+    "substitute_data_used": false,
+    "execution_stopped_before_scoring": true
+  },
+  "protocol_deviations": [],
+  "training_performed": false,
+  "tuning_performed": false,
+  "scoring_performed": false,
+  "inference_performed": false,
+  "primary_result": null,
+  "primary_ci": null,
+  "per_seed_results": [],
+  "per_source_results": [],
+  "aggregate_results": [],
+  "bootstrap": {
+    "computed": false,
+    "method": "paired source-cluster percentile bootstrap",
+    "resamples": 2000,
+    "seed": 20260921,
+    "distribution_path": null
+  },
+  "subgroup_results": [],
+  "seen_result": null,
+  "unseen_result": null,
+  "activation_results": {
+    "primary_budget": 0.05,
+    "primary_activation": null,
+    "maximum_activation": null,
+    "budget_results": []
+  },
+  "compute_metrics": {
+    "computed": false,
+    "latency_ms_per_frame": null,
+    "always_refine_latency_ms_per_frame": null
+  },
+  "frozen_gates": {
+    "G1": "NOT_EVALUATED_INVALID_EXECUTION",
+    "G2": "NOT_EVALUATED_INVALID_EXECUTION",
+    "G3": "NOT_EVALUATED_INVALID_EXECUTION",
+    "G4": "NOT_EVALUATED_INVALID_EXECUTION",
+    "G5": "NOT_EVALUATED_INVALID_EXECUTION"
+  },
+  "claims": {
+    "supported_by_this_execution": [],
+    "not_supported_by_this_execution": [],
+    "conditional": [],
+    "prior_official_states_preserved": {
+      "A-v1": "CONDITIONAL_GO",
+      "A-v2": "CONDITIONAL_GO",
+      "CAR": "STRONG_CROSS_ARCH_REPLICATION",
+      "E1": "REMOTE_INFORMATION_CONDITIONAL",
+      "E2": "INCONCLUSIVE_OR_INVALID",
+      "E3": "ROBUST_VALUE_STRUCTURE",
+      "E4": "INCONCLUSIVE_OR_INVALID"
+    }
+  },
+  "next_experiment_authorized": false
+}

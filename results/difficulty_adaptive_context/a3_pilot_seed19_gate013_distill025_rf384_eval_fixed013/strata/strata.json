@@ -1,0 +1,586 @@
+{
+  "predictions": "results\\difficulty_adaptive_context\\a3_pilot_seed19_gate013_distill025_rf384_eval_fixed013\\frame_predictions.npz",
+  "strata": 5,
+  "unseen_noise": [
+    "SSN_noise",
+    "Street_noise",
+    "Transport_noise"
+  ],
+  "test_activation": 0.05021119678176333,
+  "strata_rows": {
+    "overall": [
+      {
+        "frames": 2996,
+        "probe": {
+          "correction": 897,
+          "harm": 557,
+          "net": 340,
+          "net_per_frame": 0.11348464619492657
+        },
+        "refiner": {
+          "correction": 855,
+          "harm": 538,
+          "net": 317,
+          "net_per_frame": 0.10580774365821095
+        },
+        "retention": 0.9323529411764706,
+        "stratum": 1,
+        "confidence_low": 1.52587890625e-05,
+        "confidence_high": 0.027379989624023438
+      },
+      {
+        "frames": 2996,
+        "probe": {
+          "correction": 845,
+          "harm": 476,
+          "net": 369,
+          "net_per_frame": 0.12316421895861149
+        },
+        "refiner": {
+          "correction": 750,
+          "harm": 400,
+          "net": 350,
+          "net_per_frame": 0.11682242990654206
+        },
+        "retention": 0.948509485094851,
+        "stratum": 2,
+        "confidence_low": 0.02739185094833374,
+        "confidence_high": 0.054907023906707764
+      },
+      {
+        "frames": 2996,
+        "probe": {
+          "correction": 709,
+          "harm": 465,
+          "net": 244,
+          "net_per_frame": 0.0814419225634179
+        },
+        "refiner": {
+          "correction": 566,
+          "harm": 321,
+          "net": 245,
+          "net_per_frame": 0.08177570093457943
+        },
+        "retention": 1.0040983606557377,
+        "stratum": 3,
+        "confidence_low": 0.05491110682487488,
+        "confidence_high": 0.08066245913505554
+      },
+      {
+        "frames": 2995,
+        "probe": {
+          "correction": 696,
+          "harm": 409,
+          "net": 287,
+          "net_per_frame": 0.09582637729549248
+        },
+        "refiner": {
+          "correction": 468,
+          "harm": 246,
+          "net": 222,
+          "net_per_frame": 0.07412353923205342
+        },
+        "retention": 0.7735191637630662,
+        "stratum": 4,
+        "confidence_low": 0.08066293597221375,
+        "confidence_high": 0.10568898916244507
+      },
+      {
+        "frames": 2995,
+        "probe": {
+          "correction": 594,
+          "harm": 366,
+          "net": 228,
+          "net_per_frame": 0.07612687813021703
+        },
+        "refiner": {
+          "correction": 378,
+          "harm": 199,
+          "net": 179,
+          "net_per_frame": 0.05976627712854758
+        },
+        "retention": 0.7850877192982456,
+        "stratum": 5,
+        "confidence_low": 0.10569214820861816,
+        "confidence_high": 0.12998080253601074
+      }
+    ],
+    "seen": [
+      {
+        "frames": 1473,
+        "probe": {
+          "correction": 418,
+          "harm": 303,
+          "net": 115,
+          "net_per_frame": 0.07807196198234895
+        },
+        "refiner": {
+          "correction": 389,
+          "harm": 311,
+          "net": 78,
+          "net_per_frame": 0.05295315682281059
+        },
+        "retention": 0.6782608695652174,
+        "stratum": 1,
+        "confidence_low": 2.5331974029541016e-05,
+        "confidence_high": 0.02676159143447876
+      },
+      {
+        "frames": 1473,
+        "probe": {
+          "correction": 386,
+          "harm": 251,
+          "net": 135,
+          "net_per_frame": 0.09164969450101833
+        },
+        "refiner": {
+          "correction": 297,
+          "harm": 227,
+          "net": 70,
+          "net_per_frame": 0.04752206381534284
+        },
+        "retention": 0.5185185185185185,
+        "stratum": 2,
+        "confidence_low": 0.026795774698257446,
+        "confidence_high": 0.05369541049003601
+      },
+      {
+        "frames": 1473,
+        "probe": {
+          "correction": 299,
+          "harm": 250,
+          "net": 49,
+          "net_per_frame": 0.03326544467073999
+        },
+        "refiner": {
+          "correction": 203,
+          "harm": 160,
+          "net": 43,
+          "net_per_frame": 0.029192124915139173
+        },
+        "retention": 0.8775510204081632,
+        "stratum": 3,
+        "confidence_low": 0.053701162338256836,
+        "confidence_high": 0.07899391651153564
+      },
+      {
+        "frames": 1472,
+        "probe": {
+          "correction": 267,
+          "harm": 208,
+          "net": 59,
+          "net_per_frame": 0.04008152173913043
+        },
+        "refiner": {
+          "correction": 161,
+          "harm": 119,
+          "net": 42,
+          "net_per_frame": 0.028532608695652172
+        },
+        "retention": 0.711864406779661,
+        "stratum": 4,
+        "confidence_low": 0.07899683713912964,
+        "confidence_high": 0.10486030578613281
+      },
+      {
+        "frames": 1472,
+        "probe": {
+          "correction": 221,
+          "harm": 186,
+          "net": 35,
+          "net_per_frame": 0.02377717391304348
+        },
+        "refiner": {
+          "correction": 104,
+          "harm": 74,
+          "net": 30,
+          "net_per_frame": 0.020380434782608696
+        },
+        "retention": 0.8571428571428571,
+        "stratum": 5,
+        "confidence_low": 0.10486268997192383,
+        "confidence_high": 0.12996172904968262
+      }
+    ],
+    "unseen": [
+      {
+        "frames": 1006,
+        "probe": {
+          "correction": 320,
+          "harm": 175,
+          "net": 145,
+          "net_per_frame": 0.1441351888667992
+        },
+        "refiner": {
+          "correction": 350,
+          "harm": 133,
+          "net": 217,
+          "net_per_frame": 0.21570576540755468
+        },
+        "retention": 1.4965517241379311,
+        "stratum": 1,
+        "confidence_low": 1.52587890625e-05,
+        "confidence_high": 0.028101444244384766
+      },
+      {
+        "frames": 1006,
+        "probe": {
+          "correction": 310,
+          "harm": 144,
+          "net": 166,
+          "net_per_frame": 0.16500994035785288
+        },
+        "refiner": {
+          "correction": 337,
+          "harm": 93,
+          "net": 244,
+          "net_per_frame": 0.24254473161033796
+        },
+        "retention": 1.4698795180722892,
+        "stratum": 2,
+        "confidence_low": 0.028108835220336914,
+        "confidence_high": 0.05619758367538452
+      },
+      {
+        "frames": 1006,
+        "probe": {
+          "correction": 277,
+          "harm": 148,
+          "net": 129,
+          "net_per_frame": 0.12823061630218688
+        },
+        "refiner": {
+          "correction": 269,
+          "harm": 83,
+          "net": 186,
+          "net_per_frame": 0.1848906560636183
+        },
+        "retention": 1.441860465116279,
+        "stratum": 3,
+        "confidence_low": 0.05620625615119934,
+        "confidence_high": 0.08246999979019165
+      },
+      {
+        "frames": 1005,
+        "probe": {
+          "correction": 295,
+          "harm": 140,
+          "net": 155,
+          "net_per_frame": 0.15422885572139303
+        },
+        "refiner": {
+          "correction": 242,
+          "harm": 66,
+          "net": 176,
+          "net_per_frame": 0.17512437810945275
+        },
+        "retention": 1.135483870967742,
+        "stratum": 4,
+        "confidence_low": 0.08256474137306213,
+        "confidence_high": 0.10680234432220459
+      },
+      {
+        "frames": 1005,
+        "probe": {
+          "correction": 246,
+          "harm": 114,
+          "net": 132,
+          "net_per_frame": 0.13134328358208955
+        },
+        "refiner": {
+          "correction": 223,
+          "harm": 60,
+          "net": 163,
+          "net_per_frame": 0.16218905472636816
+        },
+        "retention": 1.2348484848484849,
+        "stratum": 5,
+        "confidence_low": 0.1068233847618103,
+        "confidence_high": 0.12998080253601074
+      }
+    ]
+  },
+  "per_noise": {
+    "Babble_noise": {
+      "frames": 1444,
+      "probe": {
+        "correction": 335,
+        "harm": 243,
+        "net": 92,
+        "net_per_frame": 0.06371191135734072
+      },
+      "refiner": {
+        "correction": 209,
+        "harm": 163,
+        "net": 46,
+        "net_per_frame": 0.03185595567867036
+      },
+      "retention": 0.5,
+      "group": "seen"
+    },
+    "City_noise": {
+      "frames": 1314,
+      "probe": {
+        "correction": 263,
+        "harm": 200,
+        "net": 63,
+        "net_per_frame": 0.04794520547945205
+      },
+      "refiner": {
+        "correction": 198,
+        "harm": 156,
+        "net": 42,
+        "net_per_frame": 0.0319634703196347
+      },
+      "retention": 0.6666666666666666,
+      "group": "seen"
+    },
+    "Domestic_noise": {
+      "frames": 1137,
+      "probe": {
+        "correction": 227,
+        "harm": 205,
+        "net": 22,
+        "net_per_frame": 0.019349164467897976
+      },
+      "refiner": {
+        "correction": 171,
+        "harm": 143,
+        "net": 28,
+        "net_per_frame": 0.024626209322779244
+      },
+      "retention": 1.2727272727272727,
+      "group": "seen"
+    },
+    "Nature_noise": {
+      "frames": 1049,
+      "probe": {
+        "correction": 228,
+        "harm": 169,
+        "net": 59,
+        "net_per_frame": 0.05624404194470925
+      },
+      "refiner": {
+        "correction": 178,
+        "harm": 110,
+        "net": 68,
+        "net_per_frame": 0.06482364156339371
+      },
+      "retention": 1.152542372881356,
+      "group": "seen"
+    },
+    "Office_noise": {
+      "frames": 1058,
+      "probe": {
+        "correction": 240,
+        "harm": 196,
+        "net": 44,
+        "net_per_frame": 0.04158790170132325
+      },
+      "refiner": {
+        "correction": 157,
+        "harm": 156,
+        "net": 1,
+        "net_per_frame": 0.000945179584120983
+      },
+      "retention": 0.022727272727272728,
+      "group": "seen"
+    },
+    "Public_noise": {
+      "frames": 1361,
+      "probe": {
+        "correction": 298,
+        "harm": 185,
+        "net": 113,
+        "net_per_frame": 0.08302718589272594
+      },
+      "refiner": {
+        "correction": 241,
+        "harm": 163,
+        "net": 78,
+        "net_per_frame": 0.05731080088170463
+      },
+      "retention": 0.6902654867256637,
+      "group": "seen"
+    },
+    "SSN_noise": {
+      "frames": 2853,
+      "probe": {
+        "correction": 956,
+        "harm": 351,
+        "net": 605,
+        "net_per_frame": 0.21205748335085875
+      },
+      "refiner": {
+        "correction": 987,
+        "harm": 165,
+        "net": 822,
+        "net_per_frame": 0.288117770767613
+      },
+      "retention": 1.3586776859504133,
+      "group": "unseen"
+    },
+    "Street_noise": {
+      "frames": 1494,
+      "probe": {
+        "correction": 364,
+        "harm": 236,
+        "net": 128,
+        "net_per_frame": 0.0856760374832664
+      },
+      "refiner": {
+        "correction": 335,
+        "harm": 175,
+        "net": 160,
+        "net_per_frame": 0.107095046854083
+      },
+      "retention": 1.25,
+      "group": "unseen"
+    },
+    "Transport_noise": {
+      "frames": 681,
+      "probe": {
+        "correction": 128,
+        "harm": 134,
+        "net": -6,
+        "net_per_frame": -0.00881057268722467
+      },
+      "refiner": {
+        "correction": 99,
+        "harm": 95,
+        "net": 4,
+        "net_per_frame": 0.005873715124816446
+      },
+      "retention": null,
+      "group": "unseen"
+    }
+  },
+  "clusters": {
+    "overall": {
+      "clusters": 95,
+      "positive_clusters": 54,
+      "negative_clusters": 35,
+      "neutral_clusters": 6,
+      "top_decile_share_refiner_correction": 0.5306595956247928,
+      "top_decile_share_refiner_harm": 0.4289906103286385,
+      "top_decile_share_probe_correction": 0.43811815022721196,
+      "top_decile_share_probe_harm": 0.4522657281126265,
+      "worst_clusters": [
+        {
+          "source_key": "test-clean/121/123859/121-123859-0001.flac",
+          "selected": 292,
+          "refiner_net": -43,
+          "probe_net": 25
+        },
+        {
+          "source_key": "test-clean/8230/279154/8230-279154-0028.flac",
+          "selected": 400,
+          "refiner_net": -32,
+          "probe_net": 51
+        },
+        {
+          "source_key": "test-clean/7176/88083/7176-88083-0001.flac",
+          "selected": 509,
+          "refiner_net": -27,
+          "probe_net": 5
+        },
+        {
+          "source_key": "test-clean/237/134500/237-134500-0021.flac",
+          "selected": 48,
+          "refiner_net": -17,
+          "probe_net": -3
+        },
+        {
+          "source_key": "test-clean/6930/76324/6930-76324-0028.flac",
+          "selected": 356,
+          "refiner_net": -15,
+          "probe_net": 27
+        }
+      ]
+    },
+    "seen": {
+      "clusters": 90,
+      "positive_clusters": 48,
+      "negative_clusters": 34,
+      "neutral_clusters": 8,
+      "top_decile_share_refiner_correction": 0.4038128249566724,
+      "top_decile_share_refiner_harm": 0.42536475869809204,
+      "top_decile_share_probe_correction": 0.3739786297925833,
+      "top_decile_share_probe_harm": 0.4248747913188648,
+      "worst_clusters": [
+        {
+          "source_key": "test-clean/8230/279154/8230-279154-0028.flac",
+          "selected": 265,
+          "refiner_net": -33,
+          "probe_net": 26
+        },
+        {
+          "source_key": "test-clean/7176/88083/7176-88083-0001.flac",
+          "selected": 349,
+          "refiner_net": -21,
+          "probe_net": -8
+        },
+        {
+          "source_key": "test-clean/260/123288/260-123288-0026.flac",
+          "selected": 337,
+          "refiner_net": -15,
+          "probe_net": -25
+        },
+        {
+          "source_key": "test-clean/7176/88083/7176-88083-0021.flac",
+          "selected": 225,
+          "refiner_net": -12,
+          "probe_net": 22
+        },
+        {
+          "source_key": "test-clean/7729/102255/7729-102255-0037.flac",
+          "selected": 40,
+          "refiner_net": -11,
+          "probe_net": -4
+        }
+      ]
+    },
+    "unseen": {
+      "clusters": 64,
+      "positive_clusters": 37,
+      "negative_clusters": 17,
+      "neutral_clusters": 10,
+      "top_decile_share_refiner_correction": 0.7044334975369458,
+      "top_decile_share_refiner_harm": 0.5103448275862069,
+      "top_decile_share_probe_correction": 0.6450276243093923,
+      "top_decile_share_probe_harm": 0.5728155339805825,
+      "worst_clusters": [
+        {
+          "source_key": "test-clean/237/134500/237-134500-0021.flac",
+          "selected": 29,
+          "refiner_net": -15,
+          "probe_net": -2
+        },
+        {
+          "source_key": "test-clean/2300/131720/2300-131720-0028.flac",
+          "selected": 151,
+          "refiner_net": -6,
+          "probe_net": -3
+        },
+        {
+          "source_key": "test-clean/7176/88083/7176-88083-0001.flac",
+          "selected": 64,
+          "refiner_net": -5,
+          "probe_net": 3
+        },
+        {
+          "source_key": "test-clean/121/121726/121-121726-0011.flac",
+          "selected": 11,
+          "refiner_net": -4,
+          "probe_net": -1
+        },
+        {
+          "source_key": "test-clean/8463/294828/8463-294828-0028.flac",
+          "selected": 36,
+          "refiner_net": -4,
+          "probe_net": 9
+        }
+      ]
+    }
+  }
+}

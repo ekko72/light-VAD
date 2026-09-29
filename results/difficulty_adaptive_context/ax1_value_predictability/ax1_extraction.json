@@ -1,0 +1,22 @@
+{
+  "items": 1336,
+  "frames": 553532,
+  "hidden_shape": [
+    553532,
+    128
+  ],
+  "mfcc_shape": [
+    553532,
+    64
+  ],
+  "metadata_matches": {
+    "labels": true,
+    "source_key": true,
+    "noise_name": true,
+    "condition": true
+  },
+  "short_max_abs_error": 0.0,
+  "short_mean_abs_error": 0.0,
+  "short_p99_abs_error": 0.0,
+  "output": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\difficulty_adaptive_context\\ax1_value_predictability\\ax1_features.npz"
+}

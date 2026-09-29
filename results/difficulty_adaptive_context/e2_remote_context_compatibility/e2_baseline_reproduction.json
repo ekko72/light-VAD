@@ -1,0 +1,2801 @@
+{
+  "completed_utc": "2026-09-21T09:28:02Z",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "elapsed_seconds": 7.9450764656066895,
+  "frames": 240565,
+  "max_abs_embedded_short_error": 0.0,
+  "max_abs_full_error": 2.086162567138672e-07,
+  "new_final_ood_touched": false,
+  "passed": true,
+  "population": {
+    "frames": 553532,
+    "noisy_test_frames": 240565,
+    "noisy_test_records": 396,
+    "noisy_test_sources": 96,
+    "noisy_test_speakers": 20,
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20
+  },
+  "protocol_id": "E2-RCCD-v1",
+  "protocol_sha256": "1A5E17226E75B08EB20725CCEB8AEA1B18794A510118E386C53F790AF700D589",
+  "record_rows": [
+    {
+      "frames": 211,
+      "item_index": 1,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:121-121726-0001"
+    },
+    {
+      "frames": 157,
+      "item_index": 7,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:1995-1837-0019"
+    },
+    {
+      "frames": 44,
+      "item_index": 9,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:237-126133-0016"
+    },
+    {
+      "frames": 511,
+      "item_index": 11,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:237-134500-0041"
+    },
+    {
+      "frames": 650,
+      "item_index": 37,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:7021-79740-0011"
+    },
+    {
+      "frames": 267,
+      "item_index": 39,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:-5:908-31957-0016"
+    },
+    {
+      "frames": 1278,
+      "item_index": 41,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:1188-133604-0016"
+    },
+    {
+      "frames": 34,
+      "item_index": 43,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:121-127105-0036"
+    },
+    {
+      "frames": 1275,
+      "item_index": 47,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:2830-3980-0073"
+    },
+    {
+      "frames": 92,
+      "item_index": 49,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:2961-961-0003"
+    },
+    {
+      "frames": 1868,
+      "item_index": 69,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:8230-279154-0038"
+    },
+    {
+      "frames": 285,
+      "item_index": 71,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:0:8463-287645-0013"
+    },
+    {
+      "frames": 37,
+      "item_index": 83,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:1320-122617-0008"
+    },
+    {
+      "frames": 1059,
+      "item_index": 87,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.086162567138672e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:2094-142345-0009"
+    },
+    {
+      "frames": 511,
+      "item_index": 90,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:237-134500-0041"
+    },
+    {
+      "frames": 606,
+      "item_index": 105,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:6930-76324-0028"
+    },
+    {
+      "frames": 772,
+      "item_index": 107,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:7729-102255-0007"
+    },
+    {
+      "frames": 1393,
+      "item_index": 109,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:5:8224-274381-0000"
+    },
+    {
+      "frames": 416,
+      "item_index": 115,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:1188-133604-0036"
+    },
+    {
+      "frames": 680,
+      "item_index": 127,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:237-134500-0031"
+    },
+    {
+      "frames": 1275,
+      "item_index": 132,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:2830-3980-0073"
+    },
+    {
+      "frames": 39,
+      "item_index": 137,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:3729-6852-0043"
+    },
+    {
+      "frames": 15,
+      "item_index": 140,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:5142-33396-0048"
+    },
+    {
+      "frames": 768,
+      "item_index": 146,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:7021-79730-0001"
+    },
+    {
+      "frames": 1276,
+      "item_index": 148,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:7176-88083-0001"
+    },
+    {
+      "frames": 879,
+      "item_index": 150,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:10:7176-88083-0021"
+    },
+    {
+      "frames": 2158,
+      "item_index": 154,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:121-123859-0001"
+    },
+    {
+      "frames": 636,
+      "item_index": 158,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:1995-1826-0001"
+    },
+    {
+      "frames": 157,
+      "item_index": 159,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:1995-1837-0019"
+    },
+    {
+      "frames": 177,
+      "item_index": 161,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:1995-1837-0029"
+    },
+    {
+      "frames": 131,
+      "item_index": 163,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:237-134500-0021"
+    },
+    {
+      "frames": 606,
+      "item_index": 179,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:6930-76324-0028"
+    },
+    {
+      "frames": 1492,
+      "item_index": 181,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:15:8224-274384-0012"
+    },
+    {
+      "frames": 34,
+      "item_index": 183,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:20:121-127105-0036"
+    },
+    {
+      "frames": 523,
+      "item_index": 189,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:20:1995-1836-0014"
+    },
+    {
+      "frames": 235,
+      "item_index": 192,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Babble_noise:20:2830-3980-0023"
+    },
+    {
+      "frames": 783,
+      "item_index": 208,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Babble_noise:20:6930-75918-0019"
+    },
+    {
+      "frames": 1278,
+      "item_index": 215,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:1188-133604-0016"
+    },
+    {
+      "frames": 1631,
+      "item_index": 217,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.2351741790771484e-08,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:1188-133604-0026"
+    },
+    {
+      "frames": 210,
+      "item_index": 219,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:1320-122612-0005"
+    },
+    {
+      "frames": 2213,
+      "item_index": 225,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:2300-131720-0028"
+    },
+    {
+      "frames": 783,
+      "item_index": 237,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:6930-75918-0019"
+    },
+    {
+      "frames": 14,
+      "item_index": 239,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.9802322387695312e-08,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:7176-92135-0003"
+    },
+    {
+      "frames": 721,
+      "item_index": 241,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:7729-102255-0037"
+    },
+    {
+      "frames": 114,
+      "item_index": 245,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:-5:908-157963-0017"
+    },
+    {
+      "frames": 365,
+      "item_index": 253,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:0:260-123286-0028"
+    },
+    {
+      "frames": 1223,
+      "item_index": 255,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:0:260-123288-0026"
+    },
+    {
+      "frames": 395,
+      "item_index": 258,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:0:2961-960-0016"
+    },
+    {
+      "frames": 347,
+      "item_index": 273,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:0:6930-75918-0009"
+    },
+    {
+      "frames": 2896,
+      "item_index": 281,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:0:908-157963-0007"
+    },
+    {
+      "frames": 211,
+      "item_index": 284,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:121-121726-0001"
+    },
+    {
+      "frames": 257,
+      "item_index": 288,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:1320-122612-0015"
+    },
+    {
+      "frames": 680,
+      "item_index": 291,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:237-134500-0031"
+    },
+    {
+      "frames": 1767,
+      "item_index": 294,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:3729-6852-0003"
+    },
+    {
+      "frames": 37,
+      "item_index": 298,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:5142-33396-0038"
+    },
+    {
+      "frames": 15,
+      "item_index": 299,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:5142-33396-0048"
+    },
+    {
+      "frames": 606,
+      "item_index": 305,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:6930-76324-0028"
+    },
+    {
+      "frames": 820,
+      "item_index": 307,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:6930-81414-0009"
+    },
+    {
+      "frames": 947,
+      "item_index": 309,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:7176-92135-0043"
+    },
+    {
+      "frames": 1868,
+      "item_index": 310,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:SSN_noise:5:8230-279154-0038"
+    },
+    {
+      "frames": 120,
+      "item_index": 318,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:10:2830-3980-0053"
+    },
+    {
+      "frames": 160,
+      "item_index": 320,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:10:2830-3980-0063"
+    },
+    {
+      "frames": 15,
+      "item_index": 330,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:10:5142-33396-0048"
+    },
+    {
+      "frames": 650,
+      "item_index": 334,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:10:7021-79740-0011"
+    },
+    {
+      "frames": 775,
+      "item_index": 340,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:10:8230-279154-0028"
+    },
+    {
+      "frames": 372,
+      "item_index": 344,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:121-127105-0026"
+    },
+    {
+      "frames": 471,
+      "item_index": 347,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:2094-142345-0029"
+    },
+    {
+      "frames": 131,
+      "item_index": 349,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:237-134500-0021"
+    },
+    {
+      "frames": 1223,
+      "item_index": 350,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:260-123288-0026"
+    },
+    {
+      "frames": 2476,
+      "item_index": 353,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:3729-6852-0033"
+    },
+    {
+      "frames": 606,
+      "item_index": 365,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:6930-76324-0028"
+    },
+    {
+      "frames": 820,
+      "item_index": 366,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:6930-81414-0009"
+    },
+    {
+      "frames": 240,
+      "item_index": 368,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:15:7176-92135-0023"
+    },
+    {
+      "frames": 1278,
+      "item_index": 371,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:SSN_noise:20:1188-133604-0016"
+    },
+    {
+      "frames": 1191,
+      "item_index": 378,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:20:2961-960-0006"
+    },
+    {
+      "frames": 420,
+      "item_index": 391,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:20:7021-85628-0010"
+    },
+    {
+      "frames": 933,
+      "item_index": 398,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:SSN_noise:20:8463-294828-0038"
+    },
+    {
+      "frames": 416,
+      "item_index": 400,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:1188-133604-0036"
+    },
+    {
+      "frames": 1218,
+      "item_index": 406,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:1320-122617-0028"
+    },
+    {
+      "frames": 636,
+      "item_index": 408,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:1995-1826-0001"
+    },
+    {
+      "frames": 760,
+      "item_index": 410,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:1995-1826-0021"
+    },
+    {
+      "frames": 3010,
+      "item_index": 412,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:1995-1836-0004"
+    },
+    {
+      "frames": 120,
+      "item_index": 413,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:2830-3980-0053"
+    },
+    {
+      "frames": 1191,
+      "item_index": 414,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:2961-960-0006"
+    },
+    {
+      "frames": 92,
+      "item_index": 415,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:2961-961-0003"
+    },
+    {
+      "frames": 137,
+      "item_index": 422,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:6930-76324-0008"
+    },
+    {
+      "frames": 772,
+      "item_index": 424,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Domestic_noise:-5:7729-102255-0007"
+    },
+    {
+      "frames": 1278,
+      "item_index": 429,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:1188-133604-0016"
+    },
+    {
+      "frames": 231,
+      "item_index": 435,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:2094-142345-0049"
+    },
+    {
+      "frames": 1275,
+      "item_index": 436,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:2830-3980-0073"
+    },
+    {
+      "frames": 92,
+      "item_index": 437,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:2961-961-0003"
+    },
+    {
+      "frames": 1767,
+      "item_index": 439,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:3729-6852-0003"
+    },
+    {
+      "frames": 137,
+      "item_index": 447,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:6930-76324-0008"
+    },
+    {
+      "frames": 264,
+      "item_index": 449,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:0:7021-85628-0020"
+    },
+    {
+      "frames": 372,
+      "item_index": 453,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:121-127105-0026"
+    },
+    {
+      "frames": 37,
+      "item_index": 455,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:1320-122617-0008"
+    },
+    {
+      "frames": 1218,
+      "item_index": 456,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:1320-122617-0028"
+    },
+    {
+      "frames": 157,
+      "item_index": 457,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:1995-1837-0019"
+    },
+    {
+      "frames": 471,
+      "item_index": 458,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:2094-142345-0029"
+    },
+    {
+      "frames": 29,
+      "item_index": 460,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:237-134493-0000"
+    },
+    {
+      "frames": 131,
+      "item_index": 461,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:237-134500-0021"
+    },
+    {
+      "frames": 107,
+      "item_index": 463,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:260-123288-0006"
+    },
+    {
+      "frames": 264,
+      "item_index": 471,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:7021-85628-0020"
+    },
+    {
+      "frames": 1276,
+      "item_index": 476,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:7176-88083-0001"
+    },
+    {
+      "frames": 775,
+      "item_index": 477,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:5:8230-279154-0028"
+    },
+    {
+      "frames": 416,
+      "item_index": 480,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:1188-133604-0036"
+    },
+    {
+      "frames": 257,
+      "item_index": 481,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:1320-122612-0015"
+    },
+    {
+      "frames": 180,
+      "item_index": 484,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:2300-131720-0038"
+    },
+    {
+      "frames": 37,
+      "item_index": 493,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:5142-33396-0038"
+    },
+    {
+      "frames": 768,
+      "item_index": 497,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.086162567138672e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:7021-79730-0001"
+    },
+    {
+      "frames": 981,
+      "item_index": 499,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:10:8224-274381-0010"
+    },
+    {
+      "frames": 22,
+      "item_index": 504,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:121-121726-0011"
+    },
+    {
+      "frames": 91,
+      "item_index": 506,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:121-127105-0006"
+    },
+    {
+      "frames": 34,
+      "item_index": 508,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:121-127105-0036"
+    },
+    {
+      "frames": 513,
+      "item_index": 512,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:1995-1826-0011"
+    },
+    {
+      "frames": 177,
+      "item_index": 513,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:1995-1837-0029"
+    },
+    {
+      "frames": 471,
+      "item_index": 514,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:2094-142345-0029"
+    },
+    {
+      "frames": 1223,
+      "item_index": 515,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:260-123288-0026"
+    },
+    {
+      "frames": 120,
+      "item_index": 516,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:2830-3980-0053"
+    },
+    {
+      "frames": 39,
+      "item_index": 518,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:3729-6852-0043"
+    },
+    {
+      "frames": 14,
+      "item_index": 526,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.4901161193847656e-08,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:7176-92135-0003"
+    },
+    {
+      "frames": 240,
+      "item_index": 527,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:7176-92135-0023"
+    },
+    {
+      "frames": 114,
+      "item_index": 528,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:15:908-157963-0017"
+    },
+    {
+      "frames": 760,
+      "item_index": 533,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:1995-1826-0021"
+    },
+    {
+      "frames": 1059,
+      "item_index": 534,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:2094-142345-0009"
+    },
+    {
+      "frames": 247,
+      "item_index": 536,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:2094-142345-0039"
+    },
+    {
+      "frames": 1223,
+      "item_index": 537,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:260-123288-0026"
+    },
+    {
+      "frames": 74,
+      "item_index": 539,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:2830-3979-0006"
+    },
+    {
+      "frames": 92,
+      "item_index": 540,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:2961-961-0003"
+    },
+    {
+      "frames": 650,
+      "item_index": 552,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:7021-79740-0011"
+    },
+    {
+      "frames": 933,
+      "item_index": 556,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:Domestic_noise:20:8463-294828-0038"
+    },
+    {
+      "frames": 513,
+      "item_index": 561,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:1995-1826-0011"
+    },
+    {
+      "frames": 1223,
+      "item_index": 564,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:260-123288-0026"
+    },
+    {
+      "frames": 1191,
+      "item_index": 565,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:2961-960-0006"
+    },
+    {
+      "frames": 395,
+      "item_index": 566,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:2961-960-0016"
+    },
+    {
+      "frames": 772,
+      "item_index": 572,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:7729-102255-0007"
+    },
+    {
+      "frames": 1868,
+      "item_index": 573,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:8230-279154-0038"
+    },
+    {
+      "frames": 17,
+      "item_index": 575,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:-5:8463-294825-0008"
+    },
+    {
+      "frames": 1631,
+      "item_index": 581,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.9802322387695312e-08,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:1188-133604-0026"
+    },
+    {
+      "frames": 372,
+      "item_index": 582,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:121-127105-0026"
+    },
+    {
+      "frames": 588,
+      "item_index": 584,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:1320-122617-0018"
+    },
+    {
+      "frames": 120,
+      "item_index": 587,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:2830-3980-0053"
+    },
+    {
+      "frames": 1275,
+      "item_index": 588,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:2830-3980-0073"
+    },
+    {
+      "frames": 14,
+      "item_index": 605,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.9802322387695312e-08,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:7176-92135-0003"
+    },
+    {
+      "frames": 409,
+      "item_index": 607,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:0:8463-287645-0003"
+    },
+    {
+      "frames": 34,
+      "item_index": 608,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:121-127105-0036"
+    },
+    {
+      "frames": 37,
+      "item_index": 610,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:1320-122617-0008"
+    },
+    {
+      "frames": 523,
+      "item_index": 611,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:1995-1836-0014"
+    },
+    {
+      "frames": 620,
+      "item_index": 613,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:2094-142345-0059"
+    },
+    {
+      "frames": 44,
+      "item_index": 614,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:237-126133-0016"
+    },
+    {
+      "frames": 680,
+      "item_index": 615,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:237-134500-0031"
+    },
+    {
+      "frames": 105,
+      "item_index": 617,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:260-123288-0016"
+    },
+    {
+      "frames": 120,
+      "item_index": 618,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:2830-3980-0053"
+    },
+    {
+      "frames": 772,
+      "item_index": 630,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:5:7729-102255-0007"
+    },
+    {
+      "frames": 37,
+      "item_index": 633,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:1320-122617-0008"
+    },
+    {
+      "frames": 471,
+      "item_index": 634,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:2094-142345-0029"
+    },
+    {
+      "frames": 511,
+      "item_index": 635,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:237-134500-0041"
+    },
+    {
+      "frames": 33,
+      "item_index": 637,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:2830-3980-0013"
+    },
+    {
+      "frames": 160,
+      "item_index": 638,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:2830-3980-0063"
+    },
+    {
+      "frames": 124,
+      "item_index": 644,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:5142-36586-0003"
+    },
+    {
+      "frames": 208,
+      "item_index": 654,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:10:908-31957-0006"
+    },
+    {
+      "frames": 1218,
+      "item_index": 657,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:1320-122617-0028"
+    },
+    {
+      "frames": 3010,
+      "item_index": 658,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:1995-1836-0004"
+    },
+    {
+      "frames": 177,
+      "item_index": 659,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:1995-1837-0029"
+    },
+    {
+      "frames": 107,
+      "item_index": 661,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:260-123288-0006"
+    },
+    {
+      "frames": 74,
+      "item_index": 662,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:2830-3979-0006"
+    },
+    {
+      "frames": 1191,
+      "item_index": 663,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:2961-960-0006"
+    },
+    {
+      "frames": 768,
+      "item_index": 672,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:7021-79730-0001"
+    },
+    {
+      "frames": 650,
+      "item_index": 673,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:7021-79740-0011"
+    },
+    {
+      "frames": 209,
+      "item_index": 677,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:15:7729-102255-0027"
+    },
+    {
+      "frames": 29,
+      "item_index": 681,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:237-134493-0000"
+    },
+    {
+      "frames": 1767,
+      "item_index": 684,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:3729-6852-0003"
+    },
+    {
+      "frames": 13,
+      "item_index": 688,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:5142-33396-0018"
+    },
+    {
+      "frames": 606,
+      "item_index": 693,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:6930-76324-0028"
+    },
+    {
+      "frames": 768,
+      "item_index": 695,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:7021-79730-0001"
+    },
+    {
+      "frames": 420,
+      "item_index": 696,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:7021-85628-0010"
+    },
+    {
+      "frames": 264,
+      "item_index": 697,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:7021-85628-0020"
+    },
+    {
+      "frames": 1276,
+      "item_index": 698,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:7176-88083-0001"
+    },
+    {
+      "frames": 1130,
+      "item_index": 700,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:7729-102255-0017"
+    },
+    {
+      "frames": 410,
+      "item_index": 704,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Nature_noise:20:8463-294828-0028"
+    },
+    {
+      "frames": 471,
+      "item_index": 707,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:2094-142345-0029"
+    },
+    {
+      "frames": 2213,
+      "item_index": 708,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:2300-131720-0028"
+    },
+    {
+      "frames": 1276,
+      "item_index": 718,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:7176-88083-0001"
+    },
+    {
+      "frames": 14,
+      "item_index": 719,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:7176-92135-0003"
+    },
+    {
+      "frames": 1492,
+      "item_index": 720,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:8224-274384-0012"
+    },
+    {
+      "frames": 803,
+      "item_index": 723,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:8230-279154-0018"
+    },
+    {
+      "frames": 285,
+      "item_index": 724,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:8463-287645-0013"
+    },
+    {
+      "frames": 267,
+      "item_index": 725,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:-5:908-31957-0016"
+    },
+    {
+      "frames": 257,
+      "item_index": 728,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:0:1320-122612-0015"
+    },
+    {
+      "frames": 873,
+      "item_index": 732,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:0:2300-131720-0018"
+    },
+    {
+      "frames": 131,
+      "item_index": 733,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:0:237-134500-0021"
+    },
+    {
+      "frames": 137,
+      "item_index": 742,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:0:6930-76324-0008"
+    },
+    {
+      "frames": 218,
+      "item_index": 745,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:0:7021-79740-0001"
+    },
+    {
+      "frames": 879,
+      "item_index": 746,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:0:7176-88083-0021"
+    },
+    {
+      "frames": 933,
+      "item_index": 747,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:0:8463-294828-0038"
+    },
+    {
+      "frames": 177,
+      "item_index": 753,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:5:1995-1837-0029"
+    },
+    {
+      "frames": 437,
+      "item_index": 758,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:5:3729-6852-0023"
+    },
+    {
+      "frames": 240,
+      "item_index": 765,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:5:7176-92135-0023"
+    },
+    {
+      "frames": 947,
+      "item_index": 766,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:5:7176-92135-0043"
+    },
+    {
+      "frames": 721,
+      "item_index": 767,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:5:7729-102255-0037"
+    },
+    {
+      "frames": 775,
+      "item_index": 768,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:5:8230-279154-0028"
+    },
+    {
+      "frames": 22,
+      "item_index": 772,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:10:121-121726-0011"
+    },
+    {
+      "frames": 1059,
+      "item_index": 773,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:10:2094-142345-0009"
+    },
+    {
+      "frames": 231,
+      "item_index": 774,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:10:2094-142345-0049"
+    },
+    {
+      "frames": 620,
+      "item_index": 775,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Office_noise:10:2094-142345-0059"
+    },
+    {
+      "frames": 2213,
+      "item_index": 776,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Office_noise:10:2300-131720-0028"
+    },
+    {
+      "frames": 2476,
+      "item_index": 779,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:10:3729-6852-0033"
+    },
+    {
+      "frames": 420,
+      "item_index": 787,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:10:7021-85628-0010"
+    },
+    {
+      "frames": 933,
+      "item_index": 789,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:10:8463-294828-0038"
+    },
+    {
+      "frames": 606,
+      "item_index": 801,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:15:6930-76324-0028"
+    },
+    {
+      "frames": 1130,
+      "item_index": 805,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:15:7729-102255-0017"
+    },
+    {
+      "frames": 285,
+      "item_index": 808,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:15:8463-287645-0013"
+    },
+    {
+      "frames": 267,
+      "item_index": 810,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:15:908-31957-0016"
+    },
+    {
+      "frames": 1278,
+      "item_index": 813,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:20:1188-133604-0016"
+    },
+    {
+      "frames": 211,
+      "item_index": 814,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:20:121-121726-0001"
+    },
+    {
+      "frames": 37,
+      "item_index": 815,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:20:1320-122617-0008"
+    },
+    {
+      "frames": 231,
+      "item_index": 816,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:20:2094-142345-0049"
+    },
+    {
+      "frames": 531,
+      "item_index": 818,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Office_noise:20:2300-131720-0008"
+    },
+    {
+      "frames": 29,
+      "item_index": 819,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Office_noise:20:237-134493-0000"
+    },
+    {
+      "frames": 1191,
+      "item_index": 820,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:20:2961-960-0006"
+    },
+    {
+      "frames": 437,
+      "item_index": 821,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:20:3729-6852-0023"
+    },
+    {
+      "frames": 13,
+      "item_index": 824,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.4901161193847656e-08,
+      "sample_id": "LibriSpeech:test:Office_noise:20:5142-33396-0018"
+    },
+    {
+      "frames": 1130,
+      "item_index": 830,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:20:7729-102255-0017"
+    },
+    {
+      "frames": 409,
+      "item_index": 831,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Office_noise:20:8463-287645-0003"
+    },
+    {
+      "frames": 513,
+      "item_index": 835,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:-5:1995-1826-0011"
+    },
+    {
+      "frames": 2213,
+      "item_index": 836,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:-5:2300-131720-0028"
+    },
+    {
+      "frames": 131,
+      "item_index": 839,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:-5:2961-961-0013"
+    },
+    {
+      "frames": 879,
+      "item_index": 847,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:-5:7176-88083-0021"
+    },
+    {
+      "frames": 775,
+      "item_index": 849,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:-5:8230-279154-0028"
+    },
+    {
+      "frames": 91,
+      "item_index": 853,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:121-127105-0006"
+    },
+    {
+      "frames": 44,
+      "item_index": 855,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:237-126133-0016"
+    },
+    {
+      "frames": 107,
+      "item_index": 857,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:260-123288-0006"
+    },
+    {
+      "frames": 105,
+      "item_index": 858,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:260-123288-0016"
+    },
+    {
+      "frames": 13,
+      "item_index": 868,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Public_noise:0:5142-33396-0018"
+    },
+    {
+      "frames": 124,
+      "item_index": 869,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:5142-36586-0003"
+    },
+    {
+      "frames": 218,
+      "item_index": 872,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:7021-79740-0001"
+    },
+    {
+      "frames": 1130,
+      "item_index": 873,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:0:7729-102255-0017"
+    },
+    {
+      "frames": 267,
+      "item_index": 874,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:0:908-31957-0016"
+    },
+    {
+      "frames": 416,
+      "item_index": 876,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:5:1188-133604-0036"
+    },
+    {
+      "frames": 257,
+      "item_index": 877,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:1320-122612-0015"
+    },
+    {
+      "frames": 247,
+      "item_index": 878,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:2094-142345-0039"
+    },
+    {
+      "frames": 180,
+      "item_index": 879,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:2300-131720-0038"
+    },
+    {
+      "frames": 124,
+      "item_index": 886,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:5142-36586-0003"
+    },
+    {
+      "frames": 1276,
+      "item_index": 893,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:7176-88083-0001"
+    },
+    {
+      "frames": 209,
+      "item_index": 894,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:5:7729-102255-0027"
+    },
+    {
+      "frames": 372,
+      "item_index": 896,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:10:121-127105-0026"
+    },
+    {
+      "frames": 34,
+      "item_index": 897,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:10:121-127105-0036"
+    },
+    {
+      "frames": 1223,
+      "item_index": 902,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:10:260-123288-0026"
+    },
+    {
+      "frames": 1275,
+      "item_index": 904,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:10:2830-3980-0073"
+    },
+    {
+      "frames": 137,
+      "item_index": 911,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:10:6930-76324-0008"
+    },
+    {
+      "frames": 721,
+      "item_index": 913,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:10:7729-102255-0037"
+    },
+    {
+      "frames": 981,
+      "item_index": 914,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:10:8224-274381-0010"
+    },
+    {
+      "frames": 760,
+      "item_index": 917,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:15:1995-1826-0021"
+    },
+    {
+      "frames": 471,
+      "item_index": 919,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:15:2094-142345-0029"
+    },
+    {
+      "frames": 180,
+      "item_index": 920,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:2300-131720-0038"
+    },
+    {
+      "frames": 105,
+      "item_index": 921,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:260-123288-0016"
+    },
+    {
+      "frames": 1223,
+      "item_index": 922,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:260-123288-0026"
+    },
+    {
+      "frames": 1275,
+      "item_index": 923,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:2830-3980-0073"
+    },
+    {
+      "frames": 395,
+      "item_index": 924,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:15:2961-960-0016"
+    },
+    {
+      "frames": 1767,
+      "item_index": 925,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:15:3729-6852-0003"
+    },
+    {
+      "frames": 124,
+      "item_index": 927,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:5142-36586-0003"
+    },
+    {
+      "frames": 209,
+      "item_index": 934,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:15:7729-102255-0027"
+    },
+    {
+      "frames": 1631,
+      "item_index": 937,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 4.470348358154297e-08,
+      "sample_id": "LibriSpeech:test:Public_noise:20:1188-133604-0026"
+    },
+    {
+      "frames": 34,
+      "item_index": 938,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:20:121-127105-0036"
+    },
+    {
+      "frames": 3010,
+      "item_index": 943,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:20:1995-1836-0004"
+    },
+    {
+      "frames": 231,
+      "item_index": 944,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:20:2094-142345-0049"
+    },
+    {
+      "frames": 437,
+      "item_index": 948,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Public_noise:20:3729-6852-0023"
+    },
+    {
+      "frames": 17,
+      "item_index": 955,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Public_noise:20:8463-294825-0008"
+    },
+    {
+      "frames": 1631,
+      "item_index": 958,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:1188-133604-0026"
+    },
+    {
+      "frames": 365,
+      "item_index": 961,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:260-123286-0028"
+    },
+    {
+      "frames": 235,
+      "item_index": 962,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:2830-3980-0023"
+    },
+    {
+      "frames": 131,
+      "item_index": 964,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:2961-961-0013"
+    },
+    {
+      "frames": 1767,
+      "item_index": 965,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:3729-6852-0003"
+    },
+    {
+      "frames": 2476,
+      "item_index": 966,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:3729-6852-0033"
+    },
+    {
+      "frames": 14,
+      "item_index": 977,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Street_noise:-5:7176-92135-0003"
+    },
+    {
+      "frames": 1631,
+      "item_index": 978,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:0:1188-133604-0026"
+    },
+    {
+      "frames": 1218,
+      "item_index": 980,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:0:1320-122617-0028"
+    },
+    {
+      "frames": 620,
+      "item_index": 982,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:0:2094-142345-0059"
+    },
+    {
+      "frames": 44,
+      "item_index": 983,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:0:237-126133-0016"
+    },
+    {
+      "frames": 721,
+      "item_index": 994,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:0:7729-102255-0037"
+    },
+    {
+      "frames": 141,
+      "item_index": 998,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:0:908-157963-0027"
+    },
+    {
+      "frames": 22,
+      "item_index": 1001,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:5:121-121726-0011"
+    },
+    {
+      "frames": 177,
+      "item_index": 1002,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:5:1995-1837-0029"
+    },
+    {
+      "frames": 247,
+      "item_index": 1003,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:5:2094-142345-0039"
+    },
+    {
+      "frames": 2213,
+      "item_index": 1004,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.9802322387695312e-08,
+      "sample_id": "LibriSpeech:test:Street_noise:5:2300-131720-0028"
+    },
+    {
+      "frames": 511,
+      "item_index": 1005,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:5:237-134500-0041"
+    },
+    {
+      "frames": 133,
+      "item_index": 1016,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:5:5142-36377-0009"
+    },
+    {
+      "frames": 218,
+      "item_index": 1019,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:5:7021-79740-0001"
+    },
+    {
+      "frames": 211,
+      "item_index": 1023,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:10:121-121726-0001"
+    },
+    {
+      "frames": 636,
+      "item_index": 1027,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:10:1995-1826-0001"
+    },
+    {
+      "frames": 177,
+      "item_index": 1029,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:10:1995-1837-0029"
+    },
+    {
+      "frames": 2213,
+      "item_index": 1030,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:10:2300-131720-0028"
+    },
+    {
+      "frames": 105,
+      "item_index": 1031,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:10:260-123288-0016"
+    },
+    {
+      "frames": 1278,
+      "item_index": 1042,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:1188-133604-0016"
+    },
+    {
+      "frames": 234,
+      "item_index": 1044,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:237-126133-0006"
+    },
+    {
+      "frames": 29,
+      "item_index": 1045,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:237-134493-0000"
+    },
+    {
+      "frames": 235,
+      "item_index": 1048,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:2830-3980-0023"
+    },
+    {
+      "frames": 395,
+      "item_index": 1049,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:15:2961-960-0016"
+    },
+    {
+      "frames": 124,
+      "item_index": 1055,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:5142-36586-0003"
+    },
+    {
+      "frames": 606,
+      "item_index": 1059,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:15:6930-76324-0028"
+    },
+    {
+      "frames": 1276,
+      "item_index": 1062,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:7176-88083-0001"
+    },
+    {
+      "frames": 721,
+      "item_index": 1063,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:15:7729-102255-0037"
+    },
+    {
+      "frames": 267,
+      "item_index": 1065,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:15:908-31957-0016"
+    },
+    {
+      "frames": 22,
+      "item_index": 1066,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:121-121726-0011"
+    },
+    {
+      "frames": 257,
+      "item_index": 1068,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:1320-122612-0015"
+    },
+    {
+      "frames": 131,
+      "item_index": 1073,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:237-134500-0021"
+    },
+    {
+      "frames": 107,
+      "item_index": 1074,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:260-123288-0006"
+    },
+    {
+      "frames": 105,
+      "item_index": 1075,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:260-123288-0016"
+    },
+    {
+      "frames": 1223,
+      "item_index": 1076,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Street_noise:20:260-123288-0026"
+    },
+    {
+      "frames": 981,
+      "item_index": 1083,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:20:8224-274381-0010"
+    },
+    {
+      "frames": 410,
+      "item_index": 1084,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Street_noise:20:8463-294828-0028"
+    },
+    {
+      "frames": 247,
+      "item_index": 1091,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:-5:2094-142345-0039"
+    },
+    {
+      "frames": 768,
+      "item_index": 1098,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:-5:7021-79730-0001"
+    },
+    {
+      "frames": 218,
+      "item_index": 1099,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:-5:7021-79740-0001"
+    },
+    {
+      "frames": 600,
+      "item_index": 1102,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:-5:8224-274384-0002"
+    },
+    {
+      "frames": 211,
+      "item_index": 1108,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:121-121726-0001"
+    },
+    {
+      "frames": 372,
+      "item_index": 1109,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:121-127105-0026"
+    },
+    {
+      "frames": 1218,
+      "item_index": 1110,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:1320-122617-0028"
+    },
+    {
+      "frames": 177,
+      "item_index": 1112,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:1995-1837-0029"
+    },
+    {
+      "frames": 620,
+      "item_index": 1113,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:2094-142345-0059"
+    },
+    {
+      "frames": 820,
+      "item_index": 1123,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:6930-81414-0009"
+    },
+    {
+      "frames": 420,
+      "item_index": 1124,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:7021-85628-0010"
+    },
+    {
+      "frames": 775,
+      "item_index": 1127,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:8230-279154-0028"
+    },
+    {
+      "frames": 141,
+      "item_index": 1128,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:0:908-157963-0027"
+    },
+    {
+      "frames": 91,
+      "item_index": 1129,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:121-127105-0006"
+    },
+    {
+      "frames": 210,
+      "item_index": 1130,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:1320-122612-0005"
+    },
+    {
+      "frames": 1059,
+      "item_index": 1132,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:2094-142345-0009"
+    },
+    {
+      "frames": 471,
+      "item_index": 1133,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:2094-142345-0029"
+    },
+    {
+      "frames": 620,
+      "item_index": 1134,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:2094-142345-0059"
+    },
+    {
+      "frames": 15,
+      "item_index": 1139,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:5142-33396-0048"
+    },
+    {
+      "frames": 285,
+      "item_index": 1148,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:8463-287645-0013"
+    },
+    {
+      "frames": 410,
+      "item_index": 1149,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:8463-294828-0028"
+    },
+    {
+      "frames": 933,
+      "item_index": 1150,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:5:8463-294828-0038"
+    },
+    {
+      "frames": 22,
+      "item_index": 1153,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:121-121726-0011"
+    },
+    {
+      "frames": 91,
+      "item_index": 1154,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:121-127105-0006"
+    },
+    {
+      "frames": 620,
+      "item_index": 1157,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:2094-142345-0059"
+    },
+    {
+      "frames": 131,
+      "item_index": 1158,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:237-134500-0021"
+    },
+    {
+      "frames": 133,
+      "item_index": 1164,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:5142-36377-0009"
+    },
+    {
+      "frames": 218,
+      "item_index": 1169,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:7021-79740-0001"
+    },
+    {
+      "frames": 114,
+      "item_index": 1172,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:10:908-157963-0017"
+    },
+    {
+      "frames": 588,
+      "item_index": 1175,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:1320-122617-0018"
+    },
+    {
+      "frames": 636,
+      "item_index": 1178,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:1995-1826-0001"
+    },
+    {
+      "frames": 120,
+      "item_index": 1180,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:2830-3980-0053"
+    },
+    {
+      "frames": 1191,
+      "item_index": 1181,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:2961-960-0006"
+    },
+    {
+      "frames": 420,
+      "item_index": 1189,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:7021-85628-0010"
+    },
+    {
+      "frames": 947,
+      "item_index": 1190,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:7176-92135-0043"
+    },
+    {
+      "frames": 721,
+      "item_index": 1191,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:15:7729-102255-0037"
+    },
+    {
+      "frames": 211,
+      "item_index": 1193,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:20:121-121726-0001"
+    },
+    {
+      "frames": 680,
+      "item_index": 1196,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:20:237-134500-0031"
+    },
+    {
+      "frames": 606,
+      "item_index": 1210,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:Transport_noise:20:6930-76324-0028"
+    },
+    {
+      "frames": 409,
+      "item_index": 1212,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:Transport_noise:20:8463-287645-0003"
+    },
+    {
+      "frames": 114,
+      "item_index": 1213,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:Transport_noise:20:908-157963-0017"
+    },
+    {
+      "frames": 257,
+      "item_index": 1216,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:-5:1320-122612-0015"
+    },
+    {
+      "frames": 760,
+      "item_index": 1218,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:-5:1995-1826-0021"
+    },
+    {
+      "frames": 775,
+      "item_index": 1231,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:-5:8230-279154-0028"
+    },
+    {
+      "frames": 365,
+      "item_index": 1235,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:0:260-123286-0028"
+    },
+    {
+      "frames": 1223,
+      "item_index": 1236,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:0:260-123288-0026"
+    },
+    {
+      "frames": 160,
+      "item_index": 1237,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:0:2830-3980-0063"
+    },
+    {
+      "frames": 133,
+      "item_index": 1243,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:0:5142-36377-0009"
+    },
+    {
+      "frames": 420,
+      "item_index": 1248,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:0:7021-85628-0010"
+    },
+    {
+      "frames": 879,
+      "item_index": 1250,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 2.086162567138672e-07,
+      "sample_id": "LibriSpeech:test:City_noise:0:7176-88083-0021"
+    },
+    {
+      "frames": 14,
+      "item_index": 1251,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 5.960464477539063e-08,
+      "sample_id": "LibriSpeech:test:City_noise:0:7176-92135-0003"
+    },
+    {
+      "frames": 240,
+      "item_index": 1252,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:0:7176-92135-0023"
+    },
+    {
+      "frames": 933,
+      "item_index": 1254,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.4901161193847656e-07,
+      "sample_id": "LibriSpeech:test:City_noise:0:8463-294828-0038"
+    },
+    {
+      "frames": 257,
+      "item_index": 1256,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:5:1320-122612-0015"
+    },
+    {
+      "frames": 513,
+      "item_index": 1258,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.2665987014770508e-07,
+      "sample_id": "LibriSpeech:test:City_noise:5:1995-1826-0011"
+    },
+    {
+      "frames": 873,
+      "item_index": 1260,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.7881393432617188e-07,
+      "sample_id": "LibriSpeech:test:City_noise:5:2300-131720-0018"
+    },
+    {
+      "frames": 107,
+      "item_index": 1261,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:5:260-123288-0006"
+    },
+    {
+      "frames": 347,
+      "item_index": 1270,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:5:6930-75918-0009"
+    },
+    {
+      "frames": 420,
+      "item_index": 1271,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:5:7021-85628-0010"
+    },
+    {
+      "frames": 760,
+      "item_index": 1277,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:10:1995-1826-0021"
+    },
+    {
+      "frames": 3010,
+      "item_index": 1278,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:10:1995-1836-0004"
+    },
+    {
+      "frames": 92,
+      "item_index": 1279,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:10:2961-961-0003"
+    },
+    {
+      "frames": 1767,
+      "item_index": 1280,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:10:3729-6852-0003"
+    },
+    {
+      "frames": 42,
+      "item_index": 1285,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:10:5142-33396-0068"
+    },
+    {
+      "frames": 606,
+      "item_index": 1290,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:10:6930-76324-0028"
+    },
+    {
+      "frames": 1492,
+      "item_index": 1293,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:10:8224-274384-0012"
+    },
+    {
+      "frames": 2896,
+      "item_index": 1294,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:10:908-157963-0007"
+    },
+    {
+      "frames": 114,
+      "item_index": 1295,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:10:908-157963-0017"
+    },
+    {
+      "frames": 1631,
+      "item_index": 1297,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 4.470348358154297e-08,
+      "sample_id": "LibriSpeech:test:City_noise:15:1188-133604-0026"
+    },
+    {
+      "frames": 416,
+      "item_index": 1298,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 8.940696716308594e-08,
+      "sample_id": "LibriSpeech:test:City_noise:15:1188-133604-0036"
+    },
+    {
+      "frames": 372,
+      "item_index": 1299,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:15:121-127105-0026"
+    },
+    {
+      "frames": 235,
+      "item_index": 1302,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:15:2830-3980-0023"
+    },
+    {
+      "frames": 15,
+      "item_index": 1308,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 4.470348358154297e-08,
+      "sample_id": "LibriSpeech:test:City_noise:15:5142-33396-0048"
+    },
+    {
+      "frames": 124,
+      "item_index": 1309,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:15:5142-36586-0003"
+    },
+    {
+      "frames": 879,
+      "item_index": 1311,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:15:7176-88083-0021"
+    },
+    {
+      "frames": 209,
+      "item_index": 1312,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:15:7729-102255-0027"
+    },
+    {
+      "frames": 1278,
+      "item_index": 1316,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:1188-133604-0016"
+    },
+    {
+      "frames": 157,
+      "item_index": 1318,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:1995-1837-0019"
+    },
+    {
+      "frames": 234,
+      "item_index": 1320,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:237-126133-0006"
+    },
+    {
+      "frames": 680,
+      "item_index": 1321,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 1.1920928955078125e-07,
+      "sample_id": "LibriSpeech:test:City_noise:20:237-134500-0031"
+    },
+    {
+      "frames": 347,
+      "item_index": 1329,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:6930-75918-0009"
+    },
+    {
+      "frames": 137,
+      "item_index": 1330,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:6930-76324-0008"
+    },
+    {
+      "frames": 209,
+      "item_index": 1331,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:7729-102255-0027"
+    },
+    {
+      "frames": 1492,
+      "item_index": 1332,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:8224-274384-0012"
+    },
+    {
+      "frames": 17,
+      "item_index": 1334,
+      "max_abs_embedded_short_error": 0.0,
+      "max_abs_full_error": 0.0,
+      "sample_id": "LibriSpeech:test:City_noise:20:8463-294825-0008"
+    }
+  ],
+  "records": 396,
+  "runner_sha256": "AB7EE06CFA401DE2AEF30766C06D81490CFB50C5B65AB741D540097032BC3A55",
+  "tolerance": 1e-06,
+  "training_performed": false
+}

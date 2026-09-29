@@ -1,0 +1,6 @@
+seed,status,best_checkpoint,best_epoch,best_val_auc,elapsed_seconds,history_path
+41,trained,results\cross_architecture_replication\checkpoints\seed41\best.pt,38,0.9096885498350731,2265.5880377292633,results\cross_architecture_replication\checkpoints\seed41\history.json
+59,trained,results\cross_architecture_replication\checkpoints\seed59\best.pt,39,0.9038144138074783,2236.362099647522,results\cross_architecture_replication\checkpoints\seed59\history.json
+71,trained,results\cross_architecture_replication\checkpoints\seed71\best.pt,39,0.904814119725892,2102.134281873703,results\cross_architecture_replication\checkpoints\seed71\history.json
+83,trained,results\cross_architecture_replication\checkpoints\seed83\best.pt,39,0.9081317730890784,2157.943922519684,results\cross_architecture_replication\checkpoints\seed83\history.json
+97,trained,results\cross_architecture_replication\checkpoints\seed97\best.pt,39,0.9083106981924539,2203.2394845485687,results\cross_architecture_replication\checkpoints\seed97\history.json

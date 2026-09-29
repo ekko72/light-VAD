@@ -1,0 +1,8 @@
+{
+  "protocol_id": "A-v2-AE-v1",
+  "protocol_path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\ae_protocol_freeze.json",
+  "protocol_sha256": "28218C73CC8CEDFE14DC9CDB5622B50C2D927627744AB9B9679FDFEE7F6B3842",
+  "freeze_manifest_path": "C:\\Users\\20547\\Desktop\\light-VAD\\reproductions\\difficulty_adaptive_context\\ae_freeze_manifest.json",
+  "freeze_manifest_sha256": "5ECA9CF3E081E0549A5EC069B8010475EEDFFF44D9B60E5EFFB8840396D42917",
+  "status": "FROZEN_BEFORE_AE1_OUTCOME_ANALYSIS"
+}

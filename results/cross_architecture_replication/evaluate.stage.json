@@ -1,0 +1,56 @@
+{
+  "stage": "evaluate",
+  "completed_at": "2026-09-20T17:40:23.101855+00:00",
+  "artifacts": [
+    {
+      "path": "evaluations\\seed41\\scores.npz",
+      "sha256": "03D8CD7670EA3D4E403426B37FBF927ED53ECA0E0F6083FAF3A8A1B039D7FD30",
+      "bytes": 5128115
+    },
+    {
+      "path": "evaluations\\seed41\\evaluation.json",
+      "sha256": "5B4EABB0B3860024705032AEC4123D533A1EC2E77302CFEEC02C75E6AA6436D0",
+      "bytes": 465
+    },
+    {
+      "path": "evaluations\\seed59\\scores.npz",
+      "sha256": "65DEEEFCF5EC53014F3FEA688BA7F617357A038D819BF6F900DC4D6AD0B2A5BD",
+      "bytes": 5133372
+    },
+    {
+      "path": "evaluations\\seed59\\evaluation.json",
+      "sha256": "0C933CF045D1C33D3BC3B0C7DEF69E4774E32ECBAA27A7F1A36A75AEAA90646A",
+      "bytes": 465
+    },
+    {
+      "path": "evaluations\\seed71\\scores.npz",
+      "sha256": "7DA937341F5C8B01A9A5935647C80A6D457E5FF458C4E5C6D9C20EE093EACB39",
+      "bytes": 5110151
+    },
+    {
+      "path": "evaluations\\seed71\\evaluation.json",
+      "sha256": "CB8DA49AAFD4D292DF788D3FD7A2A0D049784BDD0D0124B4FD12AD5AD0657EC8",
+      "bytes": 465
+    },
+    {
+      "path": "evaluations\\seed83\\scores.npz",
+      "sha256": "D75CEEAEC8A7E482DE47B6682EA8045ECE04BC897F2B548A36C17BEA56CB7893",
+      "bytes": 5121905
+    },
+    {
+      "path": "evaluations\\seed83\\evaluation.json",
+      "sha256": "DA79BC363A299A0DD0BF80339198AE7F1DEBDABC9414DD7E9BD08FA836A0BD32",
+      "bytes": 465
+    },
+    {
+      "path": "evaluations\\seed97\\scores.npz",
+      "sha256": "B79337639957D8F7DF6C1114F84A94DD9339F0F079A6231628D593FA68E46AA8",
+      "bytes": 5095554
+    },
+    {
+      "path": "evaluations\\seed97\\evaluation.json",
+      "sha256": "98F1F46623A501A5FF4C82CA1AAE3A3F9399456956E96649C92D5540BD2C2F93",
+      "bytes": 465
+    }
+  ]
+}

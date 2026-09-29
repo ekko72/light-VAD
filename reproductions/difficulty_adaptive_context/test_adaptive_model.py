@@ -10,9 +10,11 @@ import torch
 from reproductions.difficulty_adaptive_context.adaptive_model import (
     AdaptiveCausalVAD,
     AdaptiveStreamingVAD,
+    RF_SPAN_DILATION_PROFILES,
     RefinementConfig,
     SparseCausalMultiScaleRefinement,
     confidence_from_logits,
+    dilations_for_rf_span,
     selection_from_confidence,
 )
 from reproductions.marblenet_vad.model import build_marblenet_3x2x64
@@ -36,6 +38,32 @@ class AdaptiveModelTests(unittest.TestCase):
             )
         ).eval()
         self.model = AdaptiveCausalVAD(self.short, self.refinement).eval()
+
+    def test_rf_span_profiles_resolve_to_exact_lookback(self) -> None:
+        expected = {
+            64: (1, 2, 4, 8, 16),
+            128: (1, 2, 4, 8, 32),
+            256: (1, 2, 4, 8, 64),
+            384: (1, 2, 4, 8, 96),
+            512: (1, 2, 4, 8, 128),
+        }
+        self.assertEqual(RF_SPAN_DILATION_PROFILES, expected)
+        for span, dilations in expected.items():
+            with self.subTest(span=span):
+                resolved = dilations_for_rf_span(span)
+                self.assertEqual(resolved, dilations)
+                self.assertEqual(
+                    RefinementConfig(
+                        kernel_size=5,
+                        dilations=resolved,
+                    ).lookback_frames,
+                    span,
+                )
+
+        with self.assertRaisesRegex(ValueError, "unsupported RF span"):
+            dilations_for_rf_span(192)
+        with self.assertRaisesRegex(ValueError, "kernel_size=5"):
+            dilations_for_rf_span(64, kernel_size=3)
 
     def test_sparse_refinement_matches_dense_at_selected_frames(self) -> None:
         encoded = torch.randn(2, 128, 41)

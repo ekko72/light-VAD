@@ -1,0 +1,11 @@
+{
+  "stage": "audit",
+  "completed_at": "2026-09-20T17:23:45.298827+00:00",
+  "artifacts": [
+    {
+      "path": "car_causality_audit.json",
+      "sha256": "27252560556B7033BFC9E057036A45BE420DD6B8331580E1C81F0758F13CBDA7",
+      "bytes": 4489
+    }
+  ]
+}

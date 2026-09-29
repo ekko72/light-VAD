@@ -1,0 +1,13 @@
+{
+  "checkpoint": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\cross_architecture_replication\\checkpoints\\seed71\\best.pt",
+  "checkpoint_sha256": "E5DCD12922DC08009E98EE0C755C5502875CBED0E4FF520DDDDEE79E7D65572C",
+  "scores": "C:\\Users\\20547\\Desktop\\light-VAD\\results\\cross_architecture_replication\\evaluations\\seed71\\scores.npz",
+  "horizons": [
+    "H64",
+    "H128",
+    "H256",
+    "H384",
+    "HFULL"
+  ],
+  "test_frames": 298300
+}

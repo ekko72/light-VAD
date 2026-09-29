@@ -1,0 +1,146 @@
+{
+  "PROTOCOL_ID": "E3-BVRA-v1",
+  "PROTOCOL_STATUS": "FROZEN_BEFORE_E3_OUTCOME_ANALYSIS",
+  "CREATED_UTC": "2026-09-21T13:19:35.194855+00:00",
+  "TRAINING_PERFORMED": false,
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "ANALYSIS_ONLY": true,
+  "PRIMARY_MODEL": "RF384_SHORT_vs_FULL",
+  "PRIMARY_ARCHITECTURE": "MarbleNet",
+  "SECONDARY_ARCHITECTURE": "TinyGRU",
+  "POPULATION": {
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20,
+    "source": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet"
+  },
+  "THRESHOLDS": [
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7
+  ],
+  "DECISION_THRESHOLD": 0.5,
+  "D1_SMALL_MINORITY_MAX": 0.05,
+  "EXCLUSION_WIDTHS_MS": [
+    0,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "JITTER_WIDTHS_MS": [
+    10,
+    20,
+    30,
+    50
+  ],
+  "JITTER_SEEDS": [
+    113,
+    227,
+    349,
+    463,
+    587
+  ],
+  "JITTER_DISTRIBUTION": "independent discrete-uniform onset and offset offsets in frame units within the corresponding +/- width; clamp to utterance bounds; force duration >= 1 frame; rasterize union to avoid contradictory labels",
+  "FRAME_DURATION_MS": 10.0,
+  "BOOTSTRAP": {
+    "method": "source-cluster percentile bootstrap",
+    "repeats": 2000,
+    "confidence": 0.95,
+    "seed": 20260921
+  },
+  "VALUE_LAYERS": {
+    "A_decision": "SS/R/I/H with NetRefinability=P(R)-P(H)",
+    "B_probabilistic": "v_log=LogLoss(Short)-LogLoss(Full); v_brier=Brier(Short)-Brier(Full)",
+    "C_segment_event": "existing A13 segment protocol and frozen CAR/AE event bins",
+    "logloss_epsilon": 1e-12
+  },
+  "EVENT_BINS": [
+    "0",
+    "1-2",
+    "3-5",
+    "6-10",
+    "11-25",
+    "26+"
+  ],
+  "EVENT_DIMENSIONS": [
+    "onset_distance",
+    "posterior_transition_distance",
+    "offset_distance"
+  ],
+  "SEGMENT_PROTOCOL": {
+    "decision_threshold": 0.5,
+    "short_speech_max_frames": 20,
+    "onset_tolerance_frames": 20
+  },
+  "PRIMARY_CONTRASTS": {
+    "exact_boundary": "distance == 0 versus distance >= 1",
+    "near_boundary": "distance <= 2 versus distance >= 3",
+    "stable_reference": "not declared; no favorable stable control is invented"
+  },
+  "FROZEN_INPUTS": {
+    "e1_frame_results": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet",
+      "sha256": "33D0075B0D140D845E10CF95AB0D965665A9B8474088B22EBC397A2B4AD55DE2",
+      "size_bytes": 169069726
+    },
+    "e1_final_summary": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json",
+      "sha256": "3E8735DD02823093600908DD7D31FBC2B050EF86B871FC7855DDA6904A30AA31",
+      "size_bytes": 5742
+    },
+    "e1_protocol": {
+      "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json",
+      "sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6",
+      "size_bytes": 22446
+    },
+    "e1_runner": {
+      "path": "reproductions/difficulty_adaptive_context/run_e1.py",
+      "sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3",
+      "size_bytes": 174701
+    },
+    "rf384_reference": {
+      "path": "results/difficulty_adaptive_context/a9_span_sweep/seed17/eval_rf384_fixed130/frame_predictions.npz",
+      "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+      "size_bytes": 10702416
+    },
+    "tiny_gru_seed41": {
+      "path": "results/cross_architecture_replication/evaluations/seed41/scores.npz",
+      "sha256": "03D8CD7670EA3D4E403426B37FBF927ED53ECA0E0F6083FAF3A8A1B039D7FD30",
+      "size_bytes": 5128115
+    },
+    "tiny_gru_seed59": {
+      "path": "results/cross_architecture_replication/evaluations/seed59/scores.npz",
+      "sha256": "65DEEEFCF5EC53014F3FEA688BA7F617357A038D819BF6F900DC4D6AD0B2A5BD",
+      "size_bytes": 5133372
+    },
+    "tiny_gru_seed71": {
+      "path": "results/cross_architecture_replication/evaluations/seed71/scores.npz",
+      "sha256": "7DA937341F5C8B01A9A5935647C80A6D457E5FF458C4E5C6D9C20EE093EACB39",
+      "size_bytes": 5110151
+    },
+    "tiny_gru_seed83": {
+      "path": "results/cross_architecture_replication/evaluations/seed83/scores.npz",
+      "sha256": "D75CEEAEC8A7E482DE47B6682EA8045ECE04BC897F2B548A36C17BEA56CB7893",
+      "size_bytes": 5121905
+    },
+    "tiny_gru_seed97": {
+      "path": "results/cross_architecture_replication/evaluations/seed97/scores.npz",
+      "sha256": "B79337639957D8F7DF6C1114F84A94DD9339F0F079A6231628D593FA68E46AA8",
+      "size_bytes": 5095554
+    }
+  },
+  "RUNNER": {
+    "module": "reproductions.difficulty_adaptive_context.run_e3",
+    "path": "reproductions/difficulty_adaptive_context/run_e3.py",
+    "sha256": "76F51D104EC07677F53CBDA36E6113CA13477EDD9A91C74B29450DD31DE55A36"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "PROTOCOL_ID": "E4-RSD-v1",
+  "PROTOCOL_STATUS": "FROZEN_BEFORE_E4_OUTCOME_ANALYSIS",
+  "PROTOCOL_SHA256": "066516F8E208C3F4F6F4A74BE2EA92AE5C91993B995C2022C61CC8DBE783626E",
+  "RUNNER_SHA256": "33B2EF3D0E4745432F832E2FE69BD4762AA21030B96B73FC01B73D29CF422212",
+  "TRAINING_PERFORMED": false,
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "BASELINE_REPRODUCED": true,
+  "FRAME_ALIGNMENT_VERIFIED": true,
+  "E4_STATUS": "INCONCLUSIVE_OR_INVALID",
+  "RUNTIME_SECONDS": 215.11836671829224,
+  "PYTHON": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "PLATFORM": "Windows-11-10.0.26200-SP0",
+  "GIT_COMMIT": "d7a8ce71b1a00602d76d0c02b7fc9d57ff0f9870",
+  "GIT_STATUS_SHORT": [
+    " M reproductions/difficulty_adaptive_context/README.md",
+    " M reproductions/difficulty_adaptive_context/adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/analyze_context_gate.py",
+    " M reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+    " M reproductions/difficulty_adaptive_context/test_adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/test_context.py",
+    " M reproductions/difficulty_adaptive_context/train_adaptive.py",
+    "?? reproductions/boundary_aware_supervision/",
+    "?? reproductions/cross_architecture_replication/",
+    "?? reproductions/difficulty_adaptive_context/ae0_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ae_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+    "?? reproductions/difficulty_adaptive_context/analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/ax1_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/diagnose_e1_c1_backend.py",
+    "?? reproductions/difficulty_adaptive_context/recover_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/run_e2.py",
+    "?? reproductions/difficulty_adaptive_context/run_e3.py",
+    "?? reproductions/difficulty_adaptive_context/run_e4.py",
+    "?? reproductions/difficulty_adaptive_context/test_analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e2.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e3.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e4.py",
+    "?? reproductions/prior_factored_vad/",
+    "?? reproductions/ssr_prior_shift/"
+  ],
+  "ARTIFACTS": [
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_protocol_freeze.json",
+      "sha256": "066516F8E208C3F4F6F4A74BE2EA92AE5C91993B995C2022C61CC8DBE783626E",
+      "size_bytes": 9801
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_protocol_sha256.txt",
+      "sha256": "F484AABD1A232D564FB605A0E5168B8C4FD974F877CBB8ECCFEBD45E01730E89",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_runner_sha256.txt",
+      "sha256": "FF11ED531B57AFD7E504E10ED1BADF6FD6C7F8C9332ECF8EBD575A8EAFB03C8C",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_baseline_reproduction.json",
+      "sha256": "F1312C02D04D24ED6BC15423242A55765CE3C69D73C94D6ED1174B45AD377B06",
+      "size_bytes": 19759
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_kr_distribution.csv",
+      "sha256": "241EF43B93CAF317D7470D1E8E98448C255451EDE1C216F1210C29437822AD84",
+      "size_bytes": 775
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_stability_taxonomy.csv",
+      "sha256": "4F87A4B1D47389E86DC524F2CD983C05370821DB8AD3F3D53BA892036E50B44D",
+      "size_bytes": 572
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_null_overlap.csv",
+      "sha256": "A58E68A1A7B2B9F89AFF806B6F5F7EA50B4DEEC93906C7354B5E2E736C717EEF",
+      "size_bytes": 489
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_permutation_overlap.csv",
+      "sha256": "A65296FBC888FEC857B2F30345236DB6E194E309EEA3218C74791D6FBE39F33F",
+      "size_bytes": 1097
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_proper_scoring_stability.csv",
+      "sha256": "C8B6CE2A6360FB3916962637CD08F28148DDCA54D1F5DA51BC1CBA2F7BF75801",
+      "size_bytes": 542
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_short_difficulty.csv",
+      "sha256": "2AEC2074AAFDFA6DF7976F391682388504D530D09D9E63B41195BC82ED589ED0",
+      "size_bytes": 566
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_event_stability.csv",
+      "sha256": "50A1C54CCEF3321773082E125F25BBCDD9EDC8EB63593BA2876F2D6DFB3416F5",
+      "size_bytes": 3324
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_condition_stability.csv",
+      "sha256": "117DE230AA227A237784CB825226D0C4DB7B7E5B16DB4E4F461D2DFFF8255F71",
+      "size_bytes": 2526
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_disagreement_decomposition.csv",
+      "sha256": "37B6AB132D1C7D9E0B857F09D99117E2A0F69368EF81B9217DB4CE6CF61719F1",
+      "size_bytes": 549
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_short_long_instability.csv",
+      "sha256": "360DC81FE49C90E2BDF1F9BB16A71397105809E02512BA7DDBCA3F910E692E45",
+      "size_bytes": 666
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_bootstrap.csv",
+      "sha256": "91C72A2EC29BA584D554115221B256E981B2CEB51B3B2FF05B0D75CF3CC91F54",
+      "size_bytes": 1363
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_source_influence.csv",
+      "sha256": "18E5F14ED3A570B723AF1B7103728F66CCF7E1597356B6267246E99B0744C2C9",
+      "size_bytes": 1060
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_final_summary.json",
+      "sha256": "0D25842397F2E811F1B5687507176DA5D80C8EA9641414842F4C648C8A597577",
+      "size_bytes": 34159
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_final_report.md",
+      "sha256": "8793B66F495670092F7E3227A3A2EFC5F55385AEDD8EBDED53A1ED92D711AE01",
+      "size_bytes": 2509
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/e4_claim_freeze.md",
+      "sha256": "07E274ABDE3DB7D4585F9D9D5B6580E2718F33CCC15DC82A11BA5ADC9D1FC350",
+      "size_bytes": 289
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/figure1_kr_distribution.png",
+      "sha256": "CF2E407309D7CAD402C60A5C808775ED7B8CC42928E3985AA2E52061B38694DE",
+      "size_bytes": 42221
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/figure2_mean_vlog_by_stability.png",
+      "sha256": "0EE2F885417A76151BF58875998B85D9E31B26FCE7C59AE33B8B87AC22F74EEF",
+      "size_bytes": 36281
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/figure3_non_r_fate_decomposition.png",
+      "sha256": "DE8D9ED3CB578617767B4D2A5553176578ACA0A208C23EA9BE053A85A1D4F65B",
+      "size_bytes": 23866
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/figure4_event_stability.png",
+      "sha256": "B1DAD728DEB5C6A603CA685E2287B7E1005A04A58B4BF810ED01787AF2E527F4",
+      "size_bytes": 58406
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e4_refinability_stability_decomposition/figure5_seen_unseen_stability.png",
+      "sha256": "494011E28B6C52B8198446F5A5DD5967EB2E3201F15026892F978142A7C05C7F",
+      "size_bytes": 26961
+    }
+  ]
+}

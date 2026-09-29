@@ -1,0 +1,742 @@
+{
+  "artifact_count": 27,
+  "artifacts": [
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_baseline_reproduction.json",
+      "sha256": "B85BE654E15CA96C0F426B142D3302615D9FC0C533A5DECB23005466BFD99C10",
+      "size_bytes": 88562
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_claim_freeze.md",
+      "sha256": "4FC09BC58A7116DA73731CA265C58685B032963F8FFD77140E05344937B637B8",
+      "size_bytes": 9781
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_cluster_bootstrap.csv",
+      "sha256": "0C2645E0C13BE0C946C458143A04FE5C2C5EE904D41ED323EBCD46E6A022939E",
+      "size_bytes": 2779
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_condition_results.csv",
+      "sha256": "164E10301888CB115C4376E021FB22A41CDBC493CBD87C2675FA82EBB6DC8385",
+      "size_bytes": 2525
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_correction_survival.csv",
+      "sha256": "FE0C81388E61A3B98BDED4FD86B37E71D697B85C9D82D02A79D4487DADD20599",
+      "size_bytes": 4326
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_donor_seed_consistency.csv",
+      "sha256": "C8E3B16C32035798B10754DCE2DE0EA53B7A62C6C3CE3DCDED01FC3E92767ED6",
+      "size_bytes": 6745
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_e1_c4_replay.json",
+      "sha256": "4D09247132B2018BC92C2880AB4480FA2222E680577DF6CE4A2B3FDFEA2269B2",
+      "size_bytes": 776
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_e1_reconciliation.md",
+      "sha256": "E59816BAD8526964BDA401E77EFC8B592F3EA52682824E89A44E163C51FACFE5",
+      "size_bytes": 2882
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_event_strata.csv",
+      "sha256": "A64FDCBF4BEC385A15814B9CB15BE32BEC31F41874D64D502F77D49CCCCB5258",
+      "size_bytes": 9952
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_figures/figure1_condition_delta_logloss.png",
+      "sha256": "F228717431DD7EDCBFBE2269F544D8865A9C85FBC400BF96FEE618D3EBA3F51F",
+      "size_bytes": 40480
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_figures/figure2_primary_contrasts.png",
+      "sha256": "BAF5E7392E8A875BAB5FA342B8CF63458DE64273AAA0B0B3F46657F0932DC5BA",
+      "size_bytes": 36779
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_figures/figure3_correction_survival.png",
+      "sha256": "9C563A0786C5CCD5AA4FA533D53C5483DB015506217F3B07D07CE0F76C69869F",
+      "size_bytes": 37715
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_figures/figure4_event_asymmetry.png",
+      "sha256": "63CEB09F46F577AFC597DA98284C7A8819873344C61665575504243B50415AD4",
+      "size_bytes": 30296
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_figures/figure5_seen_unseen.png",
+      "sha256": "F89BE2B86508745AEA9F2882E72D01106C8EDD3FE66BAE5D1EAB3A4AA3BCD73C",
+      "size_bytes": 38946
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_final_report.md",
+      "sha256": "208024C6D46347ED0D5AF59B3FBB99F537C9B038631BA5CE5B218BCEFC2E6FC2",
+      "size_bytes": 5249
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_final_summary.json",
+      "sha256": "D5F6BCBB4F6E4D8CC881C08A60E79B49E837A57271E595648797B1C08F4F18E6",
+      "size_bytes": 18380
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_frame_results.parquet",
+      "sha256": "8A622867B69BD63E0A5F94E8D42D6D5EC4DF224B1ADD33D0BA756DB87A9FCB3D",
+      "size_bytes": 138682166
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_match_quality.csv",
+      "sha256": "FC0C19991DF35FCF956ED6792F7F3A8CAE157FA58628F91D074BAD19289F8FDB",
+      "size_bytes": 5106934
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_matching_feasibility.csv",
+      "sha256": "9391A756B072535613A7529D85DF78F2DA50DCF45906D48CA06A0D99A2129B0A",
+      "size_bytes": 1979
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_onset_offset_asymmetry.csv",
+      "sha256": "7F6C86A11A5321B077E8490CBBF819FD7C6AE809B4519AD80AD7D1D480D9717A",
+      "size_bytes": 706
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_primary_contrasts.csv",
+      "sha256": "A2D0EA9943DDB5D40E01BAA6E26AE1ED5EDE6F37680E12B8EE6AA8AB7571BE08",
+      "size_bytes": 1686
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_protocol_freeze.json",
+      "sha256": "1A5E17226E75B08EB20725CCEB8AEA1B18794A510118E386C53F790AF700D589",
+      "size_bytes": 19218
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_protocol_sha256.txt",
+      "sha256": "910B4AFA802DE9E3D59D1A505C17B1319CD9FA888C2DD43B26352DB9D8726978",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_runner_sha256.txt",
+      "sha256": "7AC4D608AC6033EFC862BBC8569B3113E5BF9C6B2F76A35E968144FE04CD6DBD",
+      "size_bytes": 66
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_seen_unseen.csv",
+      "sha256": "425EF928A80CDF3ACBF40738CA099683FB6C122B94FB7BF9A86D2E91A4196086",
+      "size_bytes": 1677
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_source_influence.csv",
+      "sha256": "9757553D3CBB191DED6C6BC456B61505A7D98D31DED0136C4C0AAFA1734AD184",
+      "size_bytes": 74506
+    },
+    {
+      "path": "results/difficulty_adaptive_context/e2_remote_context_compatibility/e2_taxonomy_transitions.csv",
+      "sha256": "AF64FA074C289700DE57DF78DB9F0CFD180922AA3DEBCEC974667510333FC546",
+      "size_bytes": 6758
+    }
+  ],
+  "baseline": {
+    "max_abs_embedded_short_error": 0.0,
+    "max_abs_full_error": 2.086162567138672e-07,
+    "passed": true
+  },
+  "command": [
+    "C:\\Users\\20547\\Desktop\\light-VAD\\.venv\\Scripts\\python.exe",
+    "-m",
+    "reproductions.difficulty_adaptive_context.run_e2",
+    "--mode",
+    "run",
+    "--device",
+    "cuda",
+    "--chunk-frames",
+    "2000"
+  ],
+  "created_utc": "2026-09-21T10:33:51Z",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "e1_artifacts": {
+    "after": {
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/_diagnose_c1_manual_vs_wrapper.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/_diagnose_c1_manual_vs_wrapper.py",
+        "sha256": "344B4D69240F5F272934ECA67606031B970914739927DBFC22087FC4A6FEBFD3",
+        "size_bytes": 5072
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_chunked_classifier_full.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_chunked_classifier_full.json",
+        "sha256": "77DD581AB9912091BE20F58A22F6DFBF93BC8A330A0A1366E1DBBE5A49AE75F0",
+        "size_bytes": 963
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cpu_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cpu_first69.json",
+        "sha256": "00B7C3584C84DE7E594C1CD19941EEEB3BD0C5A41E62C049E6D3E25FB40E2BE5",
+        "size_bytes": 50937
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cuda_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cuda_first69.json",
+        "sha256": "02E9D3EBE5E65A650F70083369AE148F7A8CE69006E20D08CB70B1E7DA31FFCC",
+        "size_bytes": 41339
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_full_run1_preserved.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_full_run1_preserved.json",
+        "sha256": "26EED9BB5CD4D950717C1CA3A52D2EA1290F1A934075A70A2EFDEE87C35350FF",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_root_cause.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_root_cause.md",
+        "sha256": "EAC068D1AD662005AC3DE57F64185A5E31D2F3E2A25F724238BF1A134BFC3951",
+        "size_bytes": 3342
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_c1_validation.json",
+        "sha256": "2A7FB6980D10EE7A69ED8363F7619F6E3A92087F91A9BFBC1C2B376C1DAEE5E3",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_final_summary.json",
+        "sha256": "22CB50B9EFB8D317DD92B19644C49F777142391A18B4ABC87F606912DC220A8C",
+        "size_bytes": 559
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_freeze.json",
+        "sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+        "size_bytes": 19314
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_sha256.txt",
+        "sha256": "8B52D2C3BE941BEBAA8079E0FA320352EDC978CCAB2D2B13B774A14E1301D617",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/_diagnose_c1_manual_vs_wrapper.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/_diagnose_c1_manual_vs_wrapper.py",
+        "sha256": "344B4D69240F5F272934ECA67606031B970914739927DBFC22087FC4A6FEBFD3",
+        "size_bytes": 5072
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_chunked_classifier_full.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_chunked_classifier_full.json",
+        "sha256": "77DD581AB9912091BE20F58A22F6DFBF93BC8A330A0A1366E1DBBE5A49AE75F0",
+        "size_bytes": 963
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cpu_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cpu_first69.json",
+        "sha256": "00B7C3584C84DE7E594C1CD19941EEEB3BD0C5A41E62C049E6D3E25FB40E2BE5",
+        "size_bytes": 50937
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cuda_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cuda_first69.json",
+        "sha256": "02E9D3EBE5E65A650F70083369AE148F7A8CE69006E20D08CB70B1E7DA31FFCC",
+        "size_bytes": 41339
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_full_run1_preserved.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_full_run1_preserved.json",
+        "sha256": "26EED9BB5CD4D950717C1CA3A52D2EA1290F1A934075A70A2EFDEE87C35350FF",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_root_cause.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_root_cause.md",
+        "sha256": "EAC068D1AD662005AC3DE57F64185A5E31D2F3E2A25F724238BF1A134BFC3951",
+        "size_bytes": 3342
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_c1_validation.json",
+        "sha256": "2A7FB6980D10EE7A69ED8363F7619F6E3A92087F91A9BFBC1C2B376C1DAEE5E3",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_final_summary.json",
+        "sha256": "22CB50B9EFB8D317DD92B19644C49F777142391A18B4ABC87F606912DC220A8C",
+        "size_bytes": 559
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_freeze.json",
+        "sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+        "size_bytes": 19314
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_sha256.txt",
+        "sha256": "8B52D2C3BE941BEBAA8079E0FA320352EDC978CCAB2D2B13B774A14E1301D617",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/run_e1_v1.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/run_e1_v1.py",
+        "sha256": "A03A0939DF7D54C9195C05930A2BDC4AE76896BC8CF55F91A9567270003397F9",
+        "size_bytes": 162377
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/test_run_e1_v1.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/test_run_e1_v1.py",
+        "sha256": "441551438B7B2CB7F6E2BB4AABB9B655ED1DA4E4C0300B7113E3D0523BD83458",
+        "size_bytes": 25345
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_to_v2_revision.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_to_v2_revision.md",
+        "sha256": "5C01C59476347967090F18A4F802AB95FFB4E80036FFFEFFDDC43B0E3738BBDB",
+        "size_bytes": 3509
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_a9_ae2_reconciliation.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_a9_ae2_reconciliation.md",
+        "sha256": "4EB823F07DF3895A27AA793A0A42EFF0B7E93C7BCEC9D6FC09D265401873848D",
+        "size_bytes": 1867
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_c1_validation.json",
+        "sha256": "7A40AC66FB051C122F81E2DC51E81635C90E834EC39A59EA92779609E0FFC16F",
+        "size_bytes": 286078
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_causality_audit.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_causality_audit.json",
+        "sha256": "6B17DC80DA92B2E55B4933B452BC3AC16968920C6E8399DC73760DD3C9653F5A",
+        "size_bytes": 6157
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_claim_freeze.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_claim_freeze.md",
+        "sha256": "41B7831EC78C4D3866E953212D6ADA0B78119CDA6259C46A5A7960AB3F58ACE8",
+        "size_bytes": 2538
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_execution_manifest.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_execution_manifest.json",
+        "sha256": "53361AAC00B4D695FCF4C28AA00BE1900E35E8E75A48C421FBCDE83396C884BF",
+        "size_bytes": 22429
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_1_primary_effect.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_1_primary_effect.png",
+        "sha256": "973C941C2581CC4AD49E72CAD800143240DDF7B454A2032878E8D2699FB64458",
+        "size_bytes": 37065
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_2_correction_survival.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_2_correction_survival.png",
+        "sha256": "8FC3FEDFFB66343CFD78E16869BD40F6E844F1DBA125E1F8E253BAC9C412DA21",
+        "size_bytes": 32885
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_3_transition_and_persistence.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_3_transition_and_persistence.png",
+        "sha256": "D12A10E933F86017790393E37D47AD4AFC8FBBA700899CA2C2E62DEF6121BA7B",
+        "size_bytes": 95148
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_4_seen_unseen_snr.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_4_seen_unseen_snr.png",
+        "sha256": "A2E89278FB4D55731BAD0D264F5E911B33671BDB2E4A53C71D9E200D1BF5B5C2",
+        "size_bytes": 55068
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_5_taxonomy_transitions.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_5_taxonomy_transitions.png",
+        "sha256": "13538BD7DCCD142E6772AA89A9B0F4E56C466470802DD45A6DFA13C4A03E6705",
+        "size_bytes": 64934
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_report.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_report.md",
+        "sha256": "5F48A1E42E5D355B1FA6D800E711EA840B51DAAE11C04CB760C6F44F396C7AAA",
+        "size_bytes": 2677
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json",
+        "sha256": "3E8735DD02823093600908DD7D31FBC2B050EF86B871FC7855DDA6904A30AA31",
+        "size_bytes": 5742
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet",
+        "sha256": "33D0075B0D140D845E10CF95AB0D965665A9B8474088B22EBC397A2B4AD55DE2",
+        "size_bytes": 169069726
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_intervention_results.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_intervention_results.csv",
+        "sha256": "D3FE604AF24DC175F1A883BF431D4D10259110E7D48D24DD283EC9275D97FC0A",
+        "size_bytes": 2455
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_match_quality.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_match_quality.csv",
+        "sha256": "41FBF4E6805FD6F8C53CF79A298C45508C1FB21881983C8C060FB4D234F256FF",
+        "size_bytes": 904161
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_primary_bootstrap.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_primary_bootstrap.csv",
+        "sha256": "A186EF2E4B86BBFF75C98D645E90C51B53651D8B94AB24A2EEC2BBA9DF5787F4",
+        "size_bytes": 1771
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json",
+        "sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6",
+        "size_bytes": 22446
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_sha256.txt",
+        "sha256": "F025D29FBF57A27EDB781E9765E2DBAD39CDAC22B69EB08569E8418493361CB2",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_replay_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_replay_validation.json",
+        "sha256": "A3649BCC1231FE45C1260EA70A0A8749D6EB683458FA59CC17EBF9689427EE1A",
+        "size_bytes": 4815
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_rf_dependency_audit.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_rf_dependency_audit.md",
+        "sha256": "2A036801E0FF2F1395E399765D764717A926D95EDA7CC17A1D8C2FA25B1DB63A",
+        "size_bytes": 1507
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_runner_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_runner_sha256.txt",
+        "sha256": "5AD348992375A43C0E56BB7537FCE7EAA03E813F479FB8C918CC2F9D2288A297",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_scoring_path_tests.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_scoring_path_tests.json",
+        "sha256": "6CC1F12C3EE2AA8814EFA6168896A3175620062DDB15774F9ECB099B004F60CA",
+        "size_bytes": 2522
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_seed_consistency.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_seed_consistency.csv",
+        "sha256": "4688E95977422EF27477CB7DD59C7EEBDD715ADCF5C0A2323FF23258ED36A0B2",
+        "size_bytes": 3194
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_stratified_results.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_stratified_results.csv",
+        "sha256": "C049B9C1A9484614D92B1A2AD29FE096F63A983FDDCD64BBC503D96744B3FF33",
+        "size_bytes": 26885
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_taxonomy_transitions.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_taxonomy_transitions.csv",
+        "sha256": "E363D57D77F9DDC5DDE44E6D59C34264071D89BA0CEC00413B75959E36C010C5",
+        "size_bytes": 24175
+      }
+    },
+    "artifact_count": 48,
+    "before": {
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/_diagnose_c1_manual_vs_wrapper.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/_diagnose_c1_manual_vs_wrapper.py",
+        "sha256": "344B4D69240F5F272934ECA67606031B970914739927DBFC22087FC4A6FEBFD3",
+        "size_bytes": 5072
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_chunked_classifier_full.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_chunked_classifier_full.json",
+        "sha256": "77DD581AB9912091BE20F58A22F6DFBF93BC8A330A0A1366E1DBBE5A49AE75F0",
+        "size_bytes": 963
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cpu_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cpu_first69.json",
+        "sha256": "00B7C3584C84DE7E594C1CD19941EEEB3BD0C5A41E62C049E6D3E25FB40E2BE5",
+        "size_bytes": 50937
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cuda_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_cuda_first69.json",
+        "sha256": "02E9D3EBE5E65A650F70083369AE148F7A8CE69006E20D08CB70B1E7DA31FFCC",
+        "size_bytes": 41339
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_full_run1_preserved.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_full_run1_preserved.json",
+        "sha256": "26EED9BB5CD4D950717C1CA3A52D2EA1290F1A934075A70A2EFDEE87C35350FF",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_root_cause.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/diagnostic_c1_root_cause.md",
+        "sha256": "EAC068D1AD662005AC3DE57F64185A5E31D2F3E2A25F724238BF1A134BFC3951",
+        "size_bytes": 3342
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_c1_validation.json",
+        "sha256": "2A7FB6980D10EE7A69ED8363F7619F6E3A92087F91A9BFBC1C2B376C1DAEE5E3",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_final_summary.json",
+        "sha256": "22CB50B9EFB8D317DD92B19644C49F777142391A18B4ABC87F606912DC220A8C",
+        "size_bytes": 559
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_freeze.json",
+        "sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+        "size_bytes": 19314
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_protocol_sha256.txt",
+        "sha256": "8B52D2C3BE941BEBAA8079E0FA320352EDC978CCAB2D2B13B774A14E1301D617",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/_diagnose_c1_manual_vs_wrapper.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/_diagnose_c1_manual_vs_wrapper.py",
+        "sha256": "344B4D69240F5F272934ECA67606031B970914739927DBFC22087FC4A6FEBFD3",
+        "size_bytes": 5072
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_chunked_classifier_full.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_chunked_classifier_full.json",
+        "sha256": "77DD581AB9912091BE20F58A22F6DFBF93BC8A330A0A1366E1DBBE5A49AE75F0",
+        "size_bytes": 963
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cpu_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cpu_first69.json",
+        "sha256": "00B7C3584C84DE7E594C1CD19941EEEB3BD0C5A41E62C049E6D3E25FB40E2BE5",
+        "size_bytes": 50937
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cuda_first69.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_cuda_first69.json",
+        "sha256": "02E9D3EBE5E65A650F70083369AE148F7A8CE69006E20D08CB70B1E7DA31FFCC",
+        "size_bytes": 41339
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_full_run1_preserved.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_full_run1_preserved.json",
+        "sha256": "26EED9BB5CD4D950717C1CA3A52D2EA1290F1A934075A70A2EFDEE87C35350FF",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_root_cause.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/diagnostic_c1_root_cause.md",
+        "sha256": "EAC068D1AD662005AC3DE57F64185A5E31D2F3E2A25F724238BF1A134BFC3951",
+        "size_bytes": 3342
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_c1_validation.json",
+        "sha256": "2A7FB6980D10EE7A69ED8363F7619F6E3A92087F91A9BFBC1C2B376C1DAEE5E3",
+        "size_bytes": 286441
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_final_summary.json",
+        "sha256": "22CB50B9EFB8D317DD92B19644C49F777142391A18B4ABC87F606912DC220A8C",
+        "size_bytes": 559
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_freeze.json",
+        "sha256": "52D995474E455649DD81D86138B731BEFBBA725D8F5028452928FA7C2CF5F793",
+        "size_bytes": 19314
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/e1_protocol_sha256.txt",
+        "sha256": "8B52D2C3BE941BEBAA8079E0FA320352EDC978CCAB2D2B13B774A14E1301D617",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/run_e1_v1.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/run_e1_v1.py",
+        "sha256": "A03A0939DF7D54C9195C05930A2BDC4AE76896BC8CF55F91A9567270003397F9",
+        "size_bytes": 162377
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/test_run_e1_v1.py": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_archive/test_run_e1_v1.py",
+        "sha256": "441551438B7B2CB7F6E2BB4AABB9B655ED1DA4E4C0300B7113E3D0523BD83458",
+        "size_bytes": 25345
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_to_v2_revision.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v1_to_v2_revision.md",
+        "sha256": "5C01C59476347967090F18A4F802AB95FFB4E80036FFFEFFDDC43B0E3738BBDB",
+        "size_bytes": 3509
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_a9_ae2_reconciliation.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_a9_ae2_reconciliation.md",
+        "sha256": "4EB823F07DF3895A27AA793A0A42EFF0B7E93C7BCEC9D6FC09D265401873848D",
+        "size_bytes": 1867
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_c1_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_c1_validation.json",
+        "sha256": "7A40AC66FB051C122F81E2DC51E81635C90E834EC39A59EA92779609E0FFC16F",
+        "size_bytes": 286078
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_causality_audit.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_causality_audit.json",
+        "sha256": "6B17DC80DA92B2E55B4933B452BC3AC16968920C6E8399DC73760DD3C9653F5A",
+        "size_bytes": 6157
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_claim_freeze.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_claim_freeze.md",
+        "sha256": "41B7831EC78C4D3866E953212D6ADA0B78119CDA6259C46A5A7960AB3F58ACE8",
+        "size_bytes": 2538
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_execution_manifest.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_execution_manifest.json",
+        "sha256": "53361AAC00B4D695FCF4C28AA00BE1900E35E8E75A48C421FBCDE83396C884BF",
+        "size_bytes": 22429
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_1_primary_effect.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_1_primary_effect.png",
+        "sha256": "973C941C2581CC4AD49E72CAD800143240DDF7B454A2032878E8D2699FB64458",
+        "size_bytes": 37065
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_2_correction_survival.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_2_correction_survival.png",
+        "sha256": "8FC3FEDFFB66343CFD78E16869BD40F6E844F1DBA125E1F8E253BAC9C412DA21",
+        "size_bytes": 32885
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_3_transition_and_persistence.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_3_transition_and_persistence.png",
+        "sha256": "D12A10E933F86017790393E37D47AD4AFC8FBBA700899CA2C2E62DEF6121BA7B",
+        "size_bytes": 95148
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_4_seen_unseen_snr.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_4_seen_unseen_snr.png",
+        "sha256": "A2E89278FB4D55731BAD0D264F5E911B33671BDB2E4A53C71D9E200D1BF5B5C2",
+        "size_bytes": 55068
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_5_taxonomy_transitions.png": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_figures/figure_5_taxonomy_transitions.png",
+        "sha256": "13538BD7DCCD142E6772AA89A9B0F4E56C466470802DD45A6DFA13C4A03E6705",
+        "size_bytes": 64934
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_report.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_report.md",
+        "sha256": "5F48A1E42E5D355B1FA6D800E711EA840B51DAAE11C04CB760C6F44F396C7AAA",
+        "size_bytes": 2677
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_final_summary.json",
+        "sha256": "3E8735DD02823093600908DD7D31FBC2B050EF86B871FC7855DDA6904A30AA31",
+        "size_bytes": 5742
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_frame_results.parquet",
+        "sha256": "33D0075B0D140D845E10CF95AB0D965665A9B8474088B22EBC397A2B4AD55DE2",
+        "size_bytes": 169069726
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_intervention_results.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_intervention_results.csv",
+        "sha256": "D3FE604AF24DC175F1A883BF431D4D10259110E7D48D24DD283EC9275D97FC0A",
+        "size_bytes": 2455
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_match_quality.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_match_quality.csv",
+        "sha256": "41FBF4E6805FD6F8C53CF79A298C45508C1FB21881983C8C060FB4D234F256FF",
+        "size_bytes": 904161
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_primary_bootstrap.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_primary_bootstrap.csv",
+        "sha256": "A186EF2E4B86BBFF75C98D645E90C51B53651D8B94AB24A2EEC2BBA9DF5787F4",
+        "size_bytes": 1771
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_freeze.json",
+        "sha256": "D61BB571BA60454AC0AF28491AEF278967B53D7764E58C8BBA797C1313C886E6",
+        "size_bytes": 22446
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_protocol_sha256.txt",
+        "sha256": "F025D29FBF57A27EDB781E9765E2DBAD39CDAC22B69EB08569E8418493361CB2",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_replay_validation.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_replay_validation.json",
+        "sha256": "A3649BCC1231FE45C1260EA70A0A8749D6EB683458FA59CC17EBF9689427EE1A",
+        "size_bytes": 4815
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_rf_dependency_audit.md": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_rf_dependency_audit.md",
+        "sha256": "2A036801E0FF2F1395E399765D764717A926D95EDA7CC17A1D8C2FA25B1DB63A",
+        "size_bytes": 1507
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_runner_sha256.txt": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_runner_sha256.txt",
+        "sha256": "5AD348992375A43C0E56BB7537FCE7EAA03E813F479FB8C918CC2F9D2288A297",
+        "size_bytes": 66
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_scoring_path_tests.json": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_scoring_path_tests.json",
+        "sha256": "6CC1F12C3EE2AA8814EFA6168896A3175620062DDB15774F9ECB099B004F60CA",
+        "size_bytes": 2522
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_seed_consistency.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_seed_consistency.csv",
+        "sha256": "4688E95977422EF27477CB7DD59C7EEBDD715ADCF5C0A2323FF23258ED36A0B2",
+        "size_bytes": 3194
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_stratified_results.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_stratified_results.csv",
+        "sha256": "C049B9C1A9484614D92B1A2AD29FE096F63A983FDDCD64BBC503D96744B3FF33",
+        "size_bytes": 26885
+      },
+      "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_taxonomy_transitions.csv": {
+        "path": "results/difficulty_adaptive_context/e1_remote_temporal_intervention/e1_v2_taxonomy_transitions.csv",
+        "sha256": "E363D57D77F9DDC5DDE44E6D59C34264071D89BA0CEC00413B75959E36C010C5",
+        "size_bytes": 24175
+      }
+    },
+    "unchanged": true
+  },
+  "e1_c4_replay": {
+    "absolute_error": 9.255426075202577e-07,
+    "passed": true,
+    "replayed_delta_logloss": 0.03213040725510272,
+    "tolerance": 1e-06
+  },
+  "figures": [
+    "figure1_condition_delta_logloss.png",
+    "figure2_primary_contrasts.png",
+    "figure3_correction_survival.png",
+    "figure4_event_asymmetry.png",
+    "figure5_seen_unseen.png"
+  ],
+  "git_commit": "d7a8ce71b1a00602d76d0c02b7fc9d57ff0f9870",
+  "git_status_short": [
+    " M reproductions/difficulty_adaptive_context/README.md",
+    " M reproductions/difficulty_adaptive_context/adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/analyze_context_gate.py",
+    " M reproductions/difficulty_adaptive_context/evaluate_adaptive.py",
+    " M reproductions/difficulty_adaptive_context/test_adaptive_model.py",
+    " M reproductions/difficulty_adaptive_context/test_context.py",
+    " M reproductions/difficulty_adaptive_context/train_adaptive.py",
+    "?? reproductions/boundary_aware_supervision/",
+    "?? reproductions/cross_architecture_replication/",
+    "?? reproductions/difficulty_adaptive_context/ae0_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ae_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ae_protocol_freeze.json",
+    "?? reproductions/difficulty_adaptive_context/analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/ax1_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax2_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax3_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_freeze_manifest.json",
+    "?? reproductions/difficulty_adaptive_context/ax4_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/ax_protocol.json",
+    "?? reproductions/difficulty_adaptive_context/benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/diagnose_e1_c1_backend.py",
+    "?? reproductions/difficulty_adaptive_context/recover_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/run_e2.py",
+    "?? reproductions/difficulty_adaptive_context/test_analyze_a10_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_benchmark_a11_conditional_compute.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a12_routing_robustness.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a13_streaming_audit.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a14_final_ood.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a2_method_study.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_a9_span_sweep.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae0_value_decomposition.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ae_mechanism.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax1_value_predictability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax2_correction_harm_separability.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax3_event_structure.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_ax4_routing_failure_taxonomy.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e1.py",
+    "?? reproductions/difficulty_adaptive_context/test_run_e2.py",
+    "?? reproductions/prior_factored_vad/",
+    "?? reproductions/ssr_prior_shift/"
+  ],
+  "new_final_ood_touched": false,
+  "next_experiment_authorized": false,
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "population": {
+    "frames": 553532,
+    "noisy_test_frames": 240565,
+    "noisy_test_records": 396,
+    "noisy_test_sources": 96,
+    "noisy_test_speakers": 20,
+    "test_frames": 298300,
+    "test_sources": 96,
+    "test_speakers": 20
+  },
+  "protocol_id": "E2-RCCD-v1",
+  "protocol_sha256": "1A5E17226E75B08EB20725CCEB8AEA1B18794A510118E386C53F790AF700D589",
+  "protocol_status": "FROZEN_BEFORE_E2_OUTCOME_ANALYSIS",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "runner_sha256": "AB7EE06CFA401DE2AEF30766C06D81490CFB50C5B65AB741D540097032BC3A55",
+  "runtime_seconds": 3848.2922010421753,
+  "scored_frames": 240565,
+  "status": "COMPLETE",
+  "torch": "2.9.1+cu128",
+  "training_performed": false
+}

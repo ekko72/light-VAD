@@ -1,0 +1,1008 @@
+{
+  "protocol": {
+    "manifest": "data\\librivad\\manifests\\LibriSpeech_test_medium.tsv",
+    "row_sample": 1080,
+    "seed": 17,
+    "utterances": 1024,
+    "valid_frames": 553532,
+    "valid_start_frame": 382,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "short_checkpoint": "results\\difficulty_adaptive_context\\formal_short_ext40\\best.pt",
+    "long_checkpoint": "results\\difficulty_adaptive_context\\formal_long_ext40\\best.pt",
+    "short_epoch": 38,
+    "long_epoch": 37,
+    "short_profile": "short",
+    "long_profile": "long",
+    "short_rf": {
+      "profile": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "lookback_frames": 122,
+      "receptive_field_frames": 123,
+      "receptive_field_seconds": 1.23
+    },
+    "long_rf": {
+      "profile": [
+        1,
+        2,
+        3,
+        4,
+        4
+      ],
+      "lookback_frames": 382,
+      "receptive_field_frames": 383,
+      "receptive_field_seconds": 3.83
+    },
+    "short_parameters": 89154,
+    "long_parameters": 89154,
+    "unseen_noise": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ]
+  },
+  "A1_overall_by_snr": {
+    "clean": {
+      "frames": 105575,
+      "short": {
+        "frames": 105575,
+        "speech": 89555,
+        "silence": 16020,
+        "accuracy": 0.9374283684584419,
+        "error": 0.06257163154155813,
+        "precision": 0.9840232474004225,
+        "recall": 0.9415219697392664,
+        "f1": 0.9623035573663847,
+        "auc": 0.9747490111148124
+      },
+      "long": {
+        "frames": 105575,
+        "speech": 89555,
+        "silence": 16020,
+        "accuracy": 0.9449112005683163,
+        "error": 0.055088799431683634,
+        "precision": 0.9802374261627573,
+        "recall": 0.9542962425325219,
+        "f1": 0.9670929048319565,
+        "auc": 0.9792999385015843
+      },
+      "delta_f1_long_minus_short": 0.004789347465571803,
+      "error_reduction_short_minus_long": 0.0074828321098745,
+      "delta_auc_long_minus_short": 0.004550927386771875
+    },
+    "20": {
+      "frames": 73006,
+      "short": {
+        "frames": 73006,
+        "speech": 61730,
+        "silence": 11276,
+        "accuracy": 0.9446757800728707,
+        "error": 0.05532421992712928,
+        "precision": 0.9707394291495993,
+        "recall": 0.9636157459906043,
+        "f1": 0.9671644703146975,
+        "auc": 0.9767469074981063
+      },
+      "long": {
+        "frames": 73006,
+        "speech": 61730,
+        "silence": 11276,
+        "accuracy": 0.9449360326548503,
+        "error": 0.05506396734514971,
+        "precision": 0.9726763424302984,
+        "recall": 0.9618985906366434,
+        "f1": 0.9672574444516843,
+        "auc": 0.977495010253891
+      },
+      "delta_f1_long_minus_short": 9.297413698672319e-05,
+      "error_reduction_short_minus_long": 0.00026025258197956425,
+      "delta_auc_long_minus_short": 0.0007481027557846298
+    },
+    "10": {
+      "frames": 73969,
+      "short": {
+        "frames": 73969,
+        "speech": 63075,
+        "silence": 10894,
+        "accuracy": 0.925036163798348,
+        "error": 0.07496383620165205,
+        "precision": 0.9588597498723839,
+        "recall": 0.9529766151407055,
+        "f1": 0.9559091306664123,
+        "auc": 0.9609446254000555
+      },
+      "long": {
+        "frames": 73969,
+        "speech": 63075,
+        "silence": 10894,
+        "accuracy": 0.9298219524395355,
+        "error": 0.07017804756046452,
+        "precision": 0.9642158277996985,
+        "recall": 0.953071739992073,
+        "f1": 0.9586113968155254,
+        "auc": 0.9613769491051337
+      },
+      "delta_f1_long_minus_short": 0.002702266149113175,
+      "error_reduction_short_minus_long": 0.004785788641187533,
+      "delta_auc_long_minus_short": 0.00043232370507817475
+    },
+    "5": {
+      "frames": 68730,
+      "short": {
+        "frames": 68730,
+        "speech": 58832,
+        "silence": 9898,
+        "accuracy": 0.8944274698093991,
+        "error": 0.10557253019060091,
+        "precision": 0.9455425017277125,
+        "recall": 0.930242045145499,
+        "f1": 0.9378298718212351,
+        "auc": 0.9307654162338914
+      },
+      "long": {
+        "frames": 68730,
+        "speech": 58832,
+        "silence": 9898,
+        "accuracy": 0.9118579950531064,
+        "error": 0.08814200494689364,
+        "precision": 0.9511369464865789,
+        "recall": 0.945607832472124,
+        "f1": 0.9483643306455737,
+        "auc": 0.938086789921326
+      },
+      "delta_f1_long_minus_short": 0.010534458824338566,
+      "error_reduction_short_minus_long": 0.017430525243707265,
+      "delta_auc_long_minus_short": 0.007321373687434574
+    },
+    "0": {
+      "frames": 71045,
+      "short": {
+        "frames": 71045,
+        "speech": 60345,
+        "silence": 10700,
+        "accuracy": 0.8739109015412767,
+        "error": 0.12608909845872335,
+        "precision": 0.918672293829132,
+        "recall": 0.9342613306819123,
+        "f1": 0.9264012356836517,
+        "auc": 0.8830484604489915
+      },
+      "long": {
+        "frames": 71045,
+        "speech": 60345,
+        "silence": 10700,
+        "accuracy": 0.8868745161517348,
+        "error": 0.11312548384826518,
+        "precision": 0.9255727675084613,
+        "recall": 0.9426133068191234,
+        "f1": 0.9340153200712638,
+        "auc": 0.8961872039511128
+      },
+      "delta_f1_long_minus_short": 0.007614084387612019,
+      "error_reduction_short_minus_long": 0.012963614610458168,
+      "delta_auc_long_minus_short": 0.013138743502121297
+    },
+    "-5": {
+      "frames": 77040,
+      "short": {
+        "frames": 77040,
+        "speech": 65195,
+        "silence": 11845,
+        "accuracy": 0.8553219106957425,
+        "error": 0.14467808930425752,
+        "precision": 0.915180286061053,
+        "recall": 0.9137203773295498,
+        "f1": 0.9144497490137082,
+        "auc": 0.8434106752056071
+      },
+      "long": {
+        "frames": 77040,
+        "speech": 65195,
+        "silence": 11845,
+        "accuracy": 0.8727154724818276,
+        "error": 0.12728452751817237,
+        "precision": 0.9179229480737019,
+        "recall": 0.9330163356085589,
+        "f1": 0.9254081027216992,
+        "auc": 0.859390350557575
+      },
+      "delta_f1_long_minus_short": 0.01095835370799092,
+      "error_reduction_short_minus_long": 0.017393561786085143,
+      "delta_auc_long_minus_short": 0.01597967535196787
+    }
+  },
+  "A2_short_difficulty_buckets": [
+    {
+      "frames": 110707,
+      "short": {
+        "frames": 110707,
+        "speech": 61585,
+        "silence": 49122,
+        "accuracy": 0.6773916735165798,
+        "error": 0.3226083264834202,
+        "precision": 0.7551282051282051,
+        "recall": 0.6216611187789235,
+        "f1": 0.6819254575410785,
+        "auc": 0.7427784848269955
+      },
+      "long": {
+        "frames": 110707,
+        "speech": 61585,
+        "silence": 49122,
+        "accuracy": 0.7244799335182057,
+        "error": 0.2755200664817943,
+        "precision": 0.7882058414464534,
+        "recall": 0.6901680604043192,
+        "f1": 0.7359362825729373,
+        "auc": 0.7962424113193696
+      },
+      "delta_f1_long_minus_short": 0.05401082503185883,
+      "error_reduction_short_minus_long": 0.047088260001625915,
+      "delta_auc_long_minus_short": 0.05346392649237408,
+      "name": "Very hard",
+      "confidence_min": 1.3202428817749023e-05,
+      "confidence_max": 0.359836220741272,
+      "difficulty_spearman": {
+        "rho": 0.0,
+        "p_value": 1.0
+      }
+    },
+    {
+      "frames": 110706,
+      "short": {
+        "frames": 110706,
+        "speech": 79013,
+        "silence": 31693,
+        "accuracy": 0.9044947879970372,
+        "error": 0.0955052120029628,
+        "precision": 0.9166463741294502,
+        "recall": 0.9528305468720337,
+        "f1": 0.9343882838437433,
+        "auc": 0.8935469566661212
+      },
+      "long": {
+        "frames": 110706,
+        "speech": 79013,
+        "silence": 31693,
+        "accuracy": 0.9015681173558795,
+        "error": 0.09843188264412046,
+        "precision": 0.9169278229360494,
+        "recall": 0.9479705871185754,
+        "f1": 0.9321908388871258,
+        "auc": 0.9130170773033367
+      },
+      "delta_f1_long_minus_short": -0.0021974449566174448,
+      "error_reduction_short_minus_long": -0.002926670641157661,
+      "delta_auc_long_minus_short": 0.019470120637215538,
+      "name": "Hard",
+      "confidence_min": 0.35983678698539734,
+      "confidence_max": 0.47276657819747925,
+      "difficulty_spearman": {
+        "rho": 0.0,
+        "p_value": 1.0
+      }
+    },
+    {
+      "frames": 110704,
+      "short": {
+        "frames": 110704,
+        "speech": 108329,
+        "silence": 2375,
+        "accuracy": 0.9785644601821072,
+        "error": 0.02143553981789276,
+        "precision": 0.9785727190605239,
+        "recall": 0.9999907688615237,
+        "f1": 0.989165818224984,
+        "auc": 0.6444798034836373
+      },
+      "long": {
+        "frames": 110704,
+        "speech": 108329,
+        "silence": 2375,
+        "accuracy": 0.9772817603699957,
+        "error": 0.022718239630004335,
+        "precision": 0.9786144632809249,
+        "recall": 0.9986060980900775,
+        "f1": 0.9885092131895044,
+        "auc": 0.716685607343322
+      },
+      "delta_f1_long_minus_short": -0.000656605035479596,
+      "error_reduction_short_minus_long": -0.0012826998121115742,
+      "delta_auc_long_minus_short": 0.07220580385968467,
+      "name": "Medium",
+      "confidence_min": 0.4727681875228882,
+      "confidence_max": 0.4950370192527771,
+      "difficulty_spearman": {
+        "rho": 0.0,
+        "p_value": 1.0
+      }
+    },
+    {
+      "frames": 110702,
+      "short": {
+        "frames": 110702,
+        "speech": 110424,
+        "silence": 278,
+        "accuracy": 0.9974887535907211,
+        "error": 0.0025112464092789653,
+        "precision": 0.9974887535907211,
+        "recall": 1.0,
+        "f1": 0.9987427982236372,
+        "auc": 0.6941425777004999
+      },
+      "long": {
+        "frames": 110702,
+        "speech": 110424,
+        "silence": 278,
+        "accuracy": 0.9973532546837456,
+        "error": 0.0026467453162544487,
+        "precision": 0.9974884132734648,
+        "recall": 0.9998641599652249,
+        "f1": 0.9986748737059667,
+        "auc": 0.8015515863770621
+      },
+      "delta_f1_long_minus_short": -6.792451767045904e-05,
+      "error_reduction_short_minus_long": -0.0001354989069754834,
+      "delta_auc_long_minus_short": 0.10740900867656222,
+      "name": "Easy",
+      "confidence_min": 0.4950372576713562,
+      "confidence_max": 0.4987853169441223,
+      "difficulty_spearman": {
+        "rho": 0.0,
+        "p_value": 1.0
+      }
+    },
+    {
+      "frames": 110713,
+      "short": {
+        "frames": 110713,
+        "speech": 110692,
+        "silence": 21,
+        "accuracy": 0.9998103203779141,
+        "error": 0.0001896796220859339,
+        "precision": 0.9998103203779141,
+        "recall": 1.0,
+        "f1": 0.9999051511935142,
+        "auc": 0.6653631784806576
+      },
+      "long": {
+        "frames": 110713,
+        "speech": 110692,
+        "silence": 21,
+        "accuracy": 0.9998012880149576,
+        "error": 0.00019871198504240695,
+        "precision": 0.9998103186646434,
+        "recall": 0.9999909659234633,
+        "f1": 0.9999006341348847,
+        "auc": 0.9201297293390671
+      },
+      "delta_f1_long_minus_short": -4.517058629471826e-06,
+      "error_reduction_short_minus_long": -9.032362956473054e-06,
+      "delta_auc_long_minus_short": 0.2547665508584095,
+      "name": "Very easy",
+      "confidence_min": 0.49878543615341187,
+      "confidence_max": 0.4999985694885254,
+      "difficulty_spearman": {
+        "rho": 0.0,
+        "p_value": 1.0
+      }
+    }
+  ],
+  "A2_confidence_thresholds": [
+    0.35983633399009707,
+    0.47276722192764287,
+    0.4950372576713562,
+    0.49878543615341187
+  ],
+  "A3_context_gain_by_snr": {
+    "clean": {
+      "frames": 105575,
+      "short": {
+        "frames": 105575,
+        "speech": 89555,
+        "silence": 16020,
+        "accuracy": 0.9374283684584419,
+        "error": 0.06257163154155813,
+        "precision": 0.9840232474004225,
+        "recall": 0.9415219697392664,
+        "f1": 0.9623035573663847,
+        "auc": 0.9747490111148124
+      },
+      "long": {
+        "frames": 105575,
+        "speech": 89555,
+        "silence": 16020,
+        "accuracy": 0.9449112005683163,
+        "error": 0.055088799431683634,
+        "precision": 0.9802374261627573,
+        "recall": 0.9542962425325219,
+        "f1": 0.9670929048319565,
+        "auc": 0.9792999385015843
+      },
+      "delta_f1_long_minus_short": 0.004789347465571803,
+      "error_reduction_short_minus_long": 0.0074828321098745,
+      "delta_auc_long_minus_short": 0.004550927386771875
+    },
+    "20": {
+      "frames": 73006,
+      "short": {
+        "frames": 73006,
+        "speech": 61730,
+        "silence": 11276,
+        "accuracy": 0.9446757800728707,
+        "error": 0.05532421992712928,
+        "precision": 0.9707394291495993,
+        "recall": 0.9636157459906043,
+        "f1": 0.9671644703146975,
+        "auc": 0.9767469074981063
+      },
+      "long": {
+        "frames": 73006,
+        "speech": 61730,
+        "silence": 11276,
+        "accuracy": 0.9449360326548503,
+        "error": 0.05506396734514971,
+        "precision": 0.9726763424302984,
+        "recall": 0.9618985906366434,
+        "f1": 0.9672574444516843,
+        "auc": 0.977495010253891
+      },
+      "delta_f1_long_minus_short": 9.297413698672319e-05,
+      "error_reduction_short_minus_long": 0.00026025258197956425,
+      "delta_auc_long_minus_short": 0.0007481027557846298
+    },
+    "10": {
+      "frames": 73969,
+      "short": {
+        "frames": 73969,
+        "speech": 63075,
+        "silence": 10894,
+        "accuracy": 0.925036163798348,
+        "error": 0.07496383620165205,
+        "precision": 0.9588597498723839,
+        "recall": 0.9529766151407055,
+        "f1": 0.9559091306664123,
+        "auc": 0.9609446254000555
+      },
+      "long": {
+        "frames": 73969,
+        "speech": 63075,
+        "silence": 10894,
+        "accuracy": 0.9298219524395355,
+        "error": 0.07017804756046452,
+        "precision": 0.9642158277996985,
+        "recall": 0.953071739992073,
+        "f1": 0.9586113968155254,
+        "auc": 0.9613769491051337
+      },
+      "delta_f1_long_minus_short": 0.002702266149113175,
+      "error_reduction_short_minus_long": 0.004785788641187533,
+      "delta_auc_long_minus_short": 0.00043232370507817475
+    },
+    "5": {
+      "frames": 68730,
+      "short": {
+        "frames": 68730,
+        "speech": 58832,
+        "silence": 9898,
+        "accuracy": 0.8944274698093991,
+        "error": 0.10557253019060091,
+        "precision": 0.9455425017277125,
+        "recall": 0.930242045145499,
+        "f1": 0.9378298718212351,
+        "auc": 0.9307654162338914
+      },
+      "long": {
+        "frames": 68730,
+        "speech": 58832,
+        "silence": 9898,
+        "accuracy": 0.9118579950531064,
+        "error": 0.08814200494689364,
+        "precision": 0.9511369464865789,
+        "recall": 0.945607832472124,
+        "f1": 0.9483643306455737,
+        "auc": 0.938086789921326
+      },
+      "delta_f1_long_minus_short": 0.010534458824338566,
+      "error_reduction_short_minus_long": 0.017430525243707265,
+      "delta_auc_long_minus_short": 0.007321373687434574
+    },
+    "0": {
+      "frames": 71045,
+      "short": {
+        "frames": 71045,
+        "speech": 60345,
+        "silence": 10700,
+        "accuracy": 0.8739109015412767,
+        "error": 0.12608909845872335,
+        "precision": 0.918672293829132,
+        "recall": 0.9342613306819123,
+        "f1": 0.9264012356836517,
+        "auc": 0.8830484604489915
+      },
+      "long": {
+        "frames": 71045,
+        "speech": 60345,
+        "silence": 10700,
+        "accuracy": 0.8868745161517348,
+        "error": 0.11312548384826518,
+        "precision": 0.9255727675084613,
+        "recall": 0.9426133068191234,
+        "f1": 0.9340153200712638,
+        "auc": 0.8961872039511128
+      },
+      "delta_f1_long_minus_short": 0.007614084387612019,
+      "error_reduction_short_minus_long": 0.012963614610458168,
+      "delta_auc_long_minus_short": 0.013138743502121297
+    },
+    "-5": {
+      "frames": 77040,
+      "short": {
+        "frames": 77040,
+        "speech": 65195,
+        "silence": 11845,
+        "accuracy": 0.8553219106957425,
+        "error": 0.14467808930425752,
+        "precision": 0.915180286061053,
+        "recall": 0.9137203773295498,
+        "f1": 0.9144497490137082,
+        "auc": 0.8434106752056071
+      },
+      "long": {
+        "frames": 77040,
+        "speech": 65195,
+        "silence": 11845,
+        "accuracy": 0.8727154724818276,
+        "error": 0.12728452751817237,
+        "precision": 0.9179229480737019,
+        "recall": 0.9330163356085589,
+        "f1": 0.9254081027216992,
+        "auc": 0.859390350557575
+      },
+      "delta_f1_long_minus_short": 0.01095835370799092,
+      "error_reduction_short_minus_long": 0.017393561786085143,
+      "delta_auc_long_minus_short": 0.01597967535196787
+    }
+  },
+  "A3_trend": {
+    "rho": -0.7714285714285715,
+    "p_value": 0.07239650145772594
+  },
+  "A4_boundary_distance": [
+    {
+      "frames": 52469,
+      "short": {
+        "frames": 52469,
+        "speech": 28122,
+        "silence": 24347,
+        "accuracy": 0.599420610265109,
+        "error": 0.4005793897348911,
+        "precision": 0.6302148251338074,
+        "recall": 0.611300760970059,
+        "f1": 0.6206137184115523,
+        "auc": 0.6395886711242582
+      },
+      "long": {
+        "frames": 52469,
+        "speech": 28122,
+        "silence": 24347,
+        "accuracy": 0.6045855648096972,
+        "error": 0.39541443519030284,
+        "precision": 0.6358946010687304,
+        "recall": 0.613576559277434,
+        "f1": 0.6245362578496841,
+        "auc": 0.6431951502919875
+      },
+      "delta_f1_long_minus_short": 0.003922539438131811,
+      "error_reduction_short_minus_long": 0.005164954544588263,
+      "delta_auc_long_minus_short": 0.0036064791677292707,
+      "name": "0-50 ms"
+    },
+    {
+      "frames": 43196,
+      "short": {
+        "frames": 43196,
+        "speech": 25787,
+        "silence": 17409,
+        "accuracy": 0.8152606722844707,
+        "error": 0.18473932771552923,
+        "precision": 0.8395042897998093,
+        "recall": 0.8537635242564082,
+        "f1": 0.8465738675690224,
+        "auc": 0.8912599476916326
+      },
+      "long": {
+        "frames": 43196,
+        "speech": 25787,
+        "silence": 17409,
+        "accuracy": 0.8276460783405871,
+        "error": 0.1723539216594129,
+        "precision": 0.8512716408763598,
+        "recall": 0.8618683832939078,
+        "f1": 0.8565372386549763,
+        "auc": 0.9017729603708325
+      },
+      "delta_f1_long_minus_short": 0.00996337108595391,
+      "error_reduction_short_minus_long": 0.012385406056116322,
+      "delta_auc_long_minus_short": 0.010513012679199907,
+      "name": "50-100 ms"
+    },
+    {
+      "frames": 74230,
+      "short": {
+        "frames": 74230,
+        "speech": 51070,
+        "silence": 23160,
+        "accuracy": 0.898383402936818,
+        "error": 0.101616597063182,
+        "precision": 0.9145191703331238,
+        "recall": 0.940180144899158,
+        "f1": 0.9271721394571945,
+        "auc": 0.9528307543271739
+      },
+      "long": {
+        "frames": 74230,
+        "speech": 51070,
+        "silence": 23160,
+        "accuracy": 0.9114778391485923,
+        "error": 0.08852216085140778,
+        "precision": 0.9224080648529607,
+        "recall": 0.951360877227335,
+        "f1": 0.9366607867518773,
+        "auc": 0.9614836725507643
+      },
+      "delta_f1_long_minus_short": 0.009488647294682795,
+      "error_reduction_short_minus_long": 0.013094436211774224,
+      "delta_auc_long_minus_short": 0.008652918223590378,
+      "name": "100-200 ms"
+    },
+    {
+      "frames": 383637,
+      "short": {
+        "frames": 383637,
+        "speech": 365064,
+        "silence": 18573,
+        "accuracy": 0.9676282527493438,
+        "error": 0.03237174725065622,
+        "precision": 0.9912297564223647,
+        "recall": 0.9746044529178446,
+        "f1": 0.9828468035441744,
+        "auc": 0.9767810817113426
+      },
+      "long": {
+        "frames": 383637,
+        "speech": 365064,
+        "silence": 18573,
+        "accuracy": 0.9753256333461058,
+        "error": 0.024674366653894175,
+        "precision": 0.9916491076712071,
+        "recall": 0.9823428220805119,
+        "f1": 0.9869740278683697,
+        "auc": 0.9789789678657572
+      },
+      "delta_f1_long_minus_short": 0.004127224324195322,
+      "error_reduction_short_minus_long": 0.007697380596762043,
+      "delta_auc_long_minus_short": 0.00219788615441463,
+      "name": ">200 ms"
+    }
+  ],
+  "A5_seen_unseen_noise": {
+    "seen": {
+      "frames": 305307,
+      "short": {
+        "frames": 305307,
+        "speech": 259604,
+        "silence": 45703,
+        "accuracy": 0.9216231530885306,
+        "error": 0.07837684691146944,
+        "precision": 0.9468873845687089,
+        "recall": 0.9617725458775673,
+        "f1": 0.9542719223985218,
+        "auc": 0.9515696089207455
+      },
+      "long": {
+        "frames": 305307,
+        "speech": 259604,
+        "silence": 45703,
+        "accuracy": 0.9226123213683276,
+        "error": 0.07738767863167238,
+        "precision": 0.9513006758695078,
+        "recall": 0.9580322337098042,
+        "f1": 0.9546545883752844,
+        "auc": 0.9533322967183554
+      },
+      "delta_f1_long_minus_short": 0.0003826659767626195,
+      "error_reduction_short_minus_long": 0.0009891682797970591,
+      "delta_auc_long_minus_short": 0.0017626877976099076
+    },
+    "unseen": {
+      "frames": 142650,
+      "short": {
+        "frames": 142650,
+        "speech": 120884,
+        "silence": 21766,
+        "accuracy": 0.8708377146862951,
+        "error": 0.12916228531370488,
+        "precision": 0.9432576249188839,
+        "recall": 0.9018315078918633,
+        "f1": 0.9220795148418967,
+        "auc": 0.9064627303191887
+      },
+      "long": {
+        "frames": 142650,
+        "speech": 120884,
+        "silence": 21766,
+        "accuracy": 0.896347704171048,
+        "error": 0.10365229582895198,
+        "precision": 0.9460598008879322,
+        "recall": 0.930751795109361,
+        "f1": 0.9383433689723616,
+        "auc": 0.9186459656839628
+      },
+      "delta_f1_long_minus_short": 0.01626385413046494,
+      "error_reduction_short_minus_long": 0.0255099894847529,
+      "delta_auc_long_minus_short": 0.01218323536477417
+    }
+  },
+  "A5_unseen_minus_seen_error_reduction": 0.024520821204955842,
+  "A5_unseen_minus_seen_delta_f1": 0.01588118815370232,
+  "per_noise": {
+    "Babble_noise": {
+      "frames": 47834,
+      "short": {
+        "frames": 47834,
+        "speech": 40325,
+        "silence": 7509,
+        "accuracy": 0.8779947317807417,
+        "error": 0.12200526821925826,
+        "precision": 0.8893630472577841,
+        "recall": 0.976788592684439,
+        "f1": 0.9310279622757465,
+        "auc": 0.8597605485527308
+      },
+      "long": {
+        "frames": 47834,
+        "speech": 40325,
+        "silence": 7509,
+        "accuracy": 0.8795835598110131,
+        "error": 0.12041644018898691,
+        "precision": 0.8971253935062846,
+        "recall": 0.9681835089894606,
+        "f1": 0.9313009875483039,
+        "auc": 0.8724409287074153
+      },
+      "delta_f1_long_minus_short": 0.0002730252725574589,
+      "error_reduction_short_minus_long": 0.0015888280302713553,
+      "delta_auc_long_minus_short": 0.012680380154684534
+    },
+    "City_noise": {
+      "frames": 54533,
+      "short": {
+        "frames": 54533,
+        "speech": 46127,
+        "silence": 8406,
+        "accuracy": 0.9206168741862726,
+        "error": 0.07938312581372747,
+        "precision": 0.9476119083315485,
+        "recall": 0.9591779218245279,
+        "f1": 0.9533598370988072,
+        "auc": 0.9538216484945792
+      },
+      "long": {
+        "frames": 54533,
+        "speech": 46127,
+        "silence": 8406,
+        "accuracy": 0.9202501237782627,
+        "error": 0.07974987622173729,
+        "precision": 0.9531629642485249,
+        "recall": 0.9525223838532747,
+        "f1": 0.9528425663879944,
+        "auc": 0.9522584877888959
+      },
+      "delta_f1_long_minus_short": -0.0005172707108128671,
+      "error_reduction_short_minus_long": -0.0003667504080098194,
+      "delta_auc_long_minus_short": -0.0015631607056832975
+    },
+    "Domestic_noise": {
+      "frames": 48081,
+      "short": {
+        "frames": 48081,
+        "speech": 41011,
+        "silence": 7070,
+        "accuracy": 0.9375012998897694,
+        "error": 0.062498700110230655,
+        "precision": 0.9668353559671793,
+        "recall": 0.9596449732998464,
+        "f1": 0.9632267459647319,
+        "auc": 0.9698163638230431
+      },
+      "long": {
+        "frames": 48081,
+        "speech": 41011,
+        "silence": 7070,
+        "accuracy": 0.9356502568582185,
+        "error": 0.06434974314178157,
+        "precision": 0.9690260013359392,
+        "recall": 0.955085221038258,
+        "f1": 0.9620051085568326,
+        "auc": 0.9697817696614807
+      },
+      "delta_f1_long_minus_short": -0.0012216374078992676,
+      "error_reduction_short_minus_long": -0.0018510430315509183,
+      "delta_auc_long_minus_short": -3.4594161562484516e-05
+    },
+    "Nature_noise": {
+      "frames": 51783,
+      "short": {
+        "frames": 51783,
+        "speech": 44362,
+        "silence": 7421,
+        "accuracy": 0.9405210204121044,
+        "error": 0.05947897958789564,
+        "precision": 0.9711696493791089,
+        "recall": 0.9590415220233534,
+        "f1": 0.9650674832709538,
+        "auc": 0.973007661829592
+      },
+      "long": {
+        "frames": 51783,
+        "speech": 44362,
+        "silence": 7421,
+        "accuracy": 0.9416217677616207,
+        "error": 0.05837823223837939,
+        "precision": 0.9742124945511277,
+        "recall": 0.9571930931878635,
+        "f1": 0.9656278070245257,
+        "auc": 0.9748627490209134
+      },
+      "delta_f1_long_minus_short": 0.0005603237535718453,
+      "error_reduction_short_minus_long": 0.0011007473495162554,
+      "delta_auc_long_minus_short": 0.0018550871913214362
+    },
+    "Office_noise": {
+      "frames": 52972,
+      "short": {
+        "frames": 52972,
+        "speech": 45351,
+        "silence": 7621,
+        "accuracy": 0.933134486143623,
+        "error": 0.06686551385637696,
+        "precision": 0.963956765874337,
+        "recall": 0.9577076580450266,
+        "f1": 0.9608220511459163,
+        "auc": 0.9656456889176697
+      },
+      "long": {
+        "frames": 52972,
+        "speech": 45351,
+        "silence": 7621,
+        "accuracy": 0.9343237937023333,
+        "error": 0.0656762062976667,
+        "precision": 0.9642334471595193,
+        "recall": 0.9588542700271218,
+        "f1": 0.9615363353934262,
+        "auc": 0.9637606604046617
+      },
+      "delta_f1_long_minus_short": 0.0007142842475098554,
+      "error_reduction_short_minus_long": 0.0011893075587102592,
+      "delta_auc_long_minus_short": -0.0018850285130079802
+    },
+    "Public_noise": {
+      "frames": 50104,
+      "short": {
+        "frames": 50104,
+        "speech": 42428,
+        "silence": 7676,
+        "accuracy": 0.9174317419766885,
+        "error": 0.08256825802331151,
+        "precision": 0.9438507012866582,
+        "recall": 0.9595785801828981,
+        "f1": 0.9516496616528173,
+        "auc": 0.953551868062489
+      },
+      "long": {
+        "frames": 50104,
+        "speech": 42428,
+        "silence": 7676,
+        "accuracy": 0.9217228165415935,
+        "error": 0.07827718345840652,
+        "precision": 0.9506788389513109,
+        "recall": 0.9572216460827755,
+        "f1": 0.9539390238173533,
+        "auc": 0.9564468746194086
+      },
+      "delta_f1_long_minus_short": 0.002289362164536013,
+      "error_reduction_short_minus_long": 0.00429107456490499,
+      "delta_auc_long_minus_short": 0.0028950065569195438
+    },
+    "SSN_noise": {
+      "frames": 55912,
+      "short": {
+        "frames": 55912,
+        "speech": 47505,
+        "silence": 8407,
+        "accuracy": 0.7729646587494634,
+        "error": 0.22703534125053657,
+        "precision": 0.9038680186555909,
+        "recall": 0.8199978949584255,
+        "f1": 0.8598927176000529,
+        "auc": 0.7540249204922391
+      },
+      "long": {
+        "frames": 55912,
+        "speech": 47505,
+        "silence": 8407,
+        "accuracy": 0.83597438832451,
+        "error": 0.16402561167549007,
+        "precision": 0.9141350849142215,
+        "recall": 0.89060098936954,
+        "f1": 0.9022145926407711,
+        "auc": 0.78781627626809
+      },
+      "delta_f1_long_minus_short": 0.04232187504071816,
+      "error_reduction_short_minus_long": 0.0630097295750465,
+      "delta_auc_long_minus_short": 0.033791355775850906
+    },
+    "Street_noise": {
+      "frames": 47105,
+      "short": {
+        "frames": 47105,
+        "speech": 39719,
+        "silence": 7386,
+        "accuracy": 0.9231504086615009,
+        "error": 0.0768495913384991,
+        "precision": 0.9633185306876813,
+        "recall": 0.9448374833203252,
+        "f1": 0.9539885098378158,
+        "auc": 0.9642349933819879
+      },
+      "long": {
+        "frames": 47105,
+        "speech": 39719,
+        "silence": 7386,
+        "accuracy": 0.927650992463645,
+        "error": 0.07234900753635495,
+        "precision": 0.9617957522574081,
+        "recall": 0.952012890556157,
+        "f1": 0.9568793177619759,
+        "auc": 0.9665573446584378
+      },
+      "delta_f1_long_minus_short": 0.002890807924160077,
+      "error_reduction_short_minus_long": 0.004500583802144145,
+      "delta_auc_long_minus_short": 0.0023223512764498633
+    },
+    "Transport_noise": {
+      "frames": 39633,
+      "short": {
+        "frames": 39633,
+        "speech": 33660,
+        "silence": 5973,
+        "accuracy": 0.946736305603916,
+        "error": 0.05326369439608407,
+        "precision": 0.9705856030548015,
+        "recall": 0.9665775401069518,
+        "f1": 0.9685774251648531,
+        "auc": 0.9778959566414879
+      },
+      "long": {
+        "frames": 39633,
+        "speech": 33660,
+        "silence": 5973,
+        "accuracy": 0.9443140816995937,
+        "error": 0.05568591830040623,
+        "precision": 0.9718280279619573,
+        "recall": 0.96232917409388,
+        "f1": 0.9670552760818617,
+        "auc": 0.9787351285379174
+      },
+      "delta_f1_long_minus_short": -0.0015221490829914197,
+      "error_reduction_short_minus_long": -0.00242222390432216,
+      "delta_auc_long_minus_short": 0.0008391718964295691
+    }
+  }
+}

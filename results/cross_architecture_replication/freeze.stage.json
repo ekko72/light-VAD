@@ -1,0 +1,16 @@
+{
+  "stage": "freeze",
+  "completed_at": "2026-09-20T14:11:21.213871+00:00",
+  "artifacts": [
+    {
+      "path": "car_protocol_freeze.json",
+      "sha256": "C6878F55BB18005807CE205239903EFF45A76756EBD213235FE8BC7D20C6669B",
+      "bytes": 15449
+    },
+    {
+      "path": "car_protocol_sha256.txt",
+      "sha256": "83258A3A4888A7488A6D06D923E98A4AA5D9D81A8F26701485B60A1B562153F7",
+      "bytes": 66
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "protocol_id": "A-v2-CAR-v1",
+  "status": "FROZEN_BEFORE_CAR_TRAINING",
+  "created_at": "2026-09-20T14:11:20.945510+00:00",
+  "git_commit": "d7a8ce71b1a00602d76d0c02b7fc9d57ff0f9870",
+  "git_dirty": true,
+  "source_hashes": {
+    "car_runner": {
+      "path": "reproductions\\cross_architecture_replication\\run_car.py",
+      "sha256": "8759641A05A2887400093D430E4E0CE8DB105C46B6DDF96210653BCDDEADF217"
+    },
+    "car_tests": {
+      "path": "reproductions\\cross_architecture_replication\\test_run_car.py",
+      "sha256": "23574F7D7BFD86BD64689CEF72C17708E463A069499C617340D3CD762099E06E"
+    },
+    "b15_runner": {
+      "path": "reproductions\\prior_factored_vad\\run_b15.py",
+      "sha256": "DE15F96080EBBAC40C3DA155EF13B18CD4EBC75708628FFE22E6579E52BDF8C0"
+    },
+    "tiny_gru_models": {
+      "path": "reproductions\\prior_factored_vad\\models.py",
+      "sha256": "1D2798261CDED8BC7ACC5B029B4788B756F5DF7C7612C683DC6E2A30BC88AC51"
+    },
+    "frame_data": {
+      "path": "reproductions\\difficulty_adaptive_context\\data.py",
+      "sha256": "890848802F483A7BA8EB60B5525DB3D0BB94B8945C768658AF36CE80464A986D"
+    },
+    "mfcc_features": {
+      "path": "reproductions\\marblenet_vad\\features.py",
+      "sha256": "9BF8864228FC31FE3920021F8778D9CAA01D221CEE98DCCD81D61F7D4D08B9EE"
+    },
+    "ae_mechanism_runner": {
+      "path": "reproductions\\difficulty_adaptive_context\\run_ae_mechanism.py",
+      "sha256": "39FDF131F9AD4EB4D0A0D6760BD32C58BE582DED5C5AAA0F964904F1DAC308EE"
+    },
+    "ae3_feature_bins": {
+      "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae3_feature_bins.csv",
+      "sha256": "A9003F895B001E2D1C5802D84369EE6D08DC7BA147197849747C7E966B21C45F"
+    },
+    "ae1_condition_availability": {
+      "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae1_condition_availability.csv",
+      "sha256": "3188D485FEE567CCFCD73C72456F8CE0278309DFBA596F01746C65E9039BBAA8"
+    },
+    "ae2_horizon_summary": {
+      "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae2_horizon_summary.csv",
+      "sha256": "E0E12B76552A5B02FD2300A6DD4AD290220EE3F9730E4B2C6013D6EBAE5EDE10"
+    }
+  },
+  "data_hashes": {
+    "train_manifest": {
+      "path": "data\\librivad\\manifests\\LibriSpeech_train_medium.tsv",
+      "sha256": "18531A2BDE4770552A8432A28445D604390EF75D8CC7788A9961C5B04CF6D09A",
+      "size_bytes": 88377417
+    },
+    "validation_manifest": {
+      "path": "data\\librivad\\manifests\\LibriSpeech_val_medium.tsv",
+      "sha256": "4E9DBB9ED29840BC675D4BA14ECBD8CEAF300A1B92FD556E7E355E2C81F0AA46",
+      "size_bytes": 7931209
+    },
+    "test_manifest": {
+      "path": "data\\librivad\\manifests\\LibriSpeech_test_medium.tsv",
+      "sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39",
+      "size_bytes": 7715067
+    },
+    "rf384_prediction_bundle": {
+      "path": "results\\difficulty_adaptive_context\\a9_span_sweep\\seed17\\eval_rf384_fixed130\\frame_predictions.npz",
+      "sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+      "size_bytes": 10702416
+    }
+  },
+  "scope": {
+    "scientific_question": "Does the sparse, hard-not-refinable, temporally structured marginal value observed with MarbleNet reproduce in a recurrent Tiny-GRU backbone?",
+    "forbidden": [
+      "router_training",
+      "method_search",
+      "architecture_search",
+      "hyperparameter_search",
+      "seed_selection",
+      "H512",
+      "frame_bootstrap_as_primary",
+      "NEW_FINAL_OOD_access"
+    ]
+  },
+  "architecture": {
+    "class": "TinyGRUVAD",
+    "input_size": 64,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "num_classes": 2,
+    "dropout": 0.0,
+    "feature_frontend": "MfccFrontend(MfccConfig(causal=True))"
+  },
+  "training": {
+    "recipe": "B15",
+    "dataset": "LibriSpeech_train_medium.tsv",
+    "validation_dataset": "LibriSpeech_val_medium.tsv",
+    "row_selection_seed": 17,
+    "validation_row_seed": 18,
+    "model_seeds": [
+      41,
+      59,
+      71,
+      83,
+      97
+    ],
+    "model_seed_controls": [
+      "initialization",
+      "training_loader_shuffle",
+      "training_chunk_resampling"
+    ],
+    "excluded_training_noise": [
+      "SSN_noise",
+      "Street_noise",
+      "Transport_noise"
+    ],
+    "train_rows": 8640,
+    "validation_rows": 432,
+    "train_chunks": 8286,
+    "validation_chunks": 318,
+    "context_seconds": 4.0,
+    "target_seconds": 4.0,
+    "context_frames": 400,
+    "target_frames": 400,
+    "batch_size": 128,
+    "optimizer": "SGD",
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.001,
+    "epochs": 40,
+    "warmup_ratio": 0.0,
+    "hold_ratio": 0.0,
+    "decay_power": 2.0,
+    "gradient_clip_norm": 5.0,
+    "early_stopping": "none",
+    "checkpoint_selection": "best_validation_auc",
+    "num_workers": 0,
+    "loss": "two_class_softmax_cross_entropy"
+  },
+  "evaluation": {
+    "test_manifest": "data\\librivad\\manifests\\LibriSpeech_test_medium.tsv",
+    "test_manifest_sha256": "267CD1A018216E62552BC00B088F2667AD2113B1D1EC0E954A4F01854C1C8A39",
+    "a9_row_sample": 1080,
+    "a9_evaluation_seed": 17,
+    "valid_start_frame": 382,
+    "prediction_bundle": "results\\difficulty_adaptive_context\\a9_span_sweep\\seed17\\eval_rf384_fixed130\\frame_predictions.npz",
+    "prediction_bundle_sha256": "F25749E568D8DF6370FD2F52262EDF6169AFEB6DA30F1BAA6F46E80CD68EEC03",
+    "expected_total_frames": 553532,
+    "expected_test_frames": 298300,
+    "expected_calibration_frames": 255232,
+    "expected_test_source_clusters": 96,
+    "expected_test_speaker_clusters": 20,
+    "decision_threshold": 0.5,
+    "horizons": [
+      "H64",
+      "H128",
+      "H256",
+      "H384",
+      "HFULL"
+    ],
+    "primary_short": "H64",
+    "primary_long": "HFULL",
+    "secondary_long": "H384",
+    "forbidden_horizons": [
+      "H512"
+    ],
+    "reset_semantics": "For target frame t and finite horizon H, initialize the GRU hidden state to zero at max(0,t-H+1), process frames through t, and score only t. H includes the target frame. HFULL initializes at the utterance start and streams causally. All horizons share one trained model.",
+    "future_frames_forbidden": true,
+    "same_weights_all_horizons": true
+  },
+  "taxonomy": {
+    "threshold": 0.5,
+    "definitions": {
+      "SS": "H64 correct and HFULL correct",
+      "R": "H64 wrong and HFULL correct",
+      "I": "H64 wrong and HFULL wrong",
+      "H": "H64 correct and HFULL wrong"
+    },
+    "value": "v(t)=loss_H64(t)-loss_HFULL(t)",
+    "net_refinability": "P(R)-P(H)"
+  },
+  "bootstrap": {
+    "primary_unit": "source_cluster",
+    "source_clusters": "source_key",
+    "speaker_unit": "speaker_sensitivity_only",
+    "speaker_clusters": "speaker_ids",
+    "repeats": 2000,
+    "interval": "percentile_95",
+    "frame_bootstrap_primary": false,
+    "aggregate_definition": "Equal-weight mean of the five seed-specific frame indicators followed by source-cluster resampling."
+  },
+  "car2_definitions": {
+    "ordered_horizons": [
+      "H64",
+      "H128",
+      "H256",
+      "H384",
+      "HFULL"
+    ],
+    "signed_incremental_value": "loss(H64)-loss(horizon), reported for each horizon",
+    "adjacent_delta_value": "value(horizon)-value(previous_horizon), with H64 as zero",
+    "first_correct_horizon": "Earliest horizon whose thresholded prediction is correct; -1 when no evaluated horizon is correct.",
+    "stable_sufficient_horizon": "Earliest horizon that is correct and remains correct at every later horizon; -1 when no such suffix exists.",
+    "non_monotone_prediction": "Correct at a horizon and incorrect at any immediately later horizon.",
+    "non_monotone_rate_denominator": "Frames incorrect at H64, matching AE2's not-short subset.",
+    "long_history_share": "(loss_H64-loss_H384)/(loss_H64-loss_HFULL), when the denominator is positive; long history is not dominant when this share is at least 0.50.",
+    "cross_architecture_unit_mismatch": "The Tiny-GRU long-history share uses (loss_H64-loss_H384)/(loss_H64-loss_HFULL). The frozen MarbleNet AE2 comparison uses oracle_net_utility_rf384/oracle_net_utility_rf512. These are direction-only diagnostics and their raw values are not numerically interchangeable."
+  },
+  "car3_definitions": {
+    "event_bins": "AE3 frozen feature bins imported without changes",
+    "persistence_denominator": "selected frames only",
+    "contrast_direction": "positive",
+    "centered_profiles": {
+      "transition": "posterior_transition_distance bins 0 through >50",
+      "onset": "signed onset distance split into before/at/after, then the frozen absolute-distance bins",
+      "offset": "signed offset distance split into before/at/after, then the frozen absolute-distance bins"
+    },
+    "cross_architecture_metrics": [
+      "bin_sign_agreement",
+      "bin_spearman_rank_correlation",
+      "qualitative_peak_location_agreement"
+    ]
+  },
+  "car4_definitions": {
+    "primary_cells": [
+      "seen/-5",
+      "seen/0",
+      "seen/5",
+      "seen/10",
+      "seen/15",
+      "seen/20",
+      "unseen/-5",
+      "unseen/0",
+      "unseen/5",
+      "unseen/10",
+      "unseen/15",
+      "unseen/20"
+    ],
+    "noise_scope": "Additional descriptive rows by noise_name; the R4 gate uses only seen/unseen x SNR cells.",
+    "marble_cell_mapping": "MarbleNet cell availability and taxonomy are computed from the frozen AE3 posterior_transition_distance rows with frame-count weighting. MarbleNet horizon diagnostics use the frozen AE2 rows for the same cell. Noise-name rows remain descriptive because the frozen AE1-AE3 tables do not contain those names.",
+    "range": "max(cell mean v)-min(cell mean v)",
+    "cross_architecture_metrics": [
+      "cell_sign_agreement",
+      "cell_spearman_rank_correlation",
+      "seen_unseen_direction_agreement",
+      "snr_trend_agreement"
+    ]
+  },
+  "car5_definitions": {
+    "sign_agreement": "Exact agreement of sign(v), including zero, over all test frames.",
+    "refinable_jaccard": "Intersection over union of per-seed R frame sets.",
+    "taxonomy_agreement": "Exact SS/R/I/H agreement over all test frames.",
+    "leave_one_seed_out": "Mean v over the remaining four seeds, frame by frame.",
+    "positive_share": "Seed count of v>0 divided by the sum of v>0 counts over all five seeds."
+  },
+  "cross_architecture_classification": {
+    "values": [
+      "REPLICATED",
+      "PARTIALLY_REPLICATED",
+      "NOT_REPLICATED",
+      "INCOMPARABLE"
+    ],
+    "sparse_prevalence_ratio_threshold": 0.1,
+    "long_history_share_threshold": 0.5,
+    "value_sparsity_epsilon": 1e-08,
+    "meaningful_value_rate_threshold": 0.1,
+    "non_monotone_min_rate": 0.05,
+    "rule": "Qualitative structure is classified before raw effect sizes; incomparable units remain INCOMPARABLE."
+  },
+  "r3_contrasts": {
+    "transition": {
+      "feature": "posterior_transition_distance",
+      "high_bins": [
+        "0"
+      ],
+      "reference_bins": [
+        "1",
+        "2-4",
+        "5-10",
+        "11-25",
+        "26-50",
+        ">50"
+      ],
+      "selected_only": false,
+      "marble_net_high_availability": 0.08836053938963805,
+      "marble_net_reference_availability": 0.003717573736434956,
+      "marble_net_contrast": 0.08464296565320309,
+      "predicted_direction": "positive",
+      "support_rule": "point_contrast_positive_and_source_cluster_ci95_lower_strictly_positive"
+    },
+    "persistence": {
+      "feature": "uncertainty_persistence",
+      "high_bins": [
+        "11-25"
+      ],
+      "reference_bins": [
+        "1"
+      ],
+      "selected_only": true,
+      "marble_net_high_availability": 0.17690875232774675,
+      "marble_net_reference_availability": 0.04315102860010035,
+      "marble_net_contrast": 0.13375772372764638,
+      "predicted_direction": "positive",
+      "support_rule": "point_contrast_positive_and_source_cluster_ci95_lower_strictly_positive"
+    },
+    "onset": {
+      "feature": "onset_distance",
+      "high_bins": [
+        "0"
+      ],
+      "reference_bins": [
+        "1"
+      ],
+      "selected_only": false,
+      "marble_net_high_availability": 0.011023622047244094,
+      "marble_net_reference_availability": -0.003543307086614173,
+      "marble_net_contrast": 0.014566929133858268,
+      "predicted_direction": "positive",
+      "support_rule": "point_contrast_positive_and_source_cluster_ci95_lower_strictly_positive"
+    }
+  },
+  "r3_pass_rule": {
+    "minimum_structures_passing": 2,
+    "structure_passes": "point contrast positive, MarbleNet contrast positive, and source-cluster bootstrap 95% lower bound > 0"
+  },
+  "condition_heterogeneity": {
+    "cells": [
+      "seen/-5",
+      "seen/0",
+      "seen/5",
+      "seen/10",
+      "seen/15",
+      "seen/20",
+      "unseen/-5",
+      "unseen/0",
+      "unseen/5",
+      "unseen/10",
+      "unseen/15",
+      "unseen/20"
+    ],
+    "metric": "mean_v",
+    "statistic": "max(cell_mean_v)-min(cell_mean_v)",
+    "minimum_point_range": 0.002,
+    "support_rule": "source-cluster bootstrap 95% lower bound of the range > 0"
+  },
+  "seed_dominance": {
+    "rule": "full mean v and every leave-one-seed-out mean v have the same positive sign, and no seed contributes more than 50% of positive-v frame counts",
+    "maximum_positive_share": 0.5
+  },
+  "gates": {
+    "R1": "5/5 Tiny-GRU seeds aggregate NetRefinability > 0",
+    "R2": "P(R) source-cluster 95% lower bound > 0 and P(I)>P(R)",
+    "R3": "at least two of transition/persistence/onset contrasts pass the frozen direction and cluster-support rule",
+    "R4": "condition-cell mean-v range meets the frozen point threshold and cluster-support rule",
+    "R5": "seed-dominance rule passes",
+    "strong": "R1-R5 all pass",
+    "conditional": "exactly four pass",
+    "no_go": "three or fewer pass"
+  },
+  "final_status_values": [
+    "STRONG_CROSS_ARCH_REPLICATION",
+    "CROSS_ARCH_CONDITIONAL",
+    "CROSS_ARCH_NO_GO"
+  ],
+  "outputs": {
+    "tables": [
+      "car_gru_training_runs.csv",
+      "car1_taxonomy_by_seed.csv",
+      "car1_taxonomy_by_condition.csv",
+      "car1_bootstrap.csv",
+      "car2_history_demand.csv",
+      "car2_nonmonotonicity.csv",
+      "car3_event_structure.csv",
+      "car3_event_comparison.csv",
+      "car3_gate_support.csv",
+      "car4_condition_dependence.csv",
+      "car4_cross_architecture.csv",
+      "car5_seed_agreement.csv",
+      "car_cross_architecture_summary.csv"
+    ],
+    "json": [
+      "car_causality_audit.json",
+      "car_final_summary.json",
+      "car_execution_manifest.json"
+    ],
+    "reports": [
+      "car_final_report.md",
+      "car_claim_freeze.md"
+    ],
+    "directories": [
+      "car3_event_profiles",
+      "car_figures",
+      "checkpoints",
+      "evaluations"
+    ],
+    "figures": [
+      "car1_taxonomy.png",
+      "car2_horizon_demand.png",
+      "car2_nonmonotonicity.png",
+      "car3_event_profiles.png",
+      "car4_condition_heatmap.png",
+      "car5_seed_agreement.png",
+      "car_gate_status.png"
+    ]
+  },
+  "safety": {
+    "NEXT_METHOD_SEARCH_AUTHORIZED": false,
+    "NEW_FINAL_OOD_TOUCHED": false
+  }
+}

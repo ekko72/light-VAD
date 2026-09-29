@@ -1,0 +1,358 @@
+{
+  "protocol_id": "A-v2-METHOD-v1",
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_at_utc": "2026-09-20T10:38:25.502029+00:00",
+  "locks": {
+    "frame_bundle": {
+      "path": "results\\difficulty_adaptive_context\\a9_span_sweep\\seed17\\eval_rf384_fixed130\\frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "feature_cache": {
+      "path": "results\\difficulty_adaptive_context\\ax1_value_predictability\\ax1_features.npz",
+      "sha256": "e6e3f45ea095f196e2da76c23db0b7518aa4bd6e8e46321d394b1705e7babe62"
+    },
+    "ax_protocol": {
+      "path": "reproductions\\difficulty_adaptive_context\\ax_protocol.json",
+      "sha256": "3f915c4bbb2809366004e3708e3ccac41718eb65d80b180f12eca19cafb0cb8e"
+    },
+    "short_rf384_checkpoint": {
+      "path": "results\\difficulty_adaptive_context\\a3_pilot_seed17_gate013_distill025_rf384\\best.pt",
+      "sha256": "85acde86d8d9a21103992b8ba697aa55dfae5987d93235a1ff3bb3ba4a5e10ab"
+    },
+    "runner": {
+      "path": "reproductions\\difficulty_adaptive_context\\run_a2_method_study.py",
+      "sha256": "edea5b0a7b089b74ec76c49824eadb449c755103208fea0847a11212fe6ca2c9"
+    }
+  },
+  "study": {
+    "a_v1": "COMPLETE / CONDITIONAL GO",
+    "a14": "FROZEN DEVELOPMENT EVIDENCE",
+    "a15": "FORBIDDEN",
+    "ae": "CLAIM FREEZE / DEVELOPMENT EVIDENCE",
+    "purpose": "Test whether learned refinability or signed-value routing beats frozen uncertainty routing at a fixed RF384 budget.",
+    "new_final_ood": "MANIFEST_ONLY / UNTOUCHED"
+  },
+  "data": {
+    "frame_bundle": {
+      "path": "results\\difficulty_adaptive_context\\a9_span_sweep\\seed17\\eval_rf384_fixed130\\frame_predictions.npz",
+      "sha256": "f25749e568d8df6370fd2f52262edf6169afeb6da30f1baa6f46e80cd68eec03"
+    },
+    "feature_cache": {
+      "path": "results\\difficulty_adaptive_context\\ax1_value_predictability\\ax1_features.npz",
+      "sha256": "e6e3f45ea095f196e2da76c23db0b7518aa4bd6e8e46321d394b1705e7babe62"
+    },
+    "frames": 553532,
+    "speakers": 40,
+    "sources": 197,
+    "split": {
+      "method": "fresh_deterministic_speaker_partition",
+      "seed": 20260920,
+      "counts": {
+        "TRAIN": 24,
+        "DEV": 8,
+        "INTERNAL_TEST": 8
+      },
+      "fingerprint_sha256": "a0cd710ec9f7bb43bcbe704d1c98f6e8d4a3004aa7603db73add39e5f3a1f469",
+      "roles": {
+        "TRAIN": {
+          "speakers": [
+            "1188",
+            "121",
+            "1580",
+            "1995",
+            "2094",
+            "2300",
+            "237",
+            "260",
+            "2830",
+            "2961",
+            "3575",
+            "4446",
+            "4970",
+            "4992",
+            "5142",
+            "6829",
+            "6930",
+            "7021",
+            "7127",
+            "7176",
+            "7729",
+            "8224",
+            "8230",
+            "908"
+          ],
+          "frames": 313993,
+          "sources": 121,
+          "taxonomy_counts": {
+            "R": 4048,
+            "I": 25608,
+            "H": 2724,
+            "SS": 281613
+          },
+          "signed_value_mean": 0.0042166545114063056
+        },
+        "DEV": {
+          "speakers": [
+            "1221",
+            "1320",
+            "3570",
+            "3729",
+            "4077",
+            "5105",
+            "5683",
+            "8455"
+          ],
+          "frames": 126522,
+          "sources": 37,
+          "taxonomy_counts": {
+            "R": 1597,
+            "I": 8199,
+            "H": 726,
+            "SS": 116000
+          },
+          "signed_value_mean": 0.006884178245680593
+        },
+        "INTERNAL_TEST": {
+          "speakers": [
+            "1089",
+            "1284",
+            "4507",
+            "5639",
+            "61",
+            "672",
+            "8463",
+            "8555"
+          ],
+          "frames": 113017,
+          "sources": 39,
+          "taxonomy_counts": {
+            "R": 1539,
+            "I": 7969,
+            "H": 855,
+            "SS": 102654
+          },
+          "signed_value_mean": 0.006052186839148092
+        }
+      },
+      "old_a9_roles": "not inherited; all new roles are reconstructed from the frozen frame bundle"
+    }
+  },
+  "targets": {
+    "decision_threshold": 0.5,
+    "short_error": "1[short_prediction != label]",
+    "refined_error": "1[RF384_prediction != label]",
+    "signed_value": "v = short_error - refined_error",
+    "taxonomy": {
+      "R": "Short wrong, RF384 correct",
+      "I": "Short wrong, RF384 wrong",
+      "H": "Short correct, RF384 wrong",
+      "SS": "Short correct, RF384 correct"
+    }
+  },
+  "features": {
+    "definition_source": "reproductions\\difficulty_adaptive_context\\run_ax1_value_predictability.py",
+    "input": "X3 exactly as feature_blocks(...)[\"X3\"]",
+    "dimension": 330,
+    "causal_window_frames": 25,
+    "normalization": "TRAIN-only mean/variance; variance uses ddof=0; zero variance channels are scaled by 1",
+    "forbidden_inputs": [
+      "future frames",
+      "RF384 output",
+      "label-derived features"
+    ]
+  },
+  "methods": {
+    "M0": {
+      "name": "frozen uncertainty",
+      "training": "none",
+      "score": "-abs(short_score - 0.5)"
+    },
+    "M1": {
+      "name": "signed value regressor",
+      "input": "X3",
+      "architecture": "Linear(330,64) -> GELU -> Dropout(0.1) -> Linear(64,64) -> GELU -> Dropout(0.1) -> Linear(64,1)",
+      "loss": "SmoothL1(beta=0.5, reduction=none) times TRAIN class weights; class weights n/(3*n_class), clipped [0.25,8], renormalized to mean 1",
+      "score": "predicted signed value"
+    },
+    "M2": {
+      "name": "refinability vs harmful/irreducible multi-head model",
+      "input": "X3",
+      "architecture": "shared Linear(330,64) -> GELU -> Dropout(0.1), then three scalar heads: R-vs-(I+H+SS), R-vs-H, R-vs-I",
+      "loss": "primary BCEWithLogits with clipped inverse-frequency pos_weight plus 0.25*(R-vs-H BCE on R/H + R-vs-I BCE on R/I)",
+      "score": "sigmoid(primary R head)"
+    }
+  },
+  "training": {
+    "seeds": [
+      17,
+      23,
+      41,
+      59,
+      71
+    ],
+    "batch_size": 4096,
+    "epochs": 30,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "early_stopping": "none",
+    "augmentation": "none",
+    "dropout": 0.1,
+    "device": "CUDA if available, otherwise CPU"
+  },
+  "selection": {
+    "budgets": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "primary_budget": 0.05,
+    "calibration_role": "DEV",
+    "rule": "select ceil(B * DEV frames) highest DEV scores; threshold is the minimum selected score; apply once to INTERNAL_TEST",
+    "recalibration_on_internal_test": "forbidden",
+    "primary_candidate_rule": "if any learned candidate passes all gates, select the passing candidate with the largest primary-budget delta U; otherwise select the candidate with the largest primary-budget delta U; M1 wins exact ties as the simpler model"
+  },
+  "metrics": {
+    "primary": "U(B)=mean(selected * v)",
+    "secondary": [
+      "F1",
+      "frame error",
+      "correction rate",
+      "harm rate",
+      "activation rate",
+      "value captured",
+      "oracle value recovery"
+    ]
+  },
+  "bootstrap": {
+    "repeats": 2000,
+    "primary_unit": "source cluster (source_key)",
+    "sensitivity_unit": "speaker cluster",
+    "paired": "same resampled clusters for method and M0",
+    "seed": 20260921,
+    "aggregation": "per-seed paired utility differences averaged over the five predeclared training seeds before cluster bootstrap"
+  },
+  "decision_rules": {
+    "G1": "delta U > 0 and source-cluster 95% CI lower > 0",
+    "G2": "at least 4/5 training seeds have delta U > 0",
+    "G3": "unseen aggregate delta U >= 0 and no cell with delta U <= -0.005 among cells with >= 1000 frames",
+    "G4": "primary-budget activation in [0.03,0.075] and all budget activation <= 0.15",
+    "G5": "estimated 5% method latency is at least 0.20 ms/frame below AlwaysRefine and at least 10% below AlwaysRefine",
+    "STATUS": [
+      "METHOD_GO if a learned candidate passes G1-G5",
+      "CONDITIONAL_GO if point delta U > 0 but CI/stability/domain criteria are incomplete",
+      "METHOD_NO_GO if neither learned method has positive utility or activation/compute is uncontrolled"
+    ],
+    "post_result_model_search": "forbidden"
+  },
+  "mechanism_diagnostics": {
+    "required": [
+      "R/I/H/SS score distributions",
+      "uncertainty persistence strata",
+      "transition proxy strata",
+      "onset/offset strata",
+      "seen/unseen",
+      "SNR",
+      "AE0 availability/observability cells"
+    ],
+    "top5_selection": [
+      "P(R|selected)",
+      "P(I|selected)",
+      "P(H|selected)",
+      "P(SS|selected)",
+      "NetOpportunity=P(R|selected)-P(H|selected)"
+    ]
+  },
+  "independent_replication": {
+    "seeds": [
+      73,
+      79,
+      83,
+      89,
+      97
+    ],
+    "role": "backbone sensitivity, not primary confirmation",
+    "training_seed_rule": "one training seed equal to the independent replicate seed",
+    "recipe": "same X3, architectures, losses, epochs and budget rule",
+    "inputs": {
+      "seed73_predictions": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_predictions\\seed73\\frame_predictions.npz",
+        "sha256": "606cacb5cff22843b3f676253b079b0f3eb1be1239bccdab19639bed9a634e30"
+      },
+      "seed73_checkpoint": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed73\\refiner\\best.pt",
+        "sha256": "6015f0422b3f1c3746a615060f03bc7db5546594c8563dec616961206886c059"
+      },
+      "seed79_predictions": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_predictions\\seed79\\frame_predictions.npz",
+        "sha256": "78f6af22016108713b6fc3b244403743ede92f65872d2540384ad0bf0fffcdc0"
+      },
+      "seed79_checkpoint": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed79\\refiner\\best.pt",
+        "sha256": "3f7758abf0bec9e11324113803c7d90768928fefef6521e58924e0bb092427a1"
+      },
+      "seed83_predictions": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_predictions\\seed83\\frame_predictions.npz",
+        "sha256": "f502ce6a5cdde591c622c0bddef32436b62f6dc8b8de8646fbbbb0536cdddc8c"
+      },
+      "seed83_checkpoint": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed83\\refiner\\best.pt",
+        "sha256": "c4b43f17d29fa5579ca9af7d7cd433a03f4228faeca9dbff9f98e7e588a477aa"
+      },
+      "seed89_predictions": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_predictions\\seed89\\frame_predictions.npz",
+        "sha256": "d397d67d63d1015174fe8c5fbcb1cefef6ffcb51e8dc7e5f2765859c7998d5a4"
+      },
+      "seed89_checkpoint": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed89\\refiner\\best.pt",
+        "sha256": "1d6ed0a243a39681bd1b40a4352899a3a75e3174e66613de78617d6b58d1d7bd"
+      },
+      "seed97_predictions": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_predictions\\seed97\\frame_predictions.npz",
+        "sha256": "8cccb57a671fe8ba352e2c4d18446035e2d53bb0c832fc78f1c352dcb4c0af77"
+      },
+      "seed97_checkpoint": {
+        "path": "results\\difficulty_adaptive_context\\ae_mechanism\\ae4_replication_training\\seed97\\refiner\\best.pt",
+        "sha256": "8fd17f70c796b4361f04be3e48a94916c3a8613408098d50bb979af8ea76180c"
+      }
+    }
+  },
+  "new_final_ood": {
+    "status": "NO_UNUSED_CONFIRMATORY_DATASET_AVAILABLE",
+    "touched": false,
+    "result_generation": "forbidden",
+    "description": "The available LibriSpeech test speakers were already used for A-v1 evaluation. No new untouched confirmatory dataset is present, so no final-OOD result may be fabricated."
+  },
+  "compute": {
+    "source": "results\\difficulty_adaptive_context\\a11_conditional_compute\\a11_conditional_compute.json",
+    "additive_short_term": "short_core",
+    "short_mean_ms_per_frame": 2.195163978127136,
+    "short_core_ms_per_frame": 1.8155573934837093,
+    "always_refine_mean_ms_per_frame": 3.1558624515835043,
+    "refinement_kernel_mean_ms_per_frame": 0.643913,
+    "m0_router_overhead_ms_per_frame": 0.3796065846434269,
+    "scheduling_overhead_ms_per_frame": 0.03631110230120704,
+    "method": "engineering diagnostic; measure CPU router forward overhead in the frozen environment and combine with the A11 short_core/refinement kernel references"
+  },
+  "outputs": {
+    "directory": "results\\difficulty_adaptive_context\\a2_method_study",
+    "required": [
+      "a2_method_protocol_freeze.json",
+      "a2_protocol_sha256.txt",
+      "a2_training_manifest.json",
+      "a2_all_runs.csv",
+      "a2_budget_results.csv",
+      "a2_cluster_bootstrap.csv",
+      "a2_cell_results.csv",
+      "a2_selection_taxonomy.csv",
+      "a2_compute_results.csv",
+      "a2_independent_replication.csv",
+      "a2_mechanism_diagnostics.csv",
+      "a2_figures/",
+      "a2_final_report.md",
+      "a2_final_summary.json",
+      "a2_claim_freeze.md"
+    ]
+  }
+}

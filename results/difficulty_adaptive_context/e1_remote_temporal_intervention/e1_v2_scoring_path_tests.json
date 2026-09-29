@@ -1,0 +1,49 @@
+{
+  "protocol_id": "E1-RTI-v2",
+  "original_protocol_id": "E1-RTI-v1",
+  "v1_runner_sha256": "A03A0939DF7D54C9195C05930A2BDC4AE76896BC8CF55F91A9567270003397F9",
+  "v2_runner_sha256": "A429DCBF8ADF4FF9A4C1601F75D941E623A171A81F6FA084B7D7FAFBA3265BB3",
+  "test_module": "reproductions.difficulty_adaptive_context.test_run_e1",
+  "test_class": "V2ScoringPathCorrectionTests",
+  "test_command": ".venv\\Scripts\\python.exe -m unittest reproductions.difficulty_adaptive_context.test_run_e1 -v",
+  "tests_run": 21,
+  "tests_failed": 0,
+  "checks": {
+    "A": {
+      "passed": true,
+      "test": "test_a_chunked_classifier_logits_reproduce_reference_semantics",
+      "evidence": "The corrected path invoked the chunk-sensitive classifier in 2, 2, and 1 frame chunks and reproduced the concatenated frozen reference semantics exactly; it did not substitute full-sequence classifier semantics."
+    },
+    "B": {
+      "passed": true,
+      "test": "test_b_embedded_short_output_is_unchanged",
+      "evidence": "For a pointwise classifier, the corrected chunked output was exactly equal to direct classifier output."
+    },
+    "C": {
+      "passed": true,
+      "test": "test_c_manual_refinement_arithmetic_is_unchanged",
+      "evidence": "Manual refinement output remained exactly equal to the pre-existing branch-sum, output projection, bounded residual, and softmax arithmetic."
+    },
+    "D": {
+      "passed": true,
+      "test": "test_d_no_future_frame_access_is_introduced",
+      "evidence": "A causal dilated branch gathered only taps at or before the target frame; the synthetic target at frame 4 gathered frames 0, 2, and 4."
+    },
+    "E": {
+      "passed": true,
+      "test": "test_e_chunk_boundaries_do_not_alter_target_alignment",
+      "evidence": "Targets on both sides of chunk boundaries matched direct classifier outputs exactly at the selected indices and across the full time axis."
+    },
+    "F": {
+      "passed": true,
+      "test": "test_f_batch_and_source_isolation_remain_intact",
+      "evidence": "Remote-window replacement modified only declared remote slots for each batch row and preserved current/unavailable slots and other batch rows."
+    },
+    "G": {
+      "passed": true,
+      "test": "test_g_correction_affects_classifier_evaluation_semantics_only",
+      "evidence": "The corrected path left encoded features unchanged, produced the same shape, and changed only classifier evaluation semantics through 2, 2, and 1 frame chunks."
+    }
+  },
+  "all_required_tests_passed": true
+}

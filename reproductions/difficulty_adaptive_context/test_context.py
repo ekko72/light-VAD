@@ -89,6 +89,38 @@ class ContextExperimentTests(unittest.TestCase):
         self.assertEqual(metrics["signed_utility"], 2)
         self.assertAlmostEqual(metrics["net_utility_per_selected"], 1.0)
 
+    def test_gate_counts_only_selected_correction_and_harm_frames(self) -> None:
+        labels = np.asarray([0, 1], dtype=np.int64)
+        short_scores = np.asarray([0.9, 0.9])
+        long_scores = np.asarray([0.1, 0.1])
+        clusters = np.asarray(["s1", "s1"])
+
+        _, correction_counts = count_frames_by_cluster(
+            labels,
+            short_scores,
+            long_scores,
+            np.asarray([True, False]),
+            clusters,
+        )
+        _, harm_counts = count_frames_by_cluster(
+            labels,
+            short_scores,
+            long_scores,
+            np.asarray([False, True]),
+            clusters,
+        )
+
+        correction_metrics = metrics_from_counts(
+            correction_counts.sum(axis=0)
+        )
+        harm_metrics = metrics_from_counts(harm_counts.sum(axis=0))
+        self.assertEqual(correction_metrics["correction"], 1)
+        self.assertEqual(correction_metrics["harm"], 0)
+        self.assertEqual(correction_metrics["signed_utility"], 1)
+        self.assertEqual(harm_metrics["correction"], 0)
+        self.assertEqual(harm_metrics["harm"], 1)
+        self.assertEqual(harm_metrics["signed_utility"], -1)
+
     def test_short_and_long_have_equal_parameters_and_different_rf(self) -> None:
         short = build_marblenet_3x2x64(
             causal=True, dilation_profile="short", frame_output=True

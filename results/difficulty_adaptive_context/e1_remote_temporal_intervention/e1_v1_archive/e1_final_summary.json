@@ -1,0 +1,15 @@
+{
+  "E1_STATUS": "INCONCLUSIVE_OR_INVALID",
+  "PRIMARY_QUESTION": "Does RF384 benefit depend on correctly related remote temporal information?",
+  "FULL_BASELINE_REPRODUCED": false,
+  "INVALID_REASON": "C1_FULL or embedded Short did not reproduce",
+  "INVALID_DETAILS": {
+    "max_abs_full_error": 0.00019294023513793945,
+    "max_abs_embedded_short_error": 0.00016936659812927246,
+    "tolerance": 1e-06
+  },
+  "PROTOCOL_DEVIATIONS": [],
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "TRAINING_PERFORMED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false
+}

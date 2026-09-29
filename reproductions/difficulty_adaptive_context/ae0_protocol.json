@@ -1,0 +1,246 @@
+{
+  "protocol_id": "A-v2-AE0-v1",
+  "status": "FROZEN_BEFORE_AE0_OUTCOME_ANALYSIS",
+  "date": "2026-09-19",
+  "study": {
+    "name": "A-v2 / AE0 - OOD Value Failure Decomposition",
+    "purpose": "Decompose opened A14 OOD utility into availability, observability, and actionability layers.",
+    "sequence_position": "AE0 before any AE1, AE2, or AE3 analysis",
+    "analysis_type": "post_hoc_scientific_analysis",
+    "training": "none",
+    "router_search": "forbidden",
+    "gate_tuning": "forbidden",
+    "threshold_change": "forbidden",
+    "model_change": "forbidden",
+    "a14_rerun": "forbidden",
+    "a15": "forbidden",
+    "seed_variation_role": "excluded_from_AE0; primary AE0 inference uses seed 17 only"
+  },
+  "a14_freeze": {
+    "verdict": "CONDITIONAL_GO",
+    "protocol_path": "results/difficulty_adaptive_context/a14_final_ood_protocol.json",
+    "protocol_sha256": "5F03D4CB8B12EC23B98ACBB7CC09FFFB7584FB1FC4D8D2366F7FA2945CD4F1CF",
+    "result_path": "results/difficulty_adaptive_context/a14_final_ood/a14_final_ood.json",
+    "result_sha256": "4B763E677F3A2FDF1766559C790D3C7DBEAF8500540BAAD3CE0D1153519434FA",
+    "per_cell_path": "results/difficulty_adaptive_context/a14_final_ood/per_cell.csv",
+    "per_cell_sha256": "8AC834E3B02A25E309D0A634BF3D089F541AF46B7D64604A52DCF40EF2A44353",
+    "per_seed_path": "results/difficulty_adaptive_context/a14_final_ood/per_seed.csv",
+    "per_seed_sha256": "835E7A78D9D6F9033CB5F3688E93C023FE13ED973932F28D51BA4ED1FB1B6BA5",
+    "runner_path": "reproductions/difficulty_adaptive_context/run_a14_final_ood.py",
+    "runner_sha256": "772213F1AA0AE009BE122A7588241E0EA240D484225A2F6E3B5E8A864949D2D8",
+    "opened_data_role": "A-v2 development data; A14 cannot be used for A-v1 model selection"
+  },
+  "primary_seed": {
+    "seed": 17,
+    "short_encoder_relation": "shared_frozen_short_encoder",
+    "reason": "A14 names seed 17 as the primary checkpoint; AE0 is a post-hoc decomposition of that frozen primary result.",
+    "checkpoint_path": "results/difficulty_adaptive_context/a3_pilot_seed17_gate013_distill025_rf384/best.pt",
+    "checkpoint_sha256": "85ACDE86D8D9A21103992B8BA697AA55DFAE5987D93235A1FF3BB3BA4A5E10AB"
+  },
+  "reconstruction": {
+    "authorization": "Reuse the frozen A14 lock, sealed-row loader, and inference interface without modifying them.",
+    "reason": "A14 JSON stores selected correction/harm counts but not the all-frame correction/harm outcomes needed for oracle availability and observability.",
+    "required_call": "predict_full_adaptive_frames",
+    "required_assertion": "np.all(stream_selected)",
+    "decision_threshold": 0.5,
+    "gate_threshold": 0.13,
+    "score_chunk_frames": 2000,
+    "frame_hop": 160,
+    "expected_frames": 2017926,
+    "expected_rows": 1080,
+    "expected_sources": 20,
+    "expected_speaker_sensitivity_keys": 16
+  },
+  "outcome_definitions": {
+    "short_wrong": "(short_score >= 0.5) != label",
+    "refined_wrong": "(refined_score >= 0.5) != label",
+    "correction_all": "short_wrong and not refined_wrong",
+    "harm_all": "not short_wrong and refined_wrong",
+    "selected": "abs(short_score - 0.5) <= 0.13",
+    "uncertainty": "abs(short_score - 0.5)",
+    "A_gross_c": "mean(correction_all)",
+    "A_net_c": "mean(correction_all) - mean(harm_all)",
+    "U_gate_c": "mean((correction_all and selected) - (harm_all and selected))",
+    "O_c": "AUROC(correction_all, uncertainty) with higher uncertainty predicting correction",
+    "P_c": "U_gate_c / A_net_c when A_net_c > 0; otherwise undefined",
+    "harm_auroc_c": "AUROC(harm_all, uncertainty) with higher uncertainty predicting harm",
+    "selected_correction_recall_c": "P(selected | correction_all)",
+    "selected_harm_rate_c": "P(selected | harm_all)"
+  },
+  "auroc": {
+    "direction": "higher uncertainty predicts the positive event",
+    "tie_handling": "average ranks",
+    "implementation_rule": "For each positive-negative pair, a strict win contributes 1.0 and a tie contributes 0.5.",
+    "undefined_rule": "Return null when either the positive or negative class is empty."
+  },
+  "classification": {
+    "precedence": [
+      {
+        "label": "AVAILABILITY_LIMITED",
+        "rule": "A_net_c <= 0"
+      },
+      {
+        "label": "OBSERVABILITY_LIMITED",
+        "rule": "A_net_c > 0 and O_c <= 0.5"
+      },
+      {
+        "label": "ACTIONABILITY_LIMITED",
+        "rule": "A_net_c > 0 and O_c > 0.5 and U_gate_c <= 0"
+      },
+      {
+        "label": "ACTIONABLE",
+        "rule": "A_net_c > 0 and O_c > 0.5 and U_gate_c > 0"
+      }
+    ],
+    "undefined_auroc_rule": "O_c is null; classify by the first applicable precedence rule and report the undefined observability field."
+  },
+  "bootstrap": {
+    "primary_unit": "source_cluster",
+    "sensitivity_unit": "speaker_cluster",
+    "repeats": 5000,
+    "seed": 20260919,
+    "seed_rules": {
+      "aggregate_source_cluster": 20260919,
+      "speaker_cluster_sensitivity": "base + 1",
+      "domain_source_cluster": "base + 10 + domain_index",
+      "cell_source_cluster": "base + 100 + cell_index"
+    },
+    "shared_resample_rule": "Within a unit and bootstrap family, one shared cluster resample vector is used for A_gross, A_net, U_gate, O, P, harm AUROC, selected-correction recall, and selected-harm rate.",
+    "confidence_interval": "2.5th to 97.5th percentile",
+    "undefined_metric_rule": "A replicate with an undefined denominator is excluded only from that metric's interval."
+  },
+  "cells": {
+    "order": [
+      ["seen", "-5"],
+      ["seen", "0"],
+      ["seen", "5"],
+      ["seen", "10"],
+      ["seen", "15"],
+      ["seen", "20"],
+      ["unseen", "-5"],
+      ["unseen", "0"],
+      ["unseen", "5"],
+      ["unseen", "10"],
+      ["unseen", "15"],
+      ["unseen", "20"]
+    ],
+    "domains": ["seen", "unseen"],
+    "snr_db": ["-5", "0", "5", "10", "15", "20"]
+  },
+  "integrity_checks": {
+    "abort_before_interpretation": true,
+    "all": {
+      "selected": 135308,
+      "correction": 23050,
+      "harm": 20678
+    },
+    "seen": {
+      "selected": 89794,
+      "correction": 13151,
+      "harm": 14813
+    },
+    "unseen": {
+      "selected": 45514,
+      "correction": 9899,
+      "harm": 5865
+    },
+    "per_cell": [
+      {
+        "domain": "seen",
+        "snr_db": "-5",
+        "selected": 21892,
+        "correction": 3804,
+        "harm": 3210
+      },
+      {
+        "domain": "seen",
+        "snr_db": "0",
+        "selected": 18546,
+        "correction": 2878,
+        "harm": 2923
+      },
+      {
+        "domain": "seen",
+        "snr_db": "5",
+        "selected": 16867,
+        "correction": 2255,
+        "harm": 2898
+      },
+      {
+        "domain": "seen",
+        "snr_db": "10",
+        "selected": 13297,
+        "correction": 1775,
+        "harm": 2471
+      },
+      {
+        "domain": "seen",
+        "snr_db": "15",
+        "selected": 10307,
+        "correction": 1315,
+        "harm": 1778
+      },
+      {
+        "domain": "seen",
+        "snr_db": "20",
+        "selected": 8885,
+        "correction": 1124,
+        "harm": 1533
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "-5",
+        "selected": 10568,
+        "correction": 2860,
+        "harm": 1350
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "0",
+        "selected": 10326,
+        "correction": 2506,
+        "harm": 1310
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "5",
+        "selected": 8677,
+        "correction": 1772,
+        "harm": 1168
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "10",
+        "selected": 6035,
+        "correction": 1191,
+        "harm": 710
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "15",
+        "selected": 5045,
+        "correction": 880,
+        "harm": 665
+      },
+      {
+        "domain": "unseen",
+        "snr_db": "20",
+        "selected": 4863,
+        "correction": 690,
+        "harm": 662
+      }
+    ]
+  },
+  "stop_rule": {
+    "stop_if": "availability_limited_count > 0 and observability_limited_count == 0 and actionability_limited_count == 0",
+    "stop_action": "STOP A-v2 MECHANISM EXPLORATION",
+    "otherwise": "Do not start AE1-AE3 automatically; report the AE0 layer split and require a separate decision.",
+    "claim": "If stopped, accept that uncertainty is a strong simple proxy while routing robustness remains condition-dependent."
+  },
+  "outputs": {
+    "directory": "results/difficulty_adaptive_context/ae0_value_decomposition",
+    "summary": "ae0_value_decomposition.json",
+    "table": "per_cell.csv",
+    "report": "README.md"
+  }
+}

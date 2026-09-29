@@ -1,0 +1,542 @@
+{
+  "BASELINE_REPRODUCED": true,
+  "BEST_METADATA_MATCHED_EFFECT": {
+    "ci95_high": 0.0247021292661965,
+    "ci95_low": 0.014629411366256237,
+    "estimate": 0.019638670554482835,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "DECISION_DETAILS": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": true,
+    "B4_REGION": "S1_ONSET_NEAR",
+    "B5": true,
+    "E2_STATUS": "INCONCLUSIVE_OR_INVALID",
+    "P1": {
+      "ci95_high": 0.02453461542878668,
+      "ci95_low": 0.014552501226452722,
+      "contrast": "P1_UTTERANCE",
+      "definition": "C7 minus C1; positive means different-source replacement is more harmful",
+      "effect": 0.019654228119660614,
+      "frames": 240565,
+      "left_condition": "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE",
+      "right_condition": "C1_SAME_UTT_DIFFERENT_TIME",
+      "sources": 96,
+      "speaker_ci95_high": 0.025222871989551428,
+      "speaker_ci95_low": 0.01379031368735869,
+      "speakers": 20,
+      "status": "PRIMARY_INTERPRETABLE",
+      "targets": 396
+    },
+    "P2": {
+      "ci95_high": NaN,
+      "ci95_low": NaN,
+      "contrast": "P2_NOISE_INSTANCE",
+      "definition": "C3 minus C2; positive means class-only replacement is more harmful",
+      "effect": NaN,
+      "frames": 0,
+      "left_condition": "C3_SAME_NOISE_CLASS",
+      "right_condition": "C2_SAME_NOISE_INSTANCE",
+      "sources": 0,
+      "speaker_ci95_high": NaN,
+      "speaker_ci95_low": NaN,
+      "speakers": 0,
+      "status": "INCOMPARABLE",
+      "targets": 0
+    },
+    "P3": {
+      "ci95_high": 0.007610304766303482,
+      "ci95_low": 0.0009659939173539824,
+      "contrast": "P3_NOISE_CLASS",
+      "definition": "C5 minus C3; positive means class mismatch adds damage",
+      "effect": 0.004255575938582742,
+      "frames": 240565,
+      "left_condition": "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR",
+      "right_condition": "C3_SAME_NOISE_CLASS",
+      "sources": 96,
+      "speaker_ci95_high": 0.007940447093516843,
+      "speaker_ci95_low": 0.001040732136830213,
+      "speakers": 20,
+      "status": "PRIMARY_INTERPRETABLE",
+      "targets": 396
+    },
+    "P4": {
+      "ci95_high": -0.0008453141896517856,
+      "ci95_low": -0.0053323138149715425,
+      "contrast": "P4_SNR",
+      "definition": "C4 minus C3; positive means SNR mismatch adds damage",
+      "effect": -0.003122788565098376,
+      "frames": 240565,
+      "left_condition": "C4_SAME_CLASS_WRONG_SNR",
+      "right_condition": "C3_SAME_NOISE_CLASS",
+      "sources": 96,
+      "speaker_ci95_high": -0.0007247591518186536,
+      "speaker_ci95_low": -0.005648219522220252,
+      "speakers": 20,
+      "status": "PRIMARY_INTERPRETABLE",
+      "targets": 396
+    },
+    "P5": {
+      "ci95_high": 0.009646898459734897,
+      "ci95_low": -0.003034719107397934,
+      "contrast": "P5_SPEECH_STATE",
+      "definition": "C6 minus C3; positive means speech-state mismatch adds damage",
+      "effect": 0.003386523805887278,
+      "frames": 67607,
+      "left_condition": "C6_SPEECH_STATE_MISMATCH",
+      "right_condition": "C3_SAME_NOISE_CLASS",
+      "sources": 57,
+      "speaker_ci95_high": 0.010569899577450897,
+      "speaker_ci95_low": -0.0060229236697128125,
+      "speakers": 19,
+      "status": "PRIMARY_INTERPRETABLE",
+      "targets": 118
+    },
+    "P6": {
+      "ci95_high": 0.02442867322179603,
+      "ci95_low": 0.014509107434145505,
+      "contrast": "P6_RESIDUAL_IDENTITY",
+      "definition": "C7 minus FULL; positive means residual replacement damage remains",
+      "effect": 0.019638670554482835,
+      "frames": 240565,
+      "left_condition": "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE",
+      "right_condition": "C0_FULL",
+      "sources": 96,
+      "speaker_ci95_high": 0.025298371253894513,
+      "speaker_ci95_low": 0.013816548902941601,
+      "speakers": 20,
+      "status": "PRIMARY_INTERPRETABLE",
+      "targets": 396
+    },
+    "RELEVANT_B5_CONTRASTS": [
+      "P1_UTTERANCE"
+    ],
+    "RESIDUAL_CONTEXT_IDENTITY": true,
+    "SPEECH_STATE_DOMINATES": false,
+    "SPEECH_STATE_FRACTION_OF_P6": 0.17244160171087808,
+    "VALIDITY": {
+      "baseline_passed": true,
+      "core_matching_valid": false,
+      "e1_artifacts_unchanged": true,
+      "e1_c4_replay_passed": true,
+      "intervention_valid": true
+    }
+  },
+  "DIFFERENT_CLASS_EFFECT": {
+    "ci95_high": 0.023404747948838782,
+    "ci95_low": 0.014496927175171691,
+    "estimate": 0.018953840872256815,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "DONOR_SEED_STABILITY": {
+    "conditions": {
+      "C1_SAME_UTT_DIFFERENT_TIME": {
+        "condition_or_contrast": "C1_SAME_UTT_DIFFERENT_TIME",
+        "contrast": "",
+        "estimate": -1.5557565177776396e-05,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "C2_SAME_NOISE_INSTANCE": {
+        "condition_or_contrast": "C2_SAME_NOISE_INSTANCE",
+        "contrast": "",
+        "estimate": NaN,
+        "finite_seed_count": 0,
+        "frames": 0,
+        "positive_seed_count": 0,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": false
+      },
+      "C3_SAME_NOISE_CLASS": {
+        "condition_or_contrast": "C3_SAME_NOISE_CLASS",
+        "contrast": "",
+        "estimate": 0.01469826493367407,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "C4_SAME_CLASS_WRONG_SNR": {
+        "condition_or_contrast": "C4_SAME_CLASS_WRONG_SNR",
+        "contrast": "",
+        "estimate": 0.011575476368575694,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": {
+        "condition_or_contrast": "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR",
+        "contrast": "",
+        "estimate": 0.018953840872256815,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "C6_SPEECH_STATE_MISMATCH": {
+        "condition_or_contrast": "C6_SPEECH_STATE_MISMATCH",
+        "contrast": "",
+        "estimate": 0.01148088509357114,
+        "finite_seed_count": 5,
+        "frames": 67607,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": {
+        "condition_or_contrast": "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE",
+        "contrast": "",
+        "estimate": 0.019638670554482835,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "condition_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      }
+    },
+    "contrasts": {
+      "P1_UTTERANCE": {
+        "condition_or_contrast": "P1_UTTERANCE",
+        "contrast": "P1_UTTERANCE",
+        "estimate": 0.019654228119660614,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "P2_NOISE_INSTANCE": {
+        "condition_or_contrast": "P2_NOISE_INSTANCE",
+        "contrast": "P2_NOISE_INSTANCE",
+        "estimate": NaN,
+        "finite_seed_count": 0,
+        "frames": 0,
+        "positive_seed_count": 0,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": false
+      },
+      "P3_NOISE_CLASS": {
+        "condition_or_contrast": "P3_NOISE_CLASS",
+        "contrast": "P3_NOISE_CLASS",
+        "estimate": 0.004255575938582742,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 4,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      },
+      "P4_SNR": {
+        "condition_or_contrast": "P4_SNR",
+        "contrast": "P4_SNR",
+        "estimate": -0.003122788565098376,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 0,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": false
+      },
+      "P5_SPEECH_STATE": {
+        "condition_or_contrast": "P5_SPEECH_STATE",
+        "contrast": "P5_SPEECH_STATE",
+        "estimate": 0.003386523805887278,
+        "finite_seed_count": 5,
+        "frames": 67607,
+        "positive_seed_count": 3,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": false
+      },
+      "P6_RESIDUAL_IDENTITY": {
+        "condition_or_contrast": "P6_RESIDUAL_IDENTITY",
+        "contrast": "P6_RESIDUAL_IDENTITY",
+        "estimate": 0.019638670554482835,
+        "finite_seed_count": 5,
+        "frames": 240565,
+        "positive_seed_count": 5,
+        "required_positive_seed_count": 4,
+        "row_type": "contrast_summary",
+        "seed": -1,
+        "seed_direction_stable": true
+      }
+    }
+  },
+  "E1_C4_REPLAY_REPRODUCED": true,
+  "E1_RECONCILIATION": {
+    "R1_exact_temporal_order_unimportant_context_statistics_matter": "SUPPORTED",
+    "R2_same_utterance_identity_matters": "SUPPORTED",
+    "R3_background_or_noise_instance_matters": "NOT_SUPPORTED",
+    "R4_noise_class_matters": "PARTIALLY_SUPPORTED",
+    "R5_snr_or_level_matters": "NOT_SUPPORTED",
+    "R6_speech_state_composition_matters": "PARTIALLY_SUPPORTED",
+    "R7_coarse_metadata_do_not_explain": "SUPPORTED",
+    "R8_insufficient_evidence": "PARTIALLY_SUPPORTED"
+  },
+  "E2_STATUS": "INCONCLUSIVE_OR_INVALID",
+  "MATCHING_FEASIBILITY_BY_CONDITION": {
+    "C1_SAME_UTT_DIFFERENT_TIME": "PRIMARY_INTERPRETABLE",
+    "C2_SAME_NOISE_INSTANCE": "INCOMPARABLE",
+    "C3_SAME_NOISE_CLASS": "PRIMARY_INTERPRETABLE",
+    "C4_SAME_CLASS_WRONG_SNR": "PRIMARY_INTERPRETABLE",
+    "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": "PRIMARY_INTERPRETABLE",
+    "C6_SPEECH_STATE_MISMATCH": "INCOMPARABLE",
+    "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": "PRIMARY_INTERPRETABLE"
+  },
+  "NEW_FINAL_OOD_TOUCHED": false,
+  "NEXT_EXPERIMENT_AUTHORIZED": false,
+  "OFFSET_EFFECT": {
+    "ci95_high": 0.03138845493581769,
+    "ci95_low": -0.013651838579386297,
+    "estimate": 0.008708015829115602
+  },
+  "ONSET_EFFECT": {
+    "ci95_high": 0.06596510933226106,
+    "ci95_low": 0.010662985074635329,
+    "estimate": 0.038804446829015966
+  },
+  "ONSET_MATCHED_STABLE_EXCESS": 0.015460363476277415,
+  "ONSET_MINUS_OFFSET": {
+    "ci95_high": 0.033448794202092784,
+    "ci95_low": -0.008497617136865155,
+    "estimate": 0.012567464017507936
+  },
+  "P1_UTTERANCE_CONTRAST": {
+    "ci95_high": 0.02453461542878668,
+    "ci95_low": 0.014552501226452722,
+    "estimate": 0.019654228119660614,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "P2_NOISE_INSTANCE_CONTRAST": {
+    "ci95_high": NaN,
+    "ci95_low": NaN,
+    "estimate": NaN,
+    "status": "INCOMPARABLE"
+  },
+  "P3_NOISE_CLASS_CONTRAST": {
+    "ci95_high": 0.007610304766303482,
+    "ci95_low": 0.0009659939173539824,
+    "estimate": 0.004255575938582742,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "P4_SNR_CONTRAST": {
+    "ci95_high": -0.0008453141896517856,
+    "ci95_low": -0.0053323138149715425,
+    "estimate": -0.003122788565098376,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "P5_SPEECH_STATE_CONTRAST": {
+    "ci95_high": 0.009646898459734897,
+    "ci95_low": -0.003034719107397934,
+    "estimate": 0.003386523805887278,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "P6_RESIDUAL_IDENTITY_EFFECT": {
+    "ci95_high": 0.02442867322179603,
+    "ci95_low": 0.014509107434145505,
+    "estimate": 0.019638670554482835,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "PROTOCOL_DEVIATIONS": [],
+  "R_SURVIVAL_BY_CONDITION": {
+    "C0_FULL": 1.0,
+    "C1_SAME_UTT_DIFFERENT_TIME": 0.8021499128413713,
+    "C2_SAME_NOISE_INSTANCE": NaN,
+    "C3_SAME_NOISE_CLASS": 0.4189424753050552,
+    "C4_SAME_CLASS_WRONG_SNR": 0.49186519465427075,
+    "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": 0.3495061011040093,
+    "C6_SPEECH_STATE_MISMATCH": 0.7023593466424682,
+    "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": 0.38698431144683326
+  },
+  "SAME_NOISE_CLASS_EFFECT": {
+    "ci95_high": 0.018574714561000537,
+    "ci95_low": 0.010788573754545353,
+    "estimate": 0.01469826493367407,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "SAME_NOISE_INSTANCE_EFFECT": {
+    "ci95_high": NaN,
+    "ci95_low": NaN,
+    "estimate": NaN,
+    "status": "INCOMPARABLE"
+  },
+  "SAME_UTT_EFFECT": {
+    "ci95_high": 0.0004786484293876707,
+    "ci95_low": -0.00048391406238330095,
+    "estimate": -1.5557565177776396e-05,
+    "status": "PRIMARY_INTERPRETABLE"
+  },
+  "SEEN_EFFECT": {
+    "C1_SAME_UTT_DIFFERENT_TIME": {
+      "ci95_high": 0.0004683488622977643,
+      "ci95_low": -0.00046769651123764497,
+      "estimate": 5.5410800308008645e-06
+    },
+    "C2_SAME_NOISE_INSTANCE": {
+      "ci95_high": NaN,
+      "ci95_low": NaN,
+      "estimate": NaN
+    },
+    "C3_SAME_NOISE_CLASS": {
+      "ci95_high": 0.008696572915938705,
+      "ci95_low": 0.004072647254331082,
+      "estimate": 0.006367615782399557
+    },
+    "C4_SAME_CLASS_WRONG_SNR": {
+      "ci95_high": 0.01100142004451989,
+      "ci95_low": 0.006310820558831182,
+      "estimate": 0.008492246946539696
+    },
+    "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": {
+      "ci95_high": 0.00964801185847125,
+      "ci95_low": 0.005267858342663703,
+      "estimate": 0.007261591007837744
+    },
+    "C6_SPEECH_STATE_MISMATCH": {
+      "ci95_high": 0.023229680365009144,
+      "ci95_low": 0.01227529048781549,
+      "estimate": 0.017989455016904177
+    },
+    "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": {
+      "ci95_high": 0.009406649219630013,
+      "ci95_low": 0.004466092831659501,
+      "estimate": 0.006763943779230262
+    }
+  },
+  "SOURCE_LOSO_STABILITY": {
+    "P1_UTTERANCE": {
+      "all_loso_positive": true,
+      "full_estimate": 0.019654228119660614,
+      "loso_source_count": 96,
+      "max_loso_estimate": 0.020552351406667585,
+      "min_loso_estimate": 0.01662931444701129,
+      "sign_consistent": true
+    },
+    "P2_NOISE_INSTANCE": {
+      "all_loso_positive": false,
+      "full_estimate": NaN,
+      "loso_source_count": 0,
+      "max_loso_estimate": NaN,
+      "min_loso_estimate": NaN,
+      "sign_consistent": false
+    },
+    "P3_NOISE_CLASS": {
+      "all_loso_positive": true,
+      "full_estimate": 0.004255575938582742,
+      "loso_source_count": 96,
+      "max_loso_estimate": 0.005424437684529959,
+      "min_loso_estimate": 0.0024538025383408846,
+      "sign_consistent": true
+    },
+    "P4_SNR": {
+      "all_loso_positive": false,
+      "full_estimate": -0.003122788565098376,
+      "loso_source_count": 96,
+      "max_loso_estimate": -0.001629656544339893,
+      "min_loso_estimate": -0.0036199590865829416,
+      "sign_consistent": true
+    },
+    "P5_SPEECH_STATE": {
+      "all_loso_positive": true,
+      "full_estimate": 0.003386523805887278,
+      "loso_source_count": 57,
+      "max_loso_estimate": 0.007755234259279593,
+      "min_loso_estimate": 0.0018416414277333554,
+      "sign_consistent": true
+    },
+    "P6_RESIDUAL_IDENTITY": {
+      "all_loso_positive": true,
+      "full_estimate": 0.019638670554482835,
+      "loso_source_count": 96,
+      "max_loso_estimate": 0.02059874621225458,
+      "min_loso_estimate": 0.01664766283758172,
+      "sign_consistent": true
+    }
+  },
+  "SPEECH_STATE_MISMATCH_EFFECT": {
+    "ci95_high": 0.016952914226573173,
+    "ci95_low": 0.005740720094819828,
+    "estimate": 0.01148088509357114,
+    "status": "INCOMPARABLE"
+  },
+  "TRAINING_PERFORMED": false,
+  "TRANSITION_EFFECT": {
+    "ci95_high": 0.07796126001990028,
+    "ci95_low": 0.039196728622089,
+    "estimate": 0.05931344397969429
+  },
+  "TRANSITION_MATCHED_STABLE_EXCESS": -0.0009896963329257787,
+  "UNSEEN_EFFECT": {
+    "C1_SAME_UTT_DIFFERENT_TIME": {
+      "ci95_high": 0.0007276914652188827,
+      "ci95_low": -0.0008265240926412688,
+      "estimate": -6.107652837714515e-05
+    },
+    "C2_SAME_NOISE_INSTANCE": {
+      "ci95_high": NaN,
+      "ci95_low": NaN,
+      "estimate": NaN
+    },
+    "C3_SAME_NOISE_CLASS": {
+      "ci95_high": 0.04362102567361557,
+      "ci95_low": 0.021486942822699574,
+      "estimate": 0.0326711019758154
+    },
+    "C4_SAME_CLASS_WRONG_SNR": {
+      "ci95_high": 0.029265909280645267,
+      "ci95_low": 0.006999376352020585,
+      "estimate": 0.018227344543495855
+    },
+    "C5_DIFFERENT_NOISE_CLASS_MATCHED_SNR": {
+      "ci95_high": 0.057382058850079735,
+      "ci95_low": 0.030612276631697525,
+      "estimate": 0.0441791141556783
+    },
+    "C6_SPEECH_STATE_MISMATCH": {
+      "ci95_high": 0.01356273543243253,
+      "ci95_low": -0.021966376196255855,
+      "estimate": -0.00487135581054682
+    },
+    "C7_BEST_METADATA_MATCHED_DIFFERENT_SOURCE": {
+      "ci95_high": 0.05955070248840348,
+      "ci95_low": 0.03376273803658514,
+      "estimate": 0.047415061336503334
+    }
+  },
+  "WRONG_SNR_EFFECT": {
+    "ci95_high": 0.01536931007374868,
+    "ci95_low": 0.007888247809056805,
+    "estimate": 0.011575476368575694,
+    "status": "PRIMARY_INTERPRETABLE"
+  }
+}

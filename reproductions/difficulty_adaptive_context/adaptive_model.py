@@ -368,7 +368,8 @@ class AdaptiveCausalVAD(nn.Module):
                 device=short_logits.device,
                 dtype=torch.bool,
             )
-            if selected.shape != short_logits.shape[:2]:
+            expected_shape = (short_logits.shape[0], short_logits.shape[-1])
+            if selected.shape != expected_shape:
                 raise ValueError(
                     "activation_mask must have shape [B, T] matching logits"
                 )

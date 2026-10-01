@@ -1,0 +1,24 @@
+{
+  "completed_at_utc": "2026-10-01T09:12:18.446362+00:00",
+  "fit_video_count": 126,
+  "frozen_at_utc": "2026-10-01T08:57:08.847977+00:00",
+  "lightweight_rows": 18,
+  "main_rows": 40,
+  "mechanism_rows": 40,
+  "output_files": [
+    "ava_speech_main_results.csv",
+    "ava_speech_mechanism_results.csv",
+    "ava_speech_lightweight_results.csv",
+    "ava_speech_report.md"
+  ],
+  "protocol_id": "AVA-SPEECH-v1",
+  "protocol_path": "results/difficulty_adaptive_context/ava_speech_v1/ava_speech_protocol.json",
+  "protocol_sha256": "C71A292EB703B4B0344AD1091BCAED96812E79103543D370893150ACBD10D1F1",
+  "runner": "reproductions/difficulty_adaptive_context/run_ava_speech_v1.py",
+  "runner_sha256": "D42C0F0D8C18F1F18941A17685FE9D02A7DF78E53FDAF456615DE50EB98E96AE",
+  "status": "COMPLETED",
+  "test_video_ids": [
+    "xO4ABy2iOQA",
+    "y7ncweROe9U"
+  ]
+}
